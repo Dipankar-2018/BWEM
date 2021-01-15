@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 if(isset($_POST['submit'])){
     include("../conn/database.php");
     $obj = new query();
@@ -106,11 +108,14 @@ if(isset($_POST['submit'])){
         $result=$obj->insertData('self_help_group_members',$condition_arr);
     }
 
-  
+    // $id=$obj->getData('self_help_group','*','','id','desc','1')[0]['id'];
 }
-if(!isset($_GET['cat']))
-    $_GET['cat']='shg';
-header("location:../data.php?cat=".$obj->get_safe_str($_GET['cat'])."&dist=".strtolower($dist));
+if(isset($_SESSION['login'])&&$_SESSION['login']==true){
+    header("location:../data.php?cat=shg&dist=".strtolower($dist));
+}
+else{
+    header("location:../../");
+}
 
 
 
