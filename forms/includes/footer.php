@@ -3,7 +3,7 @@
             <div class="container">
               <div class="content">
                 <div class="row">
-                  <div class="col-md-3">
+                  <div class="col-6 col-md-3">
                     <a href="#pablo">
                       <h5>Schemes</h5>
                     </a>
@@ -30,7 +30,7 @@
                       </li>
                     </ul>
                   </div>
-                  <div class="col-md-3">
+                  <div class="col-6 col-md-3">
                     <h5>Check Scheme Status</h5>
                     <ul class="links-vertical">
                       <li>
@@ -55,7 +55,7 @@
                       </li>
                     </ul>
                   </div>
-                  <div class="col-md-3">
+                  <div class="col-6 col-md-3">
                     <h5>Quick Link</h5>
                     <ul class="links-vertical">
                       <li>
@@ -82,7 +82,7 @@
                     </ul>
                   </div>
                   
-                  <div class="col-md-3">
+                  <div class="col-6 col-md-3">
                     <h5>Contact</h5>
                     <a href="#pablo">
                       <i class="fa fa-mail text-rose">contact@btrlm.org</i>
