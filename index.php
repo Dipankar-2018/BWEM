@@ -40,7 +40,7 @@
   </div> -->
 
 
-  <div class="main main-raised" style="z-index:1000">
+  <div class="main main-raised">
     <div class="container">
       <div class="section">
        
