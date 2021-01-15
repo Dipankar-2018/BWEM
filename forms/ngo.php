@@ -67,52 +67,68 @@
 
       <!-- Self Help Group Contact Info -->
 
-            <div class="row">
+      <!-- Self Help Group Contact Info -->
+      <div class="row">
               <div class="col-md-12">
                   <div class="card card-signup">
                   <h4 class="card-title text-center">Contact Information</h4>
                   <div class="card-body">
-                    <form>
+                   
                       <div class="form-row">
                         <div class="col-lg-12 col-sm-12">
                           <div class="form-group has-default">
                             <label class="text-info"><b>ADDRESS</b></label>
-                            <input type="text" class="form-control" placeholder="Enter Village/Town/Street/City">
+                            <input type="text" class="form-control" placeholder="Enter Village/Town/Street/City" name="address">
                           </div>
                         </div>
-                        <div class="col-lg-3 col-sm-4">
-                          <div class="form-group has-default">
-                            <label class="text-info"><b>DISTRICT</b></label>
-                            <input type="text" class="form-control" placeholder="Enter District Name">
-                          </div>
+                        <div class="col-lg-3 col-sm-3">
+                            <div class="form-group has-default">
+                              <label class="text-info"><b>SELECT DISTRICT</b></label>
+                                <select class="selectpicker" data-style="select-with-transition" title="Select District" data-size="7" name="dist" required>
+                                <option disabled>Select District</option>
+                                <?php include('./includes/htmlpart/district.php');?>
+                              </select>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-3">
+                            <div class="form-group has-default">
+                              <label class="text-info"><b>SELECT CONSTITUENCY</b></label>
+                                <select class="selectpicker" data-style="select-with-transition" title="Select Constituency" data-size="7" name="constituency" required>
+                                <option disabled>Select Constituency</option>
+                                <?php include('./includes/htmlpart/constituency.php');?>
+                              </select>
+                            </div>
                         </div>
                         <div class="col-lg-3 col-sm-4">
                           <div class="form-group has-default">
                             <label class="text-info"><b>POST OFFICE</b></label>
-                            <input type="text" class="form-control" placeholder="Enter P.O. Name">
+                            <input type="text" class="form-control" placeholder="Enter P.O. Name" name="post_office">
                           </div>
                         </div>
                         <div class="col-lg-3 col-sm-4">
                           <div class="form-group has-default">
                             <label class="text-info"><b>POLICE STATION</b></label>
-                            <input type="text" class="form-control" placeholder="Enter P.S. Name">
+                            <input type="text" class="form-control" placeholder="Enter P.S. Name" name="police_station">
                           </div>
                         </div>
                         <div class="col-lg-3 col-sm-4">
                           <div class="form-group has-default">
                             <label class="text-info"><b>PIN CODE</b></label>
-                            <input type="text" class="form-control" placeholder="Enter PIN Code">
+                            <input type="text" class="form-control" placeholder="Enter PIN Code" name="pin">
                           </div>
                         </div>
-                        <div class="col-lg-3 col-sm-4">
-                          <div class="form-group has-default">
-                            <label class="text-info"><b>STATE</b></label>
-                            <input type="text" class="form-control" placeholder="Enter State Name">
-                          </div>
+                        <div class="col-lg-3 col-sm-3">
+                            <div class="form-group has-default">
+                              <label class="text-info"><b>SELECT STATE</b></label>
+                                <select class="selectpicker" data-style="select-with-transition" title="Select State" data-size="7" name="state" required>
+                                <option disabled>Select state</option>
+                                <?php include('./includes/htmlpart/state.php');?>
+                              </select>
+                            </div>
                         </div>
 
                     </div>
-                  </form>
+               
                   </div>
                 </div>
                 </div>
@@ -170,56 +186,54 @@
 
             <!-- Self Help Group Member Info -->
 
-            <div class="row">
-              <div class="col-md-12">
-                  <div class="card card-signup">
-                  <h4 class="card-title text-center">Member Information</h4>
-                  <div class="card-body">
-                    <form>
-                      <div class="form-row">
-                      
-                          <div class="col-lg-12 col-sm-12">
-                            <div class="form-group has-default">
-                              <label for="MemberName" class="text-info"><b>MEMBER NAME</b></label>
-                              <input type="text" class="form-control" id="MemberName" placeholder="Enter Your Name">
-                            </div>
-                          </div>
-                          <div class="col-lg-4 col-sm-4">
-                            <div class="form-group has-default">
-                              <label for="SelectGender" class="text-info"><b>SELECT GENDER</b></label> <br>
-                                <select class="selectpicker" data-style="select-with-transition" id="SelectGender" title="Select Gender" data-size="7">
-                                <option disabled>Select Gender</option>
-                                <option value="2">MALE</option>
-                                <option value="3">FEMALE</option>
-                                
-                              </select>
-                            </div>
-                          </div>
-                          <div class="col-lg-4 col-sm-4">
-                            <div class="form-group has-default">
-                              <label for="InputAge" class="text-info"><b>AGE</b></label>
-                              <input type="email" class="form-control" id="InputAge" aria-describedby="emailHelp" placeholder="Enter Age">
-                             
-                            </div>
-                          </div>
-                          <div class="col-lg-4 col-sm-4">
-                            <div class="form-group has-default">
-                              <label for="InputQualification" class="text-info"><b>QUALIFICATION</b></label>
-                              <input type="email" class="form-control" id="InputQualification" aria-describedby="emailHelp" placeholder="Enter Qualification, if any">
-                             
-                            </div>
-                          </div>
-
-                          <div class="text-center">
-                            <a href="#pablo" class="btn btn-primary btn-round">Add Member</a>
-                          </div>
+            <div class="row"  id="add_member_container">
+          
+          <div class="col-md-12">
+              <div class="card card-signup">
+              <h4 class="card-title text-center">Member Information</h4>
+              <div class="card-body">
+                  <div class="form-row">                      
+                      <div class="col-lg-12 col-sm-12">
+                        <div class="form-group has-default">
+                          <label for="MemberName" class="text-info"><b>MEMBER NAME</b></label>
+                          <input type="text" class="form-control" id="MemberName" placeholder="Enter Your Name">
                         </div>
-                    </form>
-                  </div>
-                </div>
-                </div>
+                      </div>
+                      <div class="col-lg-4 col-sm-4">
+                        <div class="form-group">
+                          <label for="SelectGender" class="text-info"><b>SELECT GENDER</b></label> <br>
+                            <select class="selectpicker" data-style="select-with-transition" id="SelectGender" title="Select Gender" data-size="7">
+                            <option disabled>Select Gender</option>
+                            <option value="2">MALE</option>
+                            <option value="3">FEMALE</option>                                
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col-lg-4 col-sm-4">
+                        <div class="form-group has-default">
+                          <label for="InputAge" class="text-info"><b>AGE</b></label>
+                          <input type="email" class="form-control" id="InputAge" aria-describedby="emailHelp" placeholder="Enter Age">
+                         
+                        </div>
+                      </div>
+                      <div class="col-lg-4 col-sm-4">
+                        <div class="form-group has-default">
+                          <label for="InputQualification" class="text-info"><b>QUALIFICATION</b></label>
+                          <input type="email" class="form-control" id="InputQualification" aria-describedby="emailHelp" placeholder="Enter Qualification, if any">
+                         
+                        </div>
+                      </div>
+                     
+                      <div class="text-center">
+                        <button type="button" class="btn btn-primary btn-round" id="add_member">Add Member</button>                                                      
+                      </div>
+                    </div>
+            
+              </div>
+            </div>
             </div>
 
+        </div>
 
       <!-- Self Help Group Extra Info -->
 

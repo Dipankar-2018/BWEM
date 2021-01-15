@@ -20,7 +20,7 @@
 <body class="blog-posts sidebar-collapse">
 
 <!-- Navigation Start -->  
-  <nav class="navbar navbar bg-info  fixed-top  navbar-expand-lg "  id="sectionsNav">
+  <nav class="navbar navbar bg-info  fixed-top  navbar-expand-lg "  id="sectionsNav" style="z-index:1200">
     <div class="container">
       <div class="navbar-translate">
         <a class="navbar-brand" href="index.php">
@@ -81,7 +81,7 @@
               <a href="forms/trainer.php" class="dropdown-item">
                 <i class="material-icons">construction</i> Registration as Trainer
               </a>
-              <a href="forms/training_agency.php" class="dropdown-item">
+              <a href="#" class="dropdown-item">
                 <i class="material-icons">location_city</i> Registration of Training Agency
               </a>
             </div>

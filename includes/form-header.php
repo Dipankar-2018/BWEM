@@ -40,7 +40,7 @@
         <ul class="navbar-nav ml-auto">
           
           <li class="dropdown nav-item">
-            <a href="examples/index.html" class="dropdown-toggle nav-link" data-toggle="dropdown">
+            <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
               <i class="material-icons">home</i><b>Home</b>
             </a>
             <div class="dropdown-menu dropdown-with-icons">
@@ -79,7 +79,7 @@
               <a href="forms/trainer.php" class="dropdown-item">
                 <i class="material-icons">construction</i> Registration as Trainer
               </a>
-              <a href="forms/training_agency.php" class="dropdown-item">
+              <a href="#" class="dropdown-item">
                 <i class="material-icons">location_city</i> Registration of Training Agency
               </a>
             </div>

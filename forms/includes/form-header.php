@@ -19,7 +19,7 @@
 
 <body class="profile-page sidebar-collapse">
 <!-- Navigation Start -->  
-  <nav class="navbar navbar bg-info  fixed-top  navbar-expand-lg "  id="sectionsNav">
+  <nav class="navbar navbar bg-info  fixed-top  navbar-expand-lg "  id="sectionsNav" style="z-index:">
     <div class="container">
     <div class="navbar-translate">
         <a class="navbar-brand" href="../index.php">

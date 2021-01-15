@@ -28,7 +28,7 @@ $(document).ready(function() {
                   <div class="col-lg-4 col-sm-4">
                     <div class="form-group">
                       <label for="SelectGender" class="text-info"><b>SELECT GENDER</b></label> <br>
-                        <select class="selectpicker" data-style="select-with-transition" title="Select Gender" data-size="7">
+                        <select class="form-control" data-style="select-with-transition" title="Select Gender" data-size="7">
                         <option value="">Select Gender</option>
                         <option value="male">MALE</option>
                         <option value="female">FEMALE</option>

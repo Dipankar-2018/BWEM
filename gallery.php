@@ -2,7 +2,7 @@
 
 
   <div class="page-header header-filter" data-parallax="true" style="background-image: url('assets/img/city-profile.jpg');"></div>
-  <div class="main main-raised">
+  <div class="main main-raised" style="z-index:1">
     <div class="profile-content">
       <div class="container">
         <div class="row">
@@ -21,7 +21,7 @@
         <!-- <div class="description text-center">
           <p>***</p>
         </div> -->
-        <div class="row">
+        <!-- <div class="row">
           <div class="col-md-12 ml-auto mr-auto">
             <div class="profile-tabs">
               <ul class="nav nav-pills nav-pills-icons justify-content-center" role="tablist">
@@ -39,6 +39,32 @@
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="#favorite" role="tab" data-toggle="tab">
+                    <i class="material-icons">home_work</i>
+                    NGO's
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div> -->
+        <div class="row">
+          <div class="col-md-12 ml-auto mr-auto">
+            <div class="profile-tabs">
+              <ul class="nav nav-pills nav-pills-icons justify-content-center" role="tablist">
+                <li class="nav-item">
+                  <a class="nav-link active" href="#studio" role="tab" data-toggle="tab">
+                    <i class="material-icons">group</i>
+                    SHG's
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#" role="tab" data-toggle="tab">
+                    <i class="material-icons">store</i>
+                    Entrepreneurs
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#" role="tab" data-toggle="tab">
                     <i class="material-icons">home_work</i>
                     NGO's
                   </a>

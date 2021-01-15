@@ -1,7 +1,7 @@
-<?php include('includes/form-header.php'); ?>
+<?php include('includes/header.php'); ?>
 
-  <div id="contactUsMap" class="big-map"></div>
-  <div class="main main-raised">
+  <div id="contactUsMap" class="big-map" style="margin-top:15rem;"></div>
+  <div class="main main-raised" style="z-index:-3">
     <div class="contact-content">
       <div class="container">
         <h2 class="title">Send us a message</h2>

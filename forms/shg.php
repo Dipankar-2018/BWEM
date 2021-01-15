@@ -202,7 +202,7 @@
                           <div class="col-lg-4 col-sm-4">
                             <div class="form-group">
                               <label for="SelectGender" class="text-info"><b>SELECT GENDER</b></label> <br>
-                                <select class="form-control" data-style="select-with-transition" id="SelectGender" title="Select Gender" data-size="7">
+                                <select class="selectpicker" data-style="select-with-transition" id="SelectGender" title="Select Gender" data-size="7">
                                 <option disabled>Select Gender</option>
                                 <option value="2">MALE</option>
                                 <option value="3">FEMALE</option>                                
