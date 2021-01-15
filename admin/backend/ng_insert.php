@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 if(isset($_POST['submit'])){
     include("../conn/database.php");
     $obj = new query();
@@ -110,8 +112,11 @@ if(isset($_POST['submit'])){
 }
 // if(!isset($_GET['cat']))
 //     $_GET['cat']='shg';
-header("location:../data.php?cat=ng&dist=".strtolower($dist));
-
+if(isset($_SESSION['login'])&&$_SESSION['login']==true){
+    header("location:../data.php?cat=ng&dist=".strtolower($dist));
+}else{
+    header("location:../../");
+}
 
 
 ?>
