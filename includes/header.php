@@ -20,11 +20,7 @@
 <body class="blog-posts sidebar-collapse">
 
 <!-- Navigation Start -->  
-<<<<<<< HEAD
-  <nav class="navbar navbar bg-info  fixed-top  navbar-expand-lg "  id="sectionsNav" style="z-index: 1101!important;">
-=======
   <nav class="navbar navbar bg-info  fixed-top  navbar-expand-lg "  id="sectionsNav" style="z-index:1101 !important;">
->>>>>>> 2f6fb47398dc44e94d29cd84d1b0379a94edfd35
     <div class="container">
       <div class="navbar-translate">
         <a class="navbar-brand" href="index.php">
