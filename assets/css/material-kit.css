@@ -8021,7 +8021,7 @@ a {
 .main {
   background: #FFFFFF;
   position: relative;
-  z-index: 3; }
+  z-index: 1100; }
 
 .form-check,
 label {
