@@ -40,7 +40,7 @@
                         </div>
                         <div class="col-lg-6 col-sm-4">
                           <div class="form-group has-default">
-                            <label class="text-info"><b>SHG GROUP NAME</b></label>
+                            <label class="text-info"><b>SHG NAME</b></label>
                             <input type="text" class="form-control" placeholder="Enter SHG Name" name="group_name">
                           </div>
                         </div>
@@ -49,7 +49,7 @@
                               <label class="text-info"><b>UPLOAD REGISTRATION DOCUMENT (If Any)</b></label>
                               <input type="file" multiple="" class="inputFileHidden">
                               <div class="input-group">
-                                <input type="text" class="form-control inputFileVisible" placeholder="Select File" name="registration_file">
+                                <input type="text" class="form-control inputFileVisible" placeholder="Select File" name="registration_file" onchange="//readURL(this,'blahClone2');">
                                 <span class="input-group-btn">
                                   <button type="button" class="btn btn-link btn-fab btn-primary">
                                     <i class="material-icons">attach_file</i>
@@ -308,7 +308,7 @@
                               <label class="text-info"><b>UPLOAD BANK DOCUMENT (Passbook/Cancelled Cheque)</b></label>
                               <input type="file" multiple="" class="inputFileHidden">
                               <div class="input-group">
-                                <input type="text" class="form-control inputFileVisible" placeholder="Select File" name="passbook_file">
+                                <input type="text" class="form-control inputFileVisible" placeholder="Select File" name="passbook_file" onchange="//readURL(this,'blahClone');">
                                 <span class="input-group-btn">
                                   <button type="button" class="btn btn-link btn-fab btn-primary">
                                     <i class="material-icons">attach_file</i>
@@ -331,7 +331,8 @@
                               </label>
                             </div>
                           </div>
-                          <button type="submit" class="btn btn-primary">Submit</button>
+                          <button type="button" class="btn btn-success" onclick="previewForm()" data-toggle="modal" data-target="#myModal">Preview</button>
+                          <button id="submitForm" type="submit" class="btn btn-primary">Submit</button>
                         </div>
                 
                   </div>
@@ -345,5 +346,5 @@
       </div>
     </div>
   </div>
-
+  <?php include('./includes/htmlpart/previewmodal.php');?>
 <?php include('includes/footer.php'); ?>
