@@ -71,3 +71,96 @@ $(document).ready(function() {
 function removeElement(e){
  return e.parentElement.parentElement.parentElement.parentElement.remove();
 }
+//image preview
+function readURL(input,targetId) {
+  let FileUploadPath = input.value;
+    //To check if user upload any file
+    if (FileUploadPath == '') {
+        alert("Please upload an image");
+    } else {
+        let Extension = FileUploadPath.substring(
+        FileUploadPath.lastIndexOf('.') + 1).toLowerCase();
+        if (Extension == "png"|| Extension == "jpeg" || Extension == "jpg") {
+                if (input.files && input.files[0]) {
+                    let reader = new FileReader();
+                    reader.onload = function(e) {
+                        $('#'+targetId).attr('src', e.target.result).width(200).height(150).show();
+                    }
+                    reader.readAsDataURL(input.files[0]);
+                }
+
+            } 
+    //The file upload is NOT an image
+        else {
+                alert("File Extension Must be (jpg ,png,jpeg,gif)");
+
+            }
+      }
+}
+//Local Preview
+function previewForm(){ 
+  document.querySelector('#registration_no').innerHTML=$('input[name="registration_no"]').val();  
+  document.querySelector('#group_name').innerHTML=$('input[name="group_name"]').val();
+  document.querySelector('#address').innerHTML=$('input[name="address"]').val();
+  document.querySelector('#post_office').innerHTML=$('input[name="post_office"]').val();
+  document.querySelector('#police_station').innerHTML=$('input[name="police_station"]').val();
+  document.querySelector('#dist').innerHTML=capitalize($('select[name="dist"]').val());
+  document.querySelector('#pin').innerHTML=$('input[name="pin"]').val();
+  document.querySelector('#state').innerHTML=capitalize($('select[name="state"]').val());
+  document.querySelector('#constituency').innerHTML=capitalize($('select[name="constituency"]').val());
+  document.querySelector('#head_position').innerHTML=capitalize($('select[name="head_position"]').val());
+  document.querySelector('#head_name').innerHTML=$('input[name="head_name"]').val();
+  document.querySelector('#head_mobile').innerHTML=$('input[name="head_mobile"]').val();
+  document.querySelector('#head_email').innerHTML=$('input[name="head_email"]').val();
+  document.querySelector('#area_of_interest').innerHTML=$('input[name="area_of_interest"]').val();
+  document.querySelector('#group_exp').innerHTML=$('input[name="group_exp"]').val();
+  document.querySelector('#acc_no').innerHTML=$('input[name="acc_no"]').val();
+  document.querySelector('#ifsc_code').innerHTML=$('input[name="ifsc_code"]').val();
+  document.querySelector('#bank_name').innerHTML=$('input[name="bank_name"]').val();
+  document.querySelector('#branch_name').innerHTML=$('input[name="branch_name"]').val();
+
+  let mem_name = $('input[name="member_name[]"]');
+  let mem_gender= $('select[name="member_gender[]"]');
+  let mem_age = $('input[name="member_age[]"]');
+  let mem_qualification= $('input[name="member_qualification[]"]');
+  let str='';
+  for(let i=0;i<mem_name.length;i++){
+    let mname=mem_name[i].value;
+    let mgen=capitalize(mem_gender[i].value);
+    let mage=mem_age[i].value;
+    let mq=mem_qualification[i].value;
+    str+=`
+            <div class="col-12">
+            <div class="row">                           
+              <div class="col-lg-12">
+                <div class="form-group" id="input_fields_wrap">
+                  <label for="form-control-label">Member Name</label>
+                  <span class="form-control" class="member_name">${mname}</span>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-4">
+                <div class="form-group">
+                <label for="form-control-label">Gender</label>
+                <span class="form-control" class="member_gender">${mgen}</span>
+                </div>
+              </div>
+              <div class="col-lg-4">
+                <div class="form-group">
+                <label for="form-control-label">Age</label>
+                <span class="form-control" class="member_age">${mage}</span>
+                </div>
+              </div>
+              <div class="col-lg-4">
+                <div class="form-group">
+                <label for="form-control-label">Enter Qualification</label>
+                <span class="form-control" class="member_qualification">${mq}</span>
+                </div>
+              </div>
+            </div>
+        </div>    
+    `;
+  }
+  document.querySelector('#member-list').innerHTML=str;
+}
