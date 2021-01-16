@@ -335,6 +335,8 @@ if(isset($_GET['cat'])&& $_GET['cat']!="" && array_key_exists($obj->get_safe_str
     <!-- /.content -->
   </div>
 
+  
+
 <!-- Modal -->
   <div class="modal fade" id="myModal" style="height:95vh;overflow-y: scroll;">
     <div class="modal-dialog modal-xl">

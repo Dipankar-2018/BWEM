@@ -1,3 +1,29 @@
+<?php 
+
+if(isset($_POST['preview'])){
+
+ $registration_no = $_POST['registration_no'];
+ $group_name = $_POST['group_name'];
+ $registration_file = $_POST['registration_file'];
+ $address = $_POST['address'];
+ $dist = $_POST['dist'];
+ $constituency = $_POST['constituency'];
+ $post_office = $_POST['post_office'];
+ $police_station = $_POST['police_station'];
+ $pin = $_POST['pin'];
+ $state = $_POST['state'];
+ $head_position = $_POST['head_position'];
+ $head_name = $_POST['head_name'];
+ $head_mobile = $_POST['head_mobile'];
+ $head_email = $_POST['head_email'];
+
+ 
+
+
+
+}
+?>
+
 <?php include('includes/form-header.php'); ?>           
 
 
@@ -24,7 +50,7 @@
       <div class="section">
             
           <!-- Self Help Group Details -->
-          <form method="post" action="form-preview.php" enctype="multipart/form-data">
+          <form method="post" action="includes/form-preview/form-preview.php" enctype="multipart/form-data">
             <div class="row">
               <div class="col-md-12">
                   <div class="card card-signup">
@@ -35,13 +61,13 @@
                         <div class="col-lg-6 col-sm-4">
                           <div class="form-group has-default">
                             <label class="text-info"><b>REGISTRATION NUMBER</b></label>
-                            <input type="text" class="form-control" placeholder="Enter SHG Registration Number" name="registration_no">
+                            <input type="text" class="form-control" placeholder="Enter SHG Registration Number" name="registration_no" value=" <?php echo $registration_no; ?>" readonly>
                           </div>
                         </div>
                         <div class="col-lg-6 col-sm-4">
                           <div class="form-group has-default">
                             <label class="text-info"><b>SHG NAME</b></label>
-                            <input type="text" class="form-control" placeholder="Enter SHG Name" name="group_name">
+                            <input type="text" class="form-control" placeholder="Enter SHG Name" name="group_name" value=" <?php echo $group_name; ?>" readonly>
                           </div>
                         </div>
                         <div class="col-lg-12 col-sm-12">
@@ -49,7 +75,7 @@
                               <label class="text-info"><b>UPLOAD REGISTRATION DOCUMENT (If Any)</b></label>
                               <input type="file" multiple="" class="inputFileHidden">
                               <div class="input-group">
-                                <input type="text" class="form-control inputFileVisible" placeholder="Select File" name="registration_file" onchange="//readURL(this,'blahClone2');">
+                                <input type="text"  value="registration_file" class="form-control inputFileVisible" placeholder="Select File" name="registration_file" onchange="readURL(this,'blahClone2');" readonly>
                                 <span class="input-group-btn">
                                   <button type="button" class="btn btn-link btn-fab btn-primary">
                                     <i class="material-icons">attach_file</i>
@@ -150,9 +176,9 @@
                               <label class="text-info"><b>SELECT CATEGORY</b></label>
                                 <select class="selectpicker" data-style="select-with-transition" title="Select Category" data-size="7" name="head_position">
                                 <option disabled>Choose city</option>
-                                <option value="president">President</option>
-                                <option value="secratary">Secratary</option>
-                                <option value="director">Director</option>
+                                <option value="2">President</option>
+                                <option value="3">Secratary</option>
+                                <option value="3">Director</option>
                               </select>
                             </div>
                           </div>
@@ -196,13 +222,13 @@
                           <div class="col-lg-12 col-sm-12">
                             <div class="form-group has-default">
                               <label for="MemberName" class="text-info"><b>MEMBER NAME</b></label>
-                              <input type="text" class="form-control" id="MemberName" placeholder="Enter Your Name" name="member_name[]">
+                              <input type="text" class="form-control" id="MemberName" placeholder="Enter Your Name">
                             </div>
                           </div>
                           <div class="col-lg-4 col-sm-4">
                             <div class="form-group">
                               <label for="SelectGender" class="text-info"><b>SELECT GENDER</b></label> <br>
-                                <select class="selectpicker" data-style="select-with-transition" id="SelectGender" title="Select Gender" data-size="7" name="member_gender[]">
+                                <select class="selectpicker" data-style="select-with-transition" id="SelectGender" title="Select Gender" data-size="7">
                                 <option disabled>Select Gender</option>
                                 <option value="2">MALE</option>
                                 <option value="3">FEMALE</option>                                
@@ -212,14 +238,14 @@
                           <div class="col-lg-4 col-sm-4">
                             <div class="form-group has-default">
                               <label for="InputAge" class="text-info"><b>AGE</b></label>
-                              <input type="text" class="form-control" id="InputAge" aria-describedby="emailHelp" placeholder="Enter Age" name="member_age[]">
+                              <input type="text" class="form-control" id="InputAge" aria-describedby="emailHelp" placeholder="Enter Age">
                              
                             </div>
                           </div>
                           <div class="col-lg-4 col-sm-4">
                             <div class="form-group has-default">
                               <label for="InputQualification" class="text-info"><b>QUALIFICATION</b></label>
-                              <input type="text" class="form-control" id="InputQualification" aria-describedby="emailHelp" placeholder="Enter Qualification, if any" name="member_qualification[]">
+                              <input type="text" class="form-control" id="InputQualification" aria-describedby="emailHelp" placeholder="Enter Qualification, if any">
                              
                             </div>
                           </div>
@@ -331,11 +357,7 @@
                               </label>
                             </div>
                           </div>
-                          <button type="submit" name="preview" class="btn btn-success" onclick="previewForm()" data-toggle="modal" data-target="#myModal">Preview</button>
-                          <button id="modalActivate" type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalPreview">
-                              Launch demo modal
-                          </button>
-
+                          <button class="btn btn-success"  onclick="window.history.back();">Back</button>                      
                           <button id="submitForm" type="submit" class="btn btn-primary">Submit</button>
                         </div>
                 

@@ -25,7 +25,7 @@ if(isset($_POST['submit'])){
   $branch_name = $obj->get_safe_str($_POST['branch_name']);
 //file processing needed
     //'passbook_file',
-        $passbook_filename=$_FILES['passbook_file']['name'];
+            $passbook_filename=$_FILES['passbook_file']['name'];
             $filetemp1=$_FILES['passbook_file']['tmp_name'];
             $filetype1=$_FILES['passbook_file']['type'];
             $filesize1=$_FILES['passbook_file']['size'];
@@ -86,8 +86,8 @@ if(isset($_POST['submit'])){
        'bank_name'=>$bank_name,
        'ifsc'=>$ifsc_code,
        'branch_name'=>$branch_name,
-        'passbook_file'=>$passbook,
-        'registration_certificate_file'=>$registrationCertificate
+       'passbook_file'=>$passbook,
+       'registration_certificate_file'=>$registrationCertificate
     );
   
   $result=$obj->insertData('self_help_group',$condition_arr);
