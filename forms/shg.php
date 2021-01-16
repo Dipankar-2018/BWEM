@@ -24,7 +24,7 @@
       <div class="section">
             
           <!-- Self Help Group Details -->
-          <form method="post" action="form-preview.php" enctype="multipart/form-data">
+          <form method="post" action="../admin/backend/shg_insert.php" enctype="multipart/form-data">
             <div class="row">
               <div class="col-md-12">
                   <div class="card card-signup">
@@ -47,9 +47,9 @@
                         <div class="col-lg-12 col-sm-12">
                             <div class="form-group form-file-upload form-file-multiple">
                               <label class="text-info"><b>UPLOAD REGISTRATION DOCUMENT (If Any)</b></label>
-                              <input type="file" multiple="" class="inputFileHidden">
+                              <input type="file"  class="inputFileHidden" name="registration_file" onchange="readURL(this,'blahClone2');">
                               <div class="input-group">
-                                <input type="text" class="form-control inputFileVisible" placeholder="Select File" name="registration_file" onchange="//readURL(this,'blahClone2');">
+                                <input type="text" class="form-control inputFileVisible" placeholder="Select File" >
                                 <span class="input-group-btn">
                                   <button type="button" class="btn btn-link btn-fab btn-primary">
                                     <i class="material-icons">attach_file</i>
@@ -306,9 +306,9 @@
                           <div class="col-lg-12 col-sm-12">
                             <div class="form-group form-file-upload form-file-multiple">
                               <label class="text-info"><b>UPLOAD BANK DOCUMENT (Passbook/Cancelled Cheque)</b></label>
-                              <input type="file" multiple="" class="inputFileHidden">
+                              <input type="file"  class="inputFileHidden"  name="passbook_file" onchange="readURL(this,'blahClone');">
                               <div class="input-group">
-                                <input type="text" class="form-control inputFileVisible" placeholder="Select File" name="passbook_file" onchange="//readURL(this,'blahClone');">
+                                <input type="text" class="form-control inputFileVisible" placeholder="Select File">
                                 <span class="input-group-btn">
                                   <button type="button" class="btn btn-link btn-fab btn-primary">
                                     <i class="material-icons">attach_file</i>
@@ -331,11 +331,8 @@
                               </label>
                             </div>
                           </div>
-                          <button type="submit" name="preview" class="btn btn-success" onclick="previewForm()" data-toggle="modal" data-target="#myModal">Preview</button>
-                          <button id="modalActivate" type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalPreview">
-                              Launch demo modal
-                          </button>
-
+                          <button id="modalActivate" type="button" name="preview" class="btn btn-success" onclick="previewForm()" data-toggle="modal" data-target="#exampleModalPreview">Preview</button>
+                        
                           <button id="submitForm" type="submit" class="btn btn-primary">Submit</button>
                         </div>
                 

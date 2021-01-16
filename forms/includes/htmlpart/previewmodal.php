@@ -1,8 +1,10 @@
 <style>
-
+.modal{
+  padding:auto!important;
+}
 .modal-dialog-full-width {
-        width: 100% !important;
-        height: 100% !important;
+        width: 80% !important;
+        height: auto !important;
         margin: 0 !important;
         padding: 0 !important;
         max-width:none !important;
@@ -27,11 +29,10 @@
 
  </style>
 
-
   <!-- Modal -->
-<div class="modal fade right" id="exampleModalPreview" tabindex="-1" role="dialog" aria-labelledby="exampleModalPreviewLabel" aria-hidden="true">
+<div align="center" class="modal fade right" id="exampleModalPreview" tabindex="-1" role="dialog" aria-labelledby="exampleModalPreviewLabel" aria-hidden="true">
     <div class="modal-dialog-full-width modal-dialog momodel modal-fluid" role="document">
-        <div class="modal-content-full-width modal-content ">
+        <div align="left" class="modal-content-full-width modal-content ">
             <div class=" modal-header-full-width   modal-header text-center">
             <h4 class="card-title text-center">Form Preview:</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -41,40 +42,29 @@
             <div class="modal-body">
 
             <div class="section">
-            
-            <!-- Self Help Group Details -->
-            <form method="post" action="form-preview.php" enctype="multipart/form-data">
               <div class="row">
                 <div class="col-md-12">
                     <div class="card card-signup">
-                    <h4 class="card-title text-center">Self Help Group Details</h4>
+                    <h4 class="card-title text-center">Form Details</h4>
                     <div class="card-body">
                     
                         <div class="form-row">
                           <div class="col-lg-6 col-sm-4">
                             <div class="form-group has-default">
                               <label class="text-info"><b>REGISTRATION NUMBER</b></label>
-                              <input type="text" class="form-control" placeholder="Enter SHG Registration Number" name="registration_no">
+                              <span class="form-control" id="registration_no">1234</span>
                             </div>
                           </div>
                           <div class="col-lg-6 col-sm-4">
                             <div class="form-group has-default">
-                              <label class="text-info"><b>SHG NAME</b></label>
-                              <input type="text" class="form-control" placeholder="Enter SHG Name" name="group_name">
+                              <label class="text-info"><b>GROUP NAME</b></label>
+                              <span class="form-control" id="group_name">1234</span>
                             </div>
                           </div>
                           <div class="col-lg-12 col-sm-12">
                               <div class="form-group form-file-upload form-file-multiple">
-                                <label class="text-info"><b>UPLOAD REGISTRATION DOCUMENT (If Any)</b></label>
-                                <input type="file" multiple="" class="inputFileHidden">
-                                <div class="input-group">
-                                  <input type="text" class="form-control inputFileVisible" placeholder="Select File" name="registration_file" onchange="//readURL(this,'blahClone2');">
-                                  <span class="input-group-btn">
-                                    <button type="button" class="btn btn-link btn-fab btn-primary">
-                                      <i class="material-icons">attach_file</i>
-                                    </button>
-                                  </span>
-                                </div>
+                                <label class="text-info"><b>UPLOADED REGISTRATION DOCUMENT</b></label>
+                                <img id="blahClone2" src="#" style="display: none;"/>
                               </div>
                             </div>
   
@@ -97,52 +87,43 @@
                           <div class="col-lg-12 col-sm-12">
                             <div class="form-group has-default">
                               <label class="text-info"><b>ADDRESS</b></label>
-                              <input type="text" class="form-control" placeholder="Enter Village/Town/Street/City" name="address">
+                              <span class="form-control" id="address">1234</span>
                             </div>
                           </div>
                           <div class="col-lg-3 col-sm-3">
                               <div class="form-group has-default">
-                                <label class="text-info"><b>SELECT DISTRICT</b></label>
-                                  <select class="selectpicker" data-style="select-with-transition" title="Select District" data-size="7" name="dist" required>
-                                  <option disabled>Select District</option>
-                                  <?php include('./includes/htmlpart/district.php');?>
-                                </select>
+                                <label class="text-info"><b>DISTRICT</b></label>
+                                <span class="form-control" id="dist">1234</span>
                               </div>
                           </div>
                           <div class="col-lg-3 col-sm-3">
                               <div class="form-group has-default">
-                                <label class="text-info"><b>SELECT CONSTITUENCY</b></label>
-                                  <select class="selectpicker" data-style="select-with-transition" title="Select Constituency" data-size="7" name="constituency" required>
-                                  <option disabled>Select Constituency</option>
-                                  <?php include('./includes/htmlpart/constituency.php');?>
-                                </select>
+                                <label class="text-info"><b>CONSTITUENCY</b></label>
+                                <span class="form-control" id="constituency">1234</span>
                               </div>
                           </div>
                           <div class="col-lg-3 col-sm-4">
                             <div class="form-group has-default">
                               <label class="text-info"><b>POST OFFICE</b></label>
-                              <input type="text" class="form-control" placeholder="Enter P.O. Name" name="post_office">
+                              <span class="form-control" id="post_office">1234</span>
                             </div>
                           </div>
                           <div class="col-lg-3 col-sm-4">
                             <div class="form-group has-default">
                               <label class="text-info"><b>POLICE STATION</b></label>
-                              <input type="text" class="form-control" placeholder="Enter P.S. Name" name="police_station">
+                              <span class="form-control" id="police_station">1234</span>
                             </div>
                           </div>
                           <div class="col-lg-3 col-sm-4">
                             <div class="form-group has-default">
                               <label class="text-info"><b>PIN CODE</b></label>
-                              <input type="text" class="form-control" placeholder="Enter PIN Code" name="pin">
+                              <span class="form-control" id="pin">1234</span>
                             </div>
                           </div>
                           <div class="col-lg-3 col-sm-3">
                               <div class="form-group has-default">
                                 <label class="text-info"><b>SELECT STATE</b></label>
-                                  <select class="selectpicker" data-style="select-with-transition" title="Select State" data-size="7" name="state" required>
-                                  <option disabled>Select state</option>
-                                  <?php include('./includes/htmlpart/state.php');?>
-                                </select>
+                                <span class="form-control" id="state">1234</span>
                               </div>
                           </div>
   
@@ -166,31 +147,26 @@
                         
                             <div class="col-lg-4 col-sm-4">
                               <div class="form-group has-default">
-                                <label class="text-info"><b>SELECT CATEGORY</b></label>
-                                  <select class="selectpicker" data-style="select-with-transition" title="Select Category" data-size="7" name="head_position">
-                                  <option disabled>Choose city</option>
-                                  <option value="president">President</option>
-                                  <option value="secratary">Secratary</option>
-                                  <option value="director">Director</option>
-                                </select>
+                                <label class="text-info"><b>CATEGORY</b></label>
+                                <span class="form-control" id="head_position">1234</span>
                               </div>
                             </div>
                             <div class="col-lg-8 col-sm-8">
                               <div class="form-group has-default">
                                 <label class="text-info"><b>NAME</b></label>
-                                <input type="text" class="form-control" placeholder="Enter Your Name" name="head_name">
+                                <span class="form-control" id="head_name">1234</span>
                               </div>
                             </div>
                             <div class="col-lg-6 col-sm-6">
                               <div class="form-group has-default">
                                 <label class="text-info"><b>CONTACT NUMBER</b></label>
-                                <input type="text" class="form-control" placeholder="Enter Contact Name" name="head_mobile">
+                                <span class="form-control" id="head_mobile">1234</span>
                               </div>
                             </div>
                             <div class="col-lg-6 col-sm-6">
                               <div class="form-group has-default">
                                 <label class="text-info"><b>E-MAIL</b></label>
-                                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter E-Mail Id" name="head_email">
+                                <span class="form-control" id="head_email">1234</span>
                                
                               </div>
                             </div>
@@ -209,48 +185,18 @@
             
                 <div class="col-md-12">
                     <div class="card card-signup">
-                    <h4 class="card-title text-center">Member Information</h4>
-                    <div class="card-body">
-                        <div class="form-row">                      
-                            <div class="col-lg-12 col-sm-12">
-                              <div class="form-group has-default">
-                                <label for="MemberName" class="text-info"><b>MEMBER NAME</b></label>
-                                <input type="text" class="form-control" id="MemberName" placeholder="Enter Your Name" name="member_name[]">
-                              </div>
+                      <h4 class="card-title text-center">Member Information</h4>
+                        <div class="card-body">
+                            <!-- loop -->
+                            <div id="member-list">
+                                  
+                                  
+
                             </div>
-                            <div class="col-lg-4 col-sm-4">
-                              <div class="form-group">
-                                <label for="SelectGender" class="text-info"><b>SELECT GENDER</b></label> <br>
-                                  <select class="selectpicker" data-style="select-with-transition" id="SelectGender" title="Select Gender" data-size="7" name="member_gender[]">
-                                  <option disabled>Select Gender</option>
-                                  <option value="2">MALE</option>
-                                  <option value="3">FEMALE</option>                                
-                                </select>
-                              </div>
-                            </div>
-                            <div class="col-lg-4 col-sm-4">
-                              <div class="form-group has-default">
-                                <label for="InputAge" class="text-info"><b>AGE</b></label>
-                                <input type="text" class="form-control" id="InputAge" aria-describedby="emailHelp" placeholder="Enter Age" name="member_age[]">
-                               
-                              </div>
-                            </div>
-                            <div class="col-lg-4 col-sm-4">
-                              <div class="form-group has-default">
-                                <label for="InputQualification" class="text-info"><b>QUALIFICATION</b></label>
-                                <input type="text" class="form-control" id="InputQualification" aria-describedby="emailHelp" placeholder="Enter Qualification, if any" name="member_qualification[]">
-                               
-                              </div>
-                            </div>
-                           
-                            <div class="text-center">
-                              <button type="button" class="btn btn-primary btn-round" id="add_member">Add Member</button>                                                      
-                            </div>
-                          </div>
-                  
+                          <!-- loop end -->
+                       </div>
                     </div>
-                  </div>
-                  </div>
+                </div>
   
               </div>
   
@@ -268,13 +214,13 @@
                             <div class="col-lg-6 col-sm-6">
                               <div class="form-group has-default">
                                 <label class="text-info"><b>AREA OF INTEREST</b></label>
-                                <input type="text" class="form-control" placeholder="Enter Area of Interest" name="area_of_interest">
+                                <span class="form-control" id="area_of_interest">1234</span>
                               </div>
                             </div>
                             <div class="col-lg-6 col-sm-6">
                               <div class="form-group has-default">
                                 <label class="text-info"><b>GROUP EXPERIENCE</b></label>
-                                <input type="text" class="form-control" placeholder="Enter Group Experience, if any" name="group_exp">
+                                <span class="form-control" id="group_exp">1234</span>
                               </div>
                             </div>
                       
@@ -299,41 +245,33 @@
                             <div class="col-lg-6 col-sm-6">
                               <div class="form-group has-default">
                                 <label class="text-info"><b>A/C NUMBER</b></label>
-                                <input type="text" class="form-control" placeholder="Enter Account Number" name="acc_no">
+                                <span class="form-control" id="acc_no">1234</span> 
                               </div>
                             </div>
                             <div class="col-lg-6 col-sm-6">
                               <div class="form-group has-default">
                                 <label class="text-info"><b>IFSC CODE</b></label>
-                                <input type="text" class="form-control" placeholder="Enter IFSC Code" name="ifsc_code">
+                                <span class="form-control" id="ifsc_code">1234</span>
                               </div>
                             </div>
   
                             <div class="col-lg-6 col-sm-6">
                               <div class="form-group has-default">
                                 <label class="text-info"><b>BANK NAME</b></label>
-                                <input type="text" class="form-control" placeholder="Enter Bank Name" name="bank_name">
+                                <span class="form-control" id="bank_name">1234</span>
                               </div>
                             </div>
                             <div class="col-lg-6 col-sm-6">
                               <div class="form-group has-default">
                                 <label class="text-info"><b>BRANCH NAME</b></label>
-                                <input type="text" class="form-control" placeholder="Enter Branch Name" name="branch_name">
+                                <span class="form-control" id="branch_name">1234</span> 
                               </div>
                             </div>
   
                             <div class="col-lg-12 col-sm-12">
                               <div class="form-group form-file-upload form-file-multiple">
-                                <label class="text-info"><b>UPLOAD BANK DOCUMENT (Passbook/Cancelled Cheque)</b></label>
-                                <input type="file" multiple="" class="inputFileHidden">
-                                <div class="input-group">
-                                  <input type="text" class="form-control inputFileVisible" placeholder="Select File" name="passbook_file" onchange="//readURL(this,'blahClone');">
-                                  <span class="input-group-btn">
-                                    <button type="button" class="btn btn-link btn-fab btn-primary">
-                                      <i class="material-icons">attach_file</i>
-                                    </button>
-                                  </span>
-                                </div>
+                                <label class="text-info"><b>UPLOADED BANK DOCUMENT (Passbook/Cancelled Cheque)</b></label>
+                                <img id="blahClone" src="#" style="display: none;"/>
                               </div>
                             </div>
                             
@@ -354,11 +292,10 @@
             <div class="modal-footer-full-width  modal-footer">
                 <!-- <button type="button" class="btn btn-danger btn-rounded" data-dismiss="modal">Close</button>
                 <button type="button" class="btn btn-primary btn-rounded">Save changes</button> -->
-                <button id="button" type="submit" class="btn btn-danger btn-rounded " data-dismiss="modal">Close</button>
-                <button id="submitForm" type="submit" class="btn btn-primary btn-rounded">Submit</button>
+                <button id="button" type="button" class="btn btn-danger btn-rounded " data-dismiss="modal">Close</button>&nbsp;
+                <button id="submitForm" type="button" class="btn btn-primary btn-rounded" data-dismiss="modal" onclick="$('#submitForm').click();">Submit</button>
 
             </div>
         </div>
     </div>
 </div>
-    

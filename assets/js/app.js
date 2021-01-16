@@ -22,13 +22,13 @@ $(document).ready(function() {
                   <div class="col-lg-12 col-sm-12">
                     <div class="form-group has-default">
                       <label for="MemberName" class="text-info"><b>MEMBER NAME</b></label>
-                      <input type="text" class="form-control" placeholder="Enter Your Name">
+                      <input type="text" class="form-control" placeholder="Enter Your Name" name="member_name[]">
                     </div>
                   </div>
                   <div class="col-lg-4 col-sm-4">
                     <div class="form-group">
                       <label for="SelectGender" class="text-info"><b>SELECT GENDER</b></label> <br>
-                        <select class="form-control" data-style="select-with-transition" title="Select Gender" data-size="7">
+                        <select class="form-control" data-style="select-with-transition" title="Select Gender" data-size="7" name="member_gender[]">
                         <option value="">Select Gender</option>
                         <option value="male">MALE</option>
                         <option value="female">FEMALE</option>
@@ -39,14 +39,14 @@ $(document).ready(function() {
                   <div class="col-lg-4 col-sm-4">
                     <div class="form-group has-default">
                       <label for="InputAge" class="text-info"><b>AGE</b></label>
-                      <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Enter Age">
+                      <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Enter Age" name="member_age[]">
                      
                     </div>
                   </div>
                   <div class="col-lg-4 col-sm-4">
                     <div class="form-group has-default">
                       <label for="InputQualification" class="text-info"><b>QUALIFICATION</b></label>
-                      <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Enter Qualification, if any">
+                      <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Enter Qualification, if any" name="member_qualification[]">
                      
                     </div>
                   </div>
@@ -97,6 +97,12 @@ function readURL(input,targetId) {
             }
       }
 }
+
+//utility function
+const capitalize = (s) => {
+  if (typeof s !== 'string') return ''
+  return s.charAt(0).toUpperCase() + s.slice(1)
+}
 //Local Preview
 function previewForm(){ 
   document.querySelector('#registration_no').innerHTML=$('input[name="registration_no"]').val();  
@@ -130,36 +136,32 @@ function previewForm(){
     let mage=mem_age[i].value;
     let mq=mem_qualification[i].value;
     str+=`
-            <div class="col-12">
-            <div class="row">                           
-              <div class="col-lg-12">
-                <div class="form-group" id="input_fields_wrap">
-                  <label for="form-control-label">Member Name</label>
-                  <span class="form-control" class="member_name">${mname}</span>
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-lg-4">
-                <div class="form-group">
-                <label for="form-control-label">Gender</label>
-                <span class="form-control" class="member_gender">${mgen}</span>
-                </div>
-              </div>
-              <div class="col-lg-4">
-                <div class="form-group">
-                <label for="form-control-label">Age</label>
-                <span class="form-control" class="member_age">${mage}</span>
-                </div>
-              </div>
-              <div class="col-lg-4">
-                <div class="form-group">
-                <label for="form-control-label">Enter Qualification</label>
-                <span class="form-control" class="member_qualification">${mq}</span>
-                </div>
-              </div>
-            </div>
-        </div>    
+      <div class="form-row">                      
+        <div class="col-lg-12 col-sm-12">
+          <div class="form-group has-default">
+            <label for="MemberName" class="text-info"><b>MEMBER NAME</b></label>
+            <span class="form-control" class="member_name">${mname}</span>
+          </div>
+        </div>
+        <div class="col-lg-4 col-sm-4">
+          <div class="form-group">
+            <label for="SelectGender" class="text-info"><b>GENDER</b></label> <br>
+            <span class="form-control" class="member_gender">${mgen}</span>
+          </div>
+        </div>
+        <div class="col-lg-4 col-sm-4">
+          <div class="form-group has-default">
+            <label for="InputAge" class="text-info"><b>AGE</b></label>
+            <span class="form-control" class="member_age">${mage}</span>
+          </div>
+        </div>
+        <div class="col-lg-4 col-sm-4">
+          <div class="form-group has-default">
+            <label for="InputQualification" class="text-info"><b>QUALIFICATION</b></label>
+            <span class="form-control" class="member_qualification">${mq}</span>
+          </div>
+        </div>
+    </div>
     `;
   }
   document.querySelector('#member-list').innerHTML=str;

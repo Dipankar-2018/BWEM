@@ -24,7 +24,7 @@
       <div class="section">
             
           <!-- Self Help Group Details -->
-          <form method="post" action="./admin/backend/ngo_insert.php" enctype="multipart/form-data">
+          <form method="post" action="../admin/backend/ngo_insert.php" enctype="multipart/form-data">
             <div class="row">
               <div class="col-md-12">
                   <div class="card card-signup">
