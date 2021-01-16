@@ -35,13 +35,13 @@
                         <div class="col-lg-6 col-sm-4">
                           <div class="form-group has-default">
                             <label class="text-info"><b>REGISTRATION NUMBER</b></label>
-                            <input type="text" class="form-control" placeholder="Enter SHG Registration Number" name="registration_no">
+                            <input type="text" class="form-control" placeholder="Enter Registration Number" name="registration_no">
                           </div>
                         </div>
                         <div class="col-lg-6 col-sm-4">
                           <div class="form-group has-default">
-                            <label class="text-info"><b>SHG NAME</b></label>
-                            <input type="text" class="form-control" placeholder="Enter SHG Name" name="group_name">
+                            <label class="text-info"><b>GROUP NAME</b></label>
+                            <input type="text" class="form-control" placeholder="Enter Group Name" name="group_name">
                           </div>
                         </div>
                         <div class="col-lg-12 col-sm-12">
