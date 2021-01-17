@@ -24,7 +24,7 @@ if(isset($_POST['memberId'])){
 if(isset($_GET['id'])){
 $id=$obj->get_safe_str($_GET['id']);
 $result=$obj->getData($table,'*',array('id'=>$id))[0];
-$members=$obj->getData($table.'_members','*',array('parent_id'=>$id));
+$members=$obj->getData($table.'_members','*',array('group_name'=>$result['group_name']));
 // print_r($result);
 // print_r(sizeof($members));
 // exit;
@@ -215,7 +215,7 @@ if(isset($_GET['cat'])&& $_GET['cat']!="" && array_key_exists($obj->get_safe_str
                                 <div class="col-lg-12">
                                     <div class="form-group" id="input_fields_wrap">
                                     <label for="form-control-label">Member Name</label>
-                                    <input value="'.$members[$i]['name'].'" type="text" class="form-control" placeholder="Enter member name" name="member_name[]" required>
+                                    <input value="'.$members[$i]['name'].'" type="text" class="member_name form-control" placeholder="Enter member name" name="member_name_e[]" required>
                                     </div>
                                 </div>
                                 </div>
@@ -223,7 +223,7 @@ if(isset($_GET['cat'])&& $_GET['cat']!="" && array_key_exists($obj->get_safe_str
                                 <div class="col-lg-4">
                                     <div class="form-group">
                                     <label for="form-control-label">Select gender</label>
-                                    <select class="selectpicker form-control" data-style="btn btn-white" onchange = "showHideMajor(this.value);" name="member_gender[]" required>
+                                    <select class="selectpicker member_gender form-control" data-style="btn btn-white" onchange = "showHideMajor(this.value);" name="member_gender_e[]" required>
                                     <option value="'.$members[$i]['gender'].'">'.ucwords($members[$i]['gender']).'</option>
                                         <option value="male">Male</option>
                                         <option value="female">Female</option>
@@ -234,13 +234,13 @@ if(isset($_GET['cat'])&& $_GET['cat']!="" && array_key_exists($obj->get_safe_str
                                 <div class="col-lg-4">
                                     <div class="form-group">
                                     <label for="form-control-label">Enter age</label>
-                                    <input value="'.$members[$i]['age'].'" type="text" class="form-control" placeholder="Enter age" name="member_age[]" required>
+                                    <input value="'.$members[$i]['age'].'" type="text" class="member_age form-control" placeholder="Enter age" name="member_age_e[]" required>
                                     </div>
                                 </div>
                                 <div class="col-lg-4">
                                     <div class="form-group">
                                     <label for="form-control-label">Enter Qualification</label>
-                                    <input value="'.$members[$i]['qualification'].'" type="text" class="form-control" placeholder="Enter Qualification" name="member_qualification[]" required>
+                                    <input value="'.$members[$i]['qualification'].'" type="text" class="member_qualification form-control" placeholder="Enter Qualification" name="member_qualification_e[]" required>
                                     </div>
                                 </div>
                                 </div>

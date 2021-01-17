@@ -192,7 +192,7 @@ if(isset($_GET['cat'])&& $_GET['cat']!="" && array_key_exists($obj->get_safe_str
                               <div class="col-lg-12">
                                 <div class="form-group" id="input_fields_wrap">
                                   <label for="form-control-label">Member Name</label>
-                                  <input type="text" class="form-control" placeholder="Enter member name" name="member_name[]" required>
+                                  <input type="text" class="member_name form-control" placeholder="Enter member name" name="member_name[]" required>
                                 </div>
                               </div>
                             </div>
@@ -200,7 +200,7 @@ if(isset($_GET['cat'])&& $_GET['cat']!="" && array_key_exists($obj->get_safe_str
                               <div class="col-lg-4">
                                 <div class="form-group">
                                 <label for="form-control-label">Select gender</label>
-                                <select class="selectpicker form-control" data-style="btn btn-white" onchange = "//showHideMajor(this.value);" name="member_gender[]" required>
+                                <select class="selectpicker member_gender form-control" data-style="btn btn-white" onchange = "//showHideMajor(this.value);" name="member_gender[]" required>
                                   <option value="">Select gender</option>
                                       <option value="male">Male</option>
                                       <option value="female">Female</option>
@@ -211,13 +211,13 @@ if(isset($_GET['cat'])&& $_GET['cat']!="" && array_key_exists($obj->get_safe_str
                               <div class="col-lg-4">
                                 <div class="form-group">
                                 <label for="form-control-label">Enter age</label>
-                                <input type="text" class="form-control" placeholder="Enter age" name="member_age[]" required>
+                                <input type="text" class="member_age form-control" placeholder="Enter age" name="member_age[]" required>
                                 </div>
                               </div>
                               <div class="col-lg-4">
                                 <div class="form-group">
                                 <label for="form-control-label">Enter Qualification</label>
-                                <input type="text" class="form-control" placeholder="Enter Qualification" name="member_qualification[]" required>
+                                <input type="text" class="member_qualification form-control" placeholder="Enter Qualification" name="member_qualification[]" required>
                                 </div>
                               </div>
                             </div>

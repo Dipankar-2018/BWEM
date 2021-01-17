@@ -1,4 +1,5 @@
 <?php
+session_start();
 if(isset($_POST['submit'])&&isset($_POST['id'])){
     include("../conn/database.php");
     $obj = new query();
@@ -95,21 +96,44 @@ if(isset($_POST['submit'])&&isset($_POST['id'])){
             }
   $result=$obj->updateData('entrepreneur',$condition_arr,'id',$id);
   //for groupmember table
-  $member_name =$_POST['member_name'];
-  $member_gender =$_POST['member_gender'];
-  $member_age =$_POST['member_age'];
-  $member_qualification =$_POST['member_qualification'];
-    for($i=0;$i<count($member_name);$i++){
-        $condition_arr=array(
-            'name'=>$obj->get_safe_str($member_name[$i]),
-            'gender' =>$obj->get_safe_str($member_gender[$i]),
-            'age'=>$obj->get_safe_str($member_age[$i]),
-            'qualification'=>$obj->get_safe_str($member_qualification[$i])
-            );
-        $result=$obj->updateData('entrepreneur_members',$condition_arr,'parent_id',$id);
-    }
+  $table='entrepreneur';
+  if(isset($_POST['member_name_e'])){
+    $member_name =$_POST['member_name_e'];
+    $member_gender =$_POST['member_gender_e'];
+    $member_age =$_POST['member_age_e'];
+    $member_qualification =$_POST['member_qualification_e'];
+        for($i=0;$i<count($member_name);$i++){
+            $condition_arr=array(
+                'name'=>$obj->get_safe_str($member_name[$i]),
+                'gender' =>$obj->get_safe_str($member_gender[$i]),
+                'age'=>$obj->get_safe_str($member_age[$i]),
+                'qualification'=>$obj->get_safe_str($member_qualification[$i])
+                );
+            $result=$obj->updateData($table.'_members',$condition_arr,'group_name',$group_name);
+        }
+  }
+  if(isset($_POST['member_name'])){
+    $member_name =$_POST['member_name'];
+    $member_gender =$_POST['member_gender'];
+    $member_age =$_POST['member_age'];
+    $member_qualification =$_POST['member_qualification'];
+        for($i=0;$i<count($member_name);$i++){
+            $condition_arr=array(
+                'group_name'=>$group_name,
+                'name'=>$obj->get_safe_str($member_name[$i]),
+                'gender' =>$obj->get_safe_str($member_gender[$i]),
+                'age'=>$obj->get_safe_str($member_age[$i]),
+                'qualification'=>$obj->get_safe_str($member_qualification[$i])
+                );
+            $result=$obj->insertData($table.'_members',$condition_arr);
+        }
+  }
 
-  
+    if($obj->getData('entrepreneur','count(id)',array('group_name'=>$group_name))[0]["count(id)"]=="1"){
+        $_SESSION['formStatus']=true; 
+    }else{
+        $_SESSION['formStatus']=false;
+    }
 }
 // if(!isset($_GET['cat']))
 //     $_GET['cat']='shg';

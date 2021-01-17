@@ -127,19 +127,19 @@
                         <div class="col-lg-3 col-sm-4">
                           <div class="form-group has-default">
                             <label class="text-info"><b>DISTRICT</b></label>
-                            <span class="form-control" id="district">1234</span>  
+                            <span class="form-control" id="dist">1234</span>  
                           </div>
                         </div>
                         <div class="col-lg-3 col-sm-4">
                           <div class="form-group has-default">
                             <label class="text-info"><b>POST OFFICE</b></label>
-                            <span class="form-control" id="post">1234</span>  
+                            <span class="form-control" id="post_office">1234</span>  
                           </div>
                         </div>
                         <div class="col-lg-3 col-sm-4">
                           <div class="form-group has-default">
                             <label class="text-info"><b>POLICE STATION</b></label>
-                            <span class="form-control" id="police">1234</span>  
+                            <span class="form-control" id="police_station">1234</span>  
                           </div>
                         </div>
                         <div class="col-lg-3 col-sm-4">
@@ -177,7 +177,7 @@
                           <div class="col-lg-4 col-sm-4">
                             <div class="form-group has-default">
                               <label class="text-info"><b>SELECT YEAR OF EXPERIENCE<a class="text-danger"> *</a></b></label>
-                              <span class="form-control" id="exp">1234</span>  
+                              <span class="form-control" id="year_of_exp">1234</span>  
                             </div>
                           </div>
                           <div class="col-lg-4 col-sm-4">
@@ -283,7 +283,7 @@
                           <div class="col-lg-12 col-sm-12">
                             <div class="form-group form-file-upload form-file-multiple">
                               <label class="text-info"><b>UPLOAD BANK DOCUMENT (Passbook/Cancelled Cheque)</b></label>
-                              <input type="file" multiple="" class="inputFileHidden" onchange="readURL(this,'passbook');" name="passbook">
+                              <img id="passbook" src="#" style="display: none;"/>
                               <div class="input-group">
                                 
                              

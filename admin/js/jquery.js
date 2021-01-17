@@ -22,7 +22,7 @@ $(document).ready(function() {
               <div class="col-lg-12">
                 <div class="form-group" id="input_fields_wrap">
                   <label for="form-control-label">Member Name</label>
-                  <input type="text" class="form-control" placeholder="Enter member name" name="member_name[]" required>
+                  <input type="text" class="member_name form-control" placeholder="Enter member name" name="member_name[]" required>
                 </div>
               </div>
             </div>
@@ -30,7 +30,7 @@ $(document).ready(function() {
               <div class="col-lg-4">
                 <div class="form-group">
                 <label for="form-control-label">Select gender</label>
-                <select class="selectpicker form-control" data-style="btn btn-white" onchange = "//showHideMajor(this.value);" name="member_gender[]" required>
+                <select class="selectpicker member_gender form-control" data-style="btn btn-white" onchange = "//showHideMajor(this.value);" name="member_gender[]" required>
                   <option value="">Select gender</option>
                       <option value="male">Male</option>
                       <option value="female">Female</option>
@@ -41,13 +41,13 @@ $(document).ready(function() {
               <div class="col-lg-4">
                 <div class="form-group">
                 <label for="form-control-label">Enter age</label>
-                <input type="text" class="form-control" placeholder="Enter age" name="member_age[]" required>
+                <input type="text" class="member_age form-control" placeholder="Enter age" name="member_age[]" required>
                 </div>
               </div>
               <div class="col-lg-4">
                 <div class="form-group">
                 <label for="form-control-label">Enter Qualification</label>
-                <input type="text" class="form-control" placeholder="Enter Qualification" name="member_qualification[]" required>
+                <input type="text" class="member_qualification form-control" placeholder="Enter Qualification" name="member_qualification[]" required>
                 </div>
               </div>
             </div>
@@ -151,7 +151,7 @@ function deleteMember(memberId,element){
     dangerMode: true,
   })
   .then((willDelete) => {
-    if (willDelete) {
+    if (willDelete && (element.parentElement.parentElement.parentElement.querySelectorAll('.col-12').length>1)) {
       //mycode
       $.ajax({
         url:"editform.php",
@@ -171,7 +171,12 @@ function deleteMember(memberId,element){
         }
     });
    
+    }else{
+      swal("Atleast Single Member Required!", {
+        icon: "warning",
+      });
     } 
+
   });
   
 }
@@ -224,10 +229,10 @@ function previewForm(){
   document.querySelector('#bank_name').innerHTML=$('input[name="bank_name"]').val();
   document.querySelector('#branch_name').innerHTML=$('input[name="branch_name"]').val();
 
-  let mem_name = $('input[name="member_name[]"]');
-  let mem_gender= $('select[name="member_gender[]"]');
-  let mem_age = $('input[name="member_age[]"]');
-  let mem_qualification= $('input[name="member_qualification[]"]');
+  let mem_name = $('.member_name');
+  let mem_gender= $('.member_gender');
+  let mem_age = $('.member_age');
+  let mem_qualification= $('.member_qualification');
   let str='';
   for(let i=0;i<mem_name.length;i++){
     let mname=mem_name[i].value;

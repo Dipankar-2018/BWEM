@@ -96,10 +96,10 @@ if(isset($_POST['submit'])){
   $member_gender =$_POST['member_gender'];
   $member_age =$_POST['member_age'];
   $member_qualification =$_POST['member_qualification'];
-  $id=$obj->getData('association','*','','id','desc','1')[0]['id'];
+//   $id=$obj->getData('association','id',array('group_name'=>$group_name),'id','desc','1')[0]['id'];
     for($i=0;$i<count($member_name);$i++){
         $condition_arr=array(
-            'parent_id'=>$id,
+            'group_name'=>$group_name,
             'name'=>$obj->get_safe_str($member_name[$i]),
             'gender' =>$obj->get_safe_str($member_gender[$i]),
             'age'=>$obj->get_safe_str($member_age[$i]),
@@ -107,15 +107,18 @@ if(isset($_POST['submit'])){
             );
         $result=$obj->insertData('association_members',$condition_arr);
     }
-
-  
+    if($obj->getData('association','count(id)',array('group_name'=>$group_name))[0]["count(id)"]=="1"){
+        $_SESSION['formStatus']=true; 
+    }else{
+        $_SESSION['formStatus']=false;
+    }
 }
 // if(!isset($_GET['cat']))
 //     $_GET['cat']='as';
 if(isset($_SESSION['login'])&&$_SESSION['login']==true){
     header("location:../data.php?cat=as&dist=".strtolower($dist));
 }else{
-    header("location:../../");
+    header("location:../../forms/associations.php");
 }
 
 

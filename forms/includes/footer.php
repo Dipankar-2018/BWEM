@@ -218,7 +218,33 @@
   <!-- Control Center for Material Kit: parallax effects, scripts for the example pages etc -->
   <script src="../assets/js/material-kit.js?v=2.2.0" type="text/javascript"></script>
   <script src="../assets/js/app.js" type="text/javascript"></script>
-  
+  <script src="../assets/js/sweetalert.min.js"></script>
+  <?php
+    if(isset($_SESSION['formStatus'])){
+      if($_SESSION['formStatus']==true){
+            echo "
+            <script>
+                swal({
+                  title: 'Success',
+                  text: 'Form Submitted Successful',
+                  icon: 'success',
+                });
+            </script>   
+            ";
+        }else{
+          echo "
+          <script>
+              swal({
+                title: 'Failure',
+                text: 'Form Submitted Unsuccessful',
+                icon: 'error',
+              });
+          </script>   
+          ";
+        }
+      unset($_SESSION['formStatus']);
+    }  
+  ?>
 </body>
 
 </html>

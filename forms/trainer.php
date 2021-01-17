@@ -76,7 +76,7 @@
                           <div class="form-group">
                             <label class="label-control"></label>
                             <label class="text-info"><b>DATE OF BIRTH</b></label>
-                            <input type="text" class="form-control datepicker" value="10/10/1992" name="dob">
+                            <input type="date" class="form-control datepicker" value="10/10/1992" name="dob">
                           </div>
                         </div>
                         <div class="col-lg-3 col-sm-4">
@@ -128,7 +128,10 @@
                          <div class="col-lg-4 col-sm-4">
                             <div class="form-group has-default">
                               <label class="text-info"><b>STATE</b></label>
-                              <input type="text" class="form-control" placeholder="Enter State Name" name="state">
+                              <select class="selectpicker" data-style="select-with-transition" title="Select State" data-size="7" name="state" required>
+                                <option disabled>Select state</option>
+                                <?php include('./includes/htmlpart/state.php');?>
+                              </select>
                             </div>
                           </div>
                         <div class="col-lg-3 col-sm-4">
@@ -200,7 +203,7 @@
                           <div class="col-lg-4 col-sm-4">
                             <div class="form-group has-default">
                               <label class="text-info"><b>SELECT PREFERRED LOCATION</b><a class="text-danger"> *</a></label>
-                                <select class="selectpicker" data-style="select-with-transition" title="Select Any" data-size="7" name="dist">
+                                <select class="selectpicker" data-style="select-with-transition" title="Select Any" data-size="7" name="location">
                                 <option disabled>Select Any</option>
                                 <option value="kokrajhar">Kokrajhar</option>
                                 <option value="chirang">Chirang</option>
@@ -258,7 +261,7 @@
                           <div class="col-lg-6 col-sm-6">
                             <div class="form-group form-file-upload form-file-multiple">
                               <label class="text-info"><b>UPLOAD EDUCATION CERTIFICATE</b><a class="text-danger"> *</a></label>
-                              <input type="file" class="inputFileHidden" onchange="readURL(this,'education_cer');" name="education_cer">
+                              <input type="file" class="inputFileHidden" onchange="readURL(this,'edu_cer');" name="education_cer">
                               <div class="input-group">
                                 <input type="text" class="form-control inputFileVisible" placeholder="Select File">
                                 <span class="input-group-btn">
@@ -355,8 +358,8 @@
                               </label>
                             </div>
                           </div>
-                          <button id="modalActivate" type="button" name="preview" class="btn btn-success" onclick="previewForm()" data-toggle="modal" data-target="#exampleModalPreview">Preview</button>
-                          <button type="submit" class="btn btn-primary" name="submit_trainee">Submit</button>
+                          <button id="modalActivate" type="button" name="preview" class="btn btn-success" onclick="previewTrainerForm()" data-toggle="modal" data-target="#exampleModalPreview">Preview</button>
+                          <button id="submitForm" type="submit" class="btn btn-primary" name="submit">Submit</button>
                         </div>
                     </form>
                   </div>

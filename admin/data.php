@@ -13,9 +13,9 @@ if(isset($_POST['cat'])&& $_POST['cat']!="" && array_key_exists($obj->get_safe_s
 if(isset($_POST['id'])){  
   $id=$obj->get_safe_str($_POST['id']);
   $condition_arr=array('id'=>$id);
+  $result=$obj->getData($table,'group_name',array('id'=>$id));
+  $obj->deleteData($table.'_members',array('group_name'=>$result['group_name']));
   $obj->deleteData($table,$condition_arr);
-  $condition_arr=array('parent_id'=>$id);
-  $obj->deleteData($table.'_members',$condition_arr);
   // echo "1";
   die();
 }

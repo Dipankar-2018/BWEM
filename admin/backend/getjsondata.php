@@ -12,7 +12,7 @@ else
 
 $id=$obj->get_safe_str($_POST['id']);
 $result=$obj->getData($table,'*',array('id'=>$id));
-$members=$obj->getData($table.'_members','*',array('parent_id'=>$id));
+$members=$obj->getData($table.'_members','*',array('group_name'=>$result['group_name']));
 if($result==0)
     exit;
 $data=$result;
