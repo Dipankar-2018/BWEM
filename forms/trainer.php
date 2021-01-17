@@ -37,13 +37,13 @@
                         <div class="col-lg-4 col-sm-4">
                           <div class="form-group has-default">
                             <label class="text-info"><b>NAME</b></label>
-                            <input type="text" class="form-control" placeholder="Enter Your/Traier Name">
+                            <input type="text" class="form-control" placeholder="Enter Your/Traier Name" name="name">
                           </div>
                         </div>
                         <div class="col-lg-4 col-sm-4">
                           <div class="form-group has-default">
                             <label class="text-info"><b>E-MAIL</b></label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter E-Mail Id">
+                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter E-Mail Id" name="email">
                            
                           </div>
                         </div>
@@ -51,19 +51,19 @@
                         <div class="col-lg-4 col-sm-4">
                           <div class="form-group has-default">
                             <label class="text-info"><b>CONTACT NUMBER</b></label>
-                            <input type="text" class="form-control" placeholder="Enter Contact Number">
+                            <input type="text" class="form-control" placeholder="Enter Contact Number" name="contact">
                           </div>
                         </div>
                         <div class="col-lg-8 col-sm-8">
                           <div class="form-group has-default">
                             <label class="text-info"><b>GUARDIAN'S NAME</b></label>
-                            <input type="text" class="form-control" placeholder="Enter Guardian Name">
+                            <input type="text" class="form-control" placeholder="Enter Guardian Name" name="gname">
                           </div>
                         </div>
                         <div class="col-lg-4 col-sm-4">
                           <div class="form-group has-default">
                               <label class="text-info"><b>RELATION</b></label>
-                                <select class="selectpicker" data-style="select-with-transition" title="Select Any" data-size="7">
+                                <select class="selectpicker" data-style="select-with-transition" title="Select Any" data-size="7" name="relation">
                                 <option disabled>Select Any</option>
                                 <option value="2">Father</option>
                                 <option value="3">Mother</option>
@@ -76,13 +76,13 @@
                           <div class="form-group">
                             <label class="label-control"></label>
                             <label class="text-info"><b>DATE OF BIRTH</b></label>
-                            <input type="text" class="form-control datepicker" value="10/10/1992">
+                            <input type="text" class="form-control datepicker" value="10/10/1992" name="dob">
                           </div>
                         </div>
                         <div class="col-lg-3 col-sm-4">
                           <div class="form-group has-default">
                               <label class="text-info"><b>CATEGORY</b></label>
-                                <select class="selectpicker" data-style="select-with-transition" title="Select Any" data-size="7">
+                                <select class="selectpicker" data-style="select-with-transition" title="Select Any" data-size="7" name="category">
                                 <option disabled>Select Any</option>
                                 <option value="2">ST</option>
                                 <option value="3">SC</option>
@@ -94,7 +94,7 @@
                         <div class="col-lg-3 col-sm-4">
                           <div class="form-group has-default">
                               <label class="text-info"><b>RELIGION</b></label>
-                                <select class="selectpicker" data-style="select-with-transition" title="Select Any" data-size="7">
+                                <select class="selectpicker" data-style="select-with-transition" title="Select Any" data-size="7" name="religion">
                                 <option disabled>Select Any</option>
                                 <option value="2">Hindu</option>
                                 <option value="3">Muslim</option>
@@ -109,7 +109,7 @@
                         <div class="col-lg-3 col-sm-4">
                           <div class="form-group has-default">
                               <label class="text-info"><b>EDUCATON</b></label>
-                                <select class="selectpicker" data-style="select-with-transition" title="Select Any" data-size="7">
+                                <select class="selectpicker" data-style="select-with-transition" title="Select Any" data-size="7" name="education">
                                 <option disabled>Select Any</option>
                                 <option value="2">8th Pass / Equivalent</option>
                                 <option value="3">M.P Pass / Equivalent</option>
@@ -122,37 +122,37 @@
                         <div class="col-md-8 col-sm-8">
                           <div class="form-group has-default">
                             <label class="text-info"><b>ADDRESS</b></label>
-                            <input type="text" class="form-control" placeholder="Enter Village/Town/Street/City">
+                            <input type="text" class="form-control" placeholder="Enter Village/Town/Street/City" name="address">
                           </div>
                         </div>
                          <div class="col-lg-4 col-sm-4">
                             <div class="form-group has-default">
                               <label class="text-info"><b>STATE</b></label>
-                              <input type="text" class="form-control" placeholder="Enter State Name">
+                              <input type="text" class="form-control" placeholder="Enter State Name" name="state">
                             </div>
                           </div>
                         <div class="col-lg-3 col-sm-4">
                           <div class="form-group has-default">
                             <label class="text-info"><b>DISTRICT</b></label>
-                            <input type="text" class="form-control" placeholder="Enter District Name">
+                            <input type="text" class="form-control" placeholder="Enter District Name" name="dist">
                           </div>
                         </div>
                         <div class="col-lg-3 col-sm-4">
                           <div class="form-group has-default">
                             <label class="text-info"><b>POST OFFICE</b></label>
-                            <input type="text" class="form-control" placeholder="Enter P.O. Name">
+                            <input type="text" class="form-control" placeholder="Enter P.O. Name" name="post_office">
                           </div>
                         </div>
                         <div class="col-lg-3 col-sm-4">
                           <div class="form-group has-default">
                             <label class="text-info"><b>POLICE STATION</b></label>
-                            <input type="text" class="form-control" placeholder="Enter P.S. Name">
+                            <input type="text" class="form-control" placeholder="Enter P.S. Name" name="police_station">
                           </div>
                         </div>
                         <div class="col-lg-3 col-sm-4">
                           <div class="form-group has-default">
                             <label class="text-info"><b>PIN CODE</b></label>
-                            <input type="text" class="form-control" placeholder="Enter PIN Code">
+                            <input type="text" class="form-control" placeholder="Enter PIN Code" name="pin">
                           </div>
                         </div>
                         
@@ -178,34 +178,34 @@
                           <div class="col-lg-4 col-sm-4">
                             <div class="form-group has-default">
                               <label class="text-info"><b>SELECT AREA OF INTEREST<a class="text-danger"> *</a></b></label>
-                                <select class="selectpicker" data-style="select-with-transition" title="Select Any" data-size="7">
+                                <select class="selectpicker" data-style="select-with-transition" title="Select Any" data-size="7" name="aoi">
                                 <option disabled>Select Any</option>
-                                <option value="2">Diary Farming</option>
-                                <option value="3">Napkin Production</option>
+                                <option value="Diary Farming">Diary Farming</option>
+                                <option value="Napkin Production">Napkin Production</option>
                               </select>
                             </div>
                           </div>
                           <div class="col-lg-4 col-sm-4">
                             <div class="form-group has-default">
                               <label class="text-info"><b>SELECT YEAR OF EXPERIENCE<a class="text-danger"> *</a></b></label>
-                                <select class="selectpicker" data-style="select-with-transition" title="Select Any" data-size="7">
+                                <select class="selectpicker" data-style="select-with-transition" title="Select Any" data-size="7" name="year_of_exp">
                                 <option disabled>Select Any</option>
-                                <option value="2">1 Year</option>
-                                <option value="3">2 Year</option>
-                                <option value="4">3 Year</option>
-                                <option value="5">4 Year</option>
+                                <option value="1 Year">1 Year</option>
+                                <option value="2 Year">2 Year</option>
+                                <option value="3 Year">3 Year</option>
+                                <option value="4 Year">4 Year</option>
                               </select>
                             </div>
                           </div>
                           <div class="col-lg-4 col-sm-4">
                             <div class="form-group has-default">
                               <label class="text-info"><b>SELECT PREFERRED LOCATION</b><a class="text-danger"> *</a></label>
-                                <select class="selectpicker" data-style="select-with-transition" title="Select Any" data-size="7">
+                                <select class="selectpicker" data-style="select-with-transition" title="Select Any" data-size="7" name="dist">
                                 <option disabled>Select Any</option>
-                                <option value="2">Kokrajhar</option>
-                                <option value="3">Chirang</option>
-                                <option value="4">Baksa</option>
-                                <option value="4">Udalguri</option>
+                                <option value="kokrajhar">Kokrajhar</option>
+                                <option value="chirang">Chirang</option>
+                                <option value="baksa">Baksa</option>
+                                <option value="udalguri">Udalguri</option>
                               </select>
                             </div>
                           </div>
@@ -230,7 +230,7 @@
                           <div class="col-lg-6 col-sm-6">
                             <div class="form-group form-file-upload form-file-multiple">
                               <label class="text-info"><b>UPLOAD PHOTO</b><a class="text-danger"> *</a></label>
-                              <input type="file" multiple="" class="inputFileHidden">
+                              <input type="file" class="inputFileHidden" onchange="readURL(this,'photo');" name="photo">
                               <div class="input-group">
                                 <input type="text" class="form-control inputFileVisible" placeholder="Select File (Passport Photo)">
                                 <span class="input-group-btn">
@@ -244,7 +244,7 @@
                           <div class="col-lg-6 col-sm-6">
                             <div class="form-group form-file-upload form-file-multiple">
                               <label class="text-info"><b>UPLOAD VOTER/AADHAAR</b><a class="text-danger"> *</a></label>
-                              <input type="file" multiple="" class="inputFileHidden">
+                              <input type="file" class="inputFileHidden" onchange="readURL(this,'voter_aadhaar');" name="voter_aadhaar">
                               <div class="input-group">
                                 <input type="text" class="form-control inputFileVisible" placeholder="Select File">
                                 <span class="input-group-btn">
@@ -258,7 +258,7 @@
                           <div class="col-lg-6 col-sm-6">
                             <div class="form-group form-file-upload form-file-multiple">
                               <label class="text-info"><b>UPLOAD EDUCATION CERTIFICATE</b><a class="text-danger"> *</a></label>
-                              <input type="file" multiple="" class="inputFileHidden">
+                              <input type="file" class="inputFileHidden" onchange="readURL(this,'education_cer');" name="education_cer">
                               <div class="input-group">
                                 <input type="text" class="form-control inputFileVisible" placeholder="Select File">
                                 <span class="input-group-btn">
@@ -272,7 +272,7 @@
                           <div class="col-lg-6 col-sm-6">
                             <div class="form-group form-file-upload form-file-multiple">
                               <label class="text-info"><b>UPLOAD WORK EXPERIENCE CERTIFICATE</b><a class="text-danger"> *</a></label>
-                              <input type="file" multiple="" class="inputFileHidden">
+                              <input type="file" class="inputFileHidden" onchange="readURL(this,'work_exp');" name="work_exp">
                               <div class="input-group">
                                 <input type="text" class="form-control inputFileVisible" placeholder="Select File">
                                 <span class="input-group-btn">
@@ -305,33 +305,33 @@
                           <div class="col-lg-6 col-sm-6">
                             <div class="form-group has-default">
                               <label class="text-info"><b>A/C NUMBER</b></label>
-                              <input type="text" class="form-control" placeholder="Enter Account Number">
+                              <input type="text" class="form-control" placeholder="Enter Account Number" name="ac_no">
                             </div>
                           </div>
                           <div class="col-lg-6 col-sm-6">
                             <div class="form-group has-default">
                               <label class="text-info"><b>IFSC CODE</b></label>
-                              <input type="text" class="form-control" placeholder="Enter IFSC Code">
+                              <input type="text" class="form-control" placeholder="Enter IFSC Code" name="ifsc">
                             </div>
                           </div>
 
                           <div class="col-lg-6 col-sm-6">
                             <div class="form-group has-default">
                               <label class="text-info"><b>BANK NAME</b></label>
-                              <input type="text" class="form-control" placeholder="Enter Bank Name">
+                              <input type="text" class="form-control" placeholder="Enter Bank Name" name="bank_name">
                             </div>
                           </div>
                           <div class="col-lg-6 col-sm-6">
                             <div class="form-group has-default">
                               <label class="text-info"><b>BRANCH NAME</b></label>
-                              <input type="text" class="form-control" placeholder="Enter Branch Name">
+                              <input type="text" class="form-control" placeholder="Enter Branch Name" name="branch">
                             </div>
                           </div>
 
                           <div class="col-lg-12 col-sm-12">
                             <div class="form-group form-file-upload form-file-multiple">
                               <label class="text-info"><b>UPLOAD BANK DOCUMENT (Passbook/Cancelled Cheque)</b></label>
-                              <input type="file" multiple="" class="inputFileHidden">
+                              <input type="file" multiple="" class="inputFileHidden" onchange="readURL(this,'passbook');" name="passbook">
                               <div class="input-group">
                                 <input type="text" class="form-control inputFileVisible" placeholder="Select File">
                                 <span class="input-group-btn">
@@ -355,7 +355,8 @@
                               </label>
                             </div>
                           </div>
-                          <button type="submit" class="btn btn-primary">Submit</button>
+                          <button id="modalActivate" type="button" name="preview" class="btn btn-success" onclick="previewForm()" data-toggle="modal" data-target="#exampleModalPreview">Preview</button>
+                          <button type="submit" class="btn btn-primary" name="submit_trainee">Submit</button>
                         </div>
                     </form>
                   </div>
@@ -370,5 +371,5 @@
     </div>
   </div>
 
-  
+<?php include('./includes/htmlpart/previewmodal-trainer.php');?>
 <?php include('includes/footer.php'); ?>

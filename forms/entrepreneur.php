@@ -333,7 +333,7 @@
                           </div>
                           <button id="modalActivate" type="button" name="preview" class="btn btn-success" onclick="previewForm()" data-toggle="modal" data-target="#exampleModalPreview">Preview</button>
                         
-                          <button id="submitForm" type="submit" class="btn btn-primary">Submit</button>
+                          <button id="submitForm" type="submit" name="submit" class="btn btn-primary">Submit</button>
                         </div>
                 
                   </div>

@@ -2,7 +2,7 @@
 
 
   <div class="page-header header-filter" data-parallax="true" style="background-image: url('../assets/img/city-profile.jpg');"></div>
-  <div class="main main-raised" style="z-index: 1000;">
+   <div class="main main-raised" style="z-index: 1000;">
     <div class="profile-content">
       <div class="container">
         <div class="row">
@@ -24,7 +24,7 @@
       
        
 
-      <!-- Self Help Group Contact Info -->
+          <!-- Self Help Group Contact Info -->
 
             <div class="row">
               <div class="col-md-12">
@@ -228,9 +228,9 @@
                           <div class="col-lg-4 col-sm-4">
                             <div class="form-group form-file-upload form-file-multiple">
                               <label class="text-info"><b>UPLOAD PHOTO</b></label>
-                              <input type="file" multiple="" class="inputFileHidden">
+                              <input type="file" class="inputFileHidden" name="photo" onchange="readURL(this,'photo');">
                               <div class="input-group">
-                                <input type="text" class="form-control inputFileVisible" placeholder="Select File (Passport Photo)" name="photo">
+                                <input type="text" class="form-control inputFileVisible" placeholder="Select File (Passport Photo)">
                                 <span class="input-group-btn">
                                   <button type="button" class="btn btn-link btn-fab btn-primary">
                                     <i class="material-icons">attach_file</i>
@@ -242,9 +242,9 @@
                           <div class="col-lg-4 col-sm-4">
                             <div class="form-group form-file-upload form-file-multiple">
                               <label class="text-info"><b>UPLOAD VOTER/AADHAAR</b></label>
-                              <input type="file" multiple="" class="inputFileHidden">
+                              <input type="file"  class="inputFileHidden" name="voter_aadhaar" onchange="readURL(this,'voter_aadhaar');">
                               <div class="input-group">
-                                <input type="text" class="form-control inputFileVisible" placeholder="Select File" name="voter_aadhaar">
+                                <input type="text" class="form-control inputFileVisible" placeholder="Select File">
                                 <span class="input-group-btn">
                                   <button type="button" class="btn btn-link btn-fab btn-primary">
                                     <i class="material-icons">attach_file</i>
@@ -256,9 +256,9 @@
                           <div class="col-lg-4 col-sm-4">
                             <div class="form-group form-file-upload form-file-multiple">
                               <label class="text-info"><b>UPLOAD EDUCATION CERTIFICATE</b></label>
-                              <input type="file" multiple="" class="inputFileHidden">
+                              <input type="file"  class="inputFileHidden" name="education_cer" onchange="readURL(this,'education_cer');">
                               <div class="input-group">
-                                <input type="text" class="form-control inputFileVisible" placeholder="Select File" name="education_cer">
+                                <input type="text" class="form-control inputFileVisible" placeholder="Select File">
                                 <span class="input-group-btn">
                                   <button type="button" class="btn btn-link btn-fab btn-primary">
                                     <i class="material-icons">attach_file</i>
@@ -315,9 +315,9 @@
                           <div class="col-lg-12 col-sm-12">
                             <div class="form-group form-file-upload form-file-multiple">
                               <label class="text-info"><b>UPLOAD BANK DOCUMENT (Passbook/Cancelled Cheque)</b></label>
-                              <input type="file" multiple="" class="inputFileHidden">
+                              <input type="file" class="inputFileHidden" onchange="readURL(this,'passbook');" name="passbook">
                               <div class="input-group">
-                                <input type="text" class="form-control inputFileVisible" placeholder="Select File" name="passbook">
+                                <input type="text" class="form-control inputFileVisible" placeholder="Select File">
                                 <span class="input-group-btn">
                                   <button type="button" class="btn btn-link btn-fab btn-primary">
                                     <i class="material-icons">attach_file</i>
@@ -339,6 +339,7 @@
                               </label>
                             </div>
                           </div>
+                          <button id="modalActivate" type="button" name="preview" class="btn btn-success" onclick="previewForm()" data-toggle="modal" data-target="#exampleModalPreview">Preview</button>
                           <button type="submit" class="btn btn-primary" name="submit_trainee">Submit</button>
                         </div>
                     </form>
@@ -354,4 +355,5 @@
     </div>
   </div>
 
+<?php include('./includes/htmlpart/previewmodal-trainee.php');?>
 <?php include('includes/footer.php'); ?>

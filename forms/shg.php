@@ -212,7 +212,7 @@
                           <div class="col-lg-4 col-sm-4">
                             <div class="form-group has-default">
                               <label for="InputAge" class="text-info"><b>AGE</b></label>
-                              <input type="text" class="form-control" id="InputAge" aria-describedby="emailHelp" placeholder="Enter Age" name="member_age[]">
+                              <input type="text" class="form-control" id="InputAge" aria-describedby="age" placeholder="Enter Age" name="member_age[]">
                              
                             </div>
                           </div>
@@ -333,7 +333,7 @@
                           </div>
                           <button id="modalActivate" type="button" name="preview" class="btn btn-success" onclick="previewForm()" data-toggle="modal" data-target="#exampleModalPreview">Preview</button>
                         
-                          <button id="submitForm" type="submit" class="btn btn-primary">Submit</button>
+                          <button id="submitForm" type="submit" class="btn btn-primary" name="submit">Submit</button>
                         </div>
                 
                   </div>

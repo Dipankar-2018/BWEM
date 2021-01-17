@@ -39,20 +39,20 @@ $(document).ready(function() {
                   <div class="col-lg-4 col-sm-4">
                     <div class="form-group has-default">
                       <label for="InputAge" class="text-info"><b>AGE</b></label>
-                      <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Enter Age" name="member_age[]">
+                      <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="Enter Age" name="member_age[]">
                      
                     </div>
                   </div>
                   <div class="col-lg-4 col-sm-4">
                     <div class="form-group has-default">
                       <label for="InputQualification" class="text-info"><b>QUALIFICATION</b></label>
-                      <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Enter Qualification, if any" name="member_qualification[]">
+                      <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="Enter Qualification, if any" name="member_qualification[]">
                      
                     </div>
                   </div>
          
                   <div class="text-center">
-                    <button type="button" class="btn btn-danger btn-round btn-sm" onclick="removeElement(this)">Remove Member</button>                            
+                    <button type="button" class="btn btn-danger btn-round" onclick="removeElement(this)">Remove Member</button>                            
                   </div>
                 </div>
         

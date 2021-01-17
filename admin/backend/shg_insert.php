@@ -114,7 +114,7 @@ if(isset($_SESSION['login'])&&$_SESSION['login']==true){
     header("location:../data.php?cat=shg&dist=".strtolower($dist));
 }
 else{
-    header("location:../../");
+    header("location:../../forms/shg.php");
 }
 
 
