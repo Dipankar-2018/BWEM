@@ -4,7 +4,12 @@ session_start();
 if(isset($_POST['submit'])){
     include("../conn/database.php");
     $obj = new query();
-  $registration_no = $obj->get_safe_str($_POST['registration_no']);
+    if(strlen($registration_no) == 0){
+        $registration_no = 0;
+    }else{
+      $registration_no = $obj->get_safe_str($_POST['registration_no']);
+    }
+  
   $group_name = $obj->get_safe_str($_POST['group_name']);
   $address = $obj->get_safe_str($_POST['address']);
   $post_office = $obj->get_safe_str($_POST['post_office']);
