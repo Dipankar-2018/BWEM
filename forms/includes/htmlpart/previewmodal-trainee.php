@@ -244,55 +244,52 @@
 
         <!-- Self Help Group BANK Info -->
 
-            <div class="row">
+        <div class="row">
               <div class="col-md-12">
                   <div class="card card-signup">
                   <h4 class="card-title text-center">Bank Details</h4>
                   <div class="card-body">
-             
+                    <form>
                       <div class="form-row">
                       
                           <div class="col-lg-6 col-sm-6">
                             <div class="form-group has-default">
                               <label class="text-info"><b>A/C NUMBER</b></label>
-                              <input type="text" class="form-control" placeholder="Enter Account Number" name="ac_no">
+                              <span class="form-control" id="ac_no">1234</span>
                             </div>
                           </div>
                           <div class="col-lg-6 col-sm-6">
                             <div class="form-group has-default">
                               <label class="text-info"><b>IFSC CODE</b></label>
-                              <input type="text" class="form-control" placeholder="Enter IFSC Code" name="ifsc">
+                              <span class="form-control" id="ifsc">1234</span>
+                              
                             </div>
                           </div>
 
                           <div class="col-lg-6 col-sm-6">
                             <div class="form-group has-default">
                               <label class="text-info"><b>BANK NAME</b></label>
-                              <input type="text" class="form-control" placeholder="Enter Bank Name" name="bank_name">
+                              <span class="form-control" id="bank_name">1234</span>
+                              
                             </div>
                           </div>
                           <div class="col-lg-6 col-sm-6">
                             <div class="form-group has-default">
                               <label class="text-info"><b>BRANCH NAME</b></label>
-                              <input type="text" class="form-control" placeholder="Enter Branch Name" name="branch_name">
+                              <span class="form-control" id="branch">1234</span>
+                            
                             </div>
                           </div>
 
                           <div class="col-lg-12 col-sm-12">
                             <div class="form-group form-file-upload form-file-multiple">
                               <label class="text-info"><b>UPLOAD BANK DOCUMENT (Passbook/Cancelled Cheque)</b></label>
-                              <input type="file" class="inputFileHidden">
-                              <div class="input-group">
-                              <img id="passbook" src="#" style="display: none;"/>
-                                <span class="input-group-btn">
-                                  <button type="button" class="btn btn-link btn-fab btn-primary">
-                                    <i class="material-icons">attach_file</i>
-                                  </button>
-                                </span>
+                              <input type="file" multiple="" class="inputFileHidden" onchange="readURL(this,'passbook');" name="passbook">
+                              <div class="input-group">                               
+                               
                               </div>
                             </div>
-                          </div>                      
-                
+                          </div>                     
                         </div>
                     </form>
                   </div>

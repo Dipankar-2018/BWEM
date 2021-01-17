@@ -208,56 +208,28 @@
                             <div class="form-group form-file-upload form-file-multiple">
                               <label class="text-info"><b>UPLOAD PHOTO</b><a class="text-danger"> *</a></label>
                               <img id="photo" src="#" style="display: none;"/>
-                              <div class="input-group">
-                                <input type="text" class="form-control inputFileVisible" placeholder="Select File (Passport Photo)">
-                                <span class="input-group-btn">
-                                  <button type="button" class="btn btn-link btn-fab btn-primary">
-                                    <i class="material-icons">attach_file</i>
-                                  </button>
-                                </span>
-                              </div>
+                           
                             </div>
                           </div>
                           <div class="col-lg-6 col-sm-6">
                             <div class="form-group form-file-upload form-file-multiple">
                               <label class="text-info"><b>UPLOAD VOTER/AADHAAR</b><a class="text-danger"> *</a></label>
                               <img id="voter_aadhaar" src="#" style="display: none;"/>
-                              <div class="input-group">
-                                <input type="text" class="form-control inputFileVisible" placeholder="Select File">
-                                <span class="input-group-btn">
-                                  <button type="button" class="btn btn-link btn-fab btn-primary">
-                                    <i class="material-icons">attach_file</i>
-                                  </button>
-                                </span>
-                              </div>
+                         
                             </div>
                           </div>
                           <div class="col-lg-6 col-sm-6">
                             <div class="form-group form-file-upload form-file-multiple">
                               <label class="text-info"><b>UPLOAD EDUCATION CERTIFICATE</b><a class="text-danger"> *</a></label>
                               <img id="edu_cer" src="#" style="display: none;"/>
-                              <div class="input-group">
-                                <input type="text" class="form-control inputFileVisible" placeholder="Select File">
-                                <span class="input-group-btn">
-                                  <button type="button" class="btn btn-link btn-fab btn-primary">
-                                    <i class="material-icons">attach_file</i>
-                                  </button>
-                                </span>
-                              </div>
+                           
                             </div>
                           </div>
                           <div class="col-lg-6 col-sm-6">
                             <div class="form-group form-file-upload form-file-multiple">
                               <label class="text-info"><b>UPLOAD WORK EXPERIENCE CERTIFICATE</b><a class="text-danger"> *</a></label>
                               <img id="work_exp" src="#" style="display: none;"/>
-                              <div class="input-group">
-                                <input type="text" class="form-control inputFileVisible" placeholder="Select File">
-                                <span class="input-group-btn">
-                                  <button type="button" class="btn btn-link btn-fab btn-primary">
-                                    <i class="material-icons">attach_file</i>
-                                  </button>
-                                </span>
-                              </div>
+                           
                             </div>
                           </div>
                     
@@ -313,30 +285,14 @@
                               <label class="text-info"><b>UPLOAD BANK DOCUMENT (Passbook/Cancelled Cheque)</b></label>
                               <input type="file" multiple="" class="inputFileHidden" onchange="readURL(this,'passbook');" name="passbook">
                               <div class="input-group">
-                                <input type="text" class="form-control inputFileVisible" placeholder="Select File">
-                                <span class="input-group-btn">
-                                  <button type="button" class="btn btn-link btn-fab btn-primary">
-                                    <i class="material-icons">attach_file</i>
-                                  </button>
-                                </span>
+                                
+                             
                               </div>
                             </div>
-                          </div>
-                         
+                          </div>                        
                           
-                          <div class="form-group col-lg-12 col-sm-12">
-                           <div class="form-check">
-                              <label class="form-check-label">
-                                  <input class="form-check-input" type="checkbox" value="">
-                                  I Aggree
-                                  <span class="form-check-sign">
-                                    <span class="check"></span>
-                                  </span>
-                              </label>
-                            </div>
-                          </div>
-                          <button id="modalActivate" type="button" name="preview" class="btn btn-success" onclick="previewForm()" data-toggle="modal" data-target="#exampleModalPreview">Preview</button>
-                          <button type="submit" class="btn btn-primary" name="submit_trainee">Submit</button>
+             
+                        
                         </div>
                     </form>
                   </div>
