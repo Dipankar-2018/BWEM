@@ -1,9 +1,13 @@
 <?php
+//Trainee Insert
 session_start();
-
 if(isset($_POST['submit'])){
     include("../conn/database.php");
     $obj = new query();
+
+
+$table='trainee';
+
   $registration_no = $obj->get_safe_str($_POST['registration_no']);
   $group_name = $obj->get_safe_str($_POST['group_name']);
   $address = $obj->get_safe_str($_POST['address']);
@@ -90,13 +94,12 @@ if(isset($_POST['submit'])){
        'registration_certificate_file'=>$registrationCertificate
     );
   
-  $result=$obj->insertData('self_help_group',$condition_arr);
+  $result=$obj->insertData($table,$condition_arr);
   //for groupmember table
   $member_name =$_POST['member_name'];
   $member_gender =$_POST['member_gender'];
   $member_age =$_POST['member_age'];
   $member_qualification =$_POST['member_qualification'];
-  //$id=$obj->getData('self_help_group','id',array('group_name'=>$group_name),'id','desc','1')[0]['id'];
     for($i=0;$i<count($member_name);$i++){
         $condition_arr=array(
             'group_name'=>$group_name,
@@ -105,21 +108,19 @@ if(isset($_POST['submit'])){
             'age'=>$obj->get_safe_str($member_age[$i]),
             'qualification'=>$obj->get_safe_str($member_qualification[$i])
             );
-        $result=$obj->insertData('self_help_group_members',$condition_arr);
+        $result=$obj->insertData($table.'_members',$condition_arr);
     }
-    if($obj->getData('self_help_group','count(id)',array('group_name'=>$group_name))[0]["count(id)"]=="1"){
+    if($obj->getData($table,'count(id)',array('group_name'=>$group_name))[0]["count(id)"]=="1"){
         $_SESSION['formStatus']=true; 
     }else{
         $_SESSION['formStatus']=false;
     }    
 }
 if(isset($_SESSION['login'])&&$_SESSION['login']==true){
-    header("location:../data.php?cat=shg&dist=".strtolower($dist));
+    header("location:../data.php?cat=tre&dist=".strtolower($dist));
 }
 else{
-    header("location:../../forms/shg.php");
+    header("location:../../forms/trainee.php");
 }
-
-
 
 ?>

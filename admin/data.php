@@ -5,7 +5,7 @@ if(!isset($_GET['cat'])&& !isset($_GET['dist']))
 }
 include("conn/database.php");
 $obj = new query();
-$cat=array('shg'=>'self_help_group','ep'=>'entrepreneur','ng'=>'ngo','as'=>'association');  
+$cat=array('shg'=>'self_help_group','ep'=>'entrepreneur','ng'=>'ngo','as'=>'association','tr'=>'trainer','tre'=>'trainee');  
 $table="";
 
 if(isset($_POST['cat'])&& $_POST['cat']!="" && array_key_exists($obj->get_safe_str($_POST['cat']),$cat))

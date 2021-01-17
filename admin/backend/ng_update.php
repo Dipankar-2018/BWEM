@@ -138,6 +138,6 @@ if(isset($_POST['submit'])&&isset($_POST['id'])){
 }
 // if(!isset($_GET['cat']))
 //     $_GET['cat']='shg';
-header("location:../data.php?cat=ng&dist=".strtolower($dist));
+header("location:../data.php?cat=".$_GET['cat']."&dist=".strtolower($_POST['dist']));
 
 ?>

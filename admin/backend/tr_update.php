@@ -1,8 +1,11 @@
 <?php
+//Trainer Update
 session_start();
 if(isset($_POST['submit'])&&isset($_POST['id'])){
     include("../conn/database.php");
     $obj = new query();
+    $table='trainer';
+
     $id=$obj->get_safe_str($_POST['id']);
   $registration_no = $obj->get_safe_str($_POST['registration_no']);
   $group_name = $obj->get_safe_str($_POST['group_name']);
@@ -45,7 +48,7 @@ if(isset($_POST['submit'])&&isset($_POST['id'])){
      'branch_name'=>$branch_name
       
   );
-//file processing needed
+ //file processing needed
     //'passbook_file',
     if(isset($_FILES['passbook_file'])&&$_FILES['passbook_file']['size']!=0){
         $passbook_filename=$_FILES['passbook_file']['name'];
@@ -94,9 +97,8 @@ if(isset($_POST['submit'])&&isset($_POST['id'])){
                 }
             $condition_arr = array_merge($condition_arr, array("registration_certificate_file"=>$registrationCertificate));
             }
-  $result=$obj->updateData('self_help_group',$condition_arr,'id',$id);
+  $result=$obj->updateData($table,$condition_arr,'id',$id);
   //for groupmember table
-  $table='self_help_group';
   if(isset($_POST['member_name_e'])){
     $member_name =$_POST['member_name_e'];
     $member_gender =$_POST['member_gender_e'];
@@ -132,15 +134,14 @@ if(isset($_POST['submit'])&&isset($_POST['id'])){
 
 
 
-    if($obj->getData('self_help_group','count(id)',array('group_name'=>$group_name))[0]["count(id)"]=="1"){
+    if($obj->getData($table,'count(id)',array('group_name'=>$group_name))[0]["count(id)"]=="1"){
         $_SESSION['formStatus']=true; 
     }else{
         $_SESSION['formStatus']=false;
     }
-  
+
+    // header("location:../data.php?cat=tr&dist=".strtolower($dist));
 }
-// if(!isset($_GET['cat']))
-//     $_GET['cat']='shg';
 header("location:../data.php?cat=".$_GET['cat']."&dist=".strtolower($_POST['dist']));
 
 ?>

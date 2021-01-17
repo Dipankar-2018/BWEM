@@ -181,7 +181,76 @@
               </li>
             </ul>
           </li>
-
+          <li class="nav-item">
+          <a href="data.php" class="nav-link">
+            <i class="nav-icon fas fa-chalkboard-teacher"></i>
+              <p>
+                Trainer             
+                <i class="right fas fa-angle-left"></i> 
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="./data.php?cat=tr&dist=kokrajhar" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Kokrajhar</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="./data.php?cat=tr&dist=chirang" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Chirang</p>
+                </a>
+              </li>
+              <li class="nav-item">
+              <a href="./data.php?cat=tr&dist=baksa" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Baksa</p>
+                </a>
+              </li>
+              <li class="nav-item">
+              <a href="./data.php?cat=tr&dist=udalguri" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Udalguri</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+          <a href="data.php" class="nav-link">
+            <i class="nav-icon fas fa-user-graduate"></i>
+              <p>
+                Trainee             
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="./data.php?cat=tre&dist=kokrajhar" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Kokrajhar</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="./data.php?cat=tre&dist=chirang" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Chirang</p>
+                </a>
+              </li>
+              <li class="nav-item">
+              <a href="./data.php?cat=tre&dist=baksa" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Baksa</p>
+                </a>
+              </li>
+              <li class="nav-item">
+              <a href="./data.php?cat=tre&dist=udalguri" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Udalguri</p>
+                </a>
+              </li>
+            </ul>
+          </li>
 
  
           <li class="nav-header">EXTRAS</li>

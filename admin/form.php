@@ -13,7 +13,7 @@ $obj = new query();
 // }
 $key='shg';
 $val='Self Help Group';
-$cat=array('shg'=>'Self Help Group','ep'=>'Entreprenures','ng'=>'NGO','as'=>'Association');
+$cat=array('shg'=>'Self Help Group','ep'=>'Entreprenures','ng'=>'NGO','as'=>'Association','tr'=>'trainer','tre'=>'trainee');
 if(isset($_GET['cat'])&& $_GET['cat']!="" && array_key_exists($obj->get_safe_str($_GET['cat']),$cat)){
     $key=$obj->get_safe_str($_GET['cat']);
     $val=$cat[$key];

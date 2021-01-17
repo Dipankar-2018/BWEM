@@ -4,7 +4,7 @@ if(!isset($_GET['cat']) || !isset($_GET['id']))
   header('location:./');
 }
     $obj = new query();
-$cat=array('shg'=>'self_help_group','ep'=>'entrepreneur','ng'=>'ngo','as'=>'association');  
+$cat=array('shg'=>'self_help_group','ep'=>'entrepreneur','ng'=>'ngo','as'=>'association','tr'=>'trainer','tre'=>'trainee');  
 $table="self_help_group";
 if(isset($_GET['cat'])&& $_GET['cat']!="" && array_key_exists($obj->get_safe_str($_GET['cat']),$cat))
     $table=$cat[$obj->get_safe_str($_GET['cat'])];
@@ -31,7 +31,7 @@ $members=$obj->getData($table.'_members','*',array('group_name'=>$result['group_
 
 $key='shg';
 $val='Self Help Group';
-$cat=array('shg'=>'Self Help Group','ep'=>'Entreprenures','ng'=>'NGO','as'=>'Association');
+$cat=array('shg'=>'Self Help Group','ep'=>'Entreprenures','ng'=>'NGO','as'=>'Association','tr'=>'trainer','tre'=>'trainee');
 if(isset($_GET['cat'])&& $_GET['cat']!="" && array_key_exists($obj->get_safe_str($_GET['cat']),$cat)){
     $key=$obj->get_safe_str($_GET['cat']);
     $val=$cat[$key];
