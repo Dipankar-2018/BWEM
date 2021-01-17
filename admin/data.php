@@ -14,7 +14,7 @@ if(isset($_POST['id'])){
   $id=$obj->get_safe_str($_POST['id']);
   $condition_arr=array('id'=>$id);
   $result=$obj->getData($table,'group_name',array('id'=>$id));
-  $obj->deleteData($table.'_members',array('group_name'=>$result['group_name']));
+  $obj->deleteData($table.'_members',array('group_name'=>$result[0]['group_name']));
   $obj->deleteData($table,$condition_arr);
   // echo "1";
   die();
