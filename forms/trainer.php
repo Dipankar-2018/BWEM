@@ -180,7 +180,7 @@
                           <div class="col-lg-4 col-sm-4">
                             <div class="form-group has-default">
                               <label class="text-info"><b>SELECT AREA OF INTEREST<a class="text-danger"> *</a></b></label>
-                                <select class="selectpicker" data-style="select-with-transition" title="Select Any" data-size="7" name="aoi">
+                                <select class="selectpicker" data-style="select-with-transition" title="Select Any" data-size="7" name="aoi" requied>
                                 <option disabled>Select Any</option>
                                 <option value="Diary Farming">Diary Farming</option>
                                 <option value="Napkin Production">Napkin Production</option>
@@ -190,7 +190,7 @@
                           <div class="col-lg-4 col-sm-4">
                             <div class="form-group has-default">
                               <label class="text-info"><b>SELECT YEAR OF EXPERIENCE<a class="text-danger"> *</a></b></label>
-                                <select class="selectpicker" data-style="select-with-transition" title="Select Any" data-size="7" name="year_of_exp">
+                                <select class="selectpicker" data-style="select-with-transition" title="Select Any" data-size="7" name="year_of_exp" requied>
                                 <option disabled>Select Any</option>
                                 <option value="1 Year">1 Year</option>
                                 <option value="2 Year">2 Year</option>
@@ -202,7 +202,7 @@
                           <div class="col-lg-4 col-sm-4">
                             <div class="form-group has-default">
                               <label class="text-info"><b>SELECT PREFERRED LOCATION</b><a class="text-danger"> *</a></label>
-                                <select class="selectpicker" data-style="select-with-transition" title="Select Any" data-size="7" name="location">
+                                <select class="selectpicker" data-style="select-with-transition" title="Select Any" data-size="7" name="location" requied>
                                 <option disabled>Select Any</option>
                                 <option value="kokrajhar">Kokrajhar</option>
                                 <option value="chirang">Chirang</option>

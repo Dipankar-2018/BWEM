@@ -167,6 +167,8 @@ if(in_array($education_cer_lower, $education_cer_store)){
     );
   
 
+    echo "<pre>";
+    print_r($condition_arr);
   
 //   $result=$obj->insertData($table,$condition_arr);
    
