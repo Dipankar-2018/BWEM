@@ -2,6 +2,8 @@
 //Trainer Insert
 session_start();
 if(isset($_POST['submit'])){
+
+
     include("../conn/database.php");
     $obj = new query();
     $table='trainer';
@@ -99,10 +101,10 @@ if(in_array($education_cer_lower, $education_cer_store)){
 
 
 
-  $acc_no = $obj->get_safe_str($_POST['acc_no']);
-  $ifsc_code = $obj->get_safe_str($_POST['ifsc_code']);
+  $acc_no = $obj->get_safe_str($_POST['ac_no']);
+  $ifsc_code = $obj->get_safe_str($_POST['ifsc']);
   $bank_name = $obj->get_safe_str($_POST['bank_name']);
-  $branch_name = $obj->get_safe_str($_POST['branch_name']);
+  $branch_name = $obj->get_safe_str($_POST['branch']);
 //file processing needed
     //'passbook_file',
             $passbook_filename=$_FILES['passbook_file']['name'];
@@ -158,15 +160,11 @@ if(in_array($education_cer_lower, $education_cer_store)){
        'bank_doc'=>$passbook,
       
     );
-    
-//   $result=$obj->insertData($table,$condition_arr);
-   
+  
+    $result=$obj->insertData($table,$condition_arr);   
  
 }
 
-
-
-exit;
 
 if(isset($_SESSION['login'])&&$_SESSION['login']==true){
     header("location:../data.php?cat=tr&dist=".strtolower($dist));

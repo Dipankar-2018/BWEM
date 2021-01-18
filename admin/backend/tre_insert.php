@@ -2,34 +2,95 @@
 //Trainee Insert
 session_start();
 if(isset($_POST['submit'])){
+
+    echo "<pre>";
+    print_r($_POST);
+
+
     include("../conn/database.php");
     $obj = new query();
+    
+    $table='trainee';
+
+ $name = $obj->get_safe_str($_POST['name']);
+ $email = $obj->get_safe_str($_POST['email']);
+ $contact = $obj->get_safe_str($_POST['contact']);
+ $gname = $obj->get_safe_str($_POST['gname']);
+ $relation = $obj->get_safe_str($_POST['relation']);
+ $dob = $obj->get_safe_str($_POST['dob']);
+ $category = $obj->get_safe_str($_POST['category']);
+ $religion = $obj->get_safe_str($_POST['religion']);
+ $education = $obj->get_safe_str($_POST['education']);
+ $address = $obj->get_safe_str($_POST['address']);
+ $state = $obj->get_safe_str($_POST['state']);
+ $district = $obj->get_safe_str($_POST['district']);
+ $post = $obj->get_safe_str($_POST['post']);
+ $police = $obj->get_safe_str($_POST['police']);
+ $pin = $obj->get_safe_str($_POST['pin']);
+ $course = $obj->get_safe_str($_POST['course']);
+ $course_duration = $obj->get_safe_str($_POST['course_duration']);
+ $location = $obj->get_safe_str($_POST['location']);
 
 
-$table='trainee';
 
-if(strlen($registration_no) == 0){
-    $registration_no = 0;
-}else{
-  $registration_no = $obj->get_safe_str($_POST['registration_no']);
+//UPLOAD PHOTO
+
+$photo = $_FILES['photo']['name'];
+$photo_type = $_FILES['photo']['type'];
+$photo_size = $_FILES['photo']['size'];
+$photo_tem = $_FILES['photo']['tmp_name'];
+
+$photo_arr = explode('.', $photo);
+$photo_lwr = strtolower(end($photo_arr));
+$photo_type_store = array('jpg', 'png', 'jpeg');
+
+if(in_array($photo_lwr, $photo_type_store)){
+
+    $photoName = $name."_trainee_".$photo_lwr;
+    move_uploaded_file($photo_tem, '../images/photo/'.$photoName);
 }
 
-  $group_name = $obj->get_safe_str($_POST['group_name']);
-  $address = $obj->get_safe_str($_POST['address']);
-  $post_office = $obj->get_safe_str($_POST['post_office']);
-  $police_station = $obj->get_safe_str($_POST['police_station']);
-  $dist = $obj->get_safe_str($_POST['dist']);
-  $pin = $obj->get_safe_str($_POST['pin']);
-  $state = $obj->get_safe_str($_POST['state']);
-  $constituency= $obj->get_safe_str($_POST['constituency']);
-  $head_position = $obj->get_safe_str($_POST['head_position']);
-  $head_name = $obj->get_safe_str($_POST['head_name']);
-  $head_mobile = $obj->get_safe_str($_POST['head_mobile']);
-  $head_email = $obj->get_safe_str($_POST['head_email']);  
-  $aoi = $obj->get_safe_str($_POST['area_of_interest']);
-  $group_exp = $obj->get_safe_str($_POST['group_exp']);
-  $acc_no = $obj->get_safe_str($_POST['acc_no']);
-  $ifsc_code = $obj->get_safe_str($_POST['ifsc_code']);
+
+//VOTER AADHAR 
+
+ $addressProof = $_FILES['voter_aadhaar']['name'];
+ $addressProof_type = $_FILES['voter_aadhaar']['type'];
+ $addressProof_size = $_FILES['voter_aadhaar']['size'];
+ $addressProof_tmp = $_FILES['voter_aadhaar']['tmp_name'];
+ 
+ $addressProof_array = explode('.', $addressProof);
+ $addressProof_lower = strtolower(end($addressProof_array));
+ $address_type_store = array('jpg', 'png', 'jpeg');
+
+ if(in_array($addressProof_lower, $address_type_store)){
+    $finalAddress = $name."_trainee_".$addressProof_lower;
+    move_uploaded_file($addressProof_tmp, '../images/addressProof/'.$finalAddress);
+}
+
+
+
+//EDUCATION CERTIFICATE
+
+$education_cer = $_FILES['education_cer']['name'];
+$education_cer_type = $_FILES['education_cer']['type'];
+$education_cer_size = $_FILES['education_cer']['size'];
+$education_cer_tmp = $_FILES['education_cer']['tmp_name'];
+
+$education_cer_array = explode('.', $education_cer);
+$education_cer_lower = strtolower(end($education_cer_array));
+$education_cer_store = array('jpg', 'png', 'jpeg');
+
+if(in_array($education_cer_lower, $education_cer_store)){
+   $finalEducation = $name."_trainee_".$education_cer_lower;
+   move_uploaded_file($education_cer_tmp, '../images/addressProof/'.$finalEducation);
+}
+
+
+
+
+
+  $acc_no = $obj->get_safe_str($_POST['ac_no']);
+  $ifsc_code = $obj->get_safe_str($_POST['ifsc']);
   $bank_name = $obj->get_safe_str($_POST['bank_name']);
   $branch_name = $obj->get_safe_str($_POST['branch_name']);
 //file processing needed
@@ -48,81 +109,63 @@ if(strlen($registration_no) == 0){
             // }
             if(in_array($fileext1, $fileextStor1))
 				{
-					$passbook=$registration_no."_shg_bank_".$group_name.".".$fileext1;
+					$passbook=$name."_trainee_".$fileext1;
 					move_uploaded_file($filetemp1, '../images/bankPassbook/'.$passbook);
 				}else
 				{
 					// File Extension Error
-				}
-    //'registration_certificate_file'
-        $registration_certificate_filename=$_FILES['registration_file']['name'];
-            $filetemp2=$_FILES['registration_file']['tmp_name'];
-            $filetype2=$_FILES['registration_file']['type'];
-            $filesize2=$_FILES['registration_file']['size'];
-            $error2=$_FILES['registration_file']['error'];
-            $split2=explode('.', $registration_certificate_filename);
-			$fileext2=strtolower(end($split1));
-            $fileextStor2 = array('jpg' ,'png' ,'jpeg');
-            // if($filesize2>=205000||$filesize2==0)
-            // { 
-            //     //File Size Error
-            // }
-            if(in_array($fileext2, $fileextStor2))
-				{
-					$registrationCertificate=$registration_no."_shg_reg_".$group_name.".".$fileext2;
-					move_uploaded_file($filetemp2, '../images/registrationCertificate/'.$registrationCertificate);
-				}else
-				{
-					// File Extension Error
-				}
+                }
+           
+          
+
+
+
   $condition_arr=array(
-      'registration_no'=>$registration_no,
-       'group_name'=>$group_name,
+       'name'=>$name,
+       'email'=>$email,
+       'contact'=>$contact,
+       'gname'=>$gname,
+       'relation'=>$relation,
+       'dob'=>$dob,
+       'category'=>$category,
+       'religion'=>$religion,
+       'education'=>$education,
        'address'=>$address,
-       'post_office'=>$post_office,
-       'police_station'=>$police_station,
-       'district'=>$dist,
-       'pin'=>$pin,
        'state'=>$state,
-       'constituency'=>$constituency,
-       'category'=>$head_position,
-       'name_of_head'=>$head_name,
-       'head_mobile'=>$head_mobile,
-       'head_email'=>$head_email,
-       'aoi'=>$aoi,
-       'group_experience'=>$group_exp,
-       'bank_account_no'=>$acc_no,
-       'bank_name'=>$bank_name,
+       'district'=>$district,
+       'post_office'=>$post,
+       'pstation'=>$police,
+       'pin'=>$pin,
+       'course'=>$course,
+       'duration'=>$course_duration,
+       'location'=>$location,
+       'ac_no'=>$acc_no,
        'ifsc'=>$ifsc_code,
+       'bank_name'=>$bank_name,
        'branch_name'=>$branch_name,
-       'passbook_file'=>$passbook,
-       'registration_certificate_file'=>$registrationCertificate
+       'bank_doc'=>$passbook,
+       'photo'=>$photoName,
+       'voter_adhar'=>$finalAddress,
+       'education_doc'=>$finalEducation,
+       
+      
     );
   
-  $result=$obj->insertData($table,$condition_arr);
-  //for groupmember table
-  $member_name =$_POST['member_name'];
-  $member_gender =$_POST['member_gender'];
-  $member_age =$_POST['member_age'];
-  $member_qualification =$_POST['member_qualification'];
-    for($i=0;$i<count($member_name);$i++){
-        $condition_arr=array(
-            'group_name'=>$group_name,
-            'name'=>$obj->get_safe_str($member_name[$i]),
-            'gender' =>$obj->get_safe_str($member_gender[$i]),
-            'age'=>$obj->get_safe_str($member_age[$i]),
-            'qualification'=>$obj->get_safe_str($member_qualification[$i])
-            );
-        $result=$obj->insertData($table.'_members',$condition_arr);
-    }
-    if($obj->getData($table,'count(id)',array('group_name'=>$group_name))[0]["count(id)"]=="1"){
-        $_SESSION['formStatus']=true; 
-    }else{
-        $_SESSION['formStatus']=false;
-    }    
+    echo "<pre>";
+    print_r($condition_arr);
+
+   
+
+    $result=$obj->insertData($table,$condition_arr);   
+ 
 }
+
+exit;
+
+
+
 if(isset($_SESSION['login'])&&$_SESSION['login']==true){
-    header("location:../data.php?cat=tre&dist=".strtolower($dist));
+    header("location:../data.php?cat=tr&dist=".strtolower($dist));
 }
 else{
     header("location:../../forms/trainee.php");

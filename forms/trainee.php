@@ -22,7 +22,7 @@
     <!-- Reg. Form Content Start-->
       <div class="section">
       
-      <form action="preview-trainee.php" method="post" enctype="multipart/form-data">
+      <form action="../admin/backend/tre_insert.php" method="post" enctype="multipart/form-data">
 
           <!-- Self Help Group Contact Info -->
 
@@ -315,7 +315,7 @@
                           <div class="col-lg-12 col-sm-12">
                             <div class="form-group form-file-upload form-file-multiple">
                               <label class="text-info"><b>UPLOAD BANK DOCUMENT (Passbook/Cancelled Cheque)</b></label>
-                              <input type="file" class="inputFileHidden" onchange="readURL(this,'passbook');" name="passbook">
+                              <input type="file" class="inputFileHidden" onchange="readURL(this,'passbook_file');" name="passbook_file">
                               <div class="input-group">
                                 <input type="text" class="form-control inputFileVisible" placeholder="Select File">
                                 <span class="input-group-btn">
