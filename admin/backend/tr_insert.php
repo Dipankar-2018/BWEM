@@ -6,7 +6,6 @@ if(isset($_POST['submit'])){
 
     include("../conn/database.php");
     $obj = new query();
-    
     $table='trainer';
 
  $name = $obj->get_safe_str($_POST['name']);
@@ -41,7 +40,7 @@ $photo_type_store = array('jpg', 'png', 'jpeg');
 
 if(in_array($photo_lwr, $photo_type_store)){
 
-    $photoName = $name."_trainer_".$photo_lwr;
+    $photoName =  $email."_trainer_.".$photo_lwr;
     move_uploaded_file($photo_tem, '../images/photo/'.$photoName);
 }
 
@@ -58,7 +57,7 @@ if(in_array($photo_lwr, $photo_type_store)){
  $address_type_store = array('jpg', 'png', 'jpeg');
 
  if(in_array($addressProof_lower, $address_type_store)){
-    $finalAddress = $name."_trainer_".$addressProof_lower;
+    $finalAddress =  $email."_trainer_.".$addressProof_lower;
     move_uploaded_file($addressProof_tmp, '../images/addressProof/'.$finalAddress);
 }
 
@@ -76,8 +75,8 @@ $education_cer_lower = strtolower(end($education_cer_array));
 $education_cer_store = array('jpg', 'png', 'jpeg');
 
 if(in_array($education_cer_lower, $education_cer_store)){
-   $finalEducation = $name."_trainer_".$education_cer_lower;
-   move_uploaded_file($education_cer_tmp, '../images/addressProof/'.$finalEducation);
+   $finalEducation =  $email."_trainer_.".$education_cer_lower;
+   move_uploaded_file($education_cer_tmp, '../images/educationCer/'.$finalEducation);
 }
 
  
@@ -95,7 +94,7 @@ if(in_array($education_cer_lower, $education_cer_store)){
  $filestore = array('jpg', 'png', 'jpeg');
 
  if(in_array($fileExt, $filestore)){
-     $workExp = $name."_trainer_".$fileExt;
+     $workExp =  $email."_trainer_.".$fileExt;
      move_uploaded_file($work_exp_tmp, '../images/expCertificate/'.$workExp);
  }
 
@@ -122,7 +121,7 @@ if(in_array($education_cer_lower, $education_cer_store)){
             // }
             if(in_array($fileext1, $fileextStor1))
 				{
-					$passbook=$registration_no."_shg_bank_".$group_name.".".$fileext1;
+					$passbook= $email."_tr_bank_.".$fileext1;
 					move_uploaded_file($filetemp1, '../images/bankPassbook/'.$passbook);
 				}else
 				{
@@ -158,11 +157,15 @@ if(in_array($education_cer_lower, $education_cer_store)){
        'ac_no'=>$acc_no,
        'ifsc'=>$ifsc_code,
        'bank_name'=>$bank_name,
-       'bank_doc'=>$passbook,
-      
+       'bank_doc'=>$passbook      
     );
   
     $result=$obj->insertData($table,$condition_arr);   
+    if($obj->getData($table,'count(id)',array('email'=>$email))[0]["count(id)"]=="1"){
+        $_SESSION['formStatus']=true; 
+    }else{
+        $_SESSION['formStatus']=false;
+    }
  
 }
 

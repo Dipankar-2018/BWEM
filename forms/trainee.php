@@ -74,7 +74,7 @@
                           <div class="form-group">
                             <label class="label-control"></label>
                             <label class="text-info"><b>DATE OF BIRTH</b></label>
-                            <input type="text" class="form-control datepicker" name="dob">
+                            <input type="date" class="form-control datepicker" name="dob">
                           </div>
                         </div>
                         <div class="col-lg-3 col-sm-4">

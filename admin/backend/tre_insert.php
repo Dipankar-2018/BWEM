@@ -2,11 +2,6 @@
 //Trainee Insert
 session_start();
 if(isset($_POST['submit'])){
-
-    echo "<pre>";
-    print_r($_POST);
-
-
     include("../conn/database.php");
     $obj = new query();
     
@@ -43,10 +38,10 @@ $photo_tem = $_FILES['photo']['tmp_name'];
 $photo_arr = explode('.', $photo);
 $photo_lwr = strtolower(end($photo_arr));
 $photo_type_store = array('jpg', 'png', 'jpeg');
-
+$photoName ="";
 if(in_array($photo_lwr, $photo_type_store)){
 
-    $photoName = $name."_trainee_".$photo_lwr;
+    $photoName = $email."_trainee_.".$photo_lwr;
     move_uploaded_file($photo_tem, '../images/photo/'.$photoName);
 }
 
@@ -61,9 +56,9 @@ if(in_array($photo_lwr, $photo_type_store)){
  $addressProof_array = explode('.', $addressProof);
  $addressProof_lower = strtolower(end($addressProof_array));
  $address_type_store = array('jpg', 'png', 'jpeg');
-
+ $finalAddress="";
  if(in_array($addressProof_lower, $address_type_store)){
-    $finalAddress = $name."_trainee_".$addressProof_lower;
+    $finalAddress = $email."_trainee_.".$addressProof_lower;
     move_uploaded_file($addressProof_tmp, '../images/addressProof/'.$finalAddress);
 }
 
@@ -79,10 +74,10 @@ $education_cer_tmp = $_FILES['education_cer']['tmp_name'];
 $education_cer_array = explode('.', $education_cer);
 $education_cer_lower = strtolower(end($education_cer_array));
 $education_cer_store = array('jpg', 'png', 'jpeg');
-
+$finalEducation="";
 if(in_array($education_cer_lower, $education_cer_store)){
-   $finalEducation = $name."_trainee_".$education_cer_lower;
-   move_uploaded_file($education_cer_tmp, '../images/addressProof/'.$finalEducation);
+   $finalEducation = $email."_trainee_.".$education_cer_lower;
+   move_uploaded_file($education_cer_tmp, '../images/educationCer/'.$finalEducation);
 }
 
 
@@ -107,18 +102,15 @@ if(in_array($education_cer_lower, $education_cer_store)){
             // { 
             //     //File Size Error
             // }
+            $passbook="";
             if(in_array($fileext1, $fileextStor1))
 				{
-					$passbook=$name."_trainee_".$fileext1;
+					$passbook=$email."_trainee_.".$fileext1;
 					move_uploaded_file($filetemp1, '../images/bankPassbook/'.$passbook);
 				}else
 				{
 					// File Extension Error
                 }
-           
-          
-
-
 
   $condition_arr=array(
        'name'=>$name,
@@ -146,20 +138,24 @@ if(in_array($education_cer_lower, $education_cer_store)){
        'bank_doc'=>$passbook,
        'photo'=>$photoName,
        'voter_adhar'=>$finalAddress,
-       'education_doc'=>$finalEducation,
-       
-      
+       'education_doc'=>$finalEducation      
     );
   
-    // echo "<pre>";
-    // print_r($condition_arr);
-
+//     echo "<pre>";
+//     print_r($condition_arr);
+// exit;
    
 
     $result=$obj->insertData($table,$condition_arr);   
+    if($obj->getData($table,'count(id)',array('email'=>$email))[0]["count(id)"]=="1"){
+        $_SESSION['formStatus']=true; 
+    }else{
+        $_SESSION['formStatus']=false;
+    }
  
 }
 
+// exit;
 
 
 
