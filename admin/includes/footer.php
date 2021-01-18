@@ -34,16 +34,18 @@
 <script src="plugins/datatables-buttons/js/buttons.html5.min.js"></script>
 <script src="plugins/datatables-buttons/js/buttons.print.min.js"></script>
 <script src="plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
-<script src="js/jquery.js"></script>
+
 
 
 
 <!-- Bootstrap 4 -->
-<script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="bootstrap.bundle.min.js"></script>
+<script src="./plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="./bootstrap.bundle.min.js"></script>
 <!-- AdminLTE App -->
-<script src="dist/js/adminlte.min.js"></script>
-<script src="js/sweetalert.min.js"></script>
+<script src="./dist/js/adminlte.min.js"></script>
+<script src="./js/sweetalert.min.js"></script>
+<script src="./js/Chart.min.js"></script>
+<script src="js/jquery.js"></script>
 <?php
     if(isset($_SESSION['formStatus'])){
       if($_SESSION['formStatus']==true){

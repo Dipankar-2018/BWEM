@@ -91,7 +91,9 @@
           </div>
           <!-- ./col -->
         </div>
-
+        <!-- Pie Chart -->
+        
+       
 <div class="background float-right">
 <img src="assets/undraw/4.svg" height=280 style=" opacity: 0.3;">
 </div>        
@@ -102,8 +104,35 @@
           </div>
           
           <!-- /.col-md-6 -->
+
         </div>
         <!-- /.row -->
+        <div class="row">
+        <div class="col-lg-6 col-6">
+          <h3><b>Self Help Group Data Chart</b></h3>
+            <canvas id="shgchart" style="display: block; width: auto; height: auto;"></canvas>
+        </div>
+        <div class="col-lg-6 col-6">
+          <h3><b>Entrepreneures Data Chart</b></h3>
+            <canvas id="epchart" style="display: block;  width: auto; height: auto;"></canvas>
+        </div>
+        <div class="col-lg-6 col-6">
+          <h3><b>NGO Data Chart</b></h3>
+            <canvas id="ngchart" style="display: block;  width: auto; height: auto;"></canvas>
+        </div>
+        <div class="col-lg-6 col-6">
+          <h3><b>Association Data Chart</b></h3>
+            <canvas id="aschart" style="display: block;  width: auto; height: auto;"></canvas>
+        </div>
+        <div class="col-lg-6 col-6">
+          <h3><b>Trainer Data Chart</b></h3>
+            <canvas id="trchart" style="display: block; width: 762px; height: 381px;"></canvas>
+        </div>
+        <div class="col-lg-6 col-6">
+          <h3><b>Trainee Data Chart</b></h3>
+            <canvas id="trechart" style="display: block; width: 762px; height: 381px;"></canvas>
+        </div>
+        </div>
       </div><!-- /.container-fluid -->
     </div>
     <!-- /.content -->
