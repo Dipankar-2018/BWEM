@@ -365,12 +365,16 @@ function printChart(element){
       data:{element:element},
       dataType:"json",
       success:function(data){
-          arr=data;
-          console.log(data);
+        // console.log(data[0]['kokrajhar']);
+          arr[0]=data[0]['kokrajhar'];
+          arr[1]=data[1]['Chirang'];
+          arr[2]=data[2]['Baksa'];
+          arr[3]=data[3]['Udalguri'];
+          // console.log(arr);
       }
      
   });
-
+  // console.log(arr);
   const ctx = document.getElementById(element+"chart").getContext('2d');
   const myChart = new Chart(ctx, {
       type: 'pie',

@@ -21,15 +21,15 @@ print_r(json_encode($data, JSON_PRETTY_PRINT));
 }
 
 
-
+// $_POST['element']="shg";
 if(isset($_POST['element'])){
     include("../conn/database.php");
     $obj = new query();
     $table=$cat[$obj->get_safe_str($_POST['element'])];
     $distArray=array("kokrajhar","Chirang","Baksa","Udalguri");
-    $data=array(0,0,0,0);
-   for($i=0;$i<strlen($distArray);$i++){
-        $data[$i]=$obj->getData($table,'count(district)',array('district'=>$distArray[$i]));
+    $data=array();
+   for($i=0;$i<count($distArray);$i++){
+        array_push($data,array($distArray[$i]=>$obj->getData($table,'count(district)',array('district'=>$distArray[$i]))[0]['count(district)']));
    }
 print_r(json_encode($data, JSON_PRETTY_PRINT));
 }
