@@ -77,7 +77,7 @@ $education_cer_store = array('jpg', 'png', 'jpeg');
 $finalEducation="";
 if(in_array($education_cer_lower, $education_cer_store)){
    $finalEducation = $email."_trainee_.".$education_cer_lower;
-   move_uploaded_file($education_cer_tmp, '../images/addressProof/'.$finalEducation);
+   move_uploaded_file($education_cer_tmp, '../images/educationCer/'.$finalEducation);
 }
 
 
