@@ -151,8 +151,8 @@ if(in_array($education_cer_lower, $education_cer_store)){
       
     );
   
-    echo "<pre>";
-    print_r($condition_arr);
+    // echo "<pre>";
+    // print_r($condition_arr);
 
    
 
@@ -160,7 +160,6 @@ if(in_array($education_cer_lower, $education_cer_store)){
  
 }
 
-exit;
 
 
 
