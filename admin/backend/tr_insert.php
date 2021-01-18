@@ -2,12 +2,6 @@
 //Trainer Insert
 session_start();
 if(isset($_POST['submit'])){
-
-  echo "<pre>";
-  print_r($_POST);
-exit;
-
-
     include("../conn/database.php");
     $obj = new query();
     $table='trainer';
@@ -164,11 +158,7 @@ if(in_array($education_cer_lower, $education_cer_store)){
        'bank_doc'=>$passbook,
       
     );
-  
-
-    echo "<pre>";
-    print_r($condition_arr);
-  
+    
 //   $result=$obj->insertData($table,$condition_arr);
    
  
