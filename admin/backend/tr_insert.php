@@ -5,12 +5,11 @@ if(isset($_POST['submit'])){
 
   echo "<pre>";
   print_r($_POST);
-
+exit;
 
 
     include("../conn/database.php");
     $obj = new query();
-    
     $table='trainer';
 
  $name = $obj->get_safe_str($_POST['name']);
