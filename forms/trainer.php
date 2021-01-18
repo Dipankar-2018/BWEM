@@ -26,12 +26,12 @@
        
 
       <!-- Self Help Group Contact Info -->
-
+      <form method="post" action="../admin/backend/tr_insert.php" enctype="multipart/form-data">
             <div class="row">
               <div class="col-md-12">
                   <div class="card card-signup">
                   <h4 class="card-title text-center">Trainer Form</h4>
-                <form method="post" action="../admin/backend/tr_insert.php" enctype="multipart/form-data">
+                
                   <div class="card-body">                   
                       <div class="form-row">
                         <div class="col-lg-4 col-sm-4">
@@ -113,8 +113,8 @@
                                 <option value="8th Pass / Equivalent">8th Pass / Equivalent</option>
                                 <option value="M.P Pass / Equivalent">M.P Pass / Equivalent</option>
                                 <option value="H.S Pass / Equivalent">H.S Pass / Equivalent</option>
-                                <option value="Graduation Pass / Equivalen">Graduation Pass / Equivalen</option>
-                                <option value="Post Graduation Pass / Equivalen">Post Graduation Pass / Equivalen</option>
+                                <option value="Graduation Pass / Equivalent">Graduation Pass / Equivalen</option>
+                                <option value="Post Graduation Pass / Equivalent">Post Graduation Pass / Equivalen</option>
                               </select>
                             </div>
                         </div>
@@ -173,10 +173,8 @@
               <div class="col-md-12">
                   <div class="card card-signup">
                   <h4 class="card-title text-center">Course Details</h4>
-                  <div class="card-body">
-                  
-                      <div class="form-row">
-                      
+                  <div class="card-body">                  
+                      <div class="form-row">                      
                           <div class="col-lg-4 col-sm-4">
                             <div class="form-group has-default">
                               <label class="text-info"><b>SELECT AREA OF INTEREST<a class="text-danger"> *</a></b></label>
@@ -210,10 +208,8 @@
                                 <option value="udalguri">Udalguri</option>
                               </select>
                             </div>
-                          </div>
-  
-                        </div>
-                   
+                          </div>  
+                        </div>                  
                   </div>
                 </div>
                 </div>
@@ -225,10 +221,8 @@
               <div class="col-md-12">
                   <div class="card card-signup">
                   <h4 class="card-title text-center">Extra Information</h4>
-                  <div class="card-body">
-              
-                      <div class="form-row">
-                      
+                  <div class="card-body">              
+                      <div class="form-row">                      
                           <div class="col-lg-6 col-sm-6">
                             <div class="form-group form-file-upload form-file-multiple">
                               <label class="text-info"><b>UPLOAD PHOTO</b><a class="text-danger"> *</a></label>
@@ -284,10 +278,8 @@
                                 </span>
                               </div>
                             </div>
-                          </div>
-                    
-                        </div>
-                  
+                          </div>                    
+                        </div>                  
                   </div>
                 </div>
                 </div>
@@ -360,11 +352,12 @@
                           <button id="modalActivate" type="button" name="preview" class="btn btn-success" onclick="previewTrainerForm()" data-toggle="modal" data-target="#exampleModalPreview">Preview</button>
                           <button id="submitForm" type="submit" class="btn btn-primary" name="submit">Submit</button>
                         </div>
-                    </form>
+                 
                   </div>
                 </div>
                 </div>
             </div>
+            </form>
         </div>
         <!-- Reg. Form End -->
 

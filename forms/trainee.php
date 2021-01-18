@@ -22,7 +22,7 @@
     <!-- Reg. Form Content Start-->
       <div class="section">
       
-       
+      <form action="preview-trainee.php" method="post" enctype="multipart/form-data">
 
           <!-- Self Help Group Contact Info -->
 
@@ -31,7 +31,7 @@
                   <div class="card card-signup">
                   <h4 class="card-title text-center">Trainee Form</h4>
                   <div class="card-body">
-                    <form action="preview-trainee.php" method="post" enctype="multipart/form-data">
+                    
                       <div class="form-row">
                         <div class="col-lg-4 col-sm-4">
                           <div class="form-group has-default">
@@ -109,11 +109,11 @@
                               <label class="text-info"><b>EDUCATON</b></label>
                                 <select class="selectpicker" data-style="select-with-transition" title="Select Any" data-size="7" name="education">
                                 <option disabled>Select Any</option>
-                                <option value="8th Pass / Equivalent">8th Pass / Equivalent</option>
+                                <option value="8th Pass / Equivalent">8th Pass / equivalent</option>
                                 <option value="M.P Pass / Equivalent">M.P Pass / Equivalent</option>
                                 <option value="H.S Pass / Equivalent">H.S Pass / Equivalent</option>
-                                <option value="Graduation Pass / Equivalen">Graduation Pass / Equivalen</option>
-                                <option value="Post Graduation Pass / Equivalen">Post Graduation Pass / Equivalen</option>
+                                <option value="Graduation Pass / Equivalent">Graduation Pass / Equivalen</option>
+                                <option value="Post Graduation Pass / Equivalent">Post Graduation Pass / Equivalen</option>
                               </select>
                             </div>
                         </div>
@@ -342,11 +342,12 @@
                           <button id="modalActivate" type="button" name="preview" class="btn btn-success" onclick="previewTraineeForm()" data-toggle="modal" data-target="#exampleModalPreview">Preview</button>
                           <button id="submitForm" type="submit" class="btn btn-primary" name="submit">Submit</button>
                         </div>
-                    </form>
+                    
                   </div>
                 </div>
                 </div>
             </div>
+            </form>
         </div>
         <!-- Reg. Form End -->
 
