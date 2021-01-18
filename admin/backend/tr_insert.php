@@ -4,30 +4,51 @@ session_start();
 if(isset($_POST['submit'])){
     include("../conn/database.php");
     $obj = new query();
+    
+    $table='trainer';
 
+ $name = $obj->get_safe_str($_POST['name']);
+ $email = $obj->get_safe_str($_POST['email']);
+ $contact = $obj->get_safe_str($_POST['contact']);
+ $gname = $obj->get_safe_str($_POST['gname']);
+ $relation = $obj->get_safe_str($_POST['relation']);
+ $dob = $obj->get_safe_str($_POST['dob']);
+ $category = $obj->get_safe_str($_POST['category']);
+ $religion = $obj->get_safe_str($_POST['religion']);
+ $education = $obj->get_safe_str($_POST['education']);
+ $address = $obj->get_safe_str($_POST['address']);
+ $state = $obj->get_safe_str($_POST['state']);
+ $dist = $obj->get_safe_str($_POST['dist']);
+ $post_office = $obj->get_safe_str($_POST['post_office']);
+ $police_station = $obj->get_safe_str($_POST['police_station']);
+ $pin = $obj->get_safe_str($_POST['pin']);
+ $aoi = $obj->get_safe_str($_POST['aoi']);
+ $year_of_exp = $obj->get_safe_str($_POST['year_of_exp']);
+ $location = $obj->get_safe_str($_POST['location']);
+ $photo = $obj->get_safe_str($_POST['photo']);
+ $voter_aadhaar = $obj->get_safe_str($_POST['voter_aadhaar']);
+ $education_cer = $obj->get_safe_str($_POST['education_cer']);
 
-$table='trainer';
+ $work_exp = $obj->get_safe_str($_POST['work_exp']);
 
-if(strlen($registration_no) == 0){
-    $registration_no = 0;
-}else{
-  $registration_no = $obj->get_safe_str($_POST['registration_no']);
-}
+ // work experiance certificate 
+ $work_exp = $_FILES['work_exp']['name'];
+ $work_exp_tmp = $_FILES['work_exp']['tmp_name'];
+ $work_exp_type = $_FILES['work_exp']['type'];
+ $work_exp_size = $_FILES['work_exp']['size'];
+ $work_exp_err = $_FILES['work_exp']['error'];
 
-  $group_name = $obj->get_safe_str($_POST['group_name']);
-  $address = $obj->get_safe_str($_POST['address']);
-  $post_office = $obj->get_safe_str($_POST['post_office']);
-  $police_station = $obj->get_safe_str($_POST['police_station']);
-  $dist = $obj->get_safe_str($_POST['dist']);
-  $pin = $obj->get_safe_str($_POST['pin']);
-  $state = $obj->get_safe_str($_POST['state']);
-  $constituency= $obj->get_safe_str($_POST['constituency']);
-  $head_position = $obj->get_safe_str($_POST['head_position']);
-  $head_name = $obj->get_safe_str($_POST['head_name']);
-  $head_mobile = $obj->get_safe_str($_POST['head_mobile']);
-  $head_email = $obj->get_safe_str($_POST['head_email']);  
-  $aoi = $obj->get_safe_str($_POST['area_of_interest']);
-  $group_exp = $obj->get_safe_str($_POST['group_exp']);
+ $explode = explode('.', $work_exp);
+ $fileExt = strtolower(end($explode));
+ $filestore = array('jpg', 'png', 'jpeg');
+
+ if(in_array($fileExt, $filestore)){
+     $workExp = $name."_trainer_".$fileExt;
+     move_uploaded_file($work_exp_tmp, '../images/expCertificate/'.$workExp);
+ }
+
+  
+
   $acc_no = $obj->get_safe_str($_POST['acc_no']);
   $ifsc_code = $obj->get_safe_str($_POST['ifsc_code']);
   $bank_name = $obj->get_safe_str($_POST['bank_name']);
@@ -53,7 +74,8 @@ if(strlen($registration_no) == 0){
 				}else
 				{
 					// File Extension Error
-				}
+                }
+                
     //'registration_certificate_file'
         $registration_certificate_filename=$_FILES['registration_file']['name'];
             $filetemp2=$_FILES['registration_file']['tmp_name'];
@@ -74,7 +96,10 @@ if(strlen($registration_no) == 0){
 				}else
 				{
 					// File Extension Error
-				}
+                }
+                
+
+
   $condition_arr=array(
       'registration_no'=>$registration_no,
        'group_name'=>$group_name,
@@ -100,26 +125,7 @@ if(strlen($registration_no) == 0){
     );
   
   $result=$obj->insertData($table,$condition_arr);
-  //for groupmember table
-  $member_name =$_POST['member_name'];
-  $member_gender =$_POST['member_gender'];
-  $member_age =$_POST['member_age'];
-  $member_qualification =$_POST['member_qualification'];
-    for($i=0;$i<count($member_name);$i++){
-        $condition_arr=array(
-            'group_name'=>$group_name,
-            'name'=>$obj->get_safe_str($member_name[$i]),
-            'gender' =>$obj->get_safe_str($member_gender[$i]),
-            'age'=>$obj->get_safe_str($member_age[$i]),
-            'qualification'=>$obj->get_safe_str($member_qualification[$i])
-            );
-        $result=$obj->insertData($table.'_members',$condition_arr);
-    }
-    if($obj->getData($table,'count(id)',array('group_name'=>$group_name))[0]["count(id)"]=="1"){
-        $_SESSION['formStatus']=true; 
-    }else{
-        $_SESSION['formStatus']=false;
-    }    
+
 }
 if(isset($_SESSION['login'])&&$_SESSION['login']==true){
     header("location:../data.php?cat=tr&dist=".strtolower($dist));

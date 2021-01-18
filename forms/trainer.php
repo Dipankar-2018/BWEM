@@ -31,8 +31,8 @@
               <div class="col-md-12">
                   <div class="card card-signup">
                   <h4 class="card-title text-center">Trainer Form</h4>
-                  <div class="card-body">
-                    <form>
+                <form method="post" action="../admin/backend/tr_insert.php" enctype="multipart/form-data">
+                  <div class="card-body">                   
                       <div class="form-row">
                         <div class="col-lg-4 col-sm-4">
                           <div class="form-group has-default">
@@ -65,10 +65,9 @@
                               <label class="text-info"><b>RELATION</b></label>
                                 <select class="selectpicker" data-style="select-with-transition" title="Select Any" data-size="7" name="relation">
                                 <option disabled>Select Any</option>
-                                <option value="2">Father</option>
-                                <option value="3">Mother</option>
-                                <option value="4">Husband</option>
-                                <option value="5">Husband</option>
+                                <option value="father">Father</option>
+                                <option value="mother">Mother</option>
+                                <option value="husband">Husband</option>                               
                               </select>
                             </div>
                         </div>
@@ -84,10 +83,10 @@
                               <label class="text-info"><b>CATEGORY</b></label>
                                 <select class="selectpicker" data-style="select-with-transition" title="Select Any" data-size="7" name="category">
                                 <option disabled>Select Any</option>
-                                <option value="2">ST</option>
-                                <option value="3">SC</option>
-                                <option value="4">GENERAL</option>
-                                <option value="5">OBC</option>
+                                <option value="st">ST</option>
+                                <option value="sc">SC</option>
+                                <option value="general">GENERAL</option>
+                                <option value="obc">OBC</option>
                               </select>
                             </div>
                         </div>
@@ -96,13 +95,13 @@
                               <label class="text-info"><b>RELIGION</b></label>
                                 <select class="selectpicker" data-style="select-with-transition" title="Select Any" data-size="7" name="religion">
                                 <option disabled>Select Any</option>
-                                <option value="2">Hindu</option>
-                                <option value="3">Muslim</option>
-                                <option value="4">Christian</option>
-                                <option value="5">Sikh</option>
-                                <option value="6">Buddhist</option>
-                                <option value="7">Jainism</option>
-                                <option value="8">Others</option>
+                                <option value="hindu">Hindu</option>
+                                <option value="muslim">Muslim</option>
+                                <option value="christian">Christian</option>
+                                <option value="sikh">Sikh</option>
+                                <option value="buddist">Buddhist</option>
+                                <option value="jainism">Jainism</option>
+                                <option value="others">Others</option>
                               </select>
                             </div>
                         </div>
@@ -111,11 +110,11 @@
                               <label class="text-info"><b>EDUCATON</b></label>
                                 <select class="selectpicker" data-style="select-with-transition" title="Select Any" data-size="7" name="education">
                                 <option disabled>Select Any</option>
-                                <option value="2">8th Pass / Equivalent</option>
-                                <option value="3">M.P Pass / Equivalent</option>
-                                <option value="4">H.S Pass / Equivalent</option>
-                                <option value="5">Graduation Pass / Equivalen</option>
-                                <option value="5">Post Graduation Pass / Equivalen</option>
+                                <option value="8th Pass / Equivalent">8th Pass / Equivalent</option>
+                                <option value="M.P Pass / Equivalent">M.P Pass / Equivalent</option>
+                                <option value="H.S Pass / Equivalent">H.S Pass / Equivalent</option>
+                                <option value="Graduation Pass / Equivalen">Graduation Pass / Equivalen</option>
+                                <option value="Post Graduation Pass / Equivalen">Post Graduation Pass / Equivalen</option>
                               </select>
                             </div>
                         </div>
@@ -161,7 +160,7 @@
                         
                       </div>
                    
-                  </form>
+               
                   </div>
                 </div>
                 </div>
@@ -175,7 +174,7 @@
                   <div class="card card-signup">
                   <h4 class="card-title text-center">Course Details</h4>
                   <div class="card-body">
-                    <form>
+                  
                       <div class="form-row">
                       
                           <div class="col-lg-4 col-sm-4">
@@ -214,7 +213,7 @@
                           </div>
   
                         </div>
-                    </form>
+                   
                   </div>
                 </div>
                 </div>
@@ -227,7 +226,7 @@
                   <div class="card card-signup">
                   <h4 class="card-title text-center">Extra Information</h4>
                   <div class="card-body">
-                    <form>
+              
                       <div class="form-row">
                       
                           <div class="col-lg-6 col-sm-6">
@@ -288,7 +287,7 @@
                           </div>
                     
                         </div>
-                    </form>
+                  
                   </div>
                 </div>
                 </div>
@@ -302,7 +301,7 @@
                   <div class="card card-signup">
                   <h4 class="card-title text-center">Bank Details</h4>
                   <div class="card-body">
-                    <form>
+                   
                       <div class="form-row">
                       
                           <div class="col-lg-6 col-sm-6">
@@ -334,7 +333,7 @@
                           <div class="col-lg-12 col-sm-12">
                             <div class="form-group form-file-upload form-file-multiple">
                               <label class="text-info"><b>UPLOAD BANK DOCUMENT (Passbook/Cancelled Cheque)</b></label>
-                              <input type="file" multiple="" class="inputFileHidden" onchange="readURL(this,'passbook');" name="passbook">
+                              <input type="file" multiple="" class="inputFileHidden" onchange="readURL(this,'passbook');" name="passbook_file">
                               <div class="input-group">
                                 <input type="text" class="form-control inputFileVisible" placeholder="Select File">
                                 <span class="input-group-btn">
