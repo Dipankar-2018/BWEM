@@ -371,10 +371,17 @@ function printChart(element){
           arr[2]=data[2]['Baksa'];
           arr[3]=data[3]['Udalguri'];
           // console.log(arr);
+          drawChart(element,arr);
+      },
+      error:function(data){
+        drawChart(element,arr);
       }
      
   });
   // console.log(arr);
+  
+}
+function drawChart(element,arr){
   const ctx = document.getElementById(element+"chart").getContext('2d');
   const myChart = new Chart(ctx, {
       type: 'pie',
@@ -415,7 +422,6 @@ function printChart(element){
       }
   });
 }
-
 (
   ()=>{
     printChart("shg");
