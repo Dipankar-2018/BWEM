@@ -65,6 +65,7 @@ class query extends database{
 			$value="'".$value."'";			
 			$sql="insert into $table($field) values($value) ";
 			$result=$this->connect()->query($sql);
+			return $result==true;
 		}
 	}
 	
@@ -82,6 +83,7 @@ class query extends database{
 				$i++;
 			}
 			$result=$this->connect()->query($sql);
+			return $result==true;
 		}
 	}
 	
@@ -100,6 +102,7 @@ class query extends database{
 			}
 			$sql.=" where $where_field='$where_value' ";
 			$result=$this->connect()->query($sql);
+			return $result==true;
 		}
 	}
 	

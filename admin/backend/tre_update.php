@@ -5,141 +5,132 @@ if(isset($_POST['submit'])&&isset($_POST['id'])){
     include("../conn/database.php");
     $obj = new query();
     $table='trainee';
-
     $id=$obj->get_safe_str($_POST['id']);
-    if(strlen($registration_no) == 0){
-        $registration_no = 0;
-    }else{
-      $registration_no = $obj->get_safe_str($_POST['registration_no']);
+ $name = $obj->get_safe_str($_POST['name']);
+ $email = $obj->get_safe_str($_POST['email']);
+ $contact = $obj->get_safe_str($_POST['contact']);
+ $gname = $obj->get_safe_str($_POST['gname']);
+ $relation = $obj->get_safe_str($_POST['relation']);
+ $dob = $obj->get_safe_str($_POST['dob']);
+ $category = $obj->get_safe_str($_POST['category']);
+ $religion = $obj->get_safe_str($_POST['religion']);
+ $education = $obj->get_safe_str($_POST['education']);
+ $address = $obj->get_safe_str($_POST['address']);
+ $state = $obj->get_safe_str($_POST['state']);
+ $district = $obj->get_safe_str($_POST['district']);
+ $post = $obj->get_safe_str($_POST['post']);
+ $police = $obj->get_safe_str($_POST['police']);
+ $pin = $obj->get_safe_str($_POST['pin']);
+ $course = $obj->get_safe_str($_POST['course']);
+ $course_duration = $obj->get_safe_str($_POST['course_duration']);
+ $location = $obj->get_safe_str($_POST['location']);
+ $acc_no = $obj->get_safe_str($_POST['ac_no']);
+ $ifsc_code = $obj->get_safe_str($_POST['ifsc']);
+ $bank_name = $obj->get_safe_str($_POST['bank_name']);
+ $branch_name = $obj->get_safe_str($_POST['branch_name']);
+ $condition_arr=array(
+    'name'=>$name,
+    'email'=>$email,
+    'contact'=>$contact,
+    'gname'=>$gname,
+    'relation'=>$relation,
+    'dob'=>$dob,
+    'category'=>$category,
+    'religion'=>$religion,
+    'education'=>$education,
+    'address'=>$address,
+    'state'=>$state,
+    'district'=>$district,
+    'post_office'=>$post,
+    'pstation'=>$police,
+    'pin'=>$pin,
+    'course'=>$course,
+    'duration'=>$course_duration,
+    'location'=>$location,
+    'ac_no'=>$acc_no,
+    'ifsc'=>$ifsc_code,
+    'bank_name'=>$bank_name,
+    'branch_name'=>$branch_name    
+ );
+
+
+
+//UPLOAD PHOTO
+if(isset($_FILES['photo'])&&$_FILES['photo']['size']!=0){
+    $photo = $_FILES['photo']['name'];
+    $photo_type = $_FILES['photo']['type'];
+    $photo_size = $_FILES['photo']['size'];
+    $photo_tem = $_FILES['photo']['tmp_name'];
+    $photo_arr = explode('.', $photo);
+    $photo_lwr = strtolower(end($photo_arr));
+    $photo_type_store = array('jpg', 'png', 'jpeg');
+    $photoName ="";
+    if(in_array($photo_lwr, $photo_type_store)){
+        $photoName = $email."_trainee.".$photo_lwr;
+        $condition_arr = array_merge($condition_arr, array('photo'=>$photoName));
+        move_uploaded_file($photo_tem, '../images/photo/'.$photoName);
     }
-  
-  $group_name = $obj->get_safe_str($_POST['group_name']);
-  $address = $obj->get_safe_str($_POST['address']);
-  $post_office = $obj->get_safe_str($_POST['post_office']);
-  $police_station = $obj->get_safe_str($_POST['police_station']);
-  $dist = $obj->get_safe_str($_POST['dist']);
-  $pin = $obj->get_safe_str($_POST['pin']);
-  $state = $obj->get_safe_str($_POST['state']);
-  $constituency=$obj->get_safe_str($_POST['constituency']);
-  $head_position = $obj->get_safe_str($_POST['head_position']);
-  $head_name = $obj->get_safe_str($_POST['head_name']);
-  $head_mobile = $obj->get_safe_str($_POST['head_mobile']);
-  $head_email = $obj->get_safe_str($_POST['head_email']);  
-  $aoi = $obj->get_safe_str($_POST['area_of_interest']);
-  $group_exp = $obj->get_safe_str($_POST['group_exp']);
-  $acc_no = $obj->get_safe_str($_POST['acc_no']);
-  $ifsc_code = $obj->get_safe_str($_POST['ifsc_code']);
-  $bank_name = $obj->get_safe_str($_POST['bank_name']);
-  $branch_name = $obj->get_safe_str($_POST['branch_name']);
-  $condition_arr=array(
-    'registration_no'=>$registration_no,
-     'group_name'=>$group_name,
-     'address'=>$address,
-     'post_office'=>$post_office,
-     'police_station'=>$police_station,
-     'district'=>$dist,
-     'pin'=>$pin,
-     'state'=>$state,
-     'constituency'=>$constituency,
-     'category'=>$head_position,
-     'name_of_head'=>$head_name,
-     'head_mobile'=>$head_mobile,
-     'head_email'=>$head_email,
-     'aoi'=>$aoi,
-     'group_experience'=>$group_exp,
-     'bank_account_no'=>$acc_no,
-     'bank_name'=>$bank_name,
-     'ifsc'=>$ifsc_code,
-     'branch_name'=>$branch_name
-      
-  );
- //file processing needed
-    //'passbook_file',
-    if(isset($_FILES['passbook_file'])&&$_FILES['passbook_file']['size']!=0){
-        $passbook_filename=$_FILES['passbook_file']['name'];
-            $filetemp1=$_FILES['passbook_file']['tmp_name'];
-            $filetype1=$_FILES['passbook_file']['type'];
-            $filesize1=$_FILES['passbook_file']['size'];
-            $error1=$_FILES['passbook_file']['error'];
-            $split1=explode('.', $passbook_filename);
-			$fileext1=strtolower(end($split1));
-            $fileextStor1 = array('jpg' ,'png' ,'jpeg');
-            // if($filesize1>=205000||$filesize1==0)
-            // { 
-            //     //File Size Error
-            // }
-            if(in_array($fileext1, $fileextStor1))
-				{
-					$passbook=$registration_no."_shg_bank_".$group_name.".".$fileext1;
-					move_uploaded_file($filetemp1, '../images/bankPassbook/'.$passbook);
-				}else
-				{
-					// File Extension Error
-                }
-            $condition_arr = array_merge($condition_arr, array("passbook_file"=>$passbook));
-        }
-    //'registration_certificate_file'
-    if(isset($_FILES['registration_file'])&&$_FILES['registration_file']['size']!=0){
-        $registration_certificate_filename=$_FILES['registration_file']['name'];
-            $filetemp2=$_FILES['registration_file']['tmp_name'];
-            $filetype2=$_FILES['registration_file']['type'];
-            $filesize2=$_FILES['registration_file']['size'];
-            $error2=$_FILES['registration_file']['error'];
-            $split2=explode('.', $registration_certificate_filename);
-			$fileext2=strtolower(end($split1));
-            $fileextStor2 = array('jpg' ,'png' ,'jpeg');
-            // if($filesize2>=205000||$filesize2==0)
-            // { 
-            //     //File Size Error
-            // }
-            if(in_array($fileext2, $fileextStor2))
-				{
-					$registrationCertificate=$registration_no."_shg_reg_".$group_name.".".$fileext2;
-					move_uploaded_file($filetemp2, '../images/registrationCertificate/'.$registrationCertificate);
-				}else
-				{
-					// File Extension Error
-                }
-            $condition_arr = array_merge($condition_arr, array("registration_certificate_file"=>$registrationCertificate));
-            }
-  $result=$obj->updateData($table,$condition_arr,'id',$id);
-  //for groupmember table
-  if(isset($_POST['member_name_e'])){
-    $member_name =$_POST['member_name_e'];
-    $member_gender =$_POST['member_gender_e'];
-    $member_age =$_POST['member_age_e'];
-    $member_qualification =$_POST['member_qualification_e'];
-        for($i=0;$i<count($member_name);$i++){
-            $condition_arr=array(
-                'name'=>$obj->get_safe_str($member_name[$i]),
-                'gender' =>$obj->get_safe_str($member_gender[$i]),
-                'age'=>$obj->get_safe_str($member_age[$i]),
-                'qualification'=>$obj->get_safe_str($member_qualification[$i])
-                );
-            $result=$obj->updateData($table.'_members',$condition_arr,'group_name',$group_name);
-        }
-  }
-  if(isset($_POST['member_name'])){
-    $member_name =$_POST['member_name'];
-    $member_gender =$_POST['member_gender'];
-    $member_age =$_POST['member_age'];
-    $member_qualification =$_POST['member_qualification'];
-        for($i=0;$i<count($member_name);$i++){
-            $condition_arr=array(
-                'group_name'=>$group_name,
-                'name'=>$obj->get_safe_str($member_name[$i]),
-                'gender' =>$obj->get_safe_str($member_gender[$i]),
-                'age'=>$obj->get_safe_str($member_age[$i]),
-                'qualification'=>$obj->get_safe_str($member_qualification[$i])
-                );
-            $result=$obj->insertData($table.'_members',$condition_arr);
-        }
-  }
-  
+}
+//VOTER AADHAR 
+if(isset($_FILES['voter_aadhaar'])&&$_FILES['voter_aadhaar']['size']!=0){
+    $addressProof = $_FILES['voter_aadhaar']['name'];
+    $addressProof_type = $_FILES['voter_aadhaar']['type'];
+    $addressProof_size = $_FILES['voter_aadhaar']['size'];
+    $addressProof_tmp = $_FILES['voter_aadhaar']['tmp_name']; 
+    $addressProof_array = explode('.', $addressProof);
+    $addressProof_lower = strtolower(end($addressProof_array));
+    $address_type_store = array('jpg', 'png', 'jpeg');
+    if(in_array($addressProof_lower, $address_type_store)){
+        $finalAddress = $email."_trainee.".$addressProof_lower;
+        $condition_arr = array_merge($condition_arr, array('voter_aadhaar'=>$finalAddress));
+        move_uploaded_file($addressProof_tmp, '../images/addressProof/'.$finalAddress);
+    }
+}
 
 
-
-    if($obj->getData($table,'count(id)',array('group_name'=>$group_name))[0]["count(id)"]=="1"){
+//EDUCATION CERTIFICATE
+if(isset($_FILES['education_cer'])&&$_FILES['education_cer']['size']!=0){
+    $education_cer = $_FILES['education_cer']['name'];
+    $education_cer_type = $_FILES['education_cer']['type'];
+    $education_cer_size = $_FILES['education_cer']['size'];
+    $education_cer_tmp = $_FILES['education_cer']['tmp_name'];
+    $education_cer_array = explode('.', $education_cer);
+    $education_cer_lower = strtolower(end($education_cer_array));
+    $education_cer_store = array('jpg', 'png', 'jpeg');
+    if(in_array($education_cer_lower, $education_cer_store)){
+    $finalEducation = $email."_trainee.".$education_cer_lower;
+    $condition_arr = array_merge($condition_arr, array('education_doc'=>$finalEducation));
+    move_uploaded_file($education_cer_tmp, '../images/educationCer/'.$finalEducation);
+    }
+}
+//'passbook_file',
+if(isset($_FILES['passbook_file'])&&$_FILES['passbook_file']['size']!=0){
+    $passbook_filename=$_FILES['passbook_file']['name'];
+    $filetemp1=$_FILES['passbook_file']['tmp_name'];
+    $filetype1=$_FILES['passbook_file']['type'];
+    $filesize1=$_FILES['passbook_file']['size'];
+    $error1=$_FILES['passbook_file']['error'];
+    $split1=explode('.', $passbook_filename);
+    $fileext1=strtolower(end($split1));
+    $fileextStor1 = array('jpg' ,'png' ,'jpeg');
+    // if($filesize1>=205000||$filesize1==0)
+    // { 
+    //     //File Size Error
+    // }
+    $passbook="";
+    if(in_array($fileext1, $fileextStor1))
+    {
+        $passbook=$email."_trainee.".$fileext1;
+        $condition_arr = array_merge($condition_arr, array('bank_doc'=>$passbook));
+        move_uploaded_file($filetemp1, '../images/bankPassbook/'.$passbook);
+    }else
+    {
+        // File Extension Error
+    }
+}
+ 
+    $result=$obj->updateData($table,$condition_arr,'id',$id);
+    if($result||$obj->getData($table,'count(id)',array('email'=>$email))[0]["count(id)"]=="1"){
         $_SESSION['formStatus']=true; 
     }else{
         $_SESSION['formStatus']=false;

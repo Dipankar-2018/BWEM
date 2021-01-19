@@ -13,14 +13,22 @@ if(isset($_POST['cat'])&& $_POST['cat']!="" && array_key_exists($obj->get_safe_s
 if(isset($_POST['id'])){  
   $id=$obj->get_safe_str($_POST['id']);
   $condition_arr=array('id'=>$id);
-  $result=$obj->getData($table,'group_name',array('id'=>$id));
-  $obj->deleteData($table.'_members',array('group_name'=>$result[0]['group_name']));
-  $obj->deleteData($table,$condition_arr);
-  // echo "1";
+  if($table=="trainer" || $table=="trainee"){
+    $res1=$obj->deleteData($table,$condition_arr);
+    $res2=true;
+  }else{
+    $result=$obj->getData($table,'group_name',array('id'=>$id));
+    $res1=$obj->deleteData($table.'_members',array('group_name'=>$result[0]['group_name']));
+    $res2=$obj->deleteData($table,$condition_arr);
+  }
+  
+  // echo ($res1==true&&$res2==true)?1:0;
   die();
+  exit;
 }
 if(isset($_GET['cat'])&& $_GET['cat']!="" && array_key_exists($obj->get_safe_str($_GET['cat']),$cat)){
   $catagory=$table=$cat[$obj->get_safe_str($_GET['cat'])];
+    $exclusion=($table=="trainer"||$table=="trainee");
     if($cat[$obj->get_safe_str($_GET['cat'])]=="self_help_group")
       $catagory="Self Help Group";
   }
@@ -81,7 +89,11 @@ $result=array();
                   <thead>
                   <tr>
                     <th>ID</th>
-                    <th>GROUP NAME</th>
+                    <?php if($exclusion){
+                      echo "<th>NAME</th>";
+                    }else{
+                      echo "<th>GROUP NAME</th>";
+                    } ?>                  
                     <th>CONTACT</th>
                     <th>ADDRESS</th>
                     <th>DOWNLOAD</th>
@@ -96,8 +108,8 @@ $result=array();
              ?>
                   <tr>
                     <td><?php echo $i+1;?></td>
-                    <td><?php echo $result[$i]['group_name'];?></td>
-                    <td><?php echo $result[$i]['head_mobile'];?></td>
+                    <td><?php echo $exclusion==true?$result[$i]['name']:$result[$i]['group_name'];?></td>
+                    <td><?php echo $exclusion==true?$result[$i]['contact']:$result[$i]['head_mobile'];?></td>
                     <td><?php echo $result[$i]['address'];?></td>
                     <td><a class="btn btn-success btn-sm" href="code.php?approve_id=">
                     <i class="fas fa-file-pdf"></i> Download</a></td>
