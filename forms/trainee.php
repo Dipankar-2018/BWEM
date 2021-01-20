@@ -109,11 +109,11 @@
                               <label class="text-info"><b>EDUCATON</b></label>
                                 <select class="selectpicker" data-style="select-with-transition" title="Select Any" data-size="7" name="education">
                                 <option disabled>Select Any</option>
-                                <option value="8th Pass / Equivalent">8th Pass / equivalent</option>
+                                <option value="8th Pass / Equivalent">8th Pass / Equivalent</option>
                                 <option value="M.P Pass / Equivalent">M.P Pass / Equivalent</option>
                                 <option value="H.S Pass / Equivalent">H.S Pass / Equivalent</option>
-                                <option value="Graduation Pass / Equivalent">Graduation Pass / Equivalen</option>
-                                <option value="Post Graduation Pass / Equivalent">Post Graduation Pass / Equivalen</option>
+                                <option value="Graduation Pass / Equivalent">Graduation Pass / Equivalent</option>
+                                <option value="Post Graduation Pass / Equivalent">Post Graduation Pass / Equivalent</option>
                               </select>
                             </div>
                         </div>

@@ -94,14 +94,12 @@
         <!-- Pie Chart -->
         
        
-<div class="background float-right">
-<img src="assets/undraw/4.svg" height=280 style=" opacity: 0.3;">
-</div>        
+
 
 
         
 
-          </div>
+         
           
           <!-- /.col-md-6 -->
 
@@ -136,6 +134,7 @@
       </div><!-- /.container-fluid -->
     </div>
     <!-- /.content -->
+  </div>
   </div>
   <!-- /.content-wrapper -->
 <?php include('includes/footer.php');?>

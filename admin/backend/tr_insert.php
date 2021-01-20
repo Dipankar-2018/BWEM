@@ -24,7 +24,7 @@ if(isset($_POST['submit'])){
  $police_station = $obj->get_safe_str($_POST['police_station']);
  $pin = $obj->get_safe_str($_POST['pin']);
  $aoi = $obj->get_safe_str($_POST['aoi']);
- $year_of_exp = $obj->get_safe_str($_POST['year_of_exp']);
+ $year_of_exp = $obj->get_safe_str($_POST['year_of_exp']);  
  $location = $obj->get_safe_str($_POST['location']);
 
 //UPLOAD PHOTO
@@ -40,7 +40,7 @@ $photo_type_store = array('jpg', 'png', 'jpeg');
 
 if(in_array($photo_lwr, $photo_type_store)){
 
-    $photoName =  $email."_trainer_.".$photo_lwr;
+    $photoName =  $email."_trainer.".$photo_lwr;
     move_uploaded_file($photo_tem, '../images/photo/'.$photoName);
 }
 
@@ -57,7 +57,7 @@ if(in_array($photo_lwr, $photo_type_store)){
  $address_type_store = array('jpg', 'png', 'jpeg');
 
  if(in_array($addressProof_lower, $address_type_store)){
-    $finalAddress =  $email."_trainer_.".$addressProof_lower;
+    $finalAddress =  $email."_trainer.".$addressProof_lower;
     move_uploaded_file($addressProof_tmp, '../images/addressProof/'.$finalAddress);
 }
 
@@ -75,7 +75,7 @@ $education_cer_lower = strtolower(end($education_cer_array));
 $education_cer_store = array('jpg', 'png', 'jpeg');
 
 if(in_array($education_cer_lower, $education_cer_store)){
-   $finalEducation =  $email."_trainer_.".$education_cer_lower;
+   $finalEducation =  $email."_trainer.".$education_cer_lower;
    move_uploaded_file($education_cer_tmp, '../images/educationCer/'.$finalEducation);
 }
 
@@ -94,7 +94,7 @@ if(in_array($education_cer_lower, $education_cer_store)){
  $filestore = array('jpg', 'png', 'jpeg');
 
  if(in_array($fileExt, $filestore)){
-     $workExp =  $email."_trainer_.".$fileExt;
+     $workExp =  $email."_trainer.".$fileExt;
      move_uploaded_file($work_exp_tmp, '../images/expCertificate/'.$workExp);
  }
 
@@ -121,7 +121,7 @@ if(in_array($education_cer_lower, $education_cer_store)){
             // }
             if(in_array($fileext1, $fileextStor1))
 				{
-					$passbook= $email."_tr_bank_.".$fileext1;
+					$passbook= $email."_tr_bank.".$fileext1;
 					move_uploaded_file($filetemp1, '../images/bankPassbook/'.$passbook);
 				}else
 				{
@@ -143,7 +143,7 @@ if(in_array($education_cer_lower, $education_cer_store)){
        'education'=>$education,
        'address'=>$address,
        'state'=>$state,
-       'dist'=>$dist,
+       'district'=>$dist,
        'post_office'=>$post_office,
        'pstation'=>$police_station,
        'pin'=>$pin,
@@ -151,7 +151,7 @@ if(in_array($education_cer_lower, $education_cer_store)){
        'exp'=>$year_of_exp,
        'location'=>$location,
        'photo'=>$photoName,
-       'voter_adhar'=>$finalAddress,
+       'voter_aadhaar'=>$finalAddress,
        'education_doc'=>$finalEducation,
        'work_exp_doc'=>$workExp,
        'ac_no'=>$acc_no,
@@ -161,7 +161,7 @@ if(in_array($education_cer_lower, $education_cer_store)){
     );
   
     $result=$obj->insertData($table,$condition_arr);   
-    if($obj->getData($table,'count(id)',array('email'=>$email))[0]["count(id)"]=="1"){
+    if($result||$obj->getData($table,'count(id)',array('email'=>$email))[0]["count(id)"]=="1"){
         $_SESSION['formStatus']=true; 
     }else{
         $_SESSION['formStatus']=false;
