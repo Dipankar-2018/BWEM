@@ -1,2 +1,2 @@
-#Birgwsri Women Emopowerment Mission
-Creating Sustainable Livelihood
+#Birgwsri 
+Women Emopowerment Mission Creating Sustainable Livelihood
