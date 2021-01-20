@@ -10,7 +10,7 @@ if(isset($_POST['submit'])){
   }else{
     $registration_no = $obj->get_safe_str($_POST['registration_no']);
   }
-
+  $formID= $obj->getFormId("SHG","self_help_group");
   $group_name = $obj->get_safe_str($_POST['group_name']);
   $address = $obj->get_safe_str($_POST['address']);
   $post_office = $obj->get_safe_str($_POST['post_office']);
@@ -45,7 +45,7 @@ if(isset($_POST['submit'])){
             // }
             if(in_array($fileext1, $fileextStor1))
 				{
-					$passbook=$registration_no."_shg_bank_".$group_name.".".$fileext1;
+					$passbook=$formID."_shg_bank.".$fileext1;
 					move_uploaded_file($filetemp1, '../images/bankPassbook/'.$passbook);
 				}else
 				{
@@ -66,13 +66,14 @@ if(isset($_POST['submit'])){
             // }
             if(in_array($fileext2, $fileextStor2))
 				{
-					$registrationCertificate=$registration_no."_shg_reg_".$group_name.".".$fileext2;
+					$registrationCertificate=$formID."_shg_reg.".$fileext2;
 					move_uploaded_file($filetemp2, '../images/registrationCertificate/'.$registrationCertificate);
 				}else
 				{
 					// File Extension Error
 				}
   $condition_arr=array(
+      'formID'=>$formID,
       'registration_no'=>$registration_no,
        'group_name'=>$group_name,
        'address'=>$address,

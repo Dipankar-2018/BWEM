@@ -6,7 +6,7 @@ if(isset($_POST['submit'])){
     $obj = new query();
     
     $table='trainee';
-
+ $formID= $obj->getFormId("TRNE",$table);
  $name = $obj->get_safe_str($_POST['name']);
  $email = $obj->get_safe_str($_POST['email']);
  $contact = $obj->get_safe_str($_POST['contact']);
@@ -41,7 +41,7 @@ $photo_type_store = array('jpg', 'png', 'jpeg');
 $photoName ="";
 if(in_array($photo_lwr, $photo_type_store)){
 
-    $photoName = $email."_trainee.".$photo_lwr;
+    $photoName = $formID."_trainee.".$photo_lwr;
     move_uploaded_file($photo_tem, '../images/photo/'.$photoName);
 }
 
@@ -58,7 +58,7 @@ if(in_array($photo_lwr, $photo_type_store)){
  $address_type_store = array('jpg', 'png', 'jpeg');
  $finalAddress="";
  if(in_array($addressProof_lower, $address_type_store)){
-    $finalAddress = $email."_trainee.".$addressProof_lower;
+    $finalAddress = $formID."_trainee.".$addressProof_lower;
     move_uploaded_file($addressProof_tmp, '../images/addressProof/'.$finalAddress);
 }
 
@@ -76,7 +76,7 @@ $education_cer_lower = strtolower(end($education_cer_array));
 $education_cer_store = array('jpg', 'png', 'jpeg');
 $finalEducation="";
 if(in_array($education_cer_lower, $education_cer_store)){
-   $finalEducation = $email."_trainee.".$education_cer_lower;
+   $finalEducation = $formID."_trainee.".$education_cer_lower;
    move_uploaded_file($education_cer_tmp, '../images/educationCer/'.$finalEducation);
 }
 
@@ -105,7 +105,7 @@ if(in_array($education_cer_lower, $education_cer_store)){
             $passbook="";
             if(in_array($fileext1, $fileextStor1))
 				{
-					$passbook=$email."_trainee.".$fileext1;
+					$passbook=$formID."_trainee.".$fileext1;
 					move_uploaded_file($filetemp1, '../images/bankPassbook/'.$passbook);
 				}else
 				{
@@ -113,6 +113,7 @@ if(in_array($education_cer_lower, $education_cer_store)){
                 }
 
   $condition_arr=array(
+       'formID'=>$formID,
        'name'=>$name,
        'email'=>$email,
        'contact'=>$contact,

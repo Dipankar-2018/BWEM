@@ -42,7 +42,7 @@ if(isset($_GET['dist'])&& $_GET['dist']!=""){
 }else
     header('location:./');//$result=$obj->getData($table); 
 // print_r($result);
-if($result==0)
+if(count($result)==0)
 $result=array();   
 ?>
 

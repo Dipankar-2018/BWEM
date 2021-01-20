@@ -64,7 +64,7 @@ if(isset($_FILES['photo'])&&$_FILES['photo']['size']!=0){
     $photo_lwr = strtolower(end($photo_arr));
     $photo_type_store = array('jpg', 'png', 'jpeg');
     if(in_array($photo_lwr, $photo_type_store)){
-        $photoName =  $email."_trainer.".$photo_lwr;
+        $photoName =  $formID."_trainer.".$photo_lwr;
         $condition_arr = array_merge($condition_arr, array('photo'=>$photoName));
         move_uploaded_file($photo_tem, '../images/photo/'.$photoName);
     }    
@@ -82,7 +82,7 @@ if(isset($_FILES['voter_aadhaar'])&&$_FILES['voter_aadhaar']['size']!=0){
     $addressProof_lower = strtolower(end($addressProof_array));
     $address_type_store = array('jpg', 'png', 'jpeg');
     if(in_array($addressProof_lower, $address_type_store)){
-        $finalAddress =  $email."_trainer.".$addressProof_lower;
+        $finalAddress =  $formID."_trainer.".$addressProof_lower;
         $condition_arr = array_merge($condition_arr, array('voter_aadhaar'=>$finalAddress));
         move_uploaded_file($addressProof_tmp, '../images/addressProof/'.$finalAddress);
     }
@@ -99,7 +99,7 @@ if(isset($_FILES['education_cer'])&&$_FILES['education_cer']['size']!=0){
     $education_cer_lower = strtolower(end($education_cer_array));
     $education_cer_store = array('jpg', 'png', 'jpeg');
     if(in_array($education_cer_lower, $education_cer_store)){
-        $finalEducation =  $email."_trainer.".$education_cer_lower;
+        $finalEducation =  $formID."_trainer.".$education_cer_lower;
         $condition_arr = array_merge($condition_arr, array('education_doc'=>$finalEducation));
         move_uploaded_file($education_cer_tmp, '../images/educationCer/'.$finalEducation);
     }
@@ -118,7 +118,7 @@ if(isset($_FILES['work_exp'])&&$_FILES['work_exp']['size']!=0){
     $fileExt = strtolower(end($explode));
     $filestore = array('jpg', 'png', 'jpeg');
     if(in_array($fileExt, $filestore)){
-        $workExp =  $email."_trainer.".$fileExt;
+        $workExp =  $formID."_trainer.".$fileExt;
         $condition_arr = array_merge($condition_arr, array('work_exp_doc'=>$workExp));
         move_uploaded_file($work_exp_tmp, '../images/expCertificate/'.$workExp);
     }
@@ -139,7 +139,7 @@ if(isset($_FILES['passbook_file'])&&$_FILES['passbook_file']['size']!=0){
     // }
     if(in_array($fileext1, $fileextStor1))
     {
-        $passbook= $email."_tr_bank.".$fileext1;
+        $passbook= $formID."_tr_bank.".$fileext1;
         $condition_arr = array_merge($condition_arr, array('bank_doc'=>$passbook));
         move_uploaded_file($filetemp1, '../images/bankPassbook/'.$passbook);
     }else
