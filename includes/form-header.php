@@ -101,7 +101,15 @@ session_start();
           </li>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#" data-toggle="modal" data-target="#loginModal"><i class="material-icons">login</i><b>Dept Login</b></a>
+            <?php
+              // $_SESSION['signinerr']=false;
+              if(isset($_SESSION['signinerr'])&&!$_SESSION['signinerr']){
+                echo '<a class="nav-link" href="./admin/"><i class="material-icons"></i><b>Goto Dashboard</b></a>';
+              }else{
+                echo '<a class="nav-link" href="#" data-toggle="modal" data-target="#loginModal"><i class="material-icons">login</i><b>Dept Login</b></a>';
+              }
+            ?>
+            
           </li>
         </ul>
       </div>

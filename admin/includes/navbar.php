@@ -45,7 +45,7 @@
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-danger" href="#" role="button">Logout
+        <a class="nav-link text-danger" href="./signout.php" role="button">Logout
           <i class="fas fa-sign-out-alt"></i>
         </a>
       </li>
