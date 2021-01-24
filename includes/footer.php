@@ -126,7 +126,8 @@
           <!--     *********   END BIG WHITE FOOTER v2     *********      -->
 
 <!-- Login Modal -->
-  <div class="modal fade" id="loginModal" tabindex="-1" role="dialog">
+<?php include("forms/loginmodal.php");?>
+  <!-- <div class="modal fade" id="loginModal" tabindex="-1" role="dialog">
     <div class="modal-dialog modal-login" role="document">
       <div class="modal-content">
         <div class="card card-signup card-plain">
@@ -137,8 +138,9 @@
               <p class="text-center">Departmental Login Only</p>    
             </div>
           </div>
+          <form class="form" method="post" action="./admin/signin.php">
           <div class="modal-body">
-            <form class="form" method="" action="">
+            
              
               <div class="card-body">
                 
@@ -149,7 +151,7 @@
                         <i class="material-icons">mail</i>
                       </span>
                     </div>
-                    <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                    <input name="user" type="email" class="form-control" id="inputEmail4" placeholder="Email">
                   </div>
                 </div>
                 <div class="form-group">
@@ -159,23 +161,23 @@
                         <i class="material-icons">lock_outline</i>
                       </span>
                     </div>
-                    <input type="password" placeholder="Password..." class="form-control" />
+                    <input name="password" type="password" placeholder="Password..." class="form-control" />
                   </div>
                 </div>
+
               </div>
-            </form>
+            
           </div>
           <div class="modal-footer justify-content-center">
 
-            <button class="btn btn-info btn-round">
-                <i class="material-icons">login</i> Login
-              </button>
+          <input type="submit" value="login" class="btn btn-info btn-round"/>
               <div class="space-50"></div>
           </div>
+          </form>
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
   <!--  End Modal -->
   
   

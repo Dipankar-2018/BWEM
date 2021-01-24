@@ -104,8 +104,13 @@
           <li class="nav-item">
             <!-- <a class="nav-link" href="#" data-toggle="modal" data-target="#loginModal"><i class="material-icons">login</i><b>Dept Login</b></a> -->
             <?php
-              // $_SESSION['signinerr']=false;
-                if(isset($_SESSION['signinerr'])&&!$_SESSION['signinerr']){
+              // $_SESSION['signinerr']=true;
+              // if($_SESSION['signinerr']){
+              //   echo "yes";
+              // }else{
+              //   echo "no";
+              // }
+                if(isset($_SESSION['login'])&&$_SESSION['login']){
                   echo '<a class="nav-link" href="./admin/"><i class="material-icons"></i><b>Goto Dashboard</b></a>';
                 }else{
                   echo '<a class="nav-link" href="#" data-toggle="modal" data-target="#loginModal"><i class="material-icons">login</i><b>Dept Login</b></a>';

@@ -1,21 +1,21 @@
 <?php
 session_start();
 $error=false;
-if(isset($_POST['signin']))
+if(isset($_POST['submit']))
 {
     if($_SERVER['REQUEST_METHOD']=='POST')
     {
         include("conn/database.php");
         $obj = new query();  
         $table="user";
-        $username=$obj->get_safe_str(trim($_POST['username']));
-		$password= hash('sha512',$obj->get_safe_str(trim($_POST['password'])));
-        $result=$obj->getData($table,'user',array('user'=>$username,'password'=>$password));
-        
-        $isValidUser=$result['user']==$username;
+        echo $email=$obj->get_safe_str(trim($_POST['email']));
+	    $password= hash('sha512',$obj->get_safe_str(trim($_POST['password'])));
+        $result=$obj->getData($table,'user,email',array('email'=>$email,'password'=>$password));
+        // print_r($result[0]);
+        $isValidUser=$result[0]['email']==$email;
         if($isValidUser){
             $_SESSION['login']=true;
-            $_SESSION['username']=$username;
+            $_SESSION['user']=$result[0]['user'];
         }else{
             $_SESSION['login']=false;
         }
