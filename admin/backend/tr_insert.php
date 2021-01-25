@@ -7,7 +7,7 @@ if(isset($_POST['submit'])){
     include("../conn/database.php");
     $obj = new query();
     $table='trainer';
-
+ $formID= $obj->getFormId("TRNR",$table);
  $name = $obj->get_safe_str($_POST['name']);
  $email = $obj->get_safe_str($_POST['email']);
  $contact = $obj->get_safe_str($_POST['contact']);
@@ -40,7 +40,7 @@ $photo_type_store = array('jpg', 'png', 'jpeg');
 
 if(in_array($photo_lwr, $photo_type_store)){
 
-    $photoName =  $email."_trainer.".$photo_lwr;
+    $photoName =  $formID."_trainer.".$photo_lwr;
     move_uploaded_file($photo_tem, '../images/photo/'.$photoName);
 }
 
@@ -57,7 +57,7 @@ if(in_array($photo_lwr, $photo_type_store)){
  $address_type_store = array('jpg', 'png', 'jpeg');
 
  if(in_array($addressProof_lower, $address_type_store)){
-    $finalAddress =  $email."_trainer.".$addressProof_lower;
+    $finalAddress =  $formID."_trainer.".$addressProof_lower;
     move_uploaded_file($addressProof_tmp, '../images/addressProof/'.$finalAddress);
 }
 
@@ -75,7 +75,7 @@ $education_cer_lower = strtolower(end($education_cer_array));
 $education_cer_store = array('jpg', 'png', 'jpeg');
 
 if(in_array($education_cer_lower, $education_cer_store)){
-   $finalEducation =  $email."_trainer.".$education_cer_lower;
+   $finalEducation =  $formID."_trainer.".$education_cer_lower;
    move_uploaded_file($education_cer_tmp, '../images/educationCer/'.$finalEducation);
 }
 
@@ -94,7 +94,7 @@ if(in_array($education_cer_lower, $education_cer_store)){
  $filestore = array('jpg', 'png', 'jpeg');
 
  if(in_array($fileExt, $filestore)){
-     $workExp =  $email."_trainer.".$fileExt;
+     $workExp =  $formID."_trainer.".$fileExt;
      move_uploaded_file($work_exp_tmp, '../images/expCertificate/'.$workExp);
  }
 
@@ -121,7 +121,7 @@ if(in_array($education_cer_lower, $education_cer_store)){
             // }
             if(in_array($fileext1, $fileextStor1))
 				{
-					$passbook= $email."_tr_bank.".$fileext1;
+					$passbook= $formID."_tr_bank.".$fileext1;
 					move_uploaded_file($filetemp1, '../images/bankPassbook/'.$passbook);
 				}else
 				{
@@ -129,9 +129,8 @@ if(in_array($education_cer_lower, $education_cer_store)){
                 }
                 
 
-
-
   $condition_arr=array(
+       'formID'=>$formID,
        'name'=>$name,
        'email'=>$email,
        'contact'=>$contact,

@@ -1,5 +1,8 @@
 <?php
  session_start();
+ if(!isset($_SESSION['login']) ||  !$_SESSION['login']){
+   header('location:../');
+ }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -38,14 +41,18 @@
     </ul>
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
-     
+    <li class="nav-item">
+        <a class="nav-link" href="#">
+          <?php echo "Hi, ". $_SESSION['user'];?>
+        </a>
+      </li>
       <li class="nav-item">
         <a class="nav-link" data-widget="fullscreen" href="#" role="button">
           <i class="fas fa-expand-arrows-alt"></i>
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-danger" href="#" role="button">Logout
+        <a class="nav-link text-danger" href="./signout.php" role="button">Logout
           <i class="fas fa-sign-out-alt"></i>
         </a>
       </li>

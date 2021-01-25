@@ -10,7 +10,7 @@ if(isset($_POST['submit'])&&isset($_POST['id'])){
     }else{
       $registration_no = $obj->get_safe_str($_POST['registration_no']);
     }
-  
+  $formID=$obj->getData("association",'formID',array('id'=>$id));
   $group_name = $obj->get_safe_str($_POST['group_name']);
   $address = $obj->get_safe_str($_POST['address']);
   $post_office = $obj->get_safe_str($_POST['post_office']);
@@ -68,7 +68,7 @@ if(isset($_POST['submit'])&&isset($_POST['id'])){
             // }
             if(in_array($fileext1, $fileextStor1))
 				{
-					$passbook=$registration_no."_as_bank_".$group_name.".".$fileext1;
+					$passbook=$formID."_as_bank.".$fileext1;
 					move_uploaded_file($filetemp1, '../images/bankPassbook/'.$passbook);
 				}else
 				{
@@ -92,7 +92,7 @@ if(isset($_POST['submit'])&&isset($_POST['id'])){
             // }
             if(in_array($fileext2, $fileextStor2))
 				{
-					$registrationCertificate=$registration_no."_as_reg_".$group_name.".".$fileext2;
+					$registrationCertificate=$formID."_as_reg.".$fileext2;
 					move_uploaded_file($filetemp2, '../images/registrationCertificate/'.$registrationCertificate);
 				}else
 				{

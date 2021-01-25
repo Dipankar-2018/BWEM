@@ -50,7 +50,7 @@ class query extends database{
 			}
 			return $arr;
 		}else{
-			return 0;
+			return array();
 		}
 	}
 	
@@ -111,6 +111,24 @@ class query extends database{
 			return mysqli_real_escape_string($this->connect(),$str);
 		}
 	}
+
+	private function getRandomString($length = 10, $chars = '0123456789A') {
+		$str = '';
+		$size = strlen($chars);
+		for ($i = 0; $i < $length; $i++) {
+			$str .= $chars[mt_rand(0, $size - 1)];
+		}
+		return $str;
+	}
+	
+	public function getFormId($str1,$table){
+		$formID=$str1.$this->getRandomString();
+		$dbData=$this->getData($table,'formID',array('formID'=>$formID));
+		while(count($dbData)!=0)
+			$formID=$str1.$this->getRandomString();
+		return $formID;
+	}
+	
 }
 
 
