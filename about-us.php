@@ -1,4 +1,4 @@
-<?php include('includes/header.php'); ?>
+<?php include('includes/form-header.php'); ?>
   <div class="page-header header-filter header-small" data-parallax="true" style="background-image: url('assets/img/bg9.jpg');">
     <div class="container">
       <div class="row">

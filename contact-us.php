@@ -1,4 +1,4 @@
-<?php include('includes/header.php'); ?>
+<?php include('includes/form-header.php'); ?>
 
   <div id="contactUsMap" class="big-map" style="margin-top:15rem;"></div>
   <div class="main main-raised" style="z-index:-3">

@@ -138,7 +138,7 @@
             </div>
           </div>
           <div class="modal-body">
-            <form class="form" method="" action="">
+            <form class="form" method="post" action="../admin/backend/login.php">
              
               <div class="card-body">
                 
@@ -169,9 +169,8 @@
 
             <button class="btn btn-info btn-round">
                 <i class="material-icons">login</i> Login
-              </button>
-              <div class="space-50"></div>
-          </div>
+              </button>        
+            <div class="space-50"></div>          
         </div>
       </div>
     </div>
