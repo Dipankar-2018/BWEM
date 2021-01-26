@@ -10,8 +10,8 @@ if(isset($isForm)&&$isForm){
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <link rel="apple-touch-icon" sizes="76x76" href="<?php echo $location;?>assets/img/apple-icon.png">
-  <link rel="icon" type="image/png" href="<?php echo $location;?>assets/img/favicon.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="<?php echo $location;?>assets/img/logos/apple-icon.png">
+  <link rel="icon" type="image/png" href="<?php echo $location;?>assets/img/logos/favicon.png">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title>
     BWEM
@@ -31,10 +31,10 @@ if(isset($isForm)&&$isForm){
     <div class="navbar-translate">
         <a class="navbar-brand" href="<?php echo $location;?>index.php">
         <div class="logo-big">
-            <img src="<?php echo $location;?>assets/img/faces/logo.jpg" alt="Circle Image"  class="rounded-circle img-fluid">
+            <img src="<?php echo $location;?>assets/img/logos/logo.jpg"  alt="Circle Image"  class="rounded-circle img-fluid">
           </div>
           <div class="logo-small">
-          <img src="<?php echo $location;?>assets/img/faces/logo.jpg" alt="Circle Image"  class="rounded-circle img-fluid">
+          <img src="<?php echo $location;?>assets/img/logos/logo.jpg"  alt="Circle Image"  class="rounded-circle img-fluid">
           </div>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">

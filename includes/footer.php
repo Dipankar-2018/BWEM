@@ -199,26 +199,7 @@ if(isset($isForm)&&$isForm){
   
 
 
-<script>
 
-$(document).ready(function(){
-    $("#forgotPwd").on("click", function(){
-
-    $("#sendOtp").val("Request a new password");
-    
-    $("#forgotPwd").remove();
-
-    $("#pwdfield").remove();
-
-    $("#title").text("Forgot Password...?");
-
-    $("#text").text("Here you can easily retrieve a new password.");
-
-});
-
-}); 
-
-</script>
 </body>
 
 </html>
