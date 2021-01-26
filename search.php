@@ -63,7 +63,7 @@
 
       <div class="result" style="height:9rem">
       
-      
+        <h1>Result</h1>
       
       </div>  
   
