@@ -29,7 +29,7 @@ if(isset($isForm)&&$isForm){
   <nav class="navbar navbar bg-info  fixed-top  navbar-expand-lg "  id="sectionsNav">
     <div class="container">
     <div class="navbar-translate">
-        <a class="navbar-brand" href="index.php">
+        <a class="navbar-brand" href="<?php echo $location;?>index.php">
         <div class="logo-big">
             <img src="<?php echo $location;?>assets/img/faces/logo.jpg" alt="Circle Image"  class="rounded-circle img-fluid">
           </div>
