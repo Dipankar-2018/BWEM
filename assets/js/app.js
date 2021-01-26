@@ -225,9 +225,17 @@ function previewTraineeForm(){
 document.querySelector('#formStatusBtn').addEventListener('click',()=>{
   const formId=document.querySelector('#inputFormID').value;
   const cat=document.querySelector('#cat').value;
-  if(formId!="" || cat!=""){
+  if(formId==="" || cat===""){
     swal("All fields are Mandatory!");
   }else{
-
+      $.ajax({
+        url:"./admin/backend/search_form_status.php",
+        method:"post",
+        data:{formId:formId,cat:cat},
+        dataType:"text",
+        success:function(data){
+          document.querySelector('#formResultStatus').innerHTML=data;
+        },
+      });
   }
 });
