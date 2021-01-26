@@ -1,4 +1,7 @@
-<?php include('includes/form-header.php'); ?>           
+<?php 
+$isForm=true;
+include('../includes/form-header.php'); 
+?>           
 
 
   <div class="page-header header-filter" data-parallax="true" style="background-image: url('../assets/img/city-profile.jpg');"></div>
@@ -348,4 +351,4 @@
     </div>
   </div>
   <?php include('./includes/htmlpart/previewmodal.php');?>
-<?php include('includes/footer.php'); ?>
+<?php include('../includes/footer.php'); ?>

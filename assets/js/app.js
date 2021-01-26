@@ -218,6 +218,16 @@ function previewTraineeForm(){
   document.querySelector('#ifsc_code').innerHTML=$('input[name="ifsc_code"]').val();
   document.querySelector('#bank_name').innerHTML=$('input[name="bank_name"]').val();
   document.querySelector('#branch_name').innerHTML=$('input[name="branch_name"]').val();
-
-
 }
+
+
+//Form Status Logic
+document.querySelector('#formStatusBtn').addEventListener('click',()=>{
+  const formId=document.querySelector('#inputFormID').value;
+  const cat=document.querySelector('#cat').value;
+  if(formId!="" || cat!=""){
+    swal("All fields are Mandatory!");
+  }else{
+
+  }
+});
