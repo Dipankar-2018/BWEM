@@ -9,7 +9,7 @@
               <p class="text-center">Departmental Login Only</p>    
             </div>
           </div>
-          <form class="form" method="post" action="http://localhost/BWEMF/admin/signin.php">
+          <form class="form" method="post" action="http://localhost/BWEM/admin/signin.php">
           <div class="modal-body">
             
              
