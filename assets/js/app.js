@@ -66,6 +66,7 @@ $(document).ready(function() {
             x++; 
 	  }
     });
+
 });
 //remove element 
 function removeElement(e){
@@ -291,3 +292,5 @@ function formStatusMsg(props){
   document.querySelector('#formResultStatus').innerHTML=str;
 }
 }
+
+
