@@ -228,6 +228,6 @@ document.querySelector('#formStatusBtn').addEventListener('click',()=>{
   if(formId!="" || cat!=""){
     swal("All fields are Mandatory!");
   }else{
-    
+
   }
 });
