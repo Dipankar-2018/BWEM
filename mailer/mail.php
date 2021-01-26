@@ -12,8 +12,6 @@ $sender_email="mailer_email";
 $password="mailer_password";
 $sender_name="host_name";
 
-include('./mail-content.php');
-
 //Logic
 $mail_sent=false;
 try {

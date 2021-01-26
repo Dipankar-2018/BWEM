@@ -22,5 +22,5 @@ if($formInfo){
     $AltBody='Hi '.$reciever_name.',Your form ID is :'.$formID.' Thank You';
 }
 
-
+include('./mail.php');
 ?>
