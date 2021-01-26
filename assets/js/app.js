@@ -222,6 +222,7 @@ function previewTraineeForm(){
 
 
 //Form Status Logic
+if(document.querySelector('#formStatusBtn')!==null){
 document.querySelector('#formStatusBtn').addEventListener('click',()=>{
   document.querySelector('#formResultStatus').innerHTML="";
   const formId=document.querySelector('#inputFormID').value;
@@ -288,4 +289,5 @@ function formStatusMsg(props){
   </div>
   `;
   document.querySelector('#formResultStatus').innerHTML=str;
+}
 }
