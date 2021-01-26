@@ -7,9 +7,22 @@ require 'PHPMailer/src/Exception.php';
 require 'PHPMailer/src/PHPMailer.php';
 require 'PHPMailer/src/SMTP.php';
 $mail = new PHPMailer(true);
-include_once 'config.php';
-$mail_sent=false;
+//Sender Configuration
+$sender_email="mailer_email"; 
+$password="mailer_password";
+$sender_name="host_name";
+
+//reciever
+$reciever_email="reciever_email";
 $reciever_name=$sender_email;
+
+//content
+$Subject="sub";
+$Body="Body";
+$AltBody="AltBody";
+
+//Logic
+$mail_sent=false;
 try {
     //Goto gmail security turn on less secure app 
       $mail->isSMTP();                                            // Send using SMTP
