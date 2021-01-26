@@ -19,10 +19,6 @@
           </div>
         </div>    
      
-          
-
-             
-          <form>
    <div class="form-group">
    <div class="row">
    <div class="col-6 col-md-8 ml-auto mr-auto">
@@ -57,20 +53,16 @@
    <button type="button" id="formStatusBtn" class="btn btn-primary"> <i class="material-icons">search</i> Search</button>
   </div>
 
+    <div class="formResultStatus" style="height:9rem">
+    
+    
+    
+    </div>  
 
-</form>
-
-
-      <div class="result" style="height:9rem">
-      
-      
-      
-      </div>  
   
-   
-      </div>
     </div>
   </div>
+</div>
 
 
 
