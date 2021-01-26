@@ -1,5 +1,10 @@
 <?php
  session_start();
+$location="";
+if(isset($isForm)&&$isForm){
+  $location="../";
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">

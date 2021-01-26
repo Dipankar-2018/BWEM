@@ -54,7 +54,7 @@
 
    </div>  
 
-   <button type="submit" class="btn btn-primary"> <i class="material-icons">search</i> Search</button>
+   <button type="button" id="formStatusBtn" class="btn btn-primary"> <i class="material-icons">search</i> Search</button>
   </div>
 
 
