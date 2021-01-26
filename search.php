@@ -53,10 +53,51 @@
    <button type="button" id="formStatusBtn" class="btn btn-primary"> <i class="material-icons">search</i> Search</button>
   </div>
 
-    <div class="formResultStatus" style="height:9rem">
-    
-    
-    
+<div class="col-md-10" style="margin-top:6rem;">
+      <div class="card">
+          <div class="card-header card-header-text card-header-success">
+            <div class="card-text">
+            <span class="material-icons">add_task</span> <h4 class="card-title"> Your Application status</h4>
+            </div>
+          </div>
+          <div class="card-body">
+             Your application has been approved on 25-04-2021. For more information please visit our office.
+          </div>
+      </div>
+  </div>
+
+  <div class="col-md-10" style="margin-top:6rem;">
+      <div class="card">
+          <div class="card-header card-header-text card-header-warning">
+            <div class="card-text">
+            <span class="material-icons">pan_tool</span> <h4 class="card-title"> Your Application status</h4>
+            </div>
+          </div>
+          <div class="card-body">
+             Your application is waiting for approval.
+          </div>
+      </div>
+  </div>
+
+
+  <div class="col-md-10" style="margin-top:6rem;">
+      <div class="card">
+          <div class="card-header card-header-text card-header-danger">
+            <div class="card-text">
+            <span class="material-icons">print_disabled</span> <h4 class="card-title"> Your Application status</h4>
+            </div>
+          </div>
+          <div class="card-body">
+             Your application has been Rejected on 25-04-2021. For more information please visit our office.
+          </div>
+      </div>
+  </div>
+
+
+<div class="" style="height:4rem"></div>
+
+
+
     </div>  
 
   
