@@ -114,7 +114,7 @@ if(isset($isForm)&&$isForm){
               if(isset($_SESSION['signinerr'])&&!$_SESSION['signinerr']){
                 echo '<a class="nav-link" href="<?php echo $location;?>admin/"><i class="material-icons"></i><b>Goto Dashboard</b></a>';
               }else{
-                echo '<a class="nav-link" href="#" data-toggle="modal" data-target="#loginModal"><i class="material-icons">login</i><b>Dept Login</b></a>';
+                echo '<a class="nav-link" id="login_show" href="#" data-toggle="modal" data-target="#loginModal"><i class="material-icons">login</i><b>Dept Login</b></a>';
               }
             ?>
             

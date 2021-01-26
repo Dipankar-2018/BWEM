@@ -294,3 +294,19 @@ function formStatusMsg(props){
 }
 
 
+//login modal transion to forgot pass
+$(document).ready(function(){
+  $("#forgotPwd").on("click", function(){
+    $("#login").css("display", "none");
+    $("#email_otp").css("display", "block");
+  });
+
+  $("#login_show").on("click", function(){
+    $("#login").css("display", "block");
+    $("#email_otp").css("display", "none");
+  });
+
+
+}); 
+
+

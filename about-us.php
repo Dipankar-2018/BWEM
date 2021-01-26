@@ -9,7 +9,7 @@
       </div>
     </div>
   </div>
-  <div class="main main-raised" style="z-index:1">
+  <div class="main main-raised">
     <div class="container">
       <!-- <div class="about-description text-center">
         <div class="row">
