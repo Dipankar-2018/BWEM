@@ -1,14 +1,14 @@
 <?php
 session_start();
 $error=false;
-if(isset($_POST['submit']))
+if(isset($_POST['email']))
 {
     if($_SERVER['REQUEST_METHOD']=='POST')
     {
         include("conn/database.php");
         $obj = new query();  
         $table="user";
-        echo $email=$obj->get_safe_str(trim($_POST['email']));
+        // echo $email=$obj->get_safe_str(trim($_POST['email']));
 	    $password= hash('sha512',$obj->get_safe_str(trim($_POST['password'])));
         $result=$obj->getData($table,'user,email',array('email'=>$email,'password'=>$password));
         // print_r($result[0]);
