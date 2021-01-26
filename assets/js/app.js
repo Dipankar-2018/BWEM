@@ -223,6 +223,7 @@ function previewTraineeForm(){
 
 //Form Status Logic
 document.querySelector('#formStatusBtn').addEventListener('click',()=>{
+  document.querySelector('#formResultStatus').innerHTML="";
   const formId=document.querySelector('#inputFormID').value;
   const cat=document.querySelector('#cat').value;
   if(formId==="" || cat===""){
@@ -232,10 +233,59 @@ document.querySelector('#formStatusBtn').addEventListener('click',()=>{
         url:"./admin/backend/search_form_status.php",
         method:"post",
         data:{formId:formId,cat:cat},
-        dataType:"text",
+        dataType:"json",
         success:function(data){
-          document.querySelector('#formResultStatus').innerHTML=data;
+          if(data[0].error===1){
+            swal("Form Details Not found, Please enter the details correctly and try again");
+          }else{
+            const sDate=new Date(data[0].form_submitted_on.toString());
+            let rDate=null;
+            if(data[0].form_reviewed_on!==null)
+              rDate=new Date(data[0].form_reviewed_on.toString());
+          
+            const fStatus=parseInt(data[0].formStatus.toString());
+            let color="warning";
+            let icon="query_builder";
+            let status="Pending";
+            if(fStatus===1){
+              color="success";
+              icon="check_circle_outline";
+              status="Approved";
+            }else if(fStatus===0){
+              color="danger";
+              icon="error_outline";
+              status="Rejected";
+            }
+            const props={
+              error:parseInt(data[0].error.toString()),
+              submissionDate:`${sDate.getDate().toString().padStart(2,"0")}-${(sDate.getMonth()+1).toString().padStart(2,"0")}-${sDate.getFullYear()}`,
+              color:color,
+              icon:icon,
+              status:status,
+              reviewDate:rDate
+            }
+            if(rDate!==null)
+              props.reviewDate=`${rDate.getDate().toString().padStart(2,"0")}-${(rDate.getMonth()+1).toString().padStart(2,"0")}-${rDate.getFullYear()}`;
+            formStatusMsg(props);
+          }          
         },
       });
   }
 });
+function formStatusMsg(props){
+  str=`
+  <div class="col-md-10" style="margin-top:6rem;">
+      <div class="card">
+          <div class="card-header card-header-text card-header-${props.color}">
+            <div class="card-text"><h5>Form Submission Date: ${props.submissionDate}</h5>
+            <span class="material-icons">${props.icon}</span> <h4 class="card-title"> Your Application status: ${props.status}</h4>
+            </div>
+          </div>
+          <div class="card-body">
+             Your application has been ${props.status}${props.reviewDate!==null?` on ${props.reviewDate}`:``}. For more information please visit our office.
+          </div>
+      </div>
+  </div>
+  `;
+  document.querySelector('#formResultStatus').innerHTML=str;
+}

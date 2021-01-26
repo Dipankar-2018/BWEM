@@ -36,12 +36,12 @@
             <div class="dropdown-menu">
 
                 <a class="dropdown-item" onclick="$( '#cat').val('shg'); $('#btn').text('Self Help Group'); ">SHG</a>
-                <a class="dropdown-item" onclick="$( '#cat').val('entre'); $('#btn').text('Entrepreneurs'); ">Entrepreneurs</a>
+                <a class="dropdown-item" onclick="$( '#cat').val('en'); $('#btn').text('Entrepreneurs'); ">Entrepreneurs</a>
                 <a class="dropdown-item" onclick="$( '#cat').val('ngo'); $('#btn').text('NGO'); "> NGO's</a>
-                <a class="dropdown-item" onclick="$( '#cat').val('assoc'); $('#btn').text('Associations'); "> Associations</a>
-                <a class="dropdown-item" onclick="$( '#cat').val('trainee'); $('#btn').text('Trainee'); "> Trainee</a>
-                <a class="dropdown-item" onclick="$( '#cat').val('trainer'); $('#btn').text('Trainer'); "> Trainer</a>
-                <a class="dropdown-item" onclick="$( '#cat').val('agency'); $('#btn').text('Agency'); "> Agency</a>
+                <a class="dropdown-item" onclick="$( '#cat').val('as'); $('#btn').text('Associations'); "> Associations</a>
+                <a class="dropdown-item" onclick="$( '#cat').val('tre'); $('#btn').text('Trainee'); "> Trainee</a>
+                <a class="dropdown-item" onclick="$( '#cat').val('tr'); $('#btn').text('Trainer'); "> Trainer</a>
+                <a class="dropdown-item" onclick="$( '#cat').val('ag'); $('#btn').text('Agency'); "> Agency</a>
                
          </div>
         </div>
@@ -51,54 +51,15 @@
    </div>  
 
    <button type="button" id="formStatusBtn" class="btn btn-primary"> <i class="material-icons">search</i> Search</button>
-  </div>
-
-<div class="col-md-10" style="margin-top:6rem;">
-      <div class="card">
-          <div class="card-header card-header-text card-header-success">
-            <div class="card-text">
-            <span class="material-icons">add_task</span> <h4 class="card-title"> Your Application status</h4>
-            </div>
-          </div>
-          <div class="card-body">
-             Your application has been approved on 25-04-2021. For more information please visit our office.
-          </div>
-      </div>
-  </div>
-
-  <div class="col-md-10" style="margin-top:6rem;">
-      <div class="card">
-          <div class="card-header card-header-text card-header-warning">
-            <div class="card-text">
-            <span class="material-icons">pan_tool</span> <h4 class="card-title"> Your Application status</h4>
-            </div>
-          </div>
-          <div class="card-body">
-             Your application is waiting for approval.
-          </div>
-      </div>
+   <div id="formResultStatus" class="" style="padding:20px;height:20em;"></div>
   </div>
 
 
-  <div class="col-md-10" style="margin-top:6rem;">
-      <div class="card">
-          <div class="card-header card-header-text card-header-danger">
-            <div class="card-text">
-            <span class="material-icons">print_disabled</span> <h4 class="card-title"> Your Application status</h4>
-            </div>
-          </div>
-          <div class="card-body">
-             Your application has been Rejected on 25-04-2021. For more information please visit our office.
-          </div>
-      </div>
-  </div>
-
-
-<div class="" style="height:4rem"></div>
 
 
 
-    </div>  
+
+</div>  
 
   
     </div>
