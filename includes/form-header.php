@@ -86,7 +86,7 @@ session_start();
                 <i class="material-icons">location_city</i> Registration of Training Agency
               </a>
             </div>
-          <li class="nav-item">
+     
           <li class="nav-item">
             <a class="nav-link" href="gallery.php"><i class="material-icons">photo</i><b>Gallery</b></a>
           </li>
@@ -99,7 +99,10 @@ session_start();
           <li class="nav-item">
             <a class="nav-link" href="#"><i class="material-icons">school</i><b>FAQ</b></a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="search.php"><i class="material-icons">search</i><b>Application Status</b></a>
           </li>
+     
           <li class="nav-item">
             <?php
               // $_SESSION['signinerr']=false;
