@@ -1,7 +1,21 @@
 <?php include("includes/navbar.php"); ?>
 <?php include("includes/sidenav.php"); ?>
 
-
+<?php 
+include("conn/database.php");
+$cat=array('shg'=>'self_help_group','ep'=>'entrepreneur','ng'=>'ngo','as'=>'association','tr'=>'trainer','tre'=>'trainee');  
+$table="";
+function getDistCount($cat,$district){
+  $obj = new query();
+  $count=0;
+  foreach ($cat as $key=>$table)
+  {
+    $result=$obj->getData($table,'count(id)',array('district'=>$district));
+    $count+=$result[0]['count(id)'];
+  }
+  return $count;
+}
+?>
   
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -33,7 +47,7 @@
             <!-- small box -->
             <div class="small-box bg-info">
               <div class="inner">
-                <h3>150</h3>
+                <h3><?php echo getDistCount($cat,"kokrajhar");?></h3>
 
                 <p><b>TOTAL NO. OF REGISTRATION IN KOKRAJHAR</b></p>
               </div>
@@ -48,7 +62,7 @@
             <!-- small box -->
             <div class="small-box bg-success">
               <div class="inner">
-                <h3>44</h3>
+                <h3><?php echo getDistCount($cat,"chirang");?></h3>
 
                 <p><b>TOTAL NO. OF REGISTRATION IN CHIRANG</b></p>
               </div>
@@ -63,7 +77,7 @@
             <!-- small box -->
             <div class="small-box bg-warning">
               <div class="inner">
-              <h3>4400</h3>
+              <h3><?php echo getDistCount($cat,"baksa");?></h3>
 
                 <p><b>TOTAL NO. OF REGISTRATION IN BAKSA</b></p>
               </div>
@@ -78,7 +92,7 @@
             <!-- small box -->
             <div class="small-box bg-danger">
               <div class="inner">
-              <h3>4400</h3>
+              <h3><?php echo getDistCount($cat,"udalguri");?></h3>
 
                 <p><b>TOTAL NO. OF REGISTRATION IN UDALGURI</b></p>
               </div>

@@ -26,7 +26,7 @@ if(isset($isForm)&&$isForm){
 
 <body class="profile-page sidebar-collapse">
 <!-- Navigation Start -->  
-  <nav class="navbar navbar bg-success  fixed-top  navbar-expand-lg "  id="sectionsNav">
+  <nav class="navbar navbar bg-success  fixed-top  navbar-expand-lg "  id="sectionsNav" style="z-index:1200;">
     <div class="container">
     <div class="navbar-translate">
         <a class="navbar-brand" href="<?php echo $location;?>index.php">
