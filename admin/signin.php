@@ -11,8 +11,11 @@ if(isset($_POST['submit'])&&isset($_POST['email'])&&isset($_POST['password']))
         $email=$obj->get_safe_str(trim($_POST['email']));
 	    $password= hash('sha512',$obj->get_safe_str(trim($_POST['password'])));
         $result=$obj->getData($table,'user,email',array('email'=>$email,'password'=>$password));
-        // print_r($result[0]);
-        $isValidUser=$result[0]['email']==$email;
+        if(count($result)>0)
+            $isValidUser=$result[0]['email']==$email;
+        else{
+            $isValidUser=false;
+        }
         if($isValidUser){
             $_SESSION['login']=true;
             $_SESSION['user']=$result[0]['user'];
@@ -20,7 +23,7 @@ if(isset($_POST['submit'])&&isset($_POST['email'])&&isset($_POST['password']))
             $_SESSION['login']=false;
         }
         header('location:./');
-        // die();
+        die();
         exit;
     }
     else{
