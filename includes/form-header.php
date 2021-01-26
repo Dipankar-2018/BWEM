@@ -110,9 +110,8 @@ if(isset($isForm)&&$isForm){
      
           <li class="nav-item">
             <?php
-              // $_SESSION['signinerr']=false;
-              if(isset($_SESSION['signinerr'])&&!$_SESSION['signinerr']){
-                echo '<a class="nav-link" href="<?php echo $location;?>admin/"><i class="material-icons"></i><b>Goto Dashboard</b></a>';
+              if(isset($_SESSION['login'])&&$_SESSION['login']){
+                echo '<a class="nav-link" href="'.$location.'admin/"><i class="material-icons"></i><b>Goto Dashboard</b></a>';
               }else{
                 echo '<a class="nav-link" id="login_show" href="#" data-toggle="modal" data-target="#loginModal"><i class="material-icons">login</i><b>Dept Login</b></a>';
               }
