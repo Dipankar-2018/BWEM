@@ -9,7 +9,7 @@
           <div class="col-md-6 ml-auto mr-auto">
             <div class="profile">
               <div class="avatar">
-                <img src="assets/img/faces/logo.jpg" alt="Circle Image" class="img-raised rounded-circle img-fluid">
+                <img src="assets/img/logos/logo.jpg" alt="Circle Image" class="img-raised rounded-circle img-fluid">
               </div>
               <div class="name">
                 <h1>Application Status</h1>
