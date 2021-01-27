@@ -314,6 +314,10 @@ $(document).ready(function(){
 //reset pass
 if(document.querySelector('#passrset')!=null){
 document.querySelector('#passrset').addEventListener("click", function() {
+  const btn=document.querySelector('#passrset');
+  const btnProcessing=`<i class="fa fa-spinner fa-spin"></i>Processing`;
+  btn.innerHTML=btnProcessing;
+  const btnFinished=`Request a new password`;
   const email = document.querySelector('#reset-email').value;
   const errMsg=document.querySelector('#err_msg');
   errMsg.innerHTML="";
@@ -331,6 +335,7 @@ document.querySelector('#passrset').addEventListener("click", function() {
         swal("Reset link has been sent to your email, Please Check!");
       }else
         errMsg.innerHTML=data;
+        btn.innerHTML=btnFinished;
     }
   })
 });

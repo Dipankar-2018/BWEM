@@ -3,7 +3,7 @@
 <?php
 date_default_timezone_set("Asia/Kolkata");
 
-if(!isset($_GET['token'])&&!isset($_POST['new_password']))
+if(!isset($_GET['token'])&&!isset($_POST['resetsubmit']))
 {
     header('location: 403.html');
 }
@@ -16,7 +16,7 @@ $obj = new query();
     <div class="container">
 
 <?php
-if(isset($_POST['new_password']))
+if(isset($_POST['resetsubmit']))
 { 
         $token=$_SESSION['ton'];
         $new_pass = trim($obj->get_safe_str($_POST['new_pass']));
@@ -53,7 +53,7 @@ if(isset($_POST['new_password']))
             }
             else
             {
-                if ($username) {
+                if ($email) {
                   $new_pass = hash('sha512',trim($obj->get_safe_str($new_pass)));
                   $condition_arr= array(
                     'password'=>$new_pass,
@@ -132,7 +132,7 @@ if(isset($_GET['token']))
 
               </div>
               <div class="card-footer justify-content-center">
-                <input type="submit" name="submit" class="btn btn-rose btn-link btn-lg" value="Reset Now"/>
+                <input type="submit" name="resetsubmit" class="btn btn-rose btn-link btn-lg" value="Reset Now"/>
               </div>
             </div>
           </form>

@@ -7,9 +7,9 @@ require 'PHPMailer/src/PHPMailer.php';
 require 'PHPMailer/src/SMTP.php';
 $mail = new PHPMailer(true);
 //Sender Configuration
-$sender_email="mailer_email"; 
-$password="mailer_password";
-$sender_name="host_name";
+$sender_email="bwem2020@gmail.com"; 
+$password="BweM@2020";
+$sender_name="BWEM";
 
 //Logic
 $mailSent=false;
