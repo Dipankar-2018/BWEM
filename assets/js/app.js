@@ -304,6 +304,8 @@ $(document).ready(function(){
   $("#login_show").on("click", function(){
     $("#login").css("display", "block");
     $("#email_otp").css("display", "none");
+    document.querySelector('#reset-email').value="";
+    document.querySelector('#err_msg').innerHTML="";
   });
 
 
