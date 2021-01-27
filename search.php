@@ -37,7 +37,7 @@
 
                 <a class="dropdown-item" onclick="$( '#cat').val('shg'); $('#btn').text('Self Help Group'); ">SHG</a>
                 <a class="dropdown-item" onclick="$( '#cat').val('en'); $('#btn').text('Entrepreneurs'); ">Entrepreneurs</a>
-                <a class="dropdown-item" onclick="$( '#cat').val('ngo'); $('#btn').text('NGO'); "> NGO's</a>
+                <a class="dropdown-item" onclick="$( '#cat').val('ng'); $('#btn').text('NGO'); "> NGO's</a>
                 <a class="dropdown-item" onclick="$( '#cat').val('as'); $('#btn').text('Associations'); "> Associations</a>
                 <a class="dropdown-item" onclick="$( '#cat').val('tre'); $('#btn').text('Trainee'); "> Trainee</a>
                 <a class="dropdown-item" onclick="$( '#cat').val('tr'); $('#btn').text('Trainer'); "> Trainer</a>

@@ -18,8 +18,8 @@ if(isset($passReset)&&$passReset){
 if(isset($formInfo)&&$formInfo){
     // $formID="SHG......";//get from db
     $Subject='Registered Form ID';
-    $Body='Hi '.$reciever_name.',<br> Your form ID is :'.$formID.'<br> Thank You';
-    $AltBody='Hi '.$reciever_name.',Your form ID is :'.$formID.' Thank You';
+    $Body='Hi '.$reciever_name.',<br> Your registered form-ID is :'.$formID.'<br> Thank You';
+    $AltBody='Hi '.$reciever_name.',Your registered form-ID is :'.$formID.' Thank You';
 }
 
 include('mail.php');
