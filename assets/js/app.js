@@ -309,4 +309,28 @@ $(document).ready(function(){
 
 }); 
 
+//reset pass
+if(document.querySelector('#passrset')!=null){
+document.querySelector('#passrset').addEventListener("click", function() {
+  const email = document.querySelector('#reset-email').value;
+  const errMsg=document.querySelector('#err_msg');
+  errMsg.innerHTML="";
+  $.ajax({
+    url: "./admin/backend/passwordreseter.php",
+    method: "POST",
+    data: {
+      resetpass: 1,
+      email: email,
+    },
+    dataType: "text",
+    success: function(data) {
+      if(data=="1"){
+        document.querySelector('#back').click();
+        swal("Reset link has been sent to your email, Please Check!");
+      }else
+        errMsg.innerHTML=data;
+    }
+  })
+});
+}
 

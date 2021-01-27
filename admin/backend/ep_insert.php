@@ -116,6 +116,10 @@ if(isset($_POST['submit'])){
     }
         if($obj->getData('entrepreneur','count(id)',array('group_name'=>$group_name))[0]["count(id)"]=="1"){
             $_SESSION['formStatus']=true; 
+            $reciever_email=$head_email;
+            $reciever_name=$head_name;
+            $formInfo=true;
+            include('../../mailer/mail-content.php');
         }else{
             $_SESSION['formStatus']=false;
         }

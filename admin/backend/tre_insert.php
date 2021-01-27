@@ -144,6 +144,10 @@ if(in_array($education_cer_lower, $education_cer_store)){
     $result=$obj->insertData($table,$condition_arr);   
     if($result||$obj->getData($table,'count(id)',array('email'=>$email))[0]["count(id)"]=="1"){
         $_SESSION['formStatus']=true; 
+        $reciever_email=$email;
+        $reciever_name=$name;
+        $formInfo=true;
+        include('../../mailer/mail-content.php');
     }else{
         $_SESSION['formStatus']=false;
     }       

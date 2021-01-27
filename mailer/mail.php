@@ -1,5 +1,4 @@
 <?php
-
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
@@ -13,7 +12,7 @@ $password="mailer_password";
 $sender_name="host_name";
 
 //Logic
-$mail_sent=false;
+$mailSent=false;
 try {
     //Goto gmail security turn on less secure app 
       $mail->isSMTP();                                            // Send using SMTP
@@ -37,10 +36,11 @@ try {
       $mail->AltBody = $AltBody;
       
       $mail->send();
-      $mail_sent=true;
+      $mailSent=true;
       
   } catch (Exception $e) {
-      echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+      // echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+      $mailSent=false;
   }
 
 

@@ -63,7 +63,7 @@
               <p class="text-center" id="text">Here you can easily retrieve a new password.</p>    
             </div>
           </div>
-          <form class="form" method="post" action="http://localhost/BWEM/">
+          <!-- <form class="form" method="post" action="http://localhost/BWEM/"> -->
           <div class="modal-body">        
              
               <div class="card-body">                
@@ -74,19 +74,18 @@
                         <i class="material-icons">mail</i>
                       </span>
                     </div>
-                    <input name="email" type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                    <input id="reset-email" type="email" class="form-control" placeholder="Email" required>
                   </div>
+                  <p class="text-center text-bold text-danger" id="err_msg"></p>
                 </div>           
               </div>
-            
+             
           </div>
-          <div class="modal-footer justify-content-center">
-
-          <input type="submit" name="submit" value="Request a new password " class="btn btn-info btn-round">
-          
-              <!-- <div class="space-50" ></div> -->
+          <div class="modal-footer justify-content-center" style="margin-bottom: 2rem;">
+          <button type="button" class="btn btn-info btn-round" id="passrset">Request a new password</button>
+        
           </div>
-          </form>                             
+          <!-- </form>                              -->
         </div>
 
 
