@@ -41,6 +41,7 @@ class query extends database{
 		if($limit!=''){
 			$sql.=" limit $limit ";
 		}
+		// echo $sql;
 		//die($sql);
 		$result=$this->connect()->query($sql);
 		if($result->num_rows>0){
