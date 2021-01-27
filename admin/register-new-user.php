@@ -68,7 +68,7 @@ if(isset($_GET['type']) && $_GET['type']=='delete'){
 
       <form method="post" name="form_password">
         <div class="input-group mb-3">
-          <input type="text" class="form-control" placeholder="Full name" name="user-name">
+          <input type="text" class="form-control" placeholder="Full name" name="user-name" required>
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-user"></span>
@@ -76,7 +76,7 @@ if(isset($_GET['type']) && $_GET['type']=='delete'){
           </div>
         </div>
         <div class="input-group mb-3">
-          <input type="email" class="form-control" placeholder="Email" name="user-email">
+          <input type="email" class="form-control" placeholder="Email" name="user-email" required onkeyup="randomPassword(10);">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-envelope"></span>
@@ -84,7 +84,7 @@ if(isset($_GET['type']) && $_GET['type']=='delete'){
           </div>
         </div>
         <div class="input-group mb-3">
-          <input type="tell" class="form-control" placeholder="Phone number" name="user-phone">
+          <input type="tell" class="form-control" placeholder="Phone number" name="user-phone" required>
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-envelope"></span>
@@ -92,33 +92,11 @@ if(isset($_GET['type']) && $_GET['type']=='delete'){
           </div>
         </div>  
         <div class="input-group mb-3">
-        <input type="text" name="password" class="form-control readonly" placeholder="Click generate Password button" required style="pointer-events: none;">
-        
-        <div class="input-group-append">
-            <div class="input-group-text">
-              <span class="fas fa-lock"></span>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-        <button type='button' onClick="randomPassword(10);" class="btn btn-danger btn-sm">Generate Password <span class="fas fa-lock"></span></button>
-          <div class="col-8">
-            <!-- <div class="icheck-primary">
-              <input type="checkbox" id="agreeTerms" name="terms" value="agree">
-              <label for="agreeTerms">
-                 I agree to the <a href="#">terms</a>
-              </label>
-            </div> -->
-          </div>
-          <!-- /.col -->
-          <div class="col-4">
-        
-            <button type="submit" class="btn btn-success btn-block" name="submit">Register</button>
-        
-          </div>
-          <!-- /.col -->
-        </div>
-      </form>   
+        <input type="hidden" name="password" class="form-control readonly" placeholder="Click generate Password button">       
+     
+        </div>            
+            <button type="submit" class="btn btn-success btn-block" name="submit">Register</button>     
+        </form>   
                 
     </div>
     <!-- /.form-box -->
@@ -146,8 +124,9 @@ if(isset($_GET['type']) && $_GET['type']=='delete'){
                   <tr>
                     <th>ID</th>
                     <th>User Name</th>
-                    <th>User Contact</th>
-                    <th>Password</th>
+                    <th>User Email</th>
+                    <th>User Phone</th>
+                   
                     <th class="text-right">Action</th>
                   </tr>
                 </thead>
@@ -160,11 +139,10 @@ if(isset($_GET['type']) && $_GET['type']=='delete'){
                   <tr>
                     <td><?php echo $id?></td>
                     <td><?php echo $list['user']?></td>
-                    <td><?php echo $list['email']?></td>
-                    <td><?php echo $list['rehash']?></td>
+                    <td><?php echo $list['email']?></td>                  
+                    <td><?php echo $list['phone']?></td>                  
                     <td class="text-right py-0 align-middle">
-                      <div class="btn-group btn-group-sm">
-                        <a href="#" class="btn btn-info"><i class="fas fa-eye"></i></a>
+                      <div class="btn-group btn-group-sm">                        
                         <a href="?type=delete&id=<?php echo $list['id']?>" class="btn btn-danger"><i class="fas fa-trash"></i></a>
                       </div>
                     </td>
