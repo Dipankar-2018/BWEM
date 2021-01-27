@@ -8,8 +8,8 @@
 
 if(isset($newRegister)&&$newRegister){
     $Subject='Your BWEM Login Credentials';
-    $Body='Hi '.$reciever_name.',<br> Your Login-ID:'.$reciever_email.'<br> Your Password:'.$password.' Thank You';
-    $AltBody='Hi '.$reciever_name.', Your Login-ID:'.$reciever_email.', Your Password:'.$password.' Thank You';
+    $Body='Hi '.$reciever_name.',<br>Login ID: <b>'.$reciever_email.'</b><br>Password:<span style="color:red;font-weight: bold;">'.$password.'</span> <br><br> Regards,<br><b> Birgwsri Women Emopowerment Mission</b>';
+    $AltBody='Hi '.$reciever_name.', Your Login ID:'.$reciever_email.', Your Password: <b>'.$password.'</b> <br> Regards,<br><b> Birgwsri Women Emopowerment Mission</b>';
 }
 
 if(isset($passReset)&&$passReset){
