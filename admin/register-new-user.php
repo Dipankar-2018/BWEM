@@ -10,6 +10,16 @@ if(isset($_POST['submit'])){
   $rehash=$obj->get_safe_str($_POST['password']);
   $condition_arr=array('user'=>$user,'email'=>$user_email, 'phone' => $user_phone, 'password'=>$password,'rehash'=>$rehash);
   $result=$obj->insertData('user',$condition_arr);
+  if($result){
+    $reciever_email=$user_email;
+    $reciever_name=$user;
+    $password=$obj->get_safe_str($_POST['password']);
+    $newRegister=true;
+    include('../mailer/mail-content.php');
+    // if($mailSent==true){
+
+    // }
+  }
   header("location:register-new-user.php");
 
 }
