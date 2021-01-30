@@ -237,7 +237,7 @@ if(isset($_GET['cat'])&& $_GET['cat']!="" && array_key_exists($obj->get_safe_str
                     <div class="col-lg-4">
                     <div class="form-group">
                      <label for="form-control-label">SELECT YEAR OF EXPERIENCE *</label>
-                     <select class="selectpicker form-control" data-style="btn btn-white" id="experience"  onchange = "//showHideMajor(this.value);" name="experience" required>
+                     <select class="selectpicker form-control" data-style="btn btn-white" id="year_of_exp"  onchange = "//showHideMajor(this.value);" name="experience" required>
                      <option value="" disabled selected>Select Category</option>
                         <option value="1 year">1 Year</option>                 
                         <option value="2 year">2 Year</option>                              
@@ -281,7 +281,7 @@ if(isset($_GET['cat'])&& $_GET['cat']!="" && array_key_exists($obj->get_safe_str
                           <label for="exampleInputFile">Upload Voter/Aaadhaar</label>                 
                             <div class="input-group">
                               <div class="custom-file">
-                                <input type="file" class="custom-file-input" id="inputFile-address-proof"  onchange="readURL(this,'blah');readURL(this,'blahClone');" name="address_proof">
+                                <input type="file" class="custom-file-input" id="inputFile-address-proof"  onchange="readURL(this,'blah');readURL(this,'blahClone');" name="voter_aadhaar">
                                 <label class="custom-file-label" for="inputFile-address-proof">Choose file</label>
                               </div>
                             </div>
@@ -342,7 +342,7 @@ if(isset($_GET['cat'])&& $_GET['cat']!="" && array_key_exists($obj->get_safe_str
                     <div class="col-6 col-lg-6">
                       <div class="form-group">
                         <label class="form-control-label" for="input-branch">Branch Name</label>
-                        <input type="text" id="input-branch" class="form-control" placeholder="Branch Name" name="branch_name">
+                        <input type="text" id="input-branch" class="form-control" placeholder="Branch Name" name="branch">
                         
                       </div>
                     </div>

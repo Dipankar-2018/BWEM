@@ -175,19 +175,19 @@ if(isset($_GET['cat'])&& $_GET['cat']!="" && array_key_exists($obj->get_safe_str
                     <div class="col-lg-3">
                       <div class="form-group">
                         <label class="form-control-label" for="input-city">Post Office</label>
-                        <input type="text" id="input-city" class="form-control" placeholder="Post Office" value="" name="post_office">
+                        <input type="text" id="input-city" class="form-control" placeholder="Post Office" value="" name="post">
                       </div>
                     </div>
                     <div class="col-lg-3">
                       <div class="form-group">
                         <label class="form-control-label" for="input-country">Police Station</label>
-                        <input type="text" id="input-postal-code" class="form-control" placeholder="Police Station" name="police_station">
+                        <input type="text" id="input-postal-code" class="form-control" placeholder="Police Station" name="police">
                       </div>
                     </div>
                     <div class="col-lg-3">
                       <div class="form-group">
                         <label class="form-control-label" for="input-country">District</label>                  
-                        <select class="selectpicker form-control" data-style="btn btn-white"  name="dist" required>
+                        <select class="selectpicker form-control" data-style="btn btn-white"  name="district" required>
                           <option value="" disabled selected>Select District</option>
                           <?php include('../forms/includes/htmlpart/district.php');?>                            
                         </select>
@@ -227,7 +227,7 @@ if(isset($_GET['cat'])&& $_GET['cat']!="" && array_key_exists($obj->get_safe_str
                   <div class="col-lg-4">
                     <div class="form-group">
                      <label for="form-control-label">SELECT TRAINING COURSE *</label>
-                     <select class="selectpicker form-control" data-style="btn btn-white" id="aoi"  onchange = "//showHideMajor(this.value);" name="aoi" required>
+                     <select class="selectpicker form-control" data-style="btn btn-white" id="aoi"  onchange = "//showHideMajor(this.value);" name="course" required>
                      <option value="" disabled selected>Select Category</option>
                         <option value="President">Dairy Farmng</option>
                         <option value="Secretary">Napkin Production</option>                                             
@@ -237,7 +237,7 @@ if(isset($_GET['cat'])&& $_GET['cat']!="" && array_key_exists($obj->get_safe_str
                     <div class="col-lg-4">
                     <div class="form-group">
                      <label for="form-control-label">SELECT COURSE DURATION *</label>
-                     <select class="selectpicker form-control" data-style="btn btn-white" id="experience"  onchange = "//showHideMajor(this.value);" name="experience" required>
+                     <select class="selectpicker form-control" data-style="btn btn-white" id="experience"  onchange = "//showHideMajor(this.value);" name="course_duration" required>
                      <option value="" disabled selected>Select Category</option>
                         <option value="1 year">1 Year</option>                 
                         <option value="2 year">2 Year</option>                              
@@ -281,7 +281,7 @@ if(isset($_GET['cat'])&& $_GET['cat']!="" && array_key_exists($obj->get_safe_str
                           <label for="exampleInputFile">Upload Voter/Aaadhaar</label>                 
                             <div class="input-group">
                               <div class="custom-file">
-                                <input type="file" class="custom-file-input" id="inputFile-address-proof"  onchange="readURL(this,'blah');readURL(this,'blahClone');" name="address_proof">
+                                <input type="file" class="custom-file-input" id="inputFile-address-proof"  onchange="readURL(this,'blah');readURL(this,'blahClone');" name="voter_aadhaar">
                                 <label class="custom-file-label" for="inputFile-address-proof">Choose file</label>
                               </div>
                             </div>
@@ -298,16 +298,8 @@ if(isset($_GET['cat'])&& $_GET['cat']!="" && array_key_exists($obj->get_safe_str
                                   <label class="custom-file-label" for="inputFile-education-cer">Choose file</label>
                                 </div>
                               </div>
-                            </div>                                          
-                           <div class="btn btn-default btn-file  col-5 ">
-                          <label for="exampleInputFile">Upload work Experience Certificate</label>                 
-                            <div class="input-group">
-                              <div class="custom-file">
-                                <input type="file" class="custom-file-input" id="InputFile-workexp"  onchange="readURL(this,'blah');readURL(this,'blahClone');" name="work_exp">
-                                <label class="custom-file-label" for="InputFile-workexp">Choose file</label>
-                              </div>
-                            </div>
-                          </div>                     
+                            </div>                                         
+                                    
                         </div>
                         </div>
 
@@ -329,7 +321,7 @@ if(isset($_GET['cat'])&& $_GET['cat']!="" && array_key_exists($obj->get_safe_str
                     <div class="col-6 col-lg-6">
                       <div class="form-group">
                         <label class="form-control-label" for="input-ifsc">IFSC Code</label>
-                        <input type="text" id="input-ifsc" class="form-control" placeholder="IFSC Code" name="ifsc_code">
+                        <input type="text" id="input-ifsc" class="form-control" placeholder="IFSC Code" name="ifsc">
                       </div>
                     </div>
                     <div class="col-6 col-lg-6">
@@ -633,16 +625,8 @@ if(isset($_GET['cat'])&& $_GET['cat']!="" && array_key_exists($obj->get_safe_str
                                   <label class="custom-file-label" for="inputFile-education-cer">Choose file</label>
                                 </div>
                               </div>
-                            </div>                                          
-                           <div class="btn btn-default btn-file  col-5 ">
-                          <label for="exampleInputFile">Upload work Experience Certificate</label>                 
-                            <div class="input-group">
-                              <div class="custom-file">
-                                <input type="file" class="custom-file-input" id="InputFile-workexp"  onchange="readURL(this,'blah');readURL(this,'blahClone');" name="work_exp">
-                                <label class="custom-file-label" for="InputFile-workexp">Choose file</label>
-                              </div>
-                            </div>
-                          </div>                     
+                            </div>                                         
+                          
                         </div>
                         </div>
 
