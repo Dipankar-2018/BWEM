@@ -275,6 +275,67 @@ function previewForm(){
   document.querySelector('#member-list').innerHTML=str;
 }
 
+function previewTrainerForm(){ 
+  let form=new FormData(document.querySelector('form'));
+  document.querySelector('#name').innerHTML=$('input[name="name"]').val();  
+  document.querySelector('#email').innerHTML=$('input[name="email"]').val();
+  document.querySelector('#contact').innerHTML=$('input[name="contact"]').val();
+  document.querySelector('#gname').innerHTML=$('input[name="gname"]').val();
+  document.querySelector('#relation').innerHTML=document.querySelector('[name="relation"]').selectedOptions[0].innerHTML;//capitalize($('select[name="relation"]').val());
+  document.querySelector('#dob').innerHTML=$('input[name="dob"]').val();
+
+  document.querySelector('#category').innerHTML=document.querySelector('[name="category"]').selectedOptions[0].innerHTML;//capitalize($('select[name="category"]').val());
+  document.querySelector('#religion').innerHTML=document.querySelector('[name="religion"]').selectedOptions[0].innerHTML;//capitalize($('select[name="religion"]').val());  
+  document.querySelector('#education').innerHTML=document.querySelector('[name="education"]').selectedOptions[0].innerHTML;//capitalize($('select[name="education"]').val());
+  document.querySelector('#state').innerHTML=document.querySelector('[name="state"]').selectedOptions[0].innerHTML;//capitalize($('select[name="state"]').val());
+  document.querySelector('#address').innerHTML=$('input[name="address"]').val();
+  document.querySelector('#dist').innerHTML=document.querySelector('[name="dist"]').selectedOptions[0].innerHTML;
+  document.querySelector('#constituency').innerHTML=document.querySelector('[name="constituency"]').selectedOptions[0].innerHTML;
+  document.querySelector('#post_office').innerHTML=$('input[name="post_office"]').val();
+  document.querySelector('#police_station').innerHTML=$('input[name="police_station"]').val();
+  document.querySelector('#pin').innerHTML=$('input[name="pin"]').val();
+
+  document.querySelector('#aoi').innerHTML=document.querySelector('[name="aoi"]').selectedOptions[0].innerHTML;// capitalize($('select[name="aoi"]').val());
+  document.querySelector('#year_of_exp').innerHTML=document.querySelector('[name="year_of_exp"]').selectedOptions[0].innerHTML;//capitalize($('select[name="year_of_exp"]').val());
+  document.querySelector('#location').innerHTML=document.querySelector('[name="location"]').selectedOptions[0].innerHTML;//capitalize($('select[name="location"]').val());
+  document.querySelector('#ac_no').innerHTML=$('input[name="ac_no"]').val();
+  document.querySelector('#ifsc').innerHTML=$('input[name="ifsc"]').val();
+  document.querySelector('#bank_name').innerHTML=$('input[name="bank_name"]').val();
+  document.querySelector('#branch').innerHTML=$('input[name="branch"]').val();
+
+}
+
+
+function previewTraineeForm(){ 
+  let form=new FormData(document.querySelector('form'));
+  document.querySelector('#name').innerHTML=$('input[name="name"]').val();  
+  document.querySelector('#email').innerHTML=$('input[name="email"]').val();
+  document.querySelector('#contact').innerHTML=$('input[name="contact"]').val();
+  document.querySelector('#gname').innerHTML=$('input[name="gname"]').val();
+  document.querySelector('#relation').innerHTML=document.querySelector('[name="relation"]').selectedOptions[0].innerHTML;//capitalize($('select[name="relation"]').val());
+  document.querySelector('#dob').innerHTML=$('input[name="dob"]').val();
+
+  document.querySelector('#category').innerHTML=document.querySelector('[name="category"]').selectedOptions[0].innerHTML;//capitalize($('select[name="category"]').val());
+  document.querySelector('#religion').innerHTML=document.querySelector('[name="religion"]').selectedOptions[0].innerHTML;//capitalize($('select[name="religion"]').val());  
+  document.querySelector('#education').innerHTML=document.querySelector('[name="education"]').selectedOptions[0].innerHTML;//capitalize($('select[name="education"]').val());
+  document.querySelector('#state').innerHTML=document.querySelector('[name="state"]').selectedOptions[0].innerHTML;//capitalize($('select[name="state"]').val());
+  document.querySelector('#district').innerHTML=document.querySelector('[name="district"]').selectedOptions[0].innerHTML;
+  document.querySelector('#constituency').innerHTML=document.querySelector('[name="constituency"]').selectedOptions[0].innerHTML;
+  document.querySelector('#address').innerHTML=$('input[name="address"]').val();
+
+
+  document.querySelector('#post').innerHTML=$('input[name="post"]').val();
+  document.querySelector('#police').innerHTML=$('input[name="police"]').val();
+  document.querySelector('#pin').innerHTML=$('input[name="pin"]').val();
+
+  document.querySelector('#course').innerHTML=document.querySelector('[name="course"]').selectedOptions[0].innerHTML;// capitalize($('select[name="aoi"]').val());
+  document.querySelector('#course_duration').innerHTML=document.querySelector('[name="course_duration"]').selectedOptions[0].innerHTML;//capitalize($('select[name="year_of_exp"]').val());
+  document.querySelector('#location').innerHTML=document.querySelector('[name="location"]').selectedOptions[0].innerHTML;//capitalize($('select[name="location"]').val());
+  document.querySelector('#ac_no').innerHTML=$('input[name="ac_no"]').val();
+  document.querySelector('#ifsc').innerHTML=$('input[name="ifsc"]').val();
+  document.querySelector('#bank_name').innerHTML=$('input[name="bank_name"]').val();
+  document.querySelector('#branch_name').innerHTML=$('input[name="branch_name"]').val();
+}
 
 //post view from db
 function postViewForm(cat,id){ 

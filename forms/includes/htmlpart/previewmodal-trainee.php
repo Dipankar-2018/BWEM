@@ -283,11 +283,8 @@
 
                           <div class="col-lg-12 col-sm-12">
                             <div class="form-group form-file-upload form-file-multiple">
-                              <label class="text-info"><b>UPLOAD BANK DOCUMENT (Passbook/Cancelled Cheque)</b></label>
-                              <input type="file" multiple="" class="inputFileHidden" onchange="readURL(this,'passbook');" name="passbook">
-                              <div class="input-group">                               
-                               
-                              </div>
+                              <label class="text-info"><b>UPLOADED BANK DOCUMENT (Passbook/Cancelled Cheque)</b></label>
+                              <img id="passbookClone" src="#" style="display: none;"/>
                             </div>
                           </div>                     
                         </div>

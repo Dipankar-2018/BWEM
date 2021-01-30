@@ -171,6 +171,20 @@ if(isset($isForm)&&$isForm){
   <script src="<?php echo $location;?>assets/js/app.js" type="text/javascript"></script>
   <script src="<?php echo $location;?>assets/js/sweetalert.min.js"></script>
   <?php
+  if(isset($_SESSION['login'])){
+      if(!$_SESSION['login']){
+        echo "
+          <script>
+              swal({
+                title: 'Login Unsuccessful',
+                text: 'Check your Username/Password once!',
+                icon: 'error',
+              });
+          </script>   
+          ";
+        unset($_SESSION['login']);
+      }
+  }
     if(isset($_SESSION['formStatus'])){
       if($_SESSION['formStatus']==true){
             echo "

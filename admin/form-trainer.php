@@ -75,19 +75,19 @@ if(isset($_GET['cat'])&& $_GET['cat']!="" && array_key_exists($obj->get_safe_str
                       <div class="col-md-4">
                       <div class="form-group">
                          <label for="name">Enter Traineer Name</label>
-                         <input type="text" class="form-control" id="name" placeholder="Enter Traineer Name" name="name">
+                         <input type="text" class="form-control" placeholder="Enter Traineer Name" name="name">
                      </div>
                       </div>
                       <div class="col-md-4">
                       <div class="form-group">
                          <label for="email">Enter Traineer email</label>
-                         <input type="text" class="form-control" id="email" placeholder="Enter Traineer email" name="email">
+                         <input type="text" class="form-control"  placeholder="Enter Traineer email" name="email">
                      </div>
                       </div>
                       <div class="col-md-4">
                       <div class="form-group">
                          <label for="contact">Enter Traineer Contact</label>
-                         <input type="text" class="form-control" id="contact" placeholder="Enter Traineer Contact" name="contact">
+                         <input type="text" class="form-control" " placeholder="Enter Traineer Contact" name="contact">
                      </div>
                       </div>
                    </div>                     
@@ -96,13 +96,13 @@ if(isset($_GET['cat'])&& $_GET['cat']!="" && array_key_exists($obj->get_safe_str
                       <div class="col-md-6">
                       <div class="form-group">
                          <label for="gname">Gurdian's Name</label>
-                         <input type="text" class="form-control" id="gname" placeholder="Gurdain's Name" name="gname">
+                         <input type="text" class="form-control"  placeholder="Gurdain's Name" name="gname">
                      </div>
                       </div>
                       <div class="col-md-6">
                       <div class="form-group">
                          <label for="relation">Relation</label>
-                         <select class="selectpicker form-control" data-style="btn btn-white" id="relation" name="relation" required>
+                         <select class="selectpicker form-control" data-style="btn btn-white" name="relation" required>
                              <option value="" disabled selected>Select Category</option>
                              <option value="father">Father</option>
                              <option value="mother">Mother</option>
@@ -116,13 +116,13 @@ if(isset($_GET['cat'])&& $_GET['cat']!="" && array_key_exists($obj->get_safe_str
                 <div class="col-md-3">
                       <div class="form-group">
                          <label for="dob">Date of Birth</label>
-                         <input class="form-control" type="date" name="dob" id="dob">
+                         <input class="form-control" type="date" name="dob">
                      </div>
                       </div> 
                       <div class="col-md-3">
                       <div class="form-group">
                          <label for="category">Category</label>
-                         <select class="selectpicker form-control" data-style="btn btn-white" id="category" name="category" required>
+                         <select class="selectpicker form-control" data-style="btn btn-white"  name="category" required>
                              <option value="" disabled selected>Select Category</option>
                              <option value="st">ST</option>
                              <option value="sc">SC</option>
@@ -134,7 +134,7 @@ if(isset($_GET['cat'])&& $_GET['cat']!="" && array_key_exists($obj->get_safe_str
                       <div class="col-md-3">
                       <div class="form-group">
                          <label for="religion">Religion</label>
-                         <select class="selectpicker form-control" data-style="btn btn-white" id="religion" name="religion" required>
+                         <select class="selectpicker form-control" data-style="btn btn-white" name="religion" required>
                              <option value="" disabled selected>Select Category</option>
                              <option value="Hindu">Hindu</option>
                              <option value="Muslim">Muslim</option>
@@ -148,7 +148,7 @@ if(isset($_GET['cat'])&& $_GET['cat']!="" && array_key_exists($obj->get_safe_str
                       <div class="col-md-3">
                       <div class="form-group">
                          <label for="education">Education</label>
-                         <select class="selectpicker form-control" data-style="btn btn-white" id="education" name="education" required>
+                         <select class="selectpicker form-control" data-style="btn btn-white" name="education" required>
                              <option value="" disabled selected>Select Category</option>
                              <option value="8th Pass / Equivalent">8th Pass / Equivalent</option>
                              <option value="M.P Pass / Equivalent">M.P Pass / Equivalent</option>
@@ -167,7 +167,7 @@ if(isset($_GET['cat'])&& $_GET['cat']!="" && array_key_exists($obj->get_safe_str
                     <div class="col-md-12">
                       <div class="form-group">
                         <label class="form-control-label" for="input-address">Address</label>
-                        <input id="input-address" class="form-control" placeholder="Address - Street / Village / Town / City" type="text" name="address">
+                        <input  class="form-control" placeholder="Address - Street / Village / Town / City" type="text" name="address">
                       </div>
                     </div>
                   </div>
@@ -175,13 +175,13 @@ if(isset($_GET['cat'])&& $_GET['cat']!="" && array_key_exists($obj->get_safe_str
                     <div class="col-lg-3">
                       <div class="form-group">
                         <label class="form-control-label" for="input-city">Post Office</label>
-                        <input type="text" id="input-city" class="form-control" placeholder="Post Office" value="" name="post_office">
+                        <input type="text" class="form-control" placeholder="Post Office" value="" name="post_office">
                       </div>
                     </div>
                     <div class="col-lg-3">
                       <div class="form-group">
                         <label class="form-control-label" for="input-country">Police Station</label>
-                        <input type="text" id="input-postal-code" class="form-control" placeholder="Police Station" name="police_station">
+                        <input type="text"  class="form-control" placeholder="Police Station" name="police_station">
                       </div>
                     </div>
                     <div class="col-lg-3">
@@ -205,7 +205,7 @@ if(isset($_GET['cat'])&& $_GET['cat']!="" && array_key_exists($obj->get_safe_str
                     <div class="col-lg-3">
                       <div class="form-group">
                         <label class="form-control-label">Postal code</label>
-                        <input type="number" id="input-postal-code" class="form-control" placeholder="Postal code" name="pin">
+                        <input type="number" class="form-control" placeholder="Postal code" name="pin">
                       </div>
                     </div>
                     <div class="col-lg-3">
@@ -227,7 +227,7 @@ if(isset($_GET['cat'])&& $_GET['cat']!="" && array_key_exists($obj->get_safe_str
                   <div class="col-lg-4">
                     <div class="form-group">
                      <label for="form-control-label">SELECT AREA OF INTEREST *</label>
-                     <select class="selectpicker form-control" data-style="btn btn-white" id="aoi"  onchange = "//showHideMajor(this.value);" name="aoi" required>
+                     <select class="selectpicker form-control" data-style="btn btn-white"  onchange = "//showHideMajor(this.value);" name="aoi" required>
                      <option value="" disabled selected>Select Category</option>
                         <option value="President">Dairy Farmng</option>
                         <option value="Secretary">Napkin Production</option>                                             
@@ -237,7 +237,7 @@ if(isset($_GET['cat'])&& $_GET['cat']!="" && array_key_exists($obj->get_safe_str
                     <div class="col-lg-4">
                     <div class="form-group">
                      <label for="form-control-label">SELECT YEAR OF EXPERIENCE *</label>
-                     <select class="selectpicker form-control" data-style="btn btn-white" id="year_of_exp"  onchange = "//showHideMajor(this.value);" name="experience" required>
+                     <select class="selectpicker form-control" data-style="btn btn-white"  onchange = "//showHideMajor(this.value);" name="year_of_exp" required>
                      <option value="" disabled selected>Select Category</option>
                         <option value="1 year">1 Year</option>                 
                         <option value="2 year">2 Year</option>                              
@@ -249,7 +249,7 @@ if(isset($_GET['cat'])&& $_GET['cat']!="" && array_key_exists($obj->get_safe_str
                     <div class="col-lg-4">
                     <div class="form-group">
                      <label for="form-control-label">SELECT PREFERRED LOCATION *</label>
-                     <select class="selectpicker form-control" data-style="btn btn-white" id="location"  onchange = "//showHideMajor(this.value);" name="loaction" required>
+                     <select class="selectpicker form-control" data-style="btn btn-white"  onchange = "//showHideMajor(this.value);" name="location" required>
                      <option value="" disabled selected>Select Category</option>
                         <option value="kokrajhar">Kokrajhar</option>
                         <option value="chirang">Chirang</option>
@@ -272,7 +272,7 @@ if(isset($_GET['cat'])&& $_GET['cat']!="" && array_key_exists($obj->get_safe_str
                             <label for="exampleInputFile">Upload Pasport Size photo</label>                 
                               <div class="input-group">
                                 <div class="custom-file">
-                                  <input type="file" class="custom-file-input" id="InputFile-photo"  onchange="readURL(this,'blah');readURL(this,'blahClone');" name="photo">
+                                  <input type="file" class="custom-file-input" onchange="readURL(this,'photoClone');" name="photo">
                                   <label class="custom-file-label" for="InputFile-photo">Choose file</label>
                                 </div>
                               </div>
@@ -281,7 +281,7 @@ if(isset($_GET['cat'])&& $_GET['cat']!="" && array_key_exists($obj->get_safe_str
                           <label for="exampleInputFile">Upload Voter/Aaadhaar</label>                 
                             <div class="input-group">
                               <div class="custom-file">
-                                <input type="file" class="custom-file-input" id="inputFile-address-proof"  onchange="readURL(this,'blah');readURL(this,'blahClone');" name="voter_aadhaar">
+                                <input type="file" class="custom-file-input"   onchange="readURL(this,'voter_aadhaarClone');" name="voter_aadhaar">
                                 <label class="custom-file-label" for="inputFile-address-proof">Choose file</label>
                               </div>
                             </div>
@@ -294,7 +294,7 @@ if(isset($_GET['cat'])&& $_GET['cat']!="" && array_key_exists($obj->get_safe_str
                             <label for="exampleInputFile">Upload Education Certificate</label>                 
                               <div class="input-group">
                                 <div class="custom-file">
-                                  <input type="file" class="custom-file-input" id="inputFile-education-cer"  onchange="readURL(this,'blah');readURL(this,'blahClone');" name="education_cer">
+                                  <input type="file" class="custom-file-input"  onchange="readURL(this,'education_cerClone');" name="education_cer">
                                   <label class="custom-file-label" for="inputFile-education-cer">Choose file</label>
                                 </div>
                               </div>
@@ -303,7 +303,7 @@ if(isset($_GET['cat'])&& $_GET['cat']!="" && array_key_exists($obj->get_safe_str
                           <label for="exampleInputFile">Upload work Experience Certificate</label>                 
                             <div class="input-group">
                               <div class="custom-file">
-                                <input type="file" class="custom-file-input" id="InputFile-workexp"  onchange="readURL(this,'blah');readURL(this,'blahClone');" name="work_exp">
+                                <input type="file" class="custom-file-input"   onchange="readURL(this,'work_expClone');" name="work_exp">
                                 <label class="custom-file-label" for="InputFile-workexp">Choose file</label>
                               </div>
                             </div>
@@ -323,26 +323,26 @@ if(isset($_GET['cat'])&& $_GET['cat']!="" && array_key_exists($obj->get_safe_str
                     <div class="col-6 col-lg-6">
                       <div class="form-group">                       
                         <label class="form-control-label" for="input-ac">A/C Number</label>                   
-                        <input type="text" id="input-ac" class="form-control" placeholder="A/C Number" name="acc_no">
+                        <input type="text" class="form-control" placeholder="A/C Number" name="ac_no">
                       </div>
                     </div>
                     <div class="col-6 col-lg-6">
                       <div class="form-group">
                         <label class="form-control-label" for="input-ifsc">IFSC Code</label>
-                        <input type="text" id="input-ifsc" class="form-control" placeholder="IFSC Code" name="ifsc_code">
+                        <input type="text" class="form-control" placeholder="IFSC Code" name="ifsc">
                       </div>
                     </div>
                     <div class="col-6 col-lg-6">
                       <div class="form-group">
                         <label class="form-control-label" for="input-bank">Bank Name</label>
-                        <input type="text" id="input-bank" class="form-control" placeholder="Bank Name" name="bank_name">
+                        <input type="text" class="form-control" placeholder="Bank Name" name="bank_name">
                      
                       </div>
                     </div>
                     <div class="col-6 col-lg-6">
                       <div class="form-group">
                         <label class="form-control-label" for="input-branch">Branch Name</label>
-                        <input type="text" id="input-branch" class="form-control" placeholder="Branch Name" name="branch">
+                        <input type="text" class="form-control" placeholder="Branch Name" name="branch">
                         
                       </div>
                     </div>
@@ -353,18 +353,18 @@ if(isset($_GET['cat'])&& $_GET['cat']!="" && array_key_exists($obj->get_safe_str
                       <label for="exampleInputFile">Upload Bank document</label>                 
                         <div class="input-group">
                           <div class="custom-file">
-                            <input type="file" class="custom-file-input" id="exampleInputFile2"  onchange="readURL(this,'blah');readURL(this,'blahClone');" name="passbook_file">
+                            <input type="file" class="custom-file-input" id="exampleInputFile2"  onchange="readURL(this,'passbook_file');readURL(this,'passbook_fileClone');" name="passbook_file">
                             <label class="custom-file-label" for="exampleInputFile2">Choose file</label>
                           </div>
                         </div>
                       </div>
                       <!-- <p class="help-block">Max. 500KB</p> -->
-                      <img id="blah" src="#" style="display: none;" />
+                      <img id="passbook_file" src="#" style="display: none;" />
                   </div>     
                 </div>
                 <!-- /.card-body -->
                 <div class="card-footer">
-                  <button type="button" class="btn btn-success" onclick="previewForm()" data-toggle="modal" data-target="#myModal">Preview</button>
+                  <button type="button" class="btn btn-success" onclick="previewTrainerForm()" data-toggle="modal" data-target="#myModal">Preview</button>
                   <button type="submit" id="submitForm" class="btn btn-warning" name="submit">Submit</button>
                 </div>
               </form>
@@ -410,19 +410,19 @@ if(isset($_GET['cat'])&& $_GET['cat']!="" && array_key_exists($obj->get_safe_str
                       <div class="col-md-4">
                       <div class="form-group">
                          <label for="name">Enter Traineer Name</label>
-                         <input type="text" class="form-control" id="name" placeholder="Enter Traineer Name" name="name">
+                         <span class="form-control" id="name">1234</span>
                      </div>
                       </div>
                       <div class="col-md-4">
                       <div class="form-group">
                          <label for="email">Enter Traineer email</label>
-                         <input type="text" class="form-control" id="email" placeholder="Enter Traineer email" name="email">
+                         <span class="form-control" id="email">1234</span>
                      </div>
                       </div>
                       <div class="col-md-4">
                       <div class="form-group">
                          <label for="contact">Enter Traineer Contact</label>
-                         <input type="text" class="form-control" id="contact" placeholder="Enter Traineer Contact" name="contact">
+                         <span class="form-control" id="contact">1234</span>
                      </div>
                       </div>
                    </div>                     
@@ -431,18 +431,13 @@ if(isset($_GET['cat'])&& $_GET['cat']!="" && array_key_exists($obj->get_safe_str
                       <div class="col-md-6">
                       <div class="form-group">
                          <label for="gname">Gurdian's Name</label>
-                         <input type="text" class="form-control" id="gname" placeholder="Gurdain's Name" name="gname">
+                         <span class="form-control" id="gname">1234</span>
                      </div>
                       </div>
                       <div class="col-md-6">
                       <div class="form-group">
                          <label for="relation">Relation</label>
-                         <select class="selectpicker form-control" data-style="btn btn-white" id="relation" name="relation" required>
-                             <option value="" disabled selected>Select Category</option>
-                             <option value="father">Father</option>
-                             <option value="mother">Mother</option>
-                            <option value="husband">Husband</option>                              
-                        </select>
+                         <span class="form-control" id="relation">1234</span>
                      </div>
                       </div>                
                 </div>
@@ -451,46 +446,25 @@ if(isset($_GET['cat'])&& $_GET['cat']!="" && array_key_exists($obj->get_safe_str
                 <div class="col-md-3">
                       <div class="form-group">
                          <label for="dob">Date of Birth</label>
-                         <input class="form-control" type="date" name="dob" id="dob">
+                         <span class="form-control" id="dob">1234</span>
                      </div>
                       </div> 
                       <div class="col-md-3">
                       <div class="form-group">
                          <label for="category">Category</label>
-                         <select class="selectpicker form-control" data-style="btn btn-white" id="category" name="category" required>
-                             <option value="" disabled selected>Select Category</option>
-                             <option value="st">ST</option>
-                             <option value="sc">SC</option>
-                            <option value="obc">OBC</option>                              
-                            <option value="general">GENERAL</option>                              
-                        </select>
+                         <span class="form-control" id="category">1234</span>
                      </div>
                       </div> 
                       <div class="col-md-3">
                       <div class="form-group">
                          <label for="religion">Religion</label>
-                         <select class="selectpicker form-control" data-style="btn btn-white" id="religion" name="religion" required>
-                             <option value="" disabled selected>Select Category</option>
-                             <option value="Hindu">Hindu</option>
-                             <option value="Muslim">Muslim</option>
-                            <option value="Christian">Christian</option>                              
-                            <option value="Sikh">Sikh</option>                              
-                            <option value="Buddhist">Buddhist</option>                              
-                            <option value="Jainism">Jainism</option>                              
-                        </select>
+                         <span class="form-control" id="religion">1234</span>
                      </div>
                       </div> 
                       <div class="col-md-3">
                       <div class="form-group">
                          <label for="education">Education</label>
-                         <select class="selectpicker form-control" data-style="btn btn-white" id="education" name="education" required>
-                             <option value="" disabled selected>Select Category</option>
-                             <option value="8th Pass / Equivalent">8th Pass / Equivalent</option>
-                             <option value="M.P Pass / Equivalent">M.P Pass / Equivalent</option>
-                             <option value="H.S Pass / Equivalent">H.S Pass / Equivalent</option>
-                             <option value="Graduation Pass / Equivalent">Graduation Pass / Equivalent</option>
-                             <option value="Post Graduation Pass / Equivalent">Post Graduation Pass / Equivalent</option>                                                    
-                        </select>
+                         <span class="form-control" id="education">1234</span>
                       </div>
                    </div>                
                 </div>
@@ -502,7 +476,7 @@ if(isset($_GET['cat'])&& $_GET['cat']!="" && array_key_exists($obj->get_safe_str
                     <div class="col-md-12">
                       <div class="form-group">
                         <label class="form-control-label" for="input-address">Address</label>
-                        <input id="input-address" class="form-control" placeholder="Address - Street / Village / Town / City" type="text" name="address">
+                        <span class="form-control" id="address">1234</span>
                       </div>
                     </div>
                   </div>
@@ -510,46 +484,37 @@ if(isset($_GET['cat'])&& $_GET['cat']!="" && array_key_exists($obj->get_safe_str
                     <div class="col-lg-3">
                       <div class="form-group">
                         <label class="form-control-label" for="input-city">Post Office</label>
-                        <input type="text" id="input-city" class="form-control" placeholder="Post Office" value="" name="post_office">
+                        <span class="form-control" id="post_office">1234</span>
                       </div>
                     </div>
                     <div class="col-lg-3">
                       <div class="form-group">
                         <label class="form-control-label" for="input-country">Police Station</label>
-                        <input type="text" id="input-postal-code" class="form-control" placeholder="Police Station" name="police_station">
+                        <span class="form-control" id="police_station">1234</span> 
                       </div>
                     </div>
                     <div class="col-lg-3">
                       <div class="form-group">
-                        <label class="form-control-label" for="input-country">District</label>                  
-                        <select class="selectpicker form-control" data-style="btn btn-white"  name="dist" required>
-                          <option value="" disabled selected>Select District</option>
-                          <?php include('../forms/includes/htmlpart/district.php');?>                            
-                        </select>
+                        <label class="form-control-label" for="input-country">District</label> 
+                        <span class="form-control" id="dist">1234</span>     
                       </div>
                     </div>
                     <div class="col-lg-3">
                       <div class="form-group">
                         <label class="form-control-label" for="input-country">Constituency</label>
-                        <select class="selectpicker form-control" data-style="btn btn-white"  name="constituency" required>
-                            <option value="" disabled selected>Select Constituency</option>
-                            <?php include('../forms/includes/htmlpart/constituency.php');?>
-                        </select>
+                        <span class="form-control" id="constituency">1234</span>
                       </div>
                     </div>
                     <div class="col-lg-3">
                       <div class="form-group">
                         <label class="form-control-label">Postal code</label>
-                        <input type="number" id="input-postal-code" class="form-control" placeholder="Postal code" name="pin">
+                        <span class="form-control" id="pin">1234</span> 
                       </div>
                     </div>
                     <div class="col-lg-3">
                       <div class="form-group">
-                        <label class="form-control-label">State</label>                     
-                        <select class="selectpicker form-control" data-style="btn btn-white"  name="state" required>
-                            <option value="" disabled selected>Select State</option>
-                            <?php include('../forms/includes/htmlpart/state.php');?>                             
-                        </select>
+                        <label class="form-control-label">State</label>      
+                        <span class="form-control" id="state">1234</span>  
                       </div>
                     </div>
                  
@@ -562,35 +527,19 @@ if(isset($_GET['cat'])&& $_GET['cat']!="" && array_key_exists($obj->get_safe_str
                   <div class="col-lg-4">
                     <div class="form-group">
                      <label for="form-control-label">SELECT AREA OF INTEREST *</label>
-                     <select class="selectpicker form-control" data-style="btn btn-white" id="aoi"  onchange = "//showHideMajor(this.value);" name="aoi" required>
-                     <option value="" disabled selected>Select Category</option>
-                        <option value="President">Dairy Farmng</option>
-                        <option value="Secretary">Napkin Production</option>                                             
-                     </select>
+                     <span class="form-control" id="aoi">1234</span>
                     </div>
                     </div>
                     <div class="col-lg-4">
                     <div class="form-group">
                      <label for="form-control-label">SELECT YEAR OF EXPERIENCE *</label>
-                     <select class="selectpicker form-control" data-style="btn btn-white" id="experience"  onchange = "//showHideMajor(this.value);" name="experience" required>
-                     <option value="" disabled selected>Select Category</option>
-                        <option value="1 year">1 Year</option>                 
-                        <option value="2 year">2 Year</option>                              
-                        <option value="3 year">3 Year</option>                              
-                        <option value="4 year">4 Year</option>                              
-                     </select>
+                     <span class="form-control" id="year_of_exp">1234</span>
                     </div>
                     </div>
                     <div class="col-lg-4">
                     <div class="form-group">
                      <label for="form-control-label">SELECT PREFERRED LOCATION *</label>
-                     <select class="selectpicker form-control" data-style="btn btn-white" id="location"  onchange = "//showHideMajor(this.value);" name="loaction" required>
-                     <option value="" disabled selected>Select Category</option>
-                        <option value="kokrajhar">Kokrajhar</option>
-                        <option value="chirang">Chirang</option>
-                        <option value="baksa">Baksa</option>                              
-                        <option value="udalguri">Udalguri</option>                              
-                     </select>
+                     <span class="form-control" id="location">1234</span>
                     </div>
                     </div>
                 </div>
@@ -603,46 +552,28 @@ if(isset($_GET['cat'])&& $_GET['cat']!="" && array_key_exists($obj->get_safe_str
                       <h6 class="heading-small mb-4 text-success text-bold">Documents</h6>  
                       <div class="form-group">
                         <div class="row justify-content-around">                     
-                          <div class="btn btn-default btn-file  col-5 ">
-                            <label for="exampleInputFile">Upload Pasport Size photo</label>                 
-                              <div class="input-group">
-                                <div class="custom-file">
-                                  <input type="file" class="custom-file-input" id="InputFile-photo"  onchange="readURL(this,'blah');readURL(this,'blahClone');" name="photo">
-                                  <label class="custom-file-label" for="InputFile-photo">Choose file</label>
-                                </div>
-                              </div>
-                            </div>                                          
-                           <div class="btn btn-default btn-file  col-5 ">
-                          <label for="exampleInputFile">Upload Voter/Aaadhaar</label>                 
-                            <div class="input-group">
-                              <div class="custom-file">
-                                <input type="file" class="custom-file-input" id="inputFile-address-proof"  onchange="readURL(this,'blah');readURL(this,'blahClone');" name="address_proof">
-                                <label class="custom-file-label" for="inputFile-address-proof">Choose file</label>
-                              </div>
-                            </div>
-                          </div>                     
+                     
+                            <label for="exampleInputFile">Uploaded Pasport Size photo</label> 
+                            <img id="photoClone" src="#" style="display: none;" />                    
+                              
+                                                               
+                          
+                            <label for="exampleInputFile">Uploaded Voter/Aaadhaar</label>     
+                            <img id="voter_aadhaarClone" src="#" style="display: none;" />            
+                            
+                                         
                         </div>
                       </div>
                       <div class="form-group">
                         <div class="row justify-content-around">                     
-                          <div class="btn btn-default btn-file  col-5 ">
-                            <label for="exampleInputFile">Upload Education Certificate</label>                 
-                              <div class="input-group">
-                                <div class="custom-file">
-                                  <input type="file" class="custom-file-input" id="inputFile-education-cer"  onchange="readURL(this,'blah');readURL(this,'blahClone');" name="education_cer">
-                                  <label class="custom-file-label" for="inputFile-education-cer">Choose file</label>
-                                </div>
-                              </div>
-                            </div>                                          
-                           <div class="btn btn-default btn-file  col-5 ">
-                          <label for="exampleInputFile">Upload work Experience Certificate</label>                 
-                            <div class="input-group">
-                              <div class="custom-file">
-                                <input type="file" class="custom-file-input" id="InputFile-workexp"  onchange="readURL(this,'blah');readURL(this,'blahClone');" name="work_exp">
-                                <label class="custom-file-label" for="InputFile-workexp">Choose file</label>
-                              </div>
-                            </div>
-                          </div>                     
+                        
+                            <label for="exampleInputFile">Uploaded Education Certificate</label>       
+                            <img id="education_cerClone" src="#" style="display: none;" />                 
+                              
+                          <label for="exampleInputFile">Uploaded work Experience Certificate</label>    
+                          <img id="work_expClone" src="#" style="display: none;" />                 
+                            
+                
                         </div>
                         </div>
 
@@ -657,45 +588,34 @@ if(isset($_GET['cat'])&& $_GET['cat']!="" && array_key_exists($obj->get_safe_str
                   <div class="row">
                     <div class="col-6 col-lg-6">
                       <div class="form-group">                       
-                        <label class="form-control-label" for="input-ac">A/C Number</label>                   
-                        <input type="text" id="input-ac" class="form-control" placeholder="A/C Number" name="acc_no">
+                        <label class="form-control-label" for="input-ac">A/C Number</label>   
+                        <span class="form-control" id="ac_no">1234</span>   
                       </div>
                     </div>
                     <div class="col-6 col-lg-6">
                       <div class="form-group">
                         <label class="form-control-label" for="input-ifsc">IFSC Code</label>
-                        <input type="text" id="input-ifsc" class="form-control" placeholder="IFSC Code" name="ifsc_code">
+                        <span class="form-control" id="ifsc">1234</span>
                       </div>
                     </div>
                     <div class="col-6 col-lg-6">
                       <div class="form-group">
                         <label class="form-control-label" for="input-bank">Bank Name</label>
-                        <input type="text" id="input-bank" class="form-control" placeholder="Bank Name" name="bank_name">
-                     
+                        <span class="form-control" id="bank_name">1234</span>
                       </div>
                     </div>
                     <div class="col-6 col-lg-6">
                       <div class="form-group">
                         <label class="form-control-label" for="input-branch">Branch Name</label>
-                        <input type="text" id="input-branch" class="form-control" placeholder="Branch Name" name="branch_name">
+                        <span class="form-control" id="branch">1234</span>
                         
                       </div>
                     </div>
                     </div>                 
                   <div class="form-group">
-                  
-                      <div class="btn btn-default btn-file  col-6">
-                      <label for="exampleInputFile">Upload Bank document</label>                 
-                        <div class="input-group">
-                          <div class="custom-file">
-                            <input type="file" class="custom-file-input" id="exampleInputFile2"  onchange="readURL(this,'blah');readURL(this,'blahClone');" name="passbook_file">
-                            <label class="custom-file-label" for="exampleInputFile2">Choose file</label>
-                          </div>
-                        </div>
-                      </div>
+                      <label for="exampleInputFile">Uploaded Bank document</label>                 
                       <!-- <p class="help-block">Max. 500KB</p> -->
-                      <img id="blah" src="#" style="display: none;" />
-                  </div>     
+                      <img id="passbook_fileClone" src="#" style="display: none;" />    
                 </div>
 
               <!-- card-body-end -->
@@ -710,6 +630,6 @@ if(isset($_GET['cat'])&& $_GET['cat']!="" && array_key_exists($obj->get_safe_str
       </div>
     </div>
   </div>
-
+</div>
   <!-- /.content-wrapper -->
 <?php include('includes/footer.php');?>

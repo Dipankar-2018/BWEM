@@ -43,7 +43,11 @@ if(isset($_GET['dist'])&& $_GET['dist']!=""){
     header('location:./');//$result=$obj->getData($table); 
 // print_r($result);
 if(count($result)==0)
-$result=array();   
+$result=array();
+
+$cat=$obj->get_safe_str($_GET['cat']);
+$formHrefLocation="form".($cat=="tr"?"-trainer":($cat=="tre"?"-trainee":"")).".php?cat=".$cat;   
+$editFormHrefLocation="editform".($cat=="tr"?"-trainer":($cat=="tre"?"-trainee":"")).".php?cat=".$cat."&id=";
 ?>
 
 <?php include("includes/navbar.php"); ?>
@@ -59,7 +63,7 @@ $result=array();
         <div class="row mb-2">
           <div class="col-sm-6">
             <h1 class="m-0 text-success text-bold">BTRLM- <?php echo strtoupper($catagory).' '.strtoupper($dist).'\'S ';?> DATA </h1>
-            <a href="form.php?cat=<?php echo $obj->get_safe_str($_GET['cat']);?>" class="btn btn-primary btn-sm">Add new Data</a>
+            <a href="<?php echo $formHrefLocation;?>" class="btn btn-primary btn-sm">Add new Data</a>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -114,7 +118,7 @@ $result=array();
                     <td><a class="btn btn-success btn-sm" href="code.php?approve_id=">
                     <i class="fas fa-file-pdf"></i> Download</a></td>
                     <td><button class="btn btn-success btn-sm" onclick='<?php echo "postViewForm(\"".$_GET['cat']."\",".$result[$i]['id'].")";?>' data-toggle="modal" data-target="#myModal"><i class="fas fa-eye"></i>View</button></td>
-                    <td><a class="btn btn-success btn-sm" href="editform.php?cat=<?php echo $_GET['cat'];?>&id=<?php echo $result[$i]['id'];?>">
+                    <td><a class="btn btn-success btn-sm" href="<?php echo $editFormHrefLocation.$result[$i]['id'];?>">
                     <i class="fas fa-cog"></i> Edit</a></td>
                     <td>
                     <button class="btn btn-danger btn-sm" onclick='<?php echo "deleteEntry(\"".$_GET['cat']."\",".$result[$i]['id'].")";?>'><i class="far fa-trash-alt"></i> Delete</button>

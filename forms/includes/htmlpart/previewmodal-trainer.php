@@ -275,7 +275,7 @@
                           <div class="col-lg-6 col-sm-6">
                             <div class="form-group has-default">
                               <label class="text-info"><b>BRANCH NAME</b></label>
-                              <span class="form-control" id="branch">1234</span>
+                              <span class="form-control" id="branch_name">1234</span>
                             
                             </div>
                           </div>
