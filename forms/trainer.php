@@ -136,6 +136,15 @@ include('../includes/form-header.php');
                               </select>
                             </div>
                           </div>
+                          <div class="col-lg-3 col-sm-3">
+                            <div class="form-group has-default">
+                              <label class="text-info"><b>SELECT CONSTITUENCY</b></label>
+                                <select class="selectpicker" data-style="select-with-transition" title="Select Constituency" data-size="7" name="constituency" required>
+                                <option disabled>Select Constituency</option>
+                                <?php include('./includes/htmlpart/constituency.php');?>
+                              </select>
+                            </div>
+                        </div>
                         <div class="col-lg-3 col-sm-4">
                           <div class="form-group has-default">
                             <label class="text-info"><b>DISTRICT</b></label>
@@ -321,7 +330,7 @@ include('../includes/form-header.php');
                           <div class="col-lg-6 col-sm-6">
                             <div class="form-group has-default">
                               <label class="text-info"><b>BRANCH NAME</b></label>
-                              <input type="text" class="form-control" placeholder="Enter Branch Name" name="branch">
+                              <input type="text" class="form-control" placeholder="Enter Branch Name" name="branch_name">
                             </div>
                           </div>
 

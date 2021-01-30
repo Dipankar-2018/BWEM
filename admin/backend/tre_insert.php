@@ -18,6 +18,7 @@ if(isset($_POST['submit'])){
  $education = $obj->get_safe_str($_POST['education']);
  $address = $obj->get_safe_str($_POST['address']);
  $state = $obj->get_safe_str($_POST['state']);
+ $constituency= $obj->get_safe_str($_POST['constituency']);
  $district = $obj->get_safe_str($_POST['district']);
  $post = $obj->get_safe_str($_POST['post']);
  $police = $obj->get_safe_str($_POST['police']);
@@ -125,6 +126,7 @@ if(in_array($education_cer_lower, $education_cer_store)){
        'education'=>$education,
        'address'=>$address,
        'state'=>$state,
+       'constituency'=>$constituency,
        'district'=>$district,
        'post_office'=>$post,
        'pstation'=>$police,

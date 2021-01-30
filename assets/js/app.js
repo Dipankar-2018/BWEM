@@ -182,6 +182,7 @@ function previewTrainerForm(){
   document.querySelector('#religion').innerHTML=document.querySelector('[name="religion"]').selectedOptions[0].innerHTML;//capitalize($('select[name="religion"]').val());  
   document.querySelector('#education').innerHTML=document.querySelector('[name="education"]').selectedOptions[0].innerHTML;//capitalize($('select[name="education"]').val());
   document.querySelector('#state').innerHTML=document.querySelector('[name="state"]').selectedOptions[0].innerHTML;//capitalize($('select[name="state"]').val());
+  document.querySelector('#constituency').innerHTML=document.querySelector('[name="constituency"]').selectedOptions[0].innerHTML;
   document.querySelector('#address').innerHTML=$('input[name="address"]').val();
   document.querySelector('#dist').innerHTML=$('input[name="dist"]').val();
   document.querySelector('#post_office').innerHTML=$('input[name="post_office"]').val();

@@ -124,6 +124,12 @@
                               <span class="form-control" id="state">1234</span>  
                             </div>
                           </div>
+                          <div class="col-lg-3 col-sm-3">
+                              <div class="form-group has-default">
+                                <label class="text-info"><b>CONSTITUENCY</b></label>
+                                <span class="form-control" id="constituency">1234</span>
+                              </div>
+                          </div>
                         <div class="col-lg-3 col-sm-4">
                           <div class="form-group has-default">
                             <label class="text-info"><b>DISTRICT</b></label>

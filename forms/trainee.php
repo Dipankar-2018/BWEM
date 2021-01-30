@@ -129,13 +129,31 @@ include('../includes/form-header.php');
                          <div class="col-lg-4 col-sm-4">
                             <div class="form-group has-default">
                               <label class="text-info"><b>STATE</b></label>
-                              <input type="text" class="form-control" placeholder="Enter State Name" name="state">
+                              
+                              <!-- <input type="text" class="form-control" placeholder="Enter State Name" name="state"> -->
+                              <select class="selectpicker" data-style="select-with-transition" title="Select State" data-size="7" name="state" required>
+                                <option disabled>Select State</option>
+                                <?php include('./includes/htmlpart/state.php');?>
+                              </select>
                             </div>
                           </div>
+                          <div class="col-lg-3 col-sm-3">
+                            <div class="form-group has-default">
+                              <label class="text-info"><b>SELECT CONSTITUENCY</b></label>
+                                <select class="selectpicker" data-style="select-with-transition" title="Select Constituency" data-size="7" name="constituency" required>
+                                <option disabled>Select Constituency</option>
+                                <?php include('./includes/htmlpart/constituency.php');?>
+                              </select>
+                            </div>
+                        </div>
                         <div class="col-lg-3 col-sm-4">
                           <div class="form-group has-default">
                             <label class="text-info"><b>DISTRICT</b></label>
-                            <input type="text" class="form-control" placeholder="Enter District Name" name="district">
+                            <!-- <input type="text" class="form-control" placeholder="Enter District Name" name="district"> -->
+                            <select class="selectpicker" data-style="select-with-transition" title="Select District" data-size="7" name="district" required>
+                                <option disabled>Select District</option>
+                                <?php include('./includes/htmlpart/district.php');?>
+                              </select>
                           </div>
                         </div>
                         <div class="col-lg-3 col-sm-4">

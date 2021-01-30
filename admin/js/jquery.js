@@ -301,7 +301,7 @@ function previewTrainerForm(){
   document.querySelector('#ac_no').innerHTML=$('input[name="ac_no"]').val();
   document.querySelector('#ifsc').innerHTML=$('input[name="ifsc"]').val();
   document.querySelector('#bank_name').innerHTML=$('input[name="bank_name"]').val();
-  document.querySelector('#branch').innerHTML=$('input[name="branch"]').val();
+  document.querySelector('#branch_name').innerHTML=$('input[name="branch_name"]').val();
 
 }
 

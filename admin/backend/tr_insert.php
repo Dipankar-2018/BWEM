@@ -19,6 +19,7 @@ if(isset($_POST['submit'])){
  $education = $obj->get_safe_str($_POST['education']);
  $address = $obj->get_safe_str($_POST['address']);
  $state = $obj->get_safe_str($_POST['state']);
+ $constituency= $obj->get_safe_str($_POST['constituency']);
  $dist = $obj->get_safe_str($_POST['dist']);
  $post_office = $obj->get_safe_str($_POST['post_office']);
  $police_station = $obj->get_safe_str($_POST['police_station']);
@@ -104,7 +105,7 @@ if(in_array($education_cer_lower, $education_cer_store)){
   $acc_no = $obj->get_safe_str($_POST['ac_no']);
   $ifsc_code = $obj->get_safe_str($_POST['ifsc']);
   $bank_name = $obj->get_safe_str($_POST['bank_name']);
-  $branch_name = $obj->get_safe_str($_POST['branch']);
+  $branch_name = $obj->get_safe_str($_POST['branch_name']);
 //file processing needed
     //'passbook_file',
             $passbook_filename=$_FILES['passbook_file']['name'];
@@ -142,6 +143,7 @@ if(in_array($education_cer_lower, $education_cer_store)){
        'education'=>$education,
        'address'=>$address,
        'state'=>$state,
+       'constituency'=>$constituency,
        'district'=>$dist,
        'post_office'=>$post_office,
        'pstation'=>$police_station,
@@ -156,6 +158,7 @@ if(in_array($education_cer_lower, $education_cer_store)){
        'ac_no'=>$acc_no,
        'ifsc'=>$ifsc_code,
        'bank_name'=>$bank_name,
+       'branch_name'=>$branch_name,
        'bank_doc'=>$passbook      
     );
   
