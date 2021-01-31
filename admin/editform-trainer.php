@@ -83,6 +83,8 @@ if(isset($_GET['cat'])&& $_GET['cat']!="" && array_key_exists($obj->get_safe_str
                       <div class="form-group">
                          <label for="name">Enter Traineer Name</label>
                          <input type="text" class="form-control" value="<?php echo $result[0]['name'];?>" placeholder="Enter Traineer Name" name="name">
+                         <input value="<?php echo $_GET['cat'];?>" type="hidden" name="type"/>  
+                        <input value="<?php echo $id;?>" type="hidden" name="id"/>  
                      </div>
                       </div>
                       <div class="col-md-4">
@@ -110,7 +112,7 @@ if(isset($_GET['cat'])&& $_GET['cat']!="" && array_key_exists($obj->get_safe_str
                       <div class="form-group">
                          <label for="relation">Relation</label>
                          <select class="selectpicker form-control"  data-style="btn btn-white" name="relation" required>
-                             <option value="<?php echo $result[0]['relation'];?>" disabled selected><?php echo $result[0]['relation'];?></option>
+                             <option value="<?php echo $result[0]['relation'];?>" selected><?php echo $result[0]['relation'];?></option>
                              <option value="father">Father</option>
                              <option value="mother">Mother</option>
                             <option value="husband">Husband</option>                              
@@ -130,7 +132,7 @@ if(isset($_GET['cat'])&& $_GET['cat']!="" && array_key_exists($obj->get_safe_str
                       <div class="form-group">
                          <label for="category">Category</label>
                          <select class="selectpicker form-control" data-style="btn btn-white"  name="category" required>
-                             <option value="<?php echo $result[0]['category'];?>" disabled selected><?php echo $result[0]['category'];?></option>
+                             <option value="<?php echo $result[0]['category'];?>" selected><?php echo $result[0]['category'];?></option>
                              <option value="st">ST</option>
                              <option value="sc">SC</option>
                             <option value="obc">OBC</option>                              
@@ -142,7 +144,7 @@ if(isset($_GET['cat'])&& $_GET['cat']!="" && array_key_exists($obj->get_safe_str
                       <div class="form-group">
                          <label for="religion">Religion</label>
                          <select class="selectpicker form-control" data-style="btn btn-white" name="religion" required>
-                             <option value="<?php echo $result[0]['religion'];?>" disabled selected><?php echo $result[0]['religion'];?></option>
+                             <option value="<?php echo $result[0]['religion'];?>"  selected><?php echo $result[0]['religion'];?></option>
                              <option value="Hindu">Hindu</option>
                              <option value="Muslim">Muslim</option>
                             <option value="Christian">Christian</option>                              
@@ -156,7 +158,7 @@ if(isset($_GET['cat'])&& $_GET['cat']!="" && array_key_exists($obj->get_safe_str
                       <div class="form-group">
                          <label for="education">Education</label>
                          <select class="selectpicker form-control" data-style="btn btn-white" name="education" required>
-                             <option value="<?php echo $result[0]['religion'];?>" disabled selected><?php echo $result[0]['religion'];?></option>
+                             <option value="<?php echo $result[0]['religion'];?>"  selected><?php echo $result[0]['religion'];?></option>
                              <option value="8th Pass / Equivalent">8th Pass / Equivalent</option>
                              <option value="M.P Pass / Equivalent">M.P Pass / Equivalent</option>
                              <option value="H.S Pass / Equivalent">H.S Pass / Equivalent</option>
@@ -195,7 +197,7 @@ if(isset($_GET['cat'])&& $_GET['cat']!="" && array_key_exists($obj->get_safe_str
                       <div class="form-group">
                         <label class="form-control-label" for="input-country">District</label>                  
                         <select class="selectpicker form-control" data-style="btn btn-white" name="dist" required>
-                          <option  value="<?php echo $result[0]['district'];?>" disabled selected><?php echo $result[0]['district'];?></option>
+                          <option  value="<?php echo $result[0]['district'];?>"  selected><?php echo $result[0]['district'];?></option>
                           <?php include('../forms/includes/htmlpart/district.php');?>                            
                         </select>
                       </div>
@@ -204,7 +206,7 @@ if(isset($_GET['cat'])&& $_GET['cat']!="" && array_key_exists($obj->get_safe_str
                       <div class="form-group">
                         <label class="form-control-label" for="input-country">Constituency</label>
                         <select class="selectpicker form-control" data-style="btn btn-white"  name="constituency" required>
-                            <option  value="<?php echo $result[0]['constituency'];?>" disabled selected><?php echo $result[0]['constituency'];?></option>
+                            <option  value="<?php echo $result[0]['constituency'];?>"  selected><?php echo $result[0]['constituency'];?></option>
                             <?php include('../forms/includes/htmlpart/constituency.php');?>
                         </select>
                       </div>
@@ -219,7 +221,7 @@ if(isset($_GET['cat'])&& $_GET['cat']!="" && array_key_exists($obj->get_safe_str
                       <div class="form-group">
                         <label class="form-control-label">State</label>                     
                         <select class="selectpicker form-control" data-style="btn btn-white"  name="state" required>
-                            <option value="<?php echo $result[0]['state'];?>" disabled selected><?php echo $result[0]['state'];?></option>
+                            <option value="<?php echo $result[0]['state'];?>"  selected><?php echo $result[0]['state'];?></option>
                             <?php include('../forms/includes/htmlpart/state.php');?>                             
                         </select>
                       </div>
@@ -235,7 +237,7 @@ if(isset($_GET['cat'])&& $_GET['cat']!="" && array_key_exists($obj->get_safe_str
                     <div class="form-group">
                      <label for="form-control-label">SELECT AREA OF INTEREST *</label>
                      <select class="selectpicker form-control" data-style="btn btn-white"  onchange = "//showHideMajor(this.value);" name="aoi" required>
-                     <option value="<?php echo $result[0]['aoi'];?>" disabled selected><?php echo $result[0]['aoi'];?></option>
+                     <option value="<?php echo $result[0]['aoi'];?>"  selected><?php echo $result[0]['aoi'];?></option>
                         <option value="President">Dairy Farmng</option>
                         <option value="Secretary">Napkin Production</option>                                             
                      </select>
@@ -245,7 +247,7 @@ if(isset($_GET['cat'])&& $_GET['cat']!="" && array_key_exists($obj->get_safe_str
                     <div class="form-group">
                      <label for="form-control-label">SELECT YEAR OF EXPERIENCE *</label>
                      <select class="selectpicker form-control" data-style="btn btn-white"  onchange = "//showHideMajor(this.value);" name="year_of_exp" required>
-                     <option value="<?php echo $result[0]['exp'];?>" disabled selected><?php echo $result[0]['exp'];?></option>
+                     <option value="<?php echo $result[0]['exp'];?>"  selected><?php echo $result[0]['exp'];?></option>
                         <option value="1 year">1 Year</option>                 
                         <option value="2 year">2 Year</option>                              
                         <option value="3 year">3 Year</option>                              
@@ -257,7 +259,7 @@ if(isset($_GET['cat'])&& $_GET['cat']!="" && array_key_exists($obj->get_safe_str
                     <div class="form-group">
                      <label for="form-control-label">SELECT PREFERRED LOCATION *</label>
                      <select class="selectpicker form-control" data-style="btn btn-white"  onchange = "//showHideMajor(this.value);" name="location" required>
-                     <option value="<?php echo $result[0]['location'];?>" disabled selected><?php echo $result[0]['location'];?></option>
+                     <option value="<?php echo $result[0]['location'];?>"  selected><?php echo $result[0]['location'];?></option>
                         <option value="kokrajhar">Kokrajhar</option>
                         <option value="chirang">Chirang</option>
                         <option value="baksa">Baksa</option>                              
@@ -561,12 +563,12 @@ if(isset($_GET['cat'])&& $_GET['cat']!="" && array_key_exists($obj->get_safe_str
                         <div class="row justify-content-around">                     
                      
                             <label for="exampleInputFile">Uploaded Pasport Size photo</label> 
-                            <img id="photoClone" src="#" style="display: none;" />                    
+                            <img id="photoClone" src="<?php echo "./images/photo/".$result[0]['photo'];?>" style="width:200px;height:150px;margin:0 .3rem 1rem 2rem;"/>                  
                               
                                                                
                           
                             <label for="exampleInputFile">Uploaded Voter/Aaadhaar</label>     
-                            <img id="voter_aadhaarClone" src="#" style="display: none;" />            
+                            <img id="voter_aadhaarClone" src="<?php echo "./images/addressProof/".$result[0]['voter_aadhaar'];?>" style="width:200px;height:150px;margin:0 .3rem 1rem 2rem;"/>           
                             
                                          
                         </div>
@@ -575,10 +577,10 @@ if(isset($_GET['cat'])&& $_GET['cat']!="" && array_key_exists($obj->get_safe_str
                         <div class="row justify-content-around">                     
                         
                             <label for="exampleInputFile">Uploaded Education Certificate</label>       
-                            <img id="education_cerClone" src="#" style="display: none;" />                 
+                            <img id="education_cerClone" src="<?php echo "./images/educationCer/".$result[0]['education_doc']; ?>" style="width:200px;height:150px;margin:0 .3rem 1rem 2rem;"/>               
                               
                           <label for="exampleInputFile">Uploaded work Experience Certificate</label>    
-                          <img id="work_expClone" src="#" style="display: none;" />                 
+                          <img id="work_expClone" src="<?php echo "./images/expCertificate/".$result[0]['work_exp_doc']; ?>" style="width:200px;height:150px;margin:0 .3rem 1rem 2rem;"/>              
                             
                 
                         </div>
@@ -622,7 +624,7 @@ if(isset($_GET['cat'])&& $_GET['cat']!="" && array_key_exists($obj->get_safe_str
                   <div class="form-group">
                       <label for="exampleInputFile">Uploaded Bank document</label>                 
                       <!-- <p class="help-block">Max. 500KB</p> -->
-                      <img id="passbook_fileClone" src="#" style="display: none;" />    
+                      <img id="passbook_fileClone" src="<?php echo "./images/bankPassbook/".$result[0]['bank_doc'];?>" style="width:200px;height:150px;margin:0 .3rem 1rem 2rem;"/>  
                 </div>
 
               <!-- card-body-end -->

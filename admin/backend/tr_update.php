@@ -1,6 +1,7 @@
 <?php
 //Trainer Update
-
+session_start();
+if(isset($_POST['submit'])&&isset($_POST['id'])){
 include("../conn/database.php");
 $obj = new query();
 $table='trainer';
@@ -156,6 +157,7 @@ if($result||$obj->getData($table,'count(id)',array('email'=>$email))[0]["count(i
 }else{
     $_SESSION['formStatus']=false;
 }
-header("location:../data.php?cat=".$_GET['cat']."&dist=".strtolower($_POST['dist']));
+}
+header("location:../data.php?cat=tr"."&dist=".strtolower($_POST['dist']));
 
 ?>

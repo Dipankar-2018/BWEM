@@ -12,6 +12,10 @@ if(isset($_POST['cat'])&& $_POST['cat']!="" && array_key_exists($obj->get_safe_s
 
 $id=$obj->get_safe_str($_POST['id']);
 $result=$obj->getData($table,'*',array('id'=>$id));
+if($obj->get_safe_str($_POST['cat'])=="tr" || $obj->get_safe_str($_POST['cat'])=="tre"){
+    print_r(json_encode($result, JSON_PRETTY_PRINT));
+    exit;
+}
 $members=$obj->getData($table.'_members','*',array('group_name'=>$result[0]['group_name']));
 if($result==0)
     exit;

@@ -290,7 +290,7 @@
                           <div class="col-lg-12 col-sm-12">
                             <div class="form-group form-file-upload form-file-multiple">
                               <label class="text-info"><b>UPLOADED BANK DOCUMENT (Passbook/Cancelled Cheque)</b></label>
-                              <img id="passbookClone" src="#" style="display: none;"/>
+                              <img id="passbook_file" src="#" style="display: none;"/>
                             </div>
                           </div>                     
                         </div>

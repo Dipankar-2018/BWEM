@@ -140,6 +140,6 @@ if(isset($_FILES['passbook_file'])&&$_FILES['passbook_file']['size']!=0){
 
     // header("location:../data.php?cat=tre&dist=".strtolower($dist));
 }
-header("location:../data.php?cat=".$_GET['cat']."&dist=".strtolower($_POST['dist']));
+header("location:../data.php?cat=tre"."&dist=".strtolower($_POST['district']));
 
 ?>

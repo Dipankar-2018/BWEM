@@ -22,7 +22,7 @@
                         <i class="material-icons">mail</i>
                       </span>
                     </div>
-                    <input name="email" type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                    <input name="email" type="email" class="form-control" id="inputEmail4" placeholder="Email" required>
                   </div>
                 </div>
                 <div class="form-group" id="pwdfield">
@@ -32,7 +32,7 @@
                         <i class="material-icons">lock_outline</i>
                       </span>
                     </div>
-                    <input name="password" type="password" placeholder="Password..." class="form-control" >
+                    <input name="password" type="password" placeholder="Password..." class="form-control" required>
                   </div>
                 </div>
 

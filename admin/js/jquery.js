@@ -417,6 +417,112 @@ function postViewForm(cat,id){
 });  
 }
 
+//post View for trainer
+function postViewFormTrainer(cat,id){ 
+  // alert(cat);
+  $.ajax({
+    url:"backend/getjsondata.php",
+    method:"post",
+    data:{id:id,cat:cat},
+    dataType:"json",
+    success:function(data){
+      document.querySelector('#name').innerHTML=data[0].name;  
+      document.querySelector('#email').innerHTML=data[0].email;
+      document.querySelector('#contact').innerHTML=data[0].contact;
+      document.querySelector('#gname').innerHTML=data[0].gname;
+      document.querySelector('#relation').innerHTML=data[0].relation;
+      document.querySelector('#dob').innerHTML=data[0].dob;
+
+      document.querySelector('#category').innerHTML=data[0].category;
+      document.querySelector('#religion').innerHTML=data[0].religion;  
+      document.querySelector('#education').innerHTML=data[0].education;
+      document.querySelector('#state').innerHTML=data[0].state;
+      document.querySelector('#address').innerHTML=data[0].address;
+      document.querySelector('#dist').innerHTML=data[0].district;
+      document.querySelector('#constituency').innerHTML=data[0].constituency;
+      document.querySelector('#post_office').innerHTML=data[0].post_office;
+      document.querySelector('#police_station').innerHTML=data[0].pstation;
+      document.querySelector('#pin').innerHTML=data[0].pin;      
+      document.querySelector('#aoi').innerHTML=data[0].aoi;
+      document.querySelector('#year_of_exp').innerHTML=data[0].exp;
+      document.querySelector('#location').innerHTML=data[0].location;
+      document.querySelector('#ac_no').innerHTML=data[0].ac_no;
+      document.querySelector('#ifsc').innerHTML=data[0].ifsc;
+      document.querySelector('#bank_name').innerHTML=data[0].bank_name;
+      document.querySelector('#branch_name').innerHTML=data[0].branch_name;
+
+      document.querySelector('#passbook_fileClone').setAttribute("src", "./images/bankPassbook/"+data[0].bank_doc);
+      document.querySelector('#work_expClone').setAttribute("src", "./images/expCertificate/"+data[0].work_exp_doc);
+      document.querySelector('#education_cerClone').setAttribute("src", "./images/educationCer/"+data[0].education_doc);
+      document.querySelector('#voter_aadhaarClone').setAttribute("src", "./images/addressProof/"+data[0].voter_aadhaar);
+      document.querySelector('#photoClone').setAttribute("src", "./images/photo/"+data[0].photo);
+
+
+
+    },
+    error:function(err){
+      swal("Some Error Occured!", {
+        icon: "error",
+      });
+    }
+});  
+}
+
+//post View for trainee
+function postViewFormTrainee(cat,id){ 
+  // alert(cat);
+  $.ajax({
+    url:"backend/getjsondata.php",
+    method:"post",
+    data:{id:id,cat:cat},
+    dataType:"json",
+    success:function(data){
+      document.querySelector('#name').innerHTML=data[0].name;  
+      document.querySelector('#email').innerHTML=data[0].email;
+      document.querySelector('#contact').innerHTML=data[0].contact;
+      document.querySelector('#gname').innerHTML=data[0].gname;
+      document.querySelector('#relation').innerHTML=data[0].relation;
+      document.querySelector('#dob').innerHTML=data[0].dob;
+
+      document.querySelector('#category').innerHTML=data[0].category;
+      document.querySelector('#religion').innerHTML=data[0].religion;  
+      document.querySelector('#education').innerHTML=data[0].education;
+      document.querySelector('#state').innerHTML=data[0].state;
+      document.querySelector('#address').innerHTML=data[0].address;
+      document.querySelector('#district').innerHTML=data[0].district;
+      document.querySelector('#constituency').innerHTML=data[0].constituency;
+      document.querySelector('#post').innerHTML=data[0].post_office;
+      document.querySelector('#police').innerHTML=data[0].pstation;
+      document.querySelector('#pin').innerHTML=data[0].pin;
+      document.querySelector('#course').innerHTML=data[0].course;
+      document.querySelector('#course_duration').innerHTML=data[0].duration;
+      
+      document.querySelector('#location').innerHTML=data[0].location;
+
+      document.querySelector('#ac_no').innerHTML=data[0].ac_no;
+      document.querySelector('#ifsc').innerHTML=data[0].ifsc;
+      document.querySelector('#bank_name').innerHTML=data[0].bank_name;
+      document.querySelector('#branch_name').innerHTML=data[0].branch_name;
+
+      document.querySelector('#passbook_fileClone').setAttribute("src", "./images/bankPassbook/"+data[0].bank_doc);
+      document.querySelector('#education_cerClone').setAttribute("src", "./images/educationCer/"+data[0].education_doc);
+      document.querySelector('#voter_aadhaarClone').setAttribute("src", "./images/addressProof/"+data[0].voter_aadhaar);
+      document.querySelector('#photoClone').setAttribute("src", "./images/photo/"+data[0].photo);
+
+    },
+    error:function(err){
+      swal("Some Error Occured!", {
+        icon: "error",
+      });
+    }
+});  
+}
+
+
+
+
+
+
 
 function printChart(element){
     let arr=[12, 19, 3, 5];
@@ -443,6 +549,7 @@ function printChart(element){
   
 }
 function drawChart(element,arr){
+  if(document.getElementById(element+"chart")!=null){
   const ctx = document.getElementById(element+"chart").getContext('2d');
   const myChart = new Chart(ctx, {
       type: 'pie',
@@ -482,6 +589,7 @@ function drawChart(element,arr){
           }
       }
   });
+}
 }
 (
   ()=>{

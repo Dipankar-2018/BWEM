@@ -81,19 +81,21 @@ if(isset($_GET['cat'])&& $_GET['cat']!="" && array_key_exists($obj->get_safe_str
                       <div class="col-md-4">
                       <div class="form-group">
                          <label for="name">Enter Traineer Name</label>
-                         <input type="text" class="form-control" placeholder="Enter Traineer Name" name="name">
+                         <input value="<?php echo $result[0]['name'];?>" type="text" class="form-control" placeholder="Enter Traineer Name" name="name">
+                         <input value="<?php echo $_GET['cat'];?>" type="hidden" name="type"/>  
+                         <input value="<?php echo $id;?>" type="hidden" name="id"/>  
                      </div>
                       </div>
                       <div class="col-md-4">
                       <div class="form-group">
                          <label for="email">Enter Traineer email</label>
-                         <input type="text" class="form-control" placeholder="Enter Traineer email" name="email">
+                         <input value="<?php echo $result[0]['email'];?>" type="text" class="form-control" placeholder="Enter Traineer email" name="email">
                      </div>
                       </div>
                       <div class="col-md-4">
                       <div class="form-group">
                          <label for="contact">Enter Traineer Contact</label>
-                         <input type="text" class="form-control" placeholder="Enter Traineer Contact" name="contact">
+                         <input value="<?php echo $result[0]['contact'];?>" type="text" class="form-control" placeholder="Enter Traineer Contact" name="contact">
                      </div>
                       </div>
                    </div>                     
@@ -102,14 +104,14 @@ if(isset($_GET['cat'])&& $_GET['cat']!="" && array_key_exists($obj->get_safe_str
                       <div class="col-md-6">
                       <div class="form-group">
                          <label for="gname">Gurdian's Name</label>
-                         <input type="text" class="form-control"  placeholder="Gurdain's Name" name="gname">
+                         <input value="<?php echo $result[0]['gname'];?>" type="text" class="form-control"  placeholder="Gurdain's Name" name="gname">
                      </div>
                       </div>
                       <div class="col-md-6">
                       <div class="form-group">
                          <label for="relation">Relation</label>
                          <select class="selectpicker form-control" data-style="btn btn-white"  name="relation" required>
-                             <option value="" disabled selected>Select Category</option>
+                             <option value="<?php echo $result[0]['relation'];?>"  selected><?php echo $result[0]['relation'];?></option>
                              <option value="father">Father</option>
                              <option value="mother">Mother</option>
                             <option value="husband">Husband</option>                              
@@ -122,14 +124,14 @@ if(isset($_GET['cat'])&& $_GET['cat']!="" && array_key_exists($obj->get_safe_str
                 <div class="col-md-3">
                       <div class="form-group">
                          <label for="dob">Date of Birth</label>
-                         <input class="form-control" type="date" name="dob" >
+                         <input value="<?php echo $result[0]['dob'];?>" class="form-control" type="date" name="dob" >
                      </div>
                       </div> 
                       <div class="col-md-3">
                       <div class="form-group">
                          <label for="category">Category</label>
                          <select class="selectpicker form-control" data-style="btn btn-white" name="category" required>
-                             <option value="" disabled selected>Select Category</option>
+                             <option value="<?php echo $result[0]['category'];?>"  selected><?php echo $result[0]['category'];?></option>
                              <option value="st">ST</option>
                              <option value="sc">SC</option>
                             <option value="obc">OBC</option>                              
@@ -141,7 +143,7 @@ if(isset($_GET['cat'])&& $_GET['cat']!="" && array_key_exists($obj->get_safe_str
                       <div class="form-group">
                          <label for="religion">Religion</label>
                          <select class="selectpicker form-control" data-style="btn btn-white"  name="religion" required>
-                             <option value="" disabled selected>Select Category</option>
+                             <option value="<?php echo $result[0]['religion'];?>"  selected><?php echo $result[0]['religion'];?></option>
                              <option value="Hindu">Hindu</option>
                              <option value="Muslim">Muslim</option>
                             <option value="Christian">Christian</option>                              
@@ -155,7 +157,7 @@ if(isset($_GET['cat'])&& $_GET['cat']!="" && array_key_exists($obj->get_safe_str
                       <div class="form-group">
                          <label for="education">Education</label>
                          <select class="selectpicker form-control" data-style="btn btn-white"  name="education" required>
-                             <option value="" disabled selected>Select Category</option>
+                             <option value="<?php echo $result[0]['education'];?>"  selected><?php echo $result[0]['education'];?></option>
                              <option value="8th Pass / Equivalent">8th Pass / Equivalent</option>
                              <option value="M.P Pass / Equivalent">M.P Pass / Equivalent</option>
                              <option value="H.S Pass / Equivalent">H.S Pass / Equivalent</option>
@@ -173,7 +175,7 @@ if(isset($_GET['cat'])&& $_GET['cat']!="" && array_key_exists($obj->get_safe_str
                     <div class="col-md-12">
                       <div class="form-group">
                         <label class="form-control-label" for="input-address">Address</label>
-                        <input id="input-address" class="form-control" placeholder="Address - Street / Village / Town / City" type="text" name="address">
+                        <input value="<?php echo $result[0]['address'];?>" id="input-address" class="form-control" placeholder="Address - Street / Village / Town / City" type="text" name="address">
                       </div>
                     </div>
                   </div>
@@ -181,20 +183,20 @@ if(isset($_GET['cat'])&& $_GET['cat']!="" && array_key_exists($obj->get_safe_str
                     <div class="col-lg-3">
                       <div class="form-group">
                         <label class="form-control-label" for="input-city">Post Office</label>
-                        <input type="text" id="input-city" class="form-control" placeholder="Post Office" value="" name="post">
+                        <input value="<?php echo $result[0]['post_office'];?>" type="text" id="input-city" class="form-control" placeholder="Post Office" value="" name="post">
                       </div>
                     </div>
                     <div class="col-lg-3">
                       <div class="form-group">
                         <label class="form-control-label" for="input-country">Police Station</label>
-                        <input type="text" id="input-postal-code" class="form-control" placeholder="Police Station" name="police">
+                        <input value="<?php echo $result[0]['pstation'];?>" type="text" id="input-postal-code" class="form-control" placeholder="Police Station" name="police">
                       </div>
                     </div>
                     <div class="col-lg-3">
                       <div class="form-group">
                         <label class="form-control-label" for="input-country">District</label>                  
                         <select class="selectpicker form-control" data-style="btn btn-white"  name="district" required>
-                          <option value="" disabled selected>Select District</option>
+                          <option value="<?php echo $result[0]['district'];?>"  selected><?php echo $result[0]['district'];?></option>
                           <?php include('../forms/includes/htmlpart/district.php');?>                            
                         </select>
                       </div>
@@ -203,7 +205,7 @@ if(isset($_GET['cat'])&& $_GET['cat']!="" && array_key_exists($obj->get_safe_str
                       <div class="form-group">
                         <label class="form-control-label" for="input-country">Constituency</label>
                         <select class="selectpicker form-control" data-style="btn btn-white"  name="constituency" required>
-                            <option value="" disabled selected>Select Constituency</option>
+                            <option value="<?php echo $result[0]['constituency'];?>"  selected><?php echo $result[0]['constituency'];?></option>
                             <?php include('../forms/includes/htmlpart/constituency.php');?>
                         </select>
                       </div>
@@ -211,14 +213,14 @@ if(isset($_GET['cat'])&& $_GET['cat']!="" && array_key_exists($obj->get_safe_str
                     <div class="col-lg-3">
                       <div class="form-group">
                         <label class="form-control-label">Postal code</label>
-                        <input type="number" id="input-postal-code" class="form-control" placeholder="Postal code" name="pin">
+                        <input value="<?php echo $result[0]['pin'];?>" type="number" id="input-postal-code" class="form-control" placeholder="Postal code" name="pin">
                       </div>
                     </div>
                     <div class="col-lg-3">
                       <div class="form-group">
                         <label class="form-control-label">State</label>                     
                         <select class="selectpicker form-control" data-style="btn btn-white"  name="state" required>
-                            <option value="" disabled selected>Select State</option>
+                            <option value="<?php echo $result[0]['state'];?>"  selected><?php echo $result[0]['state'];?></option>
                             <?php include('../forms/includes/htmlpart/state.php');?>                             
                         </select>
                       </div>
@@ -234,7 +236,7 @@ if(isset($_GET['cat'])&& $_GET['cat']!="" && array_key_exists($obj->get_safe_str
                     <div class="form-group">
                      <label for="form-control-label">SELECT TRAINING COURSE *</label>
                      <select class="selectpicker form-control" data-style="btn btn-white" onchange = "//showHideMajor(this.value);" name="course" required>
-                     <option value="" disabled selected>Select Category</option>
+                     <option value="<?php echo $result[0]['course'];?>"  selected><?php echo $result[0]['course'];?></option>
                         <option value="President">Dairy Farmng</option>
                         <option value="Secretary">Napkin Production</option>                                             
                      </select>
@@ -244,7 +246,7 @@ if(isset($_GET['cat'])&& $_GET['cat']!="" && array_key_exists($obj->get_safe_str
                     <div class="form-group">
                      <label for="form-control-label">SELECT COURSE DURATION *</label>
                      <select class="selectpicker form-control" data-style="btn btn-white"  onchange = "//showHideMajor(this.value);" name="course_duration" required>
-                     <option value="" disabled selected>Select Category</option>
+                     <option value="<?php echo $result[0]['duration'];?>"  selected><?php echo $result[0]['duration'];?></option>
                         <option value="1 year">1 Year</option>                 
                         <option value="2 year">2 Year</option>                              
                         <option value="3 year">3 Year</option>                              
@@ -256,7 +258,7 @@ if(isset($_GET['cat'])&& $_GET['cat']!="" && array_key_exists($obj->get_safe_str
                     <div class="form-group">
                      <label for="form-control-label">SELECT PREFERRED LOCATION *</label>
                      <select class="selectpicker form-control" data-style="btn btn-white"  onchange = "//showHideMajor(this.value);" name="location" required>
-                     <option value="" disabled selected>Select Category</option>
+                     <option value="<?php echo $result[0]['location'];?>"  selected><?php echo $result[0]['location'];?></option>
                         <option value="kokrajhar">Kokrajhar</option>
                         <option value="chirang">Chirang</option>
                         <option value="baksa">Baksa</option>                              
@@ -321,26 +323,26 @@ if(isset($_GET['cat'])&& $_GET['cat']!="" && array_key_exists($obj->get_safe_str
                     <div class="col-6 col-lg-6">
                       <div class="form-group">                       
                         <label class="form-control-label" for="input-ac">A/C Number</label>                   
-                        <input type="text" id="input-ac" class="form-control" placeholder="A/C Number" name="ac_no">
+                        <input value="<?php echo $result[0]['ac_no'];?>" type="text" id="input-ac" class="form-control" placeholder="A/C Number" name="ac_no">
                       </div>
                     </div>
                     <div class="col-6 col-lg-6">
                       <div class="form-group">
                         <label class="form-control-label" for="input-ifsc">IFSC Code</label>
-                        <input type="text" id="input-ifsc" class="form-control" placeholder="IFSC Code" name="ifsc">
+                        <input value="<?php echo $result[0]['ifsc'];?>" type="text" id="input-ifsc" class="form-control" placeholder="IFSC Code" name="ifsc">
                       </div>
                     </div>
                     <div class="col-6 col-lg-6">
                       <div class="form-group">
                         <label class="form-control-label" for="input-bank">Bank Name</label>
-                        <input type="text" id="input-bank" class="form-control" placeholder="Bank Name" name="bank_name">
+                        <input value="<?php echo $result[0]['bank_name'];?>" type="text" id="input-bank" class="form-control" placeholder="Bank Name" name="bank_name">
                      
                       </div>
                     </div>
                     <div class="col-6 col-lg-6">
                       <div class="form-group">
                         <label class="form-control-label" for="input-branch">Branch Name</label>
-                        <input type="text" id="input-branch" class="form-control" placeholder="Branch Name" name="branch_name">
+                        <input value="<?php echo $result[0]['branch_name'];?>" type="text" id="input-branch" class="form-control" placeholder="Branch Name" name="branch_name">
                         
                       </div>
                     </div>
@@ -549,17 +551,18 @@ if(isset($_GET['cat'])&& $_GET['cat']!="" && array_key_exists($obj->get_safe_str
                 <hr class="my-4" />     
                       <h6 class="heading-small mb-4 text-success text-bold">Documents</h6>  
                       <div class="form-group">
-                        <div class="row justify-content-around">                     
-                     
+                        <div class="row">                     
+
                             <label for="exampleInputFile">Uploaded Pasport Size photo</label> 
-                            <img id="photoClone" src="#" style="display: none;" />                    
-                              
+                            <img id="photoClone" src="<?php echo "./images/photo/".$result[0]['photo'];?>" style="width:200px;height:150px;margin:0 .3rem 1rem 2rem;"/> 
+                            </div>                   
+                            <div class="row">  
                             <label for="exampleInputFile">Uploaded Voter/Aaadhaar</label>     
-                            <img id="voter_aadhaarClone" src="#" style="display: none;" />            
+                            <img id="voter_aadhaarClone" src="<?php echo "./images/addressProof/".$result[0]['voter_aadhaar'];?>" style="width:200px;height:150px;margin:0 .3rem 1rem 2rem;"/>            
                             </div>
-                            <div class="row justify-content-around"> 
+                            <div class="row"> 
                             <label for="exampleInputFile">Uploaded Education Certificate</label>       
-                            <img id="education_cerClone" src="#" style="display: none;" />  
+                            <img id="education_cerClone" src="<?php echo "./images/educationCer/".$result[0]['education_doc']; ?>" style="width:200px;height:150px;margin:0 .3rem 1rem 2rem;"/>  
                                          
                         </div>
                       </div>
@@ -602,7 +605,7 @@ if(isset($_GET['cat'])&& $_GET['cat']!="" && array_key_exists($obj->get_safe_str
                     <div class="form-group">
                       <label for="exampleInputFile">Uploaded Bank document</label>                 
                       <!-- <p class="help-block">Max. 500KB</p> -->
-                      <img id="passbook_fileClone" src="#" style="display: none;" />    
+                      <img id="passbook_fileClone" src="<?php echo "./images/bankPassbook/".$result[0]['bank_doc'];?>" style="width:200px;height:150px;margin:0 .3rem 1rem 2rem;"/>    
                 </div>
 
               <!-- card-body-end -->
