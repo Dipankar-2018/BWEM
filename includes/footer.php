@@ -138,9 +138,14 @@ if(isset($isForm)&&$isForm){
 <!-- Login Modal -->
 <?php include($location."forms/loginmodal.php");?>
 
+</div>  
   
-  
-  
+<div id="net-activity" style="position: fixed;display: inline-block;
+    width:20%;
+    text-align:center;
+    top: 5em;
+    left: 50%;
+    transform: translateX(-50%)"></div> 
   
   <!--   Core JS Files   -->
   <script src="<?php echo $location;?>assets/js/core/jquery.min.js" type="text/javascript"></script>
@@ -170,6 +175,11 @@ if(isset($isForm)&&$isForm){
   <script src="<?php echo $location;?>assets/js/material-kit.js?v=2.2.0" type="text/javascript"></script>
   <script src="<?php echo $location;?>assets/js/app.js" type="text/javascript"></script>
   <script src="<?php echo $location;?>assets/js/sweetalert.min.js"></script>
+  
+  
+ 
+  
+  
   <?php
   if(isset($_SESSION['login'])){
       if(!$_SESSION['login']){
@@ -211,13 +221,13 @@ if(isset($isForm)&&$isForm){
     }  
   ?>
 
-<script>
+
  <script>
-    $().ready(function() {
-      materialKitDemo.initContactUsMap();
-    });
+    // $().ready(function() {
+    //   materialKitDemo.initContactUsMap();
+    // });
   </script>
-</script>
+
   
 </body>
 

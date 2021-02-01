@@ -13,7 +13,12 @@
 <!-- ./wrapper -->
 
 <!-- REQUIRED SCRIPTS -->
-
+<div id="net-activity" style="position: fixed;display: inline-block;
+    width:20%;
+    text-align:center;
+    top: 5em;
+    left: 50%;
+    transform: translateX(-50%)"></div> 
 
 
 

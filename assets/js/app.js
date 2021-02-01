@@ -350,3 +350,44 @@ document.querySelector('#passrset').addEventListener("click", function() {
 });
 }
 
+//
+if(document.querySelector('#submitForm')!=null){
+
+  document.querySelector('form').addEventListener("submit", function() {
+    const btn=document.querySelector('#submitForm');
+    const btnProcessing=`<i class="fa fa-spinner fa-spin"></i>Processing`;
+    btn.innerHTML=btnProcessing;
+    btn.removeAttribute('type','submit');
+    btn.setAttribute('type','buutton');
+  });
+  }
+
+
+
+//Internet Activity
+let netState=true;
+   let internetCheck=setInterval(()=>{
+     let alert="";
+     let act=document.querySelector("#net-activity");
+        if(navigator.onLine){
+            
+           alert+= `<div class="alert alert-success alert-dismissible fade show">
+                      <strong>Success !</strong> Internet Connection is Back...
+                    </div>
+                  `;
+            if(!netState){
+              act.innerHTML=alert;
+              setTimeout(()=>{act.innerHTML=""; act.style.zIndex=0;},1000);
+              netState=true;
+            }
+            
+        }else{
+          alert+= `<div class="alert alert-danger alert-dismissible fade show">
+                       <strong>Lost !</strong> Internet Connection is Gone...
+                  </div>
+                 `;
+             act.innerHTML=alert;
+             act.style.zIndex=3000;
+            netState=false;
+        }
+   },2000); 

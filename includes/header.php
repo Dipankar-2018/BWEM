@@ -22,6 +22,8 @@ if(isset($isForm)&&$isForm){
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
   <!-- CSS Files -->
   <link href="assets/css/material-kit.css?v=2.2.0" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="<?php echo $location;?>assets/css/offline-theme-default.css">
+  <link rel="stylesheet" href="<?php echo $location;?>assets/css/offline-language-english.min.css" />
 
 </head>
 

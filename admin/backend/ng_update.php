@@ -4,7 +4,7 @@ if(isset($_POST['submit'])&&isset($_POST['id'])){
     include("../conn/database.php");
     $obj = new query();
     $id=$obj->get_safe_str($_POST['id']);
-    if(strlen($registration_no) == 0){
+    if(strlen($obj->get_safe_str($_POST['registration_no'])) == 0){
         $registration_no = 0;
     }else{
       $registration_no = $obj->get_safe_str($_POST['registration_no']);
