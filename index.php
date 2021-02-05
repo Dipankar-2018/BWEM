@@ -1,4 +1,18 @@
-<?php include("includes/form-header.php");?>
+<?php 
+include("includes/form-header.php");
+
+$obj = new query();
+
+$condition_arr = array('category' => 'notice');
+$notice_result = $obj->getData('notice', '*', $condition_arr);
+
+$condition_arr = array('category' => 'event');
+$event_result = $obj->getData('notice', '*', $condition_arr);
+
+
+
+
+?>
 
 
 <!-- <div class="page-header header-small" data-parallax="true" > -->
@@ -45,8 +59,9 @@
       <div class="section">
        
         <div class="row">
-          <div class="col-md-12">
+          <div class="col-md-12">         
             <h2 class="title text-center">Birgwsri Women Emopowerment Mission</h2>
+
             <h2 class="text-center">Creating Sustainable Livelihood</h2>
           </div>          
         </div>
@@ -213,77 +228,71 @@
              </div>
         </div>
 
-        <div class="row">
+        <div class="row">       <!-- NOTICE -->
+       
+
           <div class="col-md-6">
             <div class="card card-raised card-background colored-shadow" style="background-image: url('../assets/notice.jpg')">
               <div class="card-body text-white font-weight-bold">
                 <marquee scrollamount="3" height="200rem" onMouseOver="this.stop()" onMouseOut="this.start()" direction="up">
-                <h3 class="font-weight-bold text-uppercase">Notice Title  - 1</h3>
-                <blockquote class="blockquote">
-                  <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                </blockquote>
-                <button class="btn btn-info btn-round">Click Here</button>
-                <h3 class="font-weight-bold text-uppercase">Notice Title  - 1</h3>
-                <blockquote class="blockquote">
-                  <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                </blockquote>
-                <button class="btn btn-info btn-round">Click Here</button>
-                <h3 class="font-weight-bold text-uppercase">Notice Title  - 1</h3>
-                <blockquote class="blockquote">
-                  <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                </blockquote>
-                <button class="btn btn-info btn-round">Click Here</button>
 
+                <?php foreach($notice_result as $list):?>
 
+                <h3 class="font-weight-bold text-uppercase"><?php echo $list['title']; ?></h3>
+                <blockquote class="blockquote">
+                  <p class="mb-0"><?php echo $list['text'] ?></p>
+                </blockquote>
+
+                  <a class="btn btn-info btn-round" href="admin/images/notice/<?php echo $list['doc']; ?>" target="_blank"> <span class="material-icons"> description </span> DOCUMENT</a>            
+
+                <?php endforeach; ?>
               </marquee>
-              </div>
+              </div>  
             </div>
-            <button class="btn btn-info btn-round float-right">Read All</button>
+            <button class="btn btn-warning btn-round float-right">Read All</button>
           </div>
+
+
+
           <div class="col-md-6"> 
             <div class="card card-raised card-background" style="background-image: url('../assets/notice.jpg')" >
               <div class="card-body text-white font-weight-bold">
                 <marquee scrollamount="3" height="200rem" onMouseOver="this.stop()" onMouseOut="this.start()" direction="up">
-                <h3 class="font-weight-bold text-uppercase">Notice Title  - 1</h3>
-                <blockquote class="blockquote">
-                  <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                </blockquote>
-                <button class="btn btn-info btn-round">Click Here</button>
-                <h3 class="font-weight-bold text-uppercase">Notice Title  - 1</h3>
-                <blockquote class="blockquote">
-                  <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                </blockquote>
-                <button class="btn btn-info btn-round">Click Here</button>
-                <h3 class="font-weight-bold text-uppercase">Notice Title  - 1</h3>
-                <blockquote class="blockquote">
-                  <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                </blockquote>
-                <button class="btn btn-info btn-round">Click Here</button>
 
+                <?php foreach($event_result as $list):?>
+
+                <h3 class="font-weight-bold text-uppercase"><?php echo $list['title']; ?></h3>
+                <blockquote class="blockquote">
+                  <p class="mb-0"><?php echo $list['text']; ?></p>
+                </blockquote>
+
+                  <a class="btn btn-info btn-round" href="admin/images/notice/<?php echo $list['doc']; ?>" target="_blank"> <span class="material-icons"> description </span> DOCUMENT</a>
+               
+               <?php endforeach; ?>
+               
 
               </marquee>
               </div>
           
             </div>
-            <button class="btn btn-info btn-round float-right">Read All</button>
+            <button class="btn btn-warning btn-round float-right">Read All</button>
           </div>
+
           <!-- <div class="col-md-12">
             <div class="card card-raised card-background" style="background-image: url('../assets/img/examples/card-project6.jpg')">
               <div class="card-body">
-                <h6 class="card-category text-info">Marketing</h6>
+                <h6 class="card-category text-info">Latest Updates</h6>
                 <h3 class="card-title">0 to 100.000 Customers in 6 months</h3>
                 <p class="card-description">
                   Don't be scared of the truth because we need to restart the human foundation in truth And I love you like Kanye loves Kanye I love Rick Owens’ bed design but the back is...
                 </p>
                 <a href="#pablo" class="btn btn-warning btn-round">
-                  <i class="material-icons">subject</i> Read Case Study
-                </a>
-                <a href="#pablo" class="btn btn-white btn-just-icon btn-link" title="" rel="tooltip" data-original-title="Save to Pocket">
-                  <i class="fa fa-get-pocket"></i>
-                </a>
+                  <i class="material-icons">subject</i> View Full Story
+                </a>             
               </div>
             </div>
           </div> -->
+          
         </div>
       </div>
       <div class="section">

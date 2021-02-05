@@ -14,7 +14,7 @@ class database{
         $conn = new mysqli($this->host, $this->user, $this->password, $this->db_name);
         return $conn;
     }
-}
+} 
 
 class query extends database{
 	public function getData($table,$field='*',$condition_arr='',$order_by_field='',$order_by_type='desc',$limit=''){

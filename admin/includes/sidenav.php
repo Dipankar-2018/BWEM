@@ -255,7 +255,7 @@
  
           <li class="nav-header">EXTRAS</li>
           <li class="nav-item">
-            <a href="pages/gallery.html" class="nav-link">
+            <a href="gallary.php" class="nav-link">
               <i class="nav-icon far fa-image"></i>
               <p>
                 Gallery

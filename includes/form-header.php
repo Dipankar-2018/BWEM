@@ -4,6 +4,8 @@ $location="./";
 if(isset($isForm)&&$isForm){
   $location="../";
 }
+
+include('admin/conn/database.php');
 ?>
 
 <!DOCTYPE html>
