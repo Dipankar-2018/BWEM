@@ -7,6 +7,8 @@ $obj = new query();
 
 if(isset($_POST['img_submit'])){
     
+    $category = $_POST['category'];
+
     $image = $_FILES['image']['name'];
 
     $tmp_name = $_FILES['image']['tmp_name'];
@@ -17,11 +19,15 @@ if(isset($_POST['img_submit'])){
     if($file_extension == 'jpg' || $file_extension == 'png'){
 
         $folder = "../images/gallary/" . $image;
+        
 
         move_uploaded_file($tmp_name, $folder);
+        
+        
 
         $codition_arr = array(
-            'image' => $folder
+            'category' => $category,
+            'image' => $image
         );
 
         $obj->insertData('gallary', $codition_arr);

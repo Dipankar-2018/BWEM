@@ -9,7 +9,7 @@ include('admin/conn/database.php');
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="asm">
 <head>
   <meta charset="utf-8" />
   <link rel="apple-touch-icon" sizes="76x76" href="<?php echo $location;?>assets/img/logos/apple-icon.png">

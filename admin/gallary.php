@@ -16,7 +16,7 @@
                 <div class="header mb-2">
                     <i class="fas fa-edit"></i> Click the button to check all Notice.
                 </div>
-                <button onclick="location.href ='notice_data.php';" class="btn btn-success btn-sm"> <i class="fas fa-database"></i> Data Table </button>
+                <button onclick="location.href ='gallary_data.php';" class="btn btn-success btn-sm"> <i class="fas fa-database"></i> Gallary</button>
 
             </div>
           </div><!-- /.col -->
@@ -46,12 +46,23 @@
 
               <div class="card-body">
                 <form action="backend/gallary_insert.php" method="post"  enctype="multipart/form-data">
-                  <div class="row">                  
+                  <div class="row">
+                     <div class="col-md-12">
+                       <div class="form-group">
+                        <label>Select Category</label>
+                        <select name="category" class="form-control" required>
+                          <option value="">Select Category</option>
+                          <option value="shg">Selef Help Group</option>
+                          <option value="ngo">NGO</option>
+                          <option value="entre">Entrepreneurs</option>
+                        </select>
+                       </div>                   
                       <div class="form-group">
                       <label>UPLOAD Image</label>
-                       <input type="file" class="form-control" name="image">
+                       <input type="file" class="form-control" name="image" required>
                       
                       </div>
+                   </div>
                    </div>
                 </div>
             

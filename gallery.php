@@ -1,4 +1,19 @@
-<?php include('includes/form-header.php'); ?>
+<?php
+ include('includes/form-header.php'); 
+ $obj = new query();
+
+$condition_arr = array('category' => 'shg');
+$shg = $obj->getData('gallary', '*', $condition_arr);
+
+$condition_arr = array('category' => 'entre');
+$entre = $obj->getdata('gallary', '*', $condition_arr);
+
+$condition_arr = array('category' => 'ngo');
+$ngo = $obj->getdata('gallary', '*', $condition_arr);
+
+
+ 
+ ?>
 
 
   <div class="page-header header-filter" data-parallax="true" style="background-image: url('assets/img/city-profile.jpg');"></div>
@@ -18,53 +33,25 @@
             </div>
           </div>
         </div>
-        <!-- <div class="description text-center">
-          <p>***</p>
-        </div> -->
-        <!-- <div class="row">
-          <div class="col-md-12 ml-auto mr-auto">
-            <div class="profile-tabs">
-              <ul class="nav nav-pills nav-pills-icons justify-content-center" role="tablist">
-                <li class="nav-item">
-                  <a class="nav-link active" href="#studio" role="tab" data-toggle="tab">
-                    <i class="material-icons">group</i>
-                    SHG's
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#works" role="tab" data-toggle="tab">
-                    <i class="material-icons">store</i>
-                    Entrepreneurs
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#favorite" role="tab" data-toggle="tab">
-                    <i class="material-icons">home_work</i>
-                    NGO's
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div> -->
+
         <div class="row">
           <div class="col-md-12 ml-auto mr-auto">
             <div class="profile-tabs">
               <ul class="nav nav-pills nav-pills-icons justify-content-center" role="tablist">
                 <li class="nav-item">
-                  <a class="nav-link active" href="#studio" role="tab" data-toggle="tab">
+                  <a class="nav-link active" href="#shg" role="tab" data-toggle="tab">
                     <i class="material-icons">group</i>
                     SHG's
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#" role="tab" data-toggle="tab">
+                  <a class="nav-link" href="#entre" role="tab" data-toggle="tab">
                     <i class="material-icons">store</i>
                     Entrepreneurs
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#" role="tab" data-toggle="tab">
+                  <a class="nav-link" href="#ngo" role="tab" data-toggle="tab">
                     <i class="material-icons">home_work</i>
                     NGO's
                   </a>
@@ -73,46 +60,46 @@
             </div>
           </div>
         </div>
-        <div class="tab-content tab-space">
-          <div class="tab-pane active text-center gallery" id="studio">
+       
+        <div class="tab-content tab-space">       
+          <div class="tab-pane active text-center gallery" id="shg">
             <div class="row">
-              <div class="col-md-12 ml-auto">
-                <img src="assets/img/examples/studio-01.jpg" class="img-raised rounded">
-              </div>
+            <?php foreach($shg as $list): ?>  
+
               <div class="col-md-6 ml-auto">
-                <img src="assets/img/examples/studio-1.jpg" class="img-raised rounded">
-                <img src="assets/img/examples/studio-2.jpg" class="img-raised img-raised rounded">
-              </div>
-              <div class="col-md-6 mr-auto">
-                <img src="assets/img/examples/studio-5.jpg" class="img-raised rounded">
-                <img src="assets/img/examples/studio-4.jpg" class="img-raised rounded">
-              </div>
+                <img src="admin/images/gallary/<?php echo $list['image']; ?>" class="img-raised rounded" height="450" width="50">               
+              </div>                          
+              
+              <?php endforeach; ?>
             </div>
           </div>
-          <div class="tab-pane text-center gallery" id="works">
+       
+
+          <div class="tab-pane text-center gallery" id="entre">
             <div class="row">
-              <div class="col-md-6 ml-auto">
-                <img src="assets/img/examples/olu-eletu.jpg" class="img-raised rounded">
-                <img src="assets/img/examples/clem-onojeghuo.jpg" class="img-raised rounded">
-                <img src="assets/img/examples/cynthia-del-rio.jpg" class="img-raised rounded">
-              </div>
-              <div class="col-md-6 mr-auto">
-                <img src="assets/img/examples/mariya-georgieva.jpg" class="img-raised rounded">
-                <img src="assets/img/examples/clem-onojegaw.jpg" class="img-raised rounded">
-              </div>
+            <?php foreach($entre as $list): ?>  
+
+            <div class="col-md-6 ml-auto">
+              <img src="admin/images/gallary/<?php echo $list['image']; ?>" class="img-raised rounded" height="450" width="50">               
+            </div>                          
+
+            <?php endforeach; ?>
+        
             </div>
           </div>
-          <div class="tab-pane text-center gallery" id="favorite">
+
+
+          <div class="tab-pane text-center gallery" id="ngo">
             <div class="row">
-              <div class="col-md-6 ml-auto">
-                <img src="assets/img/examples/mariya-georgieva.jpg" class="img-raised rounded">
-                <img src="assets/img/examples/studio-3.jpg" class="img-raised rounded">
-              </div>
-              <div class="col-md-6 mr-auto">
-                <img src="assets/img/examples/clem-onojeghuo.jpg" class="img-raised rounded">
-                <img src="assets/img/examples/olu-eletu.jpg" class="img-raised rounded">
-                <img src="assets/img/examples/studio-1.jpg" class="img-raised rounded">
-              </div>
+
+            <?php foreach($ngo as $list): ?>  
+
+                <div class="col-md-6 ml-auto">
+                  <img src="admin/images/gallary/<?php echo $list['image']; ?>" class="img-raised rounded" height="450" width="50">               
+                </div>                          
+
+                <?php endforeach; ?>
+        
             </div>
           </div>
         </div>
