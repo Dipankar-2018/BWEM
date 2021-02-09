@@ -243,7 +243,11 @@ $event_result = $obj->getData('notice', '*', $condition_arr);
                   <p class="mb-0"><?php echo $list['text'] ?></p>
                 </blockquote>
 
-                  <a class="btn btn-info btn-round" href="admin/images/notice/<?php echo $list['doc']; ?>" target="_blank"> <span class="material-icons"> description </span> DOCUMENT</a>            
+                <?php if( $list['doc'] != '0'): ?>
+                  <a class="btn btn-info btn-round" href="admin/images/notice/<?php echo $list['doc']; ?>" target="_blank"> <span class="material-icons"> description </span> DOCUMENT</a>                                  
+                  <?php else: ?>
+                   
+              <?php endif; ?>
 
                 <?php endforeach; ?>
               </marquee>
@@ -266,7 +270,13 @@ $event_result = $obj->getData('notice', '*', $condition_arr);
                   <p class="mb-0"><?php echo $list['text']; ?></p>
                 </blockquote>
 
-                  <a class="btn btn-info btn-round" href="admin/images/notice/<?php echo $list['doc']; ?>" target="_blank"> <span class="material-icons"> description </span> DOCUMENT</a>
+                <?php if( $list['doc'] != '0'): ?>
+                  <a class="btn btn-info btn-round" href="admin/images/notice/<?php echo $list['doc']; ?>" target="_blank"> <span class="material-icons"> description </span> DOCUMENT</a>                                  
+                  <?php else: ?>
+                   
+              <?php endif; ?>
+
+                 
                
                <?php endforeach; ?>
                
