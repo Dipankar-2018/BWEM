@@ -87,7 +87,11 @@ $editFormHrefLocation="editform".($cat=="tr"?"-trainer":($cat=="tre"?"-trainee":
 
       <div class="card">
               <div class="card-header">
-                <h3 class="card-title">DataTable with default features</h3>
+                  <div style="display:flex;justify-content:space-between;">
+                  <h3 class="card-title">DataTable with default features</h3>
+                    <a class="btn btn-success btn-sm" href="./download/csv.php?cat=<?php echo $cat;?>&dist=<?php echo $dist;?>" >
+                        <i class="fas fa-file-pdf"></i> Download All</a>
+                  </div>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
@@ -117,7 +121,7 @@ $editFormHrefLocation="editform".($cat=="tr"?"-trainer":($cat=="tre"?"-trainee":
                     <td><?php echo $exclusion==true?$result[$i]['name']:$result[$i]['group_name'];?></td>
                     <td><?php echo $exclusion==true?$result[$i]['contact']:$result[$i]['head_mobile'];?></td>
                     <td><?php echo $result[$i]['address'];?></td>
-                    <td><a class="btn btn-success btn-sm" href="code.php?approve_id=">
+                    <td><a class="btn btn-success btn-sm" href="./download/csv.php?cat=<?php echo $cat;?>&id=<?php echo $result[$i]['id'];?>" >
                     <i class="fas fa-file-pdf"></i> Download</a></td>
                     <td><button class="btn btn-success btn-sm" onclick='<?php echo $postViewForm."(\"".$_GET['cat']."\",".$result[$i]['id'].")";?>' data-toggle="modal" data-target="<?php echo $modalId;?>"><i class="fas fa-eye"></i>View</button></td>
                     <td><a class="btn btn-success btn-sm" href="<?php echo $editFormHrefLocation.$result[$i]['id'];?>">
