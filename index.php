@@ -253,7 +253,7 @@ $event_result = $obj->getData('notice', '*', $condition_arr);
               </marquee>
               </div>  
             </div>
-            <button class="btn btn-warning btn-round float-right">Read All</button>
+            <a href="notice-data.php?id=notice" class="btn btn-warning btn-round float-right">Read All</a>
           </div>
 
 
@@ -285,7 +285,7 @@ $event_result = $obj->getData('notice', '*', $condition_arr);
               </div>
           
             </div>
-            <button class="btn btn-warning btn-round float-right">Read All</button>
+            <a href="" class="btn btn-warning btn-round float-right">Read All</a>
           </div>
 
           <!-- <div class="col-md-12">

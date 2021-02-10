@@ -14,9 +14,10 @@
             <!-- <h1 class="m-0 text-success text-bold">BTRLM not </h1> -->
             <div class="ui info message">
                 <div class="header mb-2">
-                    <i class="fas fa-edit"></i> Click the button to check all Notice.
+                    <i class="fas fa-edit"></i> Click the button to check all Images.
                 </div>
                 <button onclick="location.href ='gallary_data.php';" class="btn btn-success btn-sm"> <i class="fas fa-database"></i> Gallary</button>
+
 
             </div>
           </div><!-- /.col -->
@@ -37,7 +38,10 @@
      
       <!-- SIDE CONTAINER START -->
 
-
+      <div class="alert alert-secondary" role="alert">
+          Please Compress Images before Upload Here 
+            <a href="" class="btn btn-primary btn-sm">Here</a>
+      </div>
 
       <div class="card card-secondary">
               <div class="card-header">
