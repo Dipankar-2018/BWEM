@@ -351,14 +351,19 @@ document.querySelector('#passrset').addEventListener("click", function() {
 }
 
 //
-if(document.querySelector('#submitForm')!=null){
 
-  document.querySelector('form').addEventListener("submit", function() {
-    const btn=document.querySelector('#submitForm');
+if(document.querySelector('#submitMainForm')!=null){
+  let firstTime=true;
+  document.querySelector('form').addEventListener("submit", function(event) {
+    if(!firstTime){
+      event.preventDefault();
+      btn.removeAttribute('type','submit');
+      btn.setAttribute('type','button');
+    }
+    const btn=document.querySelector('#submitMainForm');
     const btnProcessing=`<i class="fa fa-spinner fa-spin"></i>Processing`;
     btn.innerHTML=btnProcessing;
-    btn.removeAttribute('type','submit');
-    btn.setAttribute('type','button');
+    firstTime=false;
   });
   }
 

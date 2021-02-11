@@ -90,8 +90,18 @@ $(function () {
 
 });
 
-
-
+//Count table rows
+function countRows(table,targetId){
+	const target=document.querySelector("#"+targetId);
+  if(target!==null){
+	  target.innerHTML=(target.innerHTML==="")?"0":document.querySelector("#"+table+" tbody").rows.length;
+    return target;
+  }
+  return 0;
+}
+countRows("table1","pendingRows");
+countRows("table2","acceptedRows");
+countRows("table3","rejectedRows");
 //generate password
 
 function randomPassword(length) {
