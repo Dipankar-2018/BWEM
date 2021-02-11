@@ -64,13 +64,13 @@ $editFormHrefLocation="editform".($cat=="tr"?"-trainer":($cat=="tre"?"-trainee":
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-success text-bold">BTRLM- <?php echo strtoupper($catagory).' '.strtoupper($dist).'\'S ';?> DATA </h1>
-            <a href="<?php echo $formHrefLocation;?>" class="btn btn-primary btn-sm">Add new Data</a>
+            <!-- <h1 class="m-0 text-success text-bold">BTRLM- <?php echo strtoupper($catagory).' '.strtoupper($dist).'\'S ';?> DATA </h1> -->
+            <a href="<?php echo $formHrefLocation;?>" class="btn btn-primary btn-sm"><i class="fas fa-plus-circle"></i> Add new Data </a>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Starter Page</li>
+              <li class="breadcrumb-item active"><?php echo strtoupper($catagory).' '.strtoupper($dist);?></li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -85,10 +85,19 @@ $editFormHrefLocation="editform".($cat=="tr"?"-trainer":($cat=="tre"?"-trainee":
 
 
 
+      <ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#home" class="btn btn-primary ml-3"><i class="far fa-file-alt"></i> New Application</a></li>
+    <li><a data-toggle="tab" href="#menu1"  class="btn btn-success ml-3"><i class="fas fa-check-circle"></i> Accepted</a></li>
+    <li><a data-toggle="tab" href="#menu2"  class="btn btn-danger ml-3"><i class="far fa-times-circle"></i> Rejected</a></li>
+   
+  </ul>
+
+  <div class="tab-content mt-4">
+    <div id="home" class="tab-pane fade in active">
       <div class="card">
               <div class="card-header">
                   <div style="display:flex;justify-content:space-between;">
-                  <h3 class="card-title">DataTable with default features</h3>
+                  <h3 class="card-title text-primary text-bold">BTRLM- <?php echo strtoupper($catagory).' '.strtoupper($dist).'\'S ';?> DATA </h3>
                     <a class="btn btn-success btn-sm" href="./download/csv.php?cat=<?php echo $cat;?>&dist=<?php echo $dist;?>" >
                         <i class="fas fa-file-pdf"></i> Download All</a>
                   </div>
@@ -106,10 +115,11 @@ $editFormHrefLocation="editform".($cat=="tr"?"-trainer":($cat=="tre"?"-trainee":
                     } ?>                  
                     <th>CONTACT</th>
                     <th>ADDRESS</th>
-                    <th>DOWNLOAD</th>
-                    <th>VIEW</th>
+                    <!-- <th>DOWNLOAD</th> -->
+                    <!-- <th>VIEW</th>
                     <th>EDIT</th>
-                    <th>DELETE</th>
+                    <th>DELETE</th> -->
+                    <th class="float-right">Action</th>
                   </tr>
                   </thead>
                   <tbody>
@@ -117,17 +127,22 @@ $editFormHrefLocation="editform".($cat=="tr"?"-trainer":($cat=="tre"?"-trainee":
              for($i=0;$i<count($result);$i++){
              ?>
                   <tr>
-                    <td><?php echo $i+1;?></td>
+                    <td><?php echo $exclusion==true?$result[$i]['formID']:$result[$i]['formID']; ?></td>
                     <td><?php echo $exclusion==true?$result[$i]['name']:$result[$i]['group_name'];?></td>
                     <td><?php echo $exclusion==true?$result[$i]['contact']:$result[$i]['head_mobile'];?></td>
                     <td><?php echo $result[$i]['address'];?></td>
-                    <td><a class="btn btn-success btn-sm" href="./download/csv.php?cat=<?php echo $cat;?>&id=<?php echo $result[$i]['id'];?>" >
-                    <i class="fas fa-file-pdf"></i> Download</a></td>
-                    <td><button class="btn btn-success btn-sm" onclick='<?php echo $postViewForm."(\"".$_GET['cat']."\",".$result[$i]['id'].")";?>' data-toggle="modal" data-target="<?php echo $modalId;?>"><i class="fas fa-eye"></i>View</button></td>
-                    <td><a class="btn btn-success btn-sm" href="<?php echo $editFormHrefLocation.$result[$i]['id'];?>">
-                    <i class="fas fa-cog"></i> Edit</a></td>
-                    <td>
-                    <button class="btn btn-danger btn-sm" onclick='<?php echo "deleteEntry(\"".$_GET['cat']."\",".$result[$i]['id'].")";?>'><i class="far fa-trash-alt"></i> Delete</button>
+                    <td class="float-right">
+                    <a href="" class="btn btn-success btn-sm"><i class="fas fa-check-circle"></i> Accept Application</a>
+                    <a href="" class="btn btn-primary btn-sm"><i class="far fa-times-circle"></i> Reject Application</a>
+                    <button class="btn btn-danger btn-sm" onclick='<?php echo "deleteEntry(\"".$_GET['cat']."\",".$result[$i]['id'].")";?>'><i class="far fa-trash-alt"></i> Delete</button>  
+                    
+                    <a class="btn btn-success btn-sm" href="./download/csv.php?cat=<?php echo $cat;?>&id=<?php echo $result[$i]['id'];?>" >
+                    <i class="fas fa-file-pdf"></i> Download</a>
+                    <button class="btn btn-success btn-sm" onclick='<?php echo $postViewForm."(\"".$_GET['cat']."\",".$result[$i]['id'].")";?>' data-toggle="modal" data-target="<?php echo $modalId;?>"><i class="fas fa-eye"></i>View</button>
+                    <a class="btn btn-success btn-sm" href="<?php echo $editFormHrefLocation.$result[$i]['id'];?>">
+                    <i class="fas fa-cog"></i> Edit</a>
+                   
+                    
                     </td>
                   </tr>
           <?php }?>
@@ -137,6 +152,38 @@ $editFormHrefLocation="editform".($cat=="tr"?"-trainer":($cat=="tre"?"-trainee":
               <!-- /.card-body -->
             </div>
 
+   
+    </div>
+
+
+    <div id="menu1" class="tab-pane fade">
+
+      <h3>Menu 1</h3>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+    </div>
+
+
+    <div id="menu2" class="tab-pane fade">
+
+      <h3>Menu 2</h3>
+      <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+
+    </div>
+
+
+    <div id="menu3" class="tab-pane fade">
+
+      <h3>Menu 3</h3>
+      <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+
+    </div>
+  </div>
+</div>
+
+
+
+      
 
 
 

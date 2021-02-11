@@ -2,6 +2,7 @@
 session_start();
 
 if(isset($_POST['submit'])){
+    
     include("../conn/database.php");
     $obj = new query();
 
@@ -125,6 +126,9 @@ if(isset($_POST['submit'])){
         $_SESSION['formStatus']=false;
     }    
 }
+
+
+
 if(isset($_SESSION['login'])&&$_SESSION['login']==true){
     header("location:../data.php?cat=shg&dist=".strtolower($dist));
 }
