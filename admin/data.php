@@ -55,7 +55,7 @@ $editFormHrefLocation="editform".($cat=="tr"?"-trainer":($cat=="tre"?"-trainee":
 <?php include("includes/navbar.php"); ?>
 <?php include("includes/sidenav.php"); ?>
 
-
+<!-- Dummy comment -->
   
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
