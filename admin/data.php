@@ -77,8 +77,8 @@ $editFormHrefLocation="editform".($cat=="tr"?"-trainer":($cat=="tre"?"-trainee":
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <!-- <h1 class="m-0 text-success text-bold">BTRLM- <?php echo strtoupper($catagory).' '.strtoupper($dist).'\'S ';?> DATA </h1> -->
-            <a href="<?php echo $formHrefLocation;?>" class="btn btn-primary btn-sm"><i class="fas fa-plus-circle"></i> Add new Data </a>
+            <h1 class="m-0"><i class="fas fa-chart-pie"></i> BTRLM- <?php echo strtoupper($catagory).' '.strtoupper($dist).'\'S ';?> DATA </h1>
+            
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -102,6 +102,7 @@ $editFormHrefLocation="editform".($cat=="tr"?"-trainer":($cat=="tre"?"-trainee":
     <li class="active"><a data-toggle="tab" href="#newapplication" class="btn btn-primary ml-3" id="pending"><i class="far fa-file-alt"></i> Pending Application</a></li>
     <li><a data-toggle="tab" href="#accepted"  class="btn btn-success ml-3" id="acpt"><i class="fas fa-check-circle"></i> Accepted</a></li>
     <li><a data-toggle="tab" href="#rejected"  class="btn btn-danger ml-3" id="rej"><i class="far fa-times-circle"></i> Rejected</a></li>
+    <li><a href="<?php echo $formHrefLocation;?>" class="btn btn-secondary ml-3"><i class="fas fa-plus-circle"></i> Add new Data </a></li>
    
   </ul>
 
