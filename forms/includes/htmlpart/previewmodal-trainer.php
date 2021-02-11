@@ -315,7 +315,7 @@
                 <!-- <button type="button" class="btn btn-danger btn-rounded" data-dismiss="modal">Close</button>
                 <button type="button" class="btn btn-primary btn-rounded">Save changes</button> -->
                 <button id="button" type="button" class="btn btn-danger btn-rounded " data-dismiss="modal">Close</button>&nbsp;
-                <button id="submitForm" type="button" class="btn btn-primary btn-rounded" data-dismiss="modal" onclick="$('#submitForm').click();">Submit</button>
+                <button type="button" class="btn btn-primary btn-rounded" data-dismiss="modal" onclick="$('#submitMainForm').click();">Submit</button>
 
             </div>
         </div>

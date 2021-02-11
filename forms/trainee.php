@@ -361,7 +361,7 @@ include('../includes/form-header.php');
                             </div>
                           </div>
                           <button id="modalActivate" type="button" name="preview" class="btn btn-success" onclick="previewTraineeForm()" data-toggle="modal" data-target="#exampleModalPreview">Preview</button>
-                          <button id="submitForm" type="submit" class="btn btn-primary" name="submit">Submit</button>
+                          <button id="submitMainForm" type="submit" class="btn btn-primary" name="submit">Submit</button>
                         </div>
                     
                   </div>

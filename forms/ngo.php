@@ -207,8 +207,8 @@ include('../includes/form-header.php');
                               <label for="SelectGender" class="text-info"><b>SELECT GENDER</b></label> <br>
                                 <select class="selectpicker" data-style="select-with-transition" id="SelectGender" title="Select Gender" data-size="7" name="member_gender[]">
                                 <option disabled>Select Gender</option>
-                                <option value="2">MALE</option>
-                                <option value="3">FEMALE</option>                                
+                                <option value="Male">MALE</option>
+                                <option value="Female">FEMALE</option>                              
                               </select>
                             </div>
                           </div>
@@ -336,7 +336,7 @@ include('../includes/form-header.php');
                           </div>
                           <button id="modalActivate" type="button" name="preview" class="btn btn-success" onclick="previewForm()" data-toggle="modal" data-target="#exampleModalPreview">Preview</button>
                         
-                          <button id="submitForm" type="submit" class="btn btn-primary" name="submit">Submit</button>
+                          <button id="submitMainForm" type="submit" class="btn btn-primary" name="submit">Submit</button>
                         </div>
                 
                   </div>
