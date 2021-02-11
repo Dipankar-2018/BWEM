@@ -110,7 +110,7 @@ $editFormHrefLocation="editform".($cat=="tr"?"-trainer":($cat=="tre"?"-trainee":
       <div class="card">
               <div class="card-header">
                   <div style="display:flex;justify-content:space-between;">
-                  <h3 class="card-title text-primary text-bold">BTRLM- <?php echo strtoupper($catagory).' '.strtoupper($dist).'\'S ';?> DATA </h3>
+                  <h3 class="card-title text-primary text-bold"><span class="text-danger">(PENDING APPLICATIONS)</span> <?php echo strtoupper($catagory).' '.strtoupper($dist).'\'S ';?> DATA </h3>
                     <a class="btn btn-success btn-sm" href="./download/csv.php?cat=<?php echo $cat;?>&dist=<?php echo $dist;?>" >
                         <i class="fas fa-file-pdf"></i> Download All</a>
                   </div>
@@ -177,7 +177,7 @@ $editFormHrefLocation="editform".($cat=="tr"?"-trainer":($cat=="tre"?"-trainee":
     <div class="card">
               <div class="card-header">
                   <div style="display:flex;justify-content:space-between;">
-                  <h3 class="card-title text-primary text-bold">BTRLM- <?php echo strtoupper($catagory).' '.strtoupper($dist).'\'S ';?> DATA </h3>
+                  <h3 class="card-title text-primary text-bold"><span class="text-danger">(ACCEPTED APPLICATIONS)</span> <?php echo strtoupper($catagory).' '.strtoupper($dist).'\'S ';?> DATA </h3>
                     <a class="btn btn-success btn-sm" href="./download/csv.php?cat=<?php echo $cat;?>&dist=<?php echo $dist;?>" >
                         <i class="fas fa-file-pdf"></i> Download All</a>
                   </div>
@@ -242,7 +242,7 @@ $editFormHrefLocation="editform".($cat=="tr"?"-trainer":($cat=="tre"?"-trainee":
     <div class="card">
               <div class="card-header">
                   <div style="display:flex;justify-content:space-between;">
-                  <h3 class="card-title text-primary text-bold">BTRLM- <?php echo strtoupper($catagory).' '.strtoupper($dist).'\'S ';?> DATA </h3>
+                  <h3 class="card-title text-primary text-bold"><span class="text-danger">(REJECTED APPLICATIONS)</span> <?php echo strtoupper($catagory).' '.strtoupper($dist).'\'S ';?> DATA </h3>
                     <a class="btn btn-success btn-sm" href="./download/csv.php?cat=<?php echo $cat;?>&dist=<?php echo $dist;?>" >
                         <i class="fas fa-file-pdf"></i> Download All</a>
                   </div>
