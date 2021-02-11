@@ -54,7 +54,7 @@ function getDistCount($cat,$district){
               <div class="icon">
               <i class="fas fa-chart-line"></i>
               </div>
-              <a onclick="" class="small-box-footer" data-toggle="modal" data-target="#model-desh">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a onclick="moreInfoView('kokrajhar')" class="small-box-footer" data-toggle="modal" data-target="#model-desh">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -69,7 +69,7 @@ function getDistCount($cat,$district){
               <div class="icon">
               <i class="fas fa-chart-area"></i>
               </div>
-              <a onclick="" class="small-box-footer" data-toggle="modal" data-target="#model-desh">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a onclick="moreInfoView('chirang')" class="small-box-footer" data-toggle="modal" data-target="#model-desh">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -84,7 +84,7 @@ function getDistCount($cat,$district){
               <div class="icon">
               <i class="fas fa-chart-bar"></i>
               </div>
-              <a onclick="" class="small-box-footer" data-toggle="modal" data-target="#model-desh">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a onclick="moreInfoView('baksa')" class="small-box-footer" data-toggle="modal" data-target="#model-desh">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -100,7 +100,7 @@ function getDistCount($cat,$district){
               <i class="fas fa-chart-pie"></i>
              
               </div>
-              <a onclick="" class="small-box-footer" data-toggle="modal" data-target="#model-desh">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a onclick="moreInfoView('udalguri')" class="small-box-footer" data-toggle="modal" data-target="#model-desh">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -180,52 +180,52 @@ function getDistCount($cat,$district){
                   <tbody>
                     <tr>                    
                       <td>Self Help Group</td>
-                      <td>500</td>
-                      <td>20</td>
-                      <td>30</td>
-                      <td>45</td>
+                      <td class="more-info-td" id="shg-ac">500</td>
+                      <td class="more-info-td" id="shg-rj">20</td>
+                      <td class="more-info-td" id="shg-pd">30</td>
+                      <td class="more-info-td" id="shg-tot">45</td>
                     </tr>     
                     
                     <tr>                    
                       <td>Entreprenures</td>
-                      <td>500</td>
-                      <td>20</td>
-                      <td>30</td>
-                      <td>45</td>
+                      <td class="more-info-td" id="ep-ac">500</td>
+                      <td class="more-info-td" id="ep-rj">20</td>
+                      <td class="more-info-td" id="ep-pd">30</td>
+                      <td class="more-info-td" id="ep-tot">45</td>
                     </tr> 
 
                     <tr>                    
                       <td>NGO'S</td>
-                      <td>500</td>
-                      <td>20</td>
-                      <td>30</td>
-                      <td>45</td>
+                      <td class="more-info-td" id="ng-ac">500</td>
+                      <td class="more-info-td" id="ng-rj">20</td>
+                      <td class="more-info-td" id="ng-pd">30</td>
+                      <td class="more-info-td" id="ng-tot">45</td>
                     </tr> 
 
                     <tr>                    
                       <td>Association</td>
-                      <td>500</td>
-                      <td>20</td>
-                      <td>30</td>
-                      <td>45</td>
+                      <td class="more-info-td" id="as-ac">500</td>
+                      <td class="more-info-td" id="as-rj">20</td>
+                      <td class="more-info-td" id="as-pd">30</td>
+                      <td class="more-info-td" id="as-tot">45</td>
                     </tr> 
 
 
                     <tr>                    
                       <td>Trainer</td>
-                      <td>500</td>
-                      <td>20</td>
-                      <td>30</td>
-                      <td>45</td>
+                      <td class="more-info-td" id="tr-ac">500</td>
+                      <td class="more-info-td" id="tr-rj">20</td>
+                      <td class="more-info-td" id="tr-pd">30</td>
+                      <td class="more-info-td" id="tr-tot">45</td>
                     </tr> 
 
 
                     <tr>                    
                       <td>Trainee</td>
-                      <td>500</td>
-                      <td>20</td>
-                      <td>30</td>
-                      <td>45</td>
+                      <td class="more-info-td" id="tre-ac">500</td>
+                      <td class="more-info-td" id="tre-rj">20</td>
+                      <td class="more-info-td" id="tre-pd">30</td>
+                      <td class="more-info-td" id="tre-tot">45</td>
                     </tr> 
 
 

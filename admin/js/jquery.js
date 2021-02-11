@@ -123,7 +123,9 @@ const capitalize = (s) => {
   if (typeof s !== 'string') return ''
   return s.charAt(0).toUpperCase() + s.slice(1)
 }
-function changeStatus(cat,id,status){
+
+//Change Status button functionality
+function changeStatus(btn,cat,id,status){
   swal({
     title: "Are you sure?",
     text: "The Status will be Altered!",
@@ -133,6 +135,9 @@ function changeStatus(cat,id,status){
   })
   .then((willChange) => {
     if (willChange) {
+      let temp=btn.innerHTML;
+      btn.innerHTML=`<i class="fa fa-spinner fa-spin"></i>Processing`;
+      btn.disabled=true;
       //mycode
       $.ajax({
         url:"data.php",
@@ -143,12 +148,16 @@ function changeStatus(cat,id,status){
             swal("Status has been Changed!", {
               icon: "success",
             });
+            btn.innerHTML=temp;
+            btn.disabled=false;
             window.location.reload();
         },
         error:function(err){
           swal("Some Error Occured!", {
             icon: "error",
           });
+          btn.innerHTML=temp;
+          btn.disabled=false;
         }
     });
    
@@ -570,7 +579,34 @@ function postViewFormTrainee(cat,id){
 });  
 }
 
-
+//for More info in dashboard
+function setDataIntoMoreInfo(cat,ac,rj,pd,tot){ 
+      document.querySelector('#'+cat+"-ac").innerHTML=ac;
+      document.querySelector('#'+cat+"-rj").innerHTML=rj;
+      document.querySelector('#'+cat+"-pd").innerHTML=pd;
+      document.querySelector('#'+cat+"-tot").innerHTML=tot;
+}
+function moreInfoView(district){ 
+  $.ajax({
+    url:"backend/getjsondata.php",
+    method:"post",
+    data:{moreInfo:true,district:district},
+    dataType:"json",
+    success:function(data){      
+      for(let i=0;i<data.length;i++)
+          if(Number(data[i].err)==0)
+            setDataIntoMoreInfo(data[i].cat,data[i].accept,data[i].reject,data[i].pending,data[i].total);
+          else{
+            setDataIntoMoreInfo(data[i].cat,0,0,0,0);
+          }
+    },
+    error:function(err){
+      swal("Some Error Occured!", {
+        icon: "error",
+      });
+    }
+});  
+}
 
 
 

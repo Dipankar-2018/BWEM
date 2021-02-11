@@ -32,9 +32,19 @@ if(isset($_POST['id']) && isset($_POST['delete']) &&$_POST['delete']){
 if(isset($_POST['id']) && isset($_POST['change']) &&$_POST['change']){  
   $id=$obj->get_safe_str($_POST['id']);
   $status=$obj->get_safe_str($_POST['status']);
-  $condition_arr=array('formStatus'=>$status,'form_reviewed_on'=>date('Y-m-d'));
+  $formReviewedDate=date('Y-m-d');
+  $condition_arr=array('formStatus'=>$status,'form_reviewed_on'=>$formReviewedDate);
   $result=$obj->updateData($table,$condition_arr,'id',$id);
 
+  if($result){
+    $result=$obj->getData($table,'*',array('id'=>$id))[0];
+     $formID=$result['formID'];
+    $reciever_email=isset($result['head_email'])?$result['head_email']:$result['email'];
+    $reciever_name=isset($result['head_name'])?$result['head_name']:$result['name'];
+    $formReviewedStatus=true;
+    $isApproved=$status=="1"?true:false;
+    include('../mailer/mail-content.php');
+  }
 }
 //Data Display 
 if(isset($_GET['cat'])&& $_GET['cat']!="" && array_key_exists($obj->get_safe_str($_GET['cat']),$cat)){
@@ -157,8 +167,8 @@ $editFormHrefLocation="editform".($cat=="tr"?"-trainer":($cat=="tre"?"-trainee":
                       <button class="btn btn-danger btn-sm" onclick='<?php echo "deleteEntry(\"".$_GET['cat']."\",".$result[$i]['id'].")";?>'><i class="far fa-trash-alt"></i> Delete</button>  
                     </td>
                     <td>
-                      <button type="button" class="btn btn-success btn-sm" onclick='<?php echo "changeStatus(\"".$_GET['cat']."\",".$result[$i]['id'].",1)";?>'><i class="fas fa-check-circle"></i> Accept</button>
-                      <button type="button" class="btn btn-danger btn-sm" onclick='<?php echo "changeStatus(\"".$_GET['cat']."\",".$result[$i]['id'].",0)";?>'><i class="far fa-times-circle"></i> Reject</button>                  
+                      <button type="button" class="btn btn-success btn-sm" onclick='<?php echo "changeStatus(this,\"".$_GET['cat']."\",".$result[$i]['id'].",1)";?>'><i class="fas fa-check-circle"></i> Accept</button>
+                      <button type="button" class="btn btn-danger btn-sm" onclick='<?php echo "changeStatus(this,\"".$_GET['cat']."\",".$result[$i]['id'].",0)";?>'><i class="far fa-times-circle"></i> Reject</button>                  
                     </td>
                   </tr>
           <?php }?>
@@ -224,7 +234,7 @@ $editFormHrefLocation="editform".($cat=="tr"?"-trainer":($cat=="tre"?"-trainee":
                       <button class="btn btn-danger btn-sm" onclick='<?php echo "deleteEntry(\"".$_GET['cat']."\",".$result2[$i]['id'].")";?>'><i class="far fa-trash-alt"></i> Delete</button>  
                     </td>
                     <td>
-                    <button type="button" class="btn btn-danger btn-sm" onclick='<?php echo "changeStatus(\"".$_GET['cat']."\",".$result2[$i]['id'].",0)";?>'><i class="far fa-times-circle"></i> Reject</button>                  
+                    <button type="button" class="btn btn-danger btn-sm" onclick='<?php echo "changeStatus(this,\"".$_GET['cat']."\",".$result2[$i]['id'].",0)";?>'><i class="far fa-times-circle"></i> Reject</button>                  
                     </td>
                   </tr>
           <?php }?>
@@ -289,7 +299,7 @@ $editFormHrefLocation="editform".($cat=="tr"?"-trainer":($cat=="tre"?"-trainee":
                       <button class="btn btn-danger btn-sm" onclick='<?php echo "deleteEntry(\"".$_GET['cat']."\",".$result3[$i]['id'].")";?>'><i class="far fa-trash-alt"></i> Delete</button>  
                     </td>
                     <td>
-                    <button type="button" class="btn btn-success btn-sm" onclick='<?php echo "changeStatus(\"".$_GET['cat']."\",".$result3[$i]['id'].",1)";?>'><i class="fas fa-check-circle"></i> Accept</button>          
+                    <button type="button" class="btn btn-success btn-sm" onclick='<?php echo "changeStatus(this,\"".$_GET['cat']."\",".$result3[$i]['id'].",1)";?>'><i class="fas fa-check-circle"></i> Accept</button>          
                     </td>
                   </tr>
           <?php }?>
