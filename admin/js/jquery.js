@@ -1,11 +1,7 @@
 //Add New member function
-const pending = $("#pending");
-const acpt=$("#acpt-app");
-const rjct=$("#rjct-app");
-const pendingDiv=$("#pending-app");
-const acptDiv=$("#accepted-app");
-const rjctDiv=$("#rejected-app");
+
 (()=>{
+  const pending = $("#pending");
   if(pending !== null){
     pending.click();
   }
@@ -117,6 +113,40 @@ const capitalize = (s) => {
   if (typeof s !== 'string') return ''
   return s.charAt(0).toUpperCase() + s.slice(1)
 }
+function changeStatus(cat,id,status){
+  swal({
+    title: "Are you sure?",
+    text: "The Status will be Altered!",
+    icon: "warning",
+    buttons: true,
+    dangerMode: true,
+  })
+  .then((willChange) => {
+    if (willChange) {
+      //mycode
+      $.ajax({
+        url:"data.php",
+        method:"POST",
+        data:{id:id,cat:cat,status:status,change:true},
+        dataType:"text",
+        success:function(data){
+            swal("Status has been Changed!", {
+              icon: "success",
+            });
+            window.location.reload();
+        },
+        error:function(err){
+          swal("Some Error Occured!", {
+            icon: "error",
+          });
+        }
+    });
+   
+    } 
+
+  });
+  
+}
 //delete entry
 function deleteEntry(cat,id){
   swal({
@@ -132,7 +162,7 @@ function deleteEntry(cat,id){
       $.ajax({
         url:"data.php",
         method:"POST",
-        data:{id:id,cat:cat},
+        data:{id:id,cat:cat,delete:true},
         dataType:"text",
         success:function(data){
             swal("Entry has been deleted!", {
