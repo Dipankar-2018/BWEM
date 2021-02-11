@@ -99,11 +99,10 @@ $editFormHrefLocation="editform".($cat=="tr"?"-trainer":($cat=="tre"?"-trainee":
 
 
       <ul class="nav nav-tabs">
-    <li class="active"><a data-toggle="tab" href="#newapplication" class="btn btn-primary ml-3" id="pending"><i class="far fa-file-alt"></i> Pending Application</a></li>
-    <li><a data-toggle="tab" href="#accepted"  class="btn btn-success ml-3" id="acpt"><i class="fas fa-check-circle"></i> Accepted</a></li>
-    <li><a data-toggle="tab" href="#rejected"  class="btn btn-danger ml-3" id="rej"><i class="far fa-times-circle"></i> Rejected</a></li>
+    <li class="active"><a data-toggle="tab" href="#newapplication" class="btn btn-primary ml-3" id="pending"><i class="far fa-file-alt"></i>&nbsp;<strong id="pendingRows">0</strong>&nbsp; Pending Application</a></li>
+    <li><a data-toggle="tab" href="#accepted"  class="btn btn-success ml-3" id="acpt"><i class="fas fa-check-circle"></i>&nbsp;<strong id="acceptedRows">0</strong>&nbsp; Accepted</a></li>
+    <li><a data-toggle="tab" href="#rejected"  class="btn btn-danger ml-3" id="rej"><i class="far fa-times-circle"></i>&nbsp;<strong id="rejectedRows">0</strong>&nbsp; Rejected</a></li>
     <li><a href="<?php echo $formHrefLocation;?>" class="btn btn-secondary ml-3"><i class="fas fa-plus-circle"></i> Add new Data </a></li>
-   
   </ul>
 
   <div class="tab-content mt-4">
@@ -118,7 +117,7 @@ $editFormHrefLocation="editform".($cat=="tr"?"-trainer":($cat=="tre"?"-trainee":
               </div>
               <!-- /.card-header -->
               <div class="card-body">
-                <table id="example1" class="table table-bordered table-striped">
+                <table id="table1" class="table table-bordered table-striped">
                   <thead>
                   <tr>
                     <th>ID</th>
@@ -185,7 +184,7 @@ $editFormHrefLocation="editform".($cat=="tr"?"-trainer":($cat=="tre"?"-trainee":
               </div>
               <!-- /.card-header -->
               <div class="card-body">
-                <table id="example1" class="table table-bordered table-striped">
+                <table id="table2" class="table table-bordered table-striped">
                   <thead>
                   <tr>
                     <th>ID</th>
@@ -250,7 +249,7 @@ $editFormHrefLocation="editform".($cat=="tr"?"-trainer":($cat=="tre"?"-trainee":
               </div>
               <!-- /.card-header -->
               <div class="card-body">
-                <table id="example1" class="table table-bordered table-striped">
+                <table id="table3" class="table table-bordered table-striped">
                   <thead>
                   <tr>
                     <th>ID</th>

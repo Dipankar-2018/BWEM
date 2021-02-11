@@ -54,7 +54,7 @@ function getDistCount($cat,$district){
               <div class="icon">
               <i class="fas fa-chart-line"></i>
               </div>
-              <a href="data.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="data.php" class="small-box-footer" data-toggle="modal" data-target="#model-desh">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -69,7 +69,7 @@ function getDistCount($cat,$district){
               <div class="icon">
               <i class="fas fa-chart-area"></i>
               </div>
-              <a href="data.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="data.php" class="small-box-footer" data-toggle="modal" data-target="#model-desh">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -84,7 +84,7 @@ function getDistCount($cat,$district){
               <div class="icon">
               <i class="fas fa-chart-bar"></i>
               </div>
-              <a href="data.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="data.php" class="small-box-footer" data-toggle="modal" data-target="#model-desh">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -100,7 +100,7 @@ function getDistCount($cat,$district){
               <i class="fas fa-chart-pie"></i>
              
               </div>
-              <a href="data.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="data.php" class="small-box-footer" data-toggle="modal" data-target="#model-desh">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -151,4 +151,108 @@ function getDistCount($cat,$district){
   </div>
   </div>
   <!-- /.content-wrapper -->
+
+
+
+  <!-- model -->
+<div class="modal fade" id="model-desh" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Kokrajhar's Status</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      <div class="card-body">
+                <table class="table table-bordered">
+                  <thead>
+                    <tr>
+                      <th style="width: 10px">#</th>
+                      <th>Category</th>
+                      <th>Progress</th>
+                      <th style="width: 40px">Total</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1.</td>
+                      <td>Self Help Group</td>
+                      <td>
+                        <div class="progress progress-xs">
+                          <div class="progress-bar progress-bar-danger" style="width: 55%"></div>
+                        </div>
+                      </td>
+                      <td><span class="badge bg-danger">1000</span></td>
+                    </tr>
+                    <tr>
+                      <td>2.</td>
+                      <td>Entreprenures</td>
+                      <td>
+                        <div class="progress progress-xs">
+                          <div class="progress-bar bg-warning" style="width: 70%"></div>
+                        </div>
+                      </td>
+                      <td><span class="badge bg-warning">70%</span></td>
+                    </tr>
+                    <tr>
+                      <td>3.</td>
+                      <td>NGO'S</td>
+                      <td>
+                        <div class="progress progress-xs progress-striped active">
+                          <div class="progress-bar bg-primary" style="width: 30%"></div>
+                        </div>
+                      </td>
+                      <td><span class="badge bg-primary">30%</span></td>
+                    </tr>
+                    <tr>
+                      <td>4.</td>
+                      <td>Association</td>
+                      <td>
+                        <div class="progress progress-xs progress-striped active">
+                          <div class="progress-bar bg-success" style="width: 90%"></div>
+                        </div>
+                      </td>
+                      <td><span class="badge bg-success">90%</span></td>
+                    </tr>
+                    <tr>
+                      <td>5.</td>
+                      <td>Trainer</td>
+                      <td>
+                        <div class="progress progress-xs progress-striped active">
+                          <div class="progress-bar bg-success" style="width: 90%"></div>
+                        </div>
+                      </td>
+                      <td><span class="badge bg-success">90%</span></td>
+                    </tr>
+                    <tr>
+                      <td>6.</td>
+                      <td>Trainee</td>
+                      <td>
+                        <div class="progress progress-xs progress-striped active">
+                          <div class="progress-bar bg-success" style="width: 90%"></div>
+                        </div>
+                      </td>
+                      <td><span class="badge bg-success">90%</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+      </div>
+      <div class="modal-footer">        
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
 <?php include('includes/footer.php');?>
