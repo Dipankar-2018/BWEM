@@ -10,7 +10,9 @@ $table="";
 
 if(isset($_POST['cat'])&& $_POST['cat']!="" && array_key_exists($obj->get_safe_str($_POST['cat']),$cat))
     $table=$cat[$obj->get_safe_str($_POST['cat'])];
-if(isset($_POST['id'])){  
+
+//Delete Code
+if(isset($_POST['id']) && isset($_POST['delete']) &&$_POST['delete']){  
   $id=$obj->get_safe_str($_POST['id']);
   $condition_arr=array('id'=>$id);
   if($table=="trainer" || $table=="trainee"){
@@ -21,11 +23,20 @@ if(isset($_POST['id'])){
     $res1=$obj->deleteData($table.'_members',array('group_name'=>$result[0]['group_name']));
     $res2=$obj->deleteData($table,$condition_arr);
   }
-  
   // echo ($res1==true&&$res2==true)?1:0;
   die();
   exit;
 }
+
+// change status code
+if(isset($_POST['id']) && isset($_POST['change']) &&$_POST['change']){  
+  $id=$obj->get_safe_str($_POST['id']);
+  $status=$obj->get_safe_str($_POST['status']);
+  $condition_arr=array('formStatus'=>$status,'form_reviewed_on'=>date('Y-m-d'));
+  $result=$obj->updateData($table,$condition_arr,'id',$id);
+
+}
+//Data Display 
 if(isset($_GET['cat'])&& $_GET['cat']!="" && array_key_exists($obj->get_safe_str($_GET['cat']),$cat)){
   $catagory=$table=$cat[$obj->get_safe_str($_GET['cat'])];
     $exclusion=($table=="trainer"||$table=="trainee");
@@ -38,7 +49,9 @@ $dist="kokrajhar";
 
 if(isset($_GET['dist'])&& $_GET['dist']!=""){
   $dist=$obj->get_safe_str($_GET['dist']);
-  $result=$obj->getData($table,'*',array('district'=>$dist));   
+  $result=$obj->getData($table,'*',array('district'=>$dist,'formStatus'=>'-1'));   
+  $result2=$obj->getData($table,'*',array('district'=>$dist,'formStatus'=>'1')); 
+  $result3=$obj->getData($table,'*',array('district'=>$dist,'formStatus'=>'0')); 
 }else
     header('location:./');//$result=$obj->getData($table); 
 // print_r($result);
@@ -115,10 +128,10 @@ $editFormHrefLocation="editform".($cat=="tr"?"-trainer":($cat=="tre"?"-trainee":
                     } ?>                  
                     <th>CONTACT</th>
                     <th>ADDRESS</th>
-                    <th>STAUTS</th>
-                    <th>Approval</th>
-                    <th>EDIT</th>                 
-                    <th>Action</th>
+                    <th>STATUS</th>
+                    <th>VIEW/DOWNLOAD</th>
+                    <th>EDIT/DELETE</th>
+                    <th>CHANGE TO STATUS</th>
                   </tr>
                   </thead>
                   <tbody>
@@ -131,29 +144,21 @@ $editFormHrefLocation="editform".($cat=="tr"?"-trainer":($cat=="tre"?"-trainee":
                     <td><?php echo $exclusion==true?$result[$i]['contact']:$result[$i]['head_mobile'];?></td>
                     <td><?php echo $result[$i]['address'];?></td>
                     <td>
-                      Pending  
-                    
+                      <strong>Pending </strong> 
                     </td>
                     <td>
-                    <a href="" class="btn btn-success btn-sm"><i class="fas fa-check-circle"></i> Accept</a>
-                    <a href="" class="btn btn-danger btn-sm"><i class="far fa-times-circle"></i> Reject</a>                  
+                      <button class="btn btn-primary btn-sm" onclick='<?php echo $postViewForm."(\"".$_GET['cat']."\",".$result[$i]['id'].")";?>' data-toggle="modal" data-target="<?php echo $modalId;?>"><i class="fas fa-eye"></i>View</button>
+                      <a class="btn btn-success btn-sm" href="./download/csv.php?cat=<?php echo $cat;?>&id=<?php echo $result[$i]['id'];?>" >
+                      <i class="fas fa-file-pdf"></i> Download</a>
                     </td>
                     <td>
-                  
-                    <a class="btn btn-warning btn-sm" href="<?php echo $editFormHrefLocation.$result[$i]['id'];?>">
-                    <i class="fas fa-cog"></i> Edit</a>
-                   
-                    <button class="btn btn-danger btn-sm" onclick='<?php echo "deleteEntry(\"".$_GET['cat']."\",".$result[$i]['id'].")";?>'><i class="far fa-trash-alt"></i> Delete</button>  
-                    
+                      <a class="btn btn-warning btn-sm" href="<?php echo $editFormHrefLocation.$result[$i]['id'];?>">
+                      <i class="fas fa-cog"></i> Edit</a>
+                      <button class="btn btn-danger btn-sm" onclick='<?php echo "deleteEntry(\"".$_GET['cat']."\",".$result[$i]['id'].")";?>'><i class="far fa-trash-alt"></i> Delete</button>  
                     </td>
                     <td>
-                 
-                    <button class="btn btn-primary btn-sm" onclick='<?php echo $postViewForm."(\"".$_GET['cat']."\",".$result[$i]['id'].")";?>' data-toggle="modal" data-target="<?php echo $modalId;?>"><i class="fas fa-eye"></i>View</button>
-                    
-                    <a class="btn btn-success btn-sm" href="./download/csv.php?cat=<?php echo $cat;?>&id=<?php echo $result[$i]['id'];?>" >
-                    <i class="fas fa-file-pdf"></i> Download</a>
-                  
-                    
+                      <button type="button" class="btn btn-success btn-sm" onclick='<?php echo "changeStatus(\"".$_GET['cat']."\",".$result[$i]['id'].",1)";?>'><i class="fas fa-check-circle"></i> Accept</button>
+                      <button type="button" class="btn btn-danger btn-sm" onclick='<?php echo "changeStatus(\"".$_GET['cat']."\",".$result[$i]['id'].",0)";?>'><i class="far fa-times-circle"></i> Reject</button>                  
                     </td>
                   </tr>
           <?php }?>
@@ -190,44 +195,36 @@ $editFormHrefLocation="editform".($cat=="tr"?"-trainer":($cat=="tre"?"-trainee":
                     } ?>                  
                     <th>CONTACT</th>
                     <th>ADDRESS</th>
-                    <th>STAUTS</th>
-                    <th>Approval</th>
-                    <th>EDIT</th>                 
-                    <th>Action</th>
+                    <th>STATUS</th>
+                    <th>VIEW/DOWNLOAD</th>
+                    <th>EDIT/DELETE</th>
+                    <th>CHANGE TO STATUS</th>
                   </tr>
                   </thead>
                   <tbody>
              <?php
-             for($i=0;$i<count($result);$i++){
+             for($i=0;$i<count($result2);$i++){
              ?>
                   <tr>
-                    <td><?php echo $exclusion==true?$result[$i]['formID']:$result[$i]['formID']; ?></td>
-                    <td><?php echo $exclusion==true?$result[$i]['name']:$result[$i]['group_name'];?></td>
-                    <td><?php echo $exclusion==true?$result[$i]['contact']:$result[$i]['head_mobile'];?></td>
-                    <td><?php echo $result[$i]['address'];?></td>
+                    <td><?php echo $exclusion==true?$result2[$i]['formID']:$result2[$i]['formID']; ?></td>
+                    <td><?php echo $exclusion==true?$result2[$i]['name']:$result2[$i]['group_name'];?></td>
+                    <td><?php echo $exclusion==true?$result2[$i]['contact']:$result2[$i]['head_mobile'];?></td>
+                    <td><?php echo $result2[$i]['address'];?></td>
                     <td>
-                     Accepted
+                     <strong> Approved</strong>  
                     </td>
                     <td>
-                    <a href="" class="btn btn-success btn-sm"><i class="fas fa-check-circle"></i> Accept</a>
-                    <a href="" class="btn btn-danger btn-sm"><i class="far fa-times-circle"></i> Reject</a>                  
+                      <button class="btn btn-primary btn-sm" onclick='<?php echo $postViewForm."(\"".$_GET['cat']."\",".$result2[$i]['id'].")";?>' data-toggle="modal" data-target="<?php echo $modalId;?>"><i class="fas fa-eye"></i>View</button>
+                      <a class="btn btn-success btn-sm" href="./download/csv.php?cat=<?php echo $cat;?>&id=<?php echo $result2[$i]['id'];?>" >
+                      <i class="fas fa-file-pdf"></i> Download</a>
                     </td>
                     <td>
-                  
-                    <a class="btn btn-warning btn-sm" href="<?php echo $editFormHrefLocation.$result[$i]['id'];?>">
-                    <i class="fas fa-cog"></i> Edit</a>
-                   
-                    <button class="btn btn-danger btn-sm" onclick='<?php echo "deleteEntry(\"".$_GET['cat']."\",".$result[$i]['id'].")";?>'><i class="far fa-trash-alt"></i> Delete</button>  
-                    
+                      <a class="btn btn-warning btn-sm" href="<?php echo $editFormHrefLocation.$result2[$i]['id'];?>">
+                      <i class="fas fa-cog"></i> Edit</a>
+                      <button class="btn btn-danger btn-sm" onclick='<?php echo "deleteEntry(\"".$_GET['cat']."\",".$result2[$i]['id'].")";?>'><i class="far fa-trash-alt"></i> Delete</button>  
                     </td>
                     <td>
-                 
-                    <button class="btn btn-primary btn-sm" onclick='<?php echo $postViewForm."(\"".$_GET['cat']."\",".$result[$i]['id'].")";?>' data-toggle="modal" data-target="<?php echo $modalId;?>"><i class="fas fa-eye"></i>View</button>
-                    
-                    <a class="btn btn-success btn-sm" href="./download/csv.php?cat=<?php echo $cat;?>&id=<?php echo $result[$i]['id'];?>" >
-                    <i class="fas fa-file-pdf"></i> Download</a>
-                  
-                    
+                    <button type="button" class="btn btn-danger btn-sm" onclick='<?php echo "changeStatus(\"".$_GET['cat']."\",".$result2[$i]['id'].",0)";?>'><i class="far fa-times-circle"></i> Reject</button>                  
                     </td>
                   </tr>
           <?php }?>
@@ -236,7 +233,6 @@ $editFormHrefLocation="editform".($cat=="tr"?"-trainer":($cat=="tre"?"-trainee":
               </div>
               <!-- /.card-body -->
             </div>
-
 
     </div>
 
@@ -264,46 +260,36 @@ $editFormHrefLocation="editform".($cat=="tr"?"-trainer":($cat=="tre"?"-trainee":
                     } ?>                  
                     <th>CONTACT</th>
                     <th>ADDRESS</th>
-                    <th>STAUTS</th>
-                    <th>Approval</th>
-                    <th>EDIT</th>                 
-                    <th>Action</th>
+                    <th>STATUS</th>
+                    <th>VIEW/DOWNLOAD</th>
+                    <th>EDIT/DELETE</th>
+                    <th>CHANGE TO STATUS</th>                 
                   </tr>
                   </thead>
                   <tbody>
              <?php
-             for($i=0;$i<count($result);$i++){
+             for($i=0;$i<count($result3);$i++){
              ?>
                   <tr>
-                    <td><?php echo $exclusion==true?$result[$i]['formID']:$result[$i]['formID']; ?></td>
-                    <td><?php echo $exclusion==true?$result[$i]['name']:$result[$i]['group_name'];?></td>
-                    <td><?php echo $exclusion==true?$result[$i]['contact']:$result[$i]['head_mobile'];?></td>
-                    <td><?php echo $result[$i]['address'];?></td>
+                    <td><?php echo $exclusion==true?$result3[$i]['formID']:$result3[$i]['formID']; ?></td>
+                    <td><?php echo $exclusion==true?$result3[$i]['name']:$result3[$i]['group_name'];?></td>
+                    <td><?php echo $exclusion==true?$result3[$i]['contact']:$result3[$i]['head_mobile'];?></td>
+                    <td><?php echo $result3[$i]['address'];?></td>
                     <td>
-                      
-                     Rejected
-                    
+                      <strong>Not Approved </strong> 
                     </td>
                     <td>
-                    <a href="" class="btn btn-success btn-sm"><i class="fas fa-check-circle"></i> Accept</a>
-                    <a href="" class="btn btn-danger btn-sm"><i class="far fa-times-circle"></i> Reject</a>                  
+                      <button class="btn btn-primary btn-sm" onclick='<?php echo $postViewForm."(\"".$_GET['cat']."\",".$result3[$i]['id'].")";?>' data-toggle="modal" data-target="<?php echo $modalId;?>"><i class="fas fa-eye"></i>View</button>
+                      <a class="btn btn-success btn-sm" href="./download/csv.php?cat=<?php echo $cat;?>&id=<?php echo $result3[$i]['id'];?>" >
+                      <i class="fas fa-file-pdf"></i> Download</a>
                     </td>
                     <td>
-                  
-                    <a class="btn btn-warning btn-sm" href="<?php echo $editFormHrefLocation.$result[$i]['id'];?>">
-                    <i class="fas fa-cog"></i> Edit</a>
-                   
-                    <button class="btn btn-danger btn-sm" onclick='<?php echo "deleteEntry(\"".$_GET['cat']."\",".$result[$i]['id'].")";?>'><i class="far fa-trash-alt"></i> Delete</button>  
-                    
+                      <a class="btn btn-warning btn-sm" href="<?php echo $editFormHrefLocation.$result3[$i]['id'];?>">
+                      <i class="fas fa-cog"></i> Edit</a>
+                      <button class="btn btn-danger btn-sm" onclick='<?php echo "deleteEntry(\"".$_GET['cat']."\",".$result3[$i]['id'].")";?>'><i class="far fa-trash-alt"></i> Delete</button>  
                     </td>
                     <td>
-                 
-                    <button class="btn btn-primary btn-sm" onclick='<?php echo $postViewForm."(\"".$_GET['cat']."\",".$result[$i]['id'].")";?>' data-toggle="modal" data-target="<?php echo $modalId;?>"><i class="fas fa-eye"></i>View</button>
-                    
-                    <a class="btn btn-success btn-sm" href="./download/csv.php?cat=<?php echo $cat;?>&id=<?php echo $result[$i]['id'];?>" >
-                    <i class="fas fa-file-pdf"></i> Download</a>
-                  
-                    
+                    <button type="button" class="btn btn-success btn-sm" onclick='<?php echo "changeStatus(\"".$_GET['cat']."\",".$result3[$i]['id'].",1)";?>'><i class="fas fa-check-circle"></i> Accept</button>          
                     </td>
                   </tr>
           <?php }?>
@@ -312,7 +298,6 @@ $editFormHrefLocation="editform".($cat=="tr"?"-trainer":($cat=="tre"?"-trainee":
               </div>
               <!-- /.card-body -->
             </div>
-
 
     </div>
 
