@@ -1,5 +1,11 @@
 //Add New member function
 $(document).ready(function() {
+
+    var pending = $("#pending");
+    if(pending != null){
+      pending.click();
+    }
+
     var max_fields      = 10; //maximum input boxes allowed
     var wrapper         = $(".content-wrapper-add-member"); //Fields wrapper
     var add_button      = $("#add-member"); //Add button ID

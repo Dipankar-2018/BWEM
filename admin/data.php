@@ -86,14 +86,14 @@ $editFormHrefLocation="editform".($cat=="tr"?"-trainer":($cat=="tre"?"-trainee":
 
 
       <ul class="nav nav-tabs">
-    <li class="active"><a data-toggle="tab" href="#home" class="btn btn-primary ml-3"><i class="far fa-file-alt"></i> New Application</a></li>
-    <li><a data-toggle="tab" href="#menu1"  class="btn btn-success ml-3"><i class="fas fa-check-circle"></i> Accepted</a></li>
-    <li><a data-toggle="tab" href="#menu2"  class="btn btn-danger ml-3"><i class="far fa-times-circle"></i> Rejected</a></li>
+    <li class="active"><a data-toggle="tab" href="#newapplication" class="btn btn-primary ml-3" id="pending"><i class="far fa-file-alt"></i>Pending Application</a></li>
+    <li><a data-toggle="tab" href="#accepted"  class="btn btn-success ml-3" id="acpt"><i class="fas fa-check-circle"></i> Accepted</a></li>
+    <li><a data-toggle="tab" href="#rejected"  class="btn btn-danger ml-3" id="rej"><i class="far fa-times-circle"></i> Rejected</a></li>
    
   </ul>
 
   <div class="tab-content mt-4">
-    <div id="home" class="tab-pane fade in active">
+    <div id="newapplication" class="tab-pane fade in active">
       <div class="card">
               <div class="card-header">
                   <div style="display:flex;justify-content:space-between;">
@@ -115,11 +115,10 @@ $editFormHrefLocation="editform".($cat=="tr"?"-trainer":($cat=="tre"?"-trainee":
                     } ?>                  
                     <th>CONTACT</th>
                     <th>ADDRESS</th>
-                    <!-- <th>DOWNLOAD</th> -->
-                    <!-- <th>VIEW</th>
-                    <th>EDIT</th>
-                    <th>DELETE</th> -->
-                    <th class="float-right">Action</th>
+                    <th>STAUTS</th>
+                    <th>Approval</th>
+                    <th>EDIT</th>                 
+                    <th>Action</th>
                   </tr>
                   </thead>
                   <tbody>
@@ -131,17 +130,29 @@ $editFormHrefLocation="editform".($cat=="tr"?"-trainer":($cat=="tre"?"-trainee":
                     <td><?php echo $exclusion==true?$result[$i]['name']:$result[$i]['group_name'];?></td>
                     <td><?php echo $exclusion==true?$result[$i]['contact']:$result[$i]['head_mobile'];?></td>
                     <td><?php echo $result[$i]['address'];?></td>
-                    <td class="float-right">
-                    <a href="" class="btn btn-success btn-sm"><i class="fas fa-check-circle"></i> Accept Application</a>
-                    <a href="" class="btn btn-primary btn-sm"><i class="far fa-times-circle"></i> Reject Application</a>
+                    <td>
+                      Pending  
+                    
+                    </td>
+                    <td>
+                    <a href="" class="btn btn-success btn-sm"><i class="fas fa-check-circle"></i> Accept</a>
+                    <a href="" class="btn btn-danger btn-sm"><i class="far fa-times-circle"></i> Reject</a>                  
+                    </td>
+                    <td>
+                  
+                    <a class="btn btn-warning btn-sm" href="<?php echo $editFormHrefLocation.$result[$i]['id'];?>">
+                    <i class="fas fa-cog"></i> Edit</a>
+                   
                     <button class="btn btn-danger btn-sm" onclick='<?php echo "deleteEntry(\"".$_GET['cat']."\",".$result[$i]['id'].")";?>'><i class="far fa-trash-alt"></i> Delete</button>  
+                    
+                    </td>
+                    <td>
+                 
+                    <button class="btn btn-primary btn-sm" onclick='<?php echo $postViewForm."(\"".$_GET['cat']."\",".$result[$i]['id'].")";?>' data-toggle="modal" data-target="<?php echo $modalId;?>"><i class="fas fa-eye"></i>View</button>
                     
                     <a class="btn btn-success btn-sm" href="./download/csv.php?cat=<?php echo $cat;?>&id=<?php echo $result[$i]['id'];?>" >
                     <i class="fas fa-file-pdf"></i> Download</a>
-                    <button class="btn btn-success btn-sm" onclick='<?php echo $postViewForm."(\"".$_GET['cat']."\",".$result[$i]['id'].")";?>' data-toggle="modal" data-target="<?php echo $modalId;?>"><i class="fas fa-eye"></i>View</button>
-                    <a class="btn btn-success btn-sm" href="<?php echo $editFormHrefLocation.$result[$i]['id'];?>">
-                    <i class="fas fa-cog"></i> Edit</a>
-                   
+                  
                     
                     </td>
                   </tr>
@@ -156,7 +167,7 @@ $editFormHrefLocation="editform".($cat=="tr"?"-trainer":($cat=="tre"?"-trainee":
     </div>
 
 
-    <div id="menu1" class="tab-pane fade">
+    <div id="accepted" class="tab-pane fade">
 
       <h3>Menu 1</h3>
       <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
@@ -164,7 +175,7 @@ $editFormHrefLocation="editform".($cat=="tr"?"-trainer":($cat=="tre"?"-trainee":
     </div>
 
 
-    <div id="menu2" class="tab-pane fade">
+    <div id="rejected" class="tab-pane fade">
 
       <h3>Menu 2</h3>
       <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
@@ -172,12 +183,6 @@ $editFormHrefLocation="editform".($cat=="tr"?"-trainer":($cat=="tre"?"-trainee":
     </div>
 
 
-    <div id="menu3" class="tab-pane fade">
-
-      <h3>Menu 3</h3>
-      <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-
-    </div>
   </div>
 </div>
 
