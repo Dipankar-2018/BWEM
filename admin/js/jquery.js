@@ -1,11 +1,17 @@
 //Add New member function
+const pending = $("#pending");
+const acpt=$("#acpt-app");
+const rjct=$("#rjct-app");
+const pendingDiv=$("#pending-app");
+const acptDiv=$("#accepted-app");
+const rjctDiv=$("#rejected-app");
+(()=>{
+  if(pending !== null){
+    pending.click();
+  }
+})()
+
 $(document).ready(function() {
-
-    var pending = $("#pending");
-    if(pending != null){
-      pending.click();
-    }
-
     var max_fields      = 10; //maximum input boxes allowed
     var wrapper         = $(".content-wrapper-add-member"); //Fields wrapper
     var add_button      = $("#add-member"); //Add button ID
