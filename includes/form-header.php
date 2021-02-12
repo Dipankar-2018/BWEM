@@ -31,7 +31,7 @@ include($location.'admin/conn/database.php');
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
 </head>
 
-<body class="profile-page sidebar-collapse">
+<body class="<?php echo (isset($contactPage)&&$contactPage)?'contact-page':'profile-page';?> sidebar-collapse">
 <!-- Navigation Start -->  
   <nav class="navbar navbar bg-success  fixed-top  navbar-expand-lg "  id="sectionsNav" style="z-index:1200;">
     <div class="container">

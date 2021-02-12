@@ -175,7 +175,7 @@ if(isset($isForm)&&$isForm){
   <script src="<?php echo $location;?>assets/js/material-kit.js?v=2.2.0" type="text/javascript"></script>
   <script src="<?php echo $location;?>assets/js/app.js" type="text/javascript"></script>
   <script src="<?php echo $location;?>assets/js/sweetalert.min.js"></script>
-  
+  <script src="<?php echo $location;?>assets/demo/demo.js" type="text/javascript"></script>
   
  
   
@@ -222,10 +222,10 @@ if(isset($isForm)&&$isForm){
   ?>
 
 
- <script>
-    // $().ready(function() {
-    //   materialKitDemo.initContactUsMap();
-    // });
+<script>
+    $().ready(function() {
+      materialKitDemo.initContactUsMap();
+    });
   </script>
 
   
