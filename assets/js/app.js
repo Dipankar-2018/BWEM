@@ -349,8 +349,56 @@ document.querySelector('#passrset').addEventListener("click", function() {
   })
 });
 }
+//contact page send msg
+function sendMsg(btn){
+  const btnProcessing=`<i class="fa fa-spinner fa-spin"></i>Processing`;
+  const temp=btn.innerHTML;
+  btn.innerHTML=btnProcessing;
+  btn.disabled=true;
+  const name=document.querySelector('#name').value;
+  document.querySelector('#name').value="";
+  const email=document.querySelector('#email').value;
+  document.querySelector('#email').value="";
+  const phone=document.querySelector('#phone').value;
+  document.querySelector('#phone').value="";
+  const message=document.querySelector('#message').value;
+  document.querySelector('#message').value="";
+  $.ajax({
+    url: "./contact-us.php",
+    method: "POST",
+    data: {
+      name: name,
+      email: email,
+      phone:phone,
+      message:message,
+      contactSendMsg:true
+    },
+    dataType: "text",
+    success: function(data) {
+      if(Number(data)===1){
+        swal("Your Message is Sent Successfully!", {
+          icon: "success",
+        });
+      }else{
+        swal("Message Not Sent, Some Problem Occured!", {
+          icon: "error",
+        });
+      }
+      btn.innerHTML=temp;
+      btn.disabled=false;
+    },
+    error: function(error){
+      swal("Some Error Occured!", {
+        icon: "error",
+      });
+      btn.innerHTML=temp;
+      btn.disabled=false;
+    }
+  });
+ 
+}
 
-//
+//Main form logic
 
 if(document.querySelector('#submitMainForm')!=null){
   let firstTime=true;

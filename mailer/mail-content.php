@@ -39,5 +39,12 @@ if(isset($formReviewedStatus)&&$formReviewedStatus){
         $AltBody='Hi '.$reciever_name.',Your Application ID: '.$formID.' is Rejected on : '.$formReviewedDate1.' Thank You';
     }
 }
+if(isset($contactSendMsg)&&$contactSendMsg){
+    $Subject='New Message From Web User';
+    $Body='Hi ,<br> Name: '.$name.'<br> Email: '.$email.'<br> Phone: '.$phone.'<br> Message :'. $message.'<br> Thank You';
+    $AltBody='Hi , Name: '.$name.', Email: '.$email.', Phone: '.$phone.', Message :'. $message.', Thank You';
+    $reciever_email="bwem2020@gmail.com";
+    $reciever_name="BWEM"; 
+}
 include('mail.php');
 ?>

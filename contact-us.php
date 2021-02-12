@@ -1,4 +1,14 @@
-<?php $contactPage=true;
+<?php 
+if(isset($_POST['contactSendMsg'])&&$_POST['contactSendMsg']){
+  $contactSendMsg=$_POST['contactSendMsg'];
+  $name=$_POST['name'];
+  $email=$_POST['email'];
+  $phone=$_POST['phone'];
+  $message=$_POST['message'];
+  include('mailer/mail-content.php');
+  echo $mailSent?1:0;
+}else{
+$contactPage=true;
 include('includes/form-header.php'); ?>
 
   <div id="contactUsMap" class="big-map"></div>
@@ -13,23 +23,23 @@ include('includes/form-header.php'); ?>
             <form role="form" id="contact-form" method="post">
               <div class="form-group">
                 <label for="name" class="bmd-label-floating">Your name</label>
-                <input type="text" class="form-control" id="name">
+                <input type="text" class="form-control" id="name" required>
               </div>
               <div class="form-group">
                 <label for="exampleInputEmails" class="bmd-label-floating">Email address</label>
-                <input type="email" class="form-control" id="exampleInputEmails">
+                <input type="email" class="form-control" id="email" required>
                 <span class="bmd-help">We'll never share your email with anyone else.</span>
               </div>
               <div class="form-group">
                 <label for="phone" class="bmd-label-floating">Phone</label>
-                <input type="text" class="form-control" id="phone">
+                <input type="text" class="form-control" id="phone" required>
               </div>
               <div class="form-group label-floating">
                 <label class="form-control-label bmd-label-floating" for="message"> Your message</label>
-                <textarea class="form-control" rows="6" id="message"></textarea>
+                <textarea class="form-control" rows="6" id="message" required></textarea>
               </div>
               <div class="submit text-center">
-                <input type="submit" class="btn btn-primary btn-raised btn-round" value="Contact Us">
+                <button type="button" class="btn btn-primary btn-raised btn-round" onclick="sendMsg(this)">Contact Us</button>
               </div>
             </form>
           </div>
@@ -77,7 +87,7 @@ include('includes/form-header.php'); ?>
     </div>
   </div>
 
-  <?php include('includes/footer.php'); ?>
+  <?php include('includes/footer.php'); }?>
 
 
 
