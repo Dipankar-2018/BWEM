@@ -1,6 +1,6 @@
 //Add New member function
 $(document).ready(function() {
-    var max_fields      = 10; //maximum input boxes allowed
+    var max_fields      = 100; //maximum input boxes allowed
     var wrapper         = $("#add_member_container"); //Fields wrapper
     var add_button      = $("#add_member"); //Add button ID
    
