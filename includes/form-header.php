@@ -65,9 +65,9 @@ include($location.'admin/conn/database.php');
               <a style="font-size:2vh"  href="#" class="dropdown-item">
                 <i class="material-icons">article</i> Director's Note
               </a>
-              <a  style="font-size:2vh" href="#" class="dropdown-item">
+              <!-- <a  style="font-size:2vh" href="#" class="dropdown-item">
                 <i class="material-icons">voice_chat</i> BWEM Anthem
-              </a>
+              </a> -->
               
             </div>
           </li>
@@ -102,9 +102,7 @@ include($location.'admin/conn/database.php');
           <li class="nav-item">
             <a  style="font-size:2vh" class="nav-link" href="<?php echo $location;?>gallery.php"><i class="material-icons">photo</i><b>Gallery</b></a>
           </li>
-          <li class="nav-item">
-            <a style="font-size:2vh"  class="nav-link" href="<?php echo $location;?>contact-us.php"><i class="material-icons">phone</i><b>Contact</b></a>
-          </li>
+          
           <li class="nav-item">
             <a  style="font-size:2vh" class="nav-link" href="<?php echo $location;?>about-us.php"><i class="material-icons">group</i><b>About Us</b></a>
           </li>
@@ -114,7 +112,9 @@ include($location.'admin/conn/database.php');
           <li class="nav-item">
             <a style="font-size:2vh"  class="nav-link" href="<?php echo $location;?>search.php"><i class="material-icons">search</i><b>Application Status</b></a>
           </li>
-     
+          <li class="nav-item">
+            <a style="font-size:2vh"  class="nav-link" href="<?php echo $location;?>contact-us.php"><i class="material-icons">phone</i><b>Contact</b></a>
+          </li>
           <li class="nav-item">
             <?php
               if(isset($_SESSION['login'])&&$_SESSION['login']){
