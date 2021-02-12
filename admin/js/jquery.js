@@ -592,7 +592,8 @@ function moreInfoView(district){
     method:"post",
     data:{moreInfo:true,district:district},
     dataType:"json",
-    success:function(data){      
+    success:function(data){    
+      document.querySelector('#exampleModalLabel').innerHTML=`${capitalize(district)}'s Status`;
       for(let i=0;i<data.length;i++)
           if(Number(data[i].err)==0)
             setDataIntoMoreInfo(data[i].cat,data[i].accept,data[i].reject,data[i].pending,data[i].total);
