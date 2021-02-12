@@ -37,4 +37,26 @@ if(isset($_POST['element'])){
    }
 print_r(json_encode($data, JSON_PRETTY_PRINT));
 }
+
+// $_POST['moreInfo']=true;
+// $_POST['district']="kokrajhar";
+//for moreinfo in dashboard
+if(isset($_POST['moreInfo'])&&$_POST['moreInfo']){
+    include("../conn/database.php");
+    $obj = new query();
+    $district=$obj->get_safe_str($_POST['district']);
+    $data=array();
+    foreach($cat as $key => $val) {
+        $table=$val; 
+        $sql='distinct (SELECT count(`formStatus`) FROM '.$table.' WHERE `district`="'.$district.'") as total,
+        (SELECT count(`formStatus`) FROM '.$table.' WHERE `district`="'.$district.'" and `formStatus`=1) as accept,
+        (SELECT count(`formStatus`) FROM '.$table.' WHERE `district`="'.$district.'" and `formStatus`=0) as reject,
+        (SELECT count(`formStatus`) FROM '.$table.' WHERE `district`="'.$district.'" and `formStatus`=-1) as pending';
+        $result=$obj->getData($table,$sql);
+       
+        $result=count($result)>0?array_merge(array('cat'=>$key,'err'=>0),$result[0]):array('cat'=>$key,'err'=>1);
+        array_push($data,$result);
+    }
+print_r(json_encode($data, JSON_PRETTY_PRINT));
+}
 ?>

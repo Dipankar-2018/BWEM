@@ -27,6 +27,17 @@ if(isset($formInfo)&&$formInfo){
     $Body='Hi '.$reciever_name.',<br> Your registered form-ID is :'.$formID.'<br> Thank You';
     $AltBody='Hi '.$reciever_name.',Your registered form-ID is :'.$formID.' Thank You';
 }
-
+if(isset($formReviewedStatus)&&$formReviewedStatus){
+    $formReviewedDate1=date("d-m-Y",strtotime($formReviewedDate));
+    if($isApproved){
+        $Subject='Congratulations Your Application has been Approved';
+        $Body='Hi '.$reciever_name.',<br> Your Application ID: '.$formID.' is Approved on : '.$formReviewedDate1.'<br> Thank You';
+        $AltBody='Hi '.$reciever_name.',Your Application ID: '.$formID.' is Approved on : '.$formReviewedDate1.' Thank You';
+    }else{
+        $Subject='Your Application has been Rejected';
+        $Body='Hi '.$reciever_name.',<br> Your Application ID: '.$formID.' is Rejected on : '.$formReviewedDate1.'<br> Thank You';
+        $AltBody='Hi '.$reciever_name.',Your Application ID: '.$formID.' is Rejected on : '.$formReviewedDate1.' Thank You';
+    }
+}
 include('mail.php');
 ?>
