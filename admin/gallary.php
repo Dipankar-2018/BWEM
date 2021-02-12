@@ -40,7 +40,7 @@
 
       <div class="alert alert-secondary" role="alert">
           Please Compress Images before Upload Here 
-            <a href="" class="btn btn-primary btn-sm">Here</a>
+            <a href="https://tinypng.com/" class="btn btn-primary">Here</a>
       </div>
 
       <div class="card card-secondary">

@@ -8,6 +8,7 @@ if(isset($isForm)&&$isForm){
 include($location.'admin/conn/database.php');
 ?>
 
+
 <!DOCTYPE html>
 <html lang="asm">
 <head>
@@ -54,72 +55,72 @@ include($location.'admin/conn/database.php');
         <ul class="navbar-nav ml-auto">
           
           <li class="dropdown nav-item">
-            <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+            <a style="font-size:2vh"  href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
               <i class="material-icons">home</i><b>Home</b>
             </a>
             <div class="dropdown-menu dropdown-with-icons">
-               <a href="#" class="dropdown-item">
+               <a  style="font-size:2vh" href="#" class="dropdown-item">
                 <i class="material-icons">record_voice_over</i> CEM Message
               </a>
-              <a href="#" class="dropdown-item">
+              <a style="font-size:2vh"  href="#" class="dropdown-item">
                 <i class="material-icons">article</i> Director's Note
               </a>
-              <a href="#" class="dropdown-item">
+              <a  style="font-size:2vh" href="#" class="dropdown-item">
                 <i class="material-icons">voice_chat</i> BWEM Anthem
               </a>
               
             </div>
           </li>
           <li class="dropdown nav-item">
-            <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+            <a  style="font-size:2vh" href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
               <i class="material-icons">how_to_reg</i> <b>Registration</b>
             </a>
             <div class="dropdown-menu dropdown-with-icons">
-               <a href="<?php echo $location;?>forms/shg.php" class="dropdown-item">
+               <a style="font-size:2vh"  href="<?php echo $location;?>forms/shg.php" class="dropdown-item">
                 <i class="material-icons">group</i> Registration as a SHG
               </a>
-              <a href="<?php echo $location;?>forms/entrepreneur.php" class="dropdown-item">
+              <a  style="font-size:2vh" href="<?php echo $location;?>forms/entrepreneur.php" class="dropdown-item">
                 <i class="material-icons">store</i> Registration of Entrepreneurs
               </a>
-              <a href="<?php echo $location;?>forms/ngo.php" class="dropdown-item">
+              <a style="font-size:2vh"  href="<?php echo $location;?>forms/ngo.php" class="dropdown-item">
                 <i class="material-icons">home_work</i> NGO's
               </a>
-              <a href="<?php echo $location;?>forms/associations.php" class="dropdown-item">
+              <a style="font-size:2vh"  href="<?php echo $location;?>forms/associations.php" class="dropdown-item">
                 <i class="material-icons">business</i> Associations
               </a>
-              <a href="<?php echo $location;?>forms/trainee.php" class="dropdown-item">
+              <a style="font-size:2vh"  href="<?php echo $location;?>forms/trainee.php" class="dropdown-item">
                 <i class="material-icons">model_training</i> Registration as Trainee
               </a>
-              <a href="<?php echo $location;?>forms/trainer.php" class="dropdown-item">
+              <a  style="font-size:2vh" href="<?php echo $location;?>forms/trainer.php" class="dropdown-item">
                 <i class="material-icons">construction</i> Registration as Trainer
               </a>
-              <a href="#" class="dropdown-item">
+              <a  style="font-size:2vh" href="#" class="dropdown-item">
                 <i class="material-icons">location_city</i> Registration of Training Agency
               </a>
             </div>
      
           <li class="nav-item">
-            <a class="nav-link" href="<?php echo $location;?>gallery.php"><i class="material-icons">photo</i><b>Gallery</b></a>
+            <a  style="font-size:2vh" class="nav-link" href="<?php echo $location;?>gallery.php"><i class="material-icons">photo</i><b>Gallery</b></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="<?php echo $location;?>contact-us.php"><i class="material-icons">phone</i><b>Contact</b></a>
+            <a style="font-size:2vh"  class="nav-link" href="<?php echo $location;?>contact-us.php"><i class="material-icons">phone</i><b>Contact</b></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="<?php echo $location;?>about-us.php"><i class="material-icons">group</i><b>About Us</b></a>
+            <a  style="font-size:2vh" class="nav-link" href="<?php echo $location;?>about-us.php"><i class="material-icons">group</i><b>About Us</b></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#"><i class="material-icons">school</i><b>FAQ</b></a>
+            <a style="font-size:2vh"  class="nav-link" href="#"><i class="material-icons">school</i><b>FAQ</b></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="<?php echo $location;?>search.php"><i class="material-icons">search</i><b>Application Status</b></a>
+            <a style="font-size:2vh"  class="nav-link" href="<?php echo $location;?>search.php"><i class="material-icons">search</i><b>Application Status</b></a>
           </li>
      
           <li class="nav-item">
             <?php
               if(isset($_SESSION['login'])&&$_SESSION['login']){
-                echo '<a class="nav-link" href="'.$location.'admin/"><i class="material-icons"></i><b>Goto Dashboard</b></a>';
+                echo '<a  style="font-size:2vh" class="nav-link" href="'.$location.'admin/"><i class="material-icons"></i><b>Goto Dashboard</b></a>';
               }else{
-                echo '<a class="nav-link" id="login_show" href="#" data-toggle="modal" data-target="#loginModal"><i class="material-icons">login</i><b>Dept Login</b></a>';
+                echo '<a  style="font-size:2vh" class="nav-link" id="login_show" href="#" data-toggle="modal" data-target="#loginModal"><i class="material-icons">login</i><b>Dept Login</b></a>';
               }
             ?>
             

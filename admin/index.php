@@ -171,15 +171,15 @@ function getDistCount($cat,$district){
                     <tr>
                       
                       <th>Category</th>
-                      <th>Accepted</th>
-                      <th>Rejected</th>
-                      <th>Pending</th>
-                      <th style="width: 40px">Total</th>
+                      <th class="text-success">Accepted</th>
+                      <th class="text-danger">Rejected</th>
+                      <th class="text-warning">Pending</th>
+                      <th style="width: 40px" class="text-primary">Total</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>                    
-                      <td>Self Help Group</td>
+                      <td class="text-bold"> <i class="fas fa-users"></i> Self Help Group</td>
                       <td class="more-info-td" id="shg-ac">500</td>
                       <td class="more-info-td" id="shg-rj">20</td>
                       <td class="more-info-td" id="shg-pd">30</td>
@@ -187,7 +187,7 @@ function getDistCount($cat,$district){
                     </tr>     
                     
                     <tr>                    
-                      <td>Entreprenures</td>
+                      <td class="text-bold"><i class="fab fa-black-tie"></i> Entreprenures</td>
                       <td class="more-info-td" id="ep-ac">500</td>
                       <td class="more-info-td" id="ep-rj">20</td>
                       <td class="more-info-td" id="ep-pd">30</td>
@@ -195,7 +195,7 @@ function getDistCount($cat,$district){
                     </tr> 
 
                     <tr>                    
-                      <td>NGO'S</td>
+                      <td class="text-bold"><i class="far fa-building"></i> NGO'S</td>
                       <td class="more-info-td" id="ng-ac">500</td>
                       <td class="more-info-td" id="ng-rj">20</td>
                       <td class="more-info-td" id="ng-pd">30</td>
@@ -203,7 +203,7 @@ function getDistCount($cat,$district){
                     </tr> 
 
                     <tr>                    
-                      <td>Association</td>
+                      <td class="text-bold"><i class="fas fa-bookmark"></i> Association</td>
                       <td class="more-info-td" id="as-ac">500</td>
                       <td class="more-info-td" id="as-rj">20</td>
                       <td class="more-info-td" id="as-pd">30</td>
@@ -212,7 +212,7 @@ function getDistCount($cat,$district){
 
 
                     <tr>                    
-                      <td>Trainer</td>
+                      <td class="text-bold"><i class="fab fa-slideshare"></i> Trainer</td>
                       <td class="more-info-td" id="tr-ac">500</td>
                       <td class="more-info-td" id="tr-rj">20</td>
                       <td class="more-info-td" id="tr-pd">30</td>
@@ -221,7 +221,7 @@ function getDistCount($cat,$district){
 
 
                     <tr>                    
-                      <td>Trainee</td>
+                      <td class="text-bold"><i class="fas fa-book-reader"></i> Trainee</td>
                       <td class="more-info-td" id="tre-ac">500</td>
                       <td class="more-info-td" id="tre-rj">20</td>
                       <td class="more-info-td" id="tre-pd">30</td>
