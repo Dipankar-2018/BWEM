@@ -40,13 +40,13 @@ include('includes/form-header.php'); ?>
               </div>
               <div class="description">
                 <h4 class="info-title">Find us at the office</h4>
-                <p> Bld Mihail Kogalniceanu, nr. 8,<br>
-                  7652 Bucharest,<br>
-                  Romania
+                <p> Bodoland Secretariat, BTAD, <br>
+                Assam 783370,<br>
+                  
                 </p>
               </div>
             </div>
-            <div class="info info-horizontal">
+            <!-- <div class="info info-horizontal">
               <div class="icon icon-primary">
                 <i class="material-icons">phone</i>
               </div>
@@ -57,20 +57,8 @@ include('includes/form-header.php'); ?>
                   Mon - Fri, 8:00-22:00
                 </p>
               </div>
-            </div>
-            <div class="info info-horizontal">
-              <div class="icon icon-primary">
-                <i class="material-icons">business_center</i>
-              </div>
-              <div class="description">
-                <h4 class="info-title">Legal Information</h4>
-                <p> Creative Tim Ltd.<br>
-                  VAT &#xB7; EN2341241<br>
-                  IBAN &#xB7; EN8732ENGB2300099123<br>
-                  Bank &#xB7; Great Britain Bank
-                </p>
-              </div>
-            </div>
+            </div> -->
+      
           </div>
         </div>
       </div>
