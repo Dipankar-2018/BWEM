@@ -35,7 +35,7 @@
         <script>
             swal({
               title: 'Success',
-              text: 'Form Submitted Successfully',
+              text: 'Form Submitted Successfully. Please check your email for the Registration ID',
               icon: 'success',
             });
         </script>   

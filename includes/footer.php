@@ -176,7 +176,7 @@ if(isset($isForm)&&$isForm){
   <script src="<?php echo $location;?>assets/js/app.js" type="text/javascript"></script>
   <script src="<?php echo $location;?>assets/js/sweetalert.min.js"></script>
   <script src="<?php echo $location;?>assets/demo/demo.js" type="text/javascript"></script>
-  
+  <script src="<?php echo $location;?>assets/js/sweetalert.min.js"></script>
  
   
   
@@ -201,8 +201,9 @@ if(isset($isForm)&&$isForm){
             <script>
                 swal({
                   title: 'Success',
-                  text: 'Form Submitted Successful',
+                  text: 'Form Submitted Successful. Please check your Email for the UNIQUE ID',
                   icon: 'success',
+                  color: 'red',
                 });
             </script>   
             ";
@@ -228,6 +229,33 @@ if(isset($isForm)&&$isForm){
     });
   </script>
 
+
+
+<script>
+
+$(function() {
+    var Toast = Swal.mixin({
+      toast: true,
+      position: 'top-end',
+      showConfirmButton: false,
+      timer: 3000
+    });
+    $('.swalDefaultInfo').click(function() {
+      // Toast.fire({
+      //   icon: 'info',
+      //   title: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+      console.log("clicked");
+      
+    })
+    });
+  }
+
+
+
+
+
+
+</script>
   
 </body>
 

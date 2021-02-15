@@ -44,7 +44,7 @@ include('../includes/form-header.php');
                         <div class="col-lg-6 col-sm-4">
                           <div class="form-group has-default">
                             <label class="text-info"><b>GROUP NAME</b></label>
-                            <input type="text" class="form-control" placeholder="Enter Group Name" name="group_name">
+                            <input type="text" class="form-control" placeholder="Enter Group Name" name="group_name" required>
                           </div>
                         </div>
                         <div class="col-lg-12 col-sm-12">
@@ -81,7 +81,7 @@ include('../includes/form-header.php');
                         <div class="col-lg-12 col-sm-12">
                           <div class="form-group has-default">
                             <label class="text-info"><b>ADDRESS</b></label>
-                            <input type="text" class="form-control" placeholder="Enter Village/Town/Street/City" name="address">
+                            <input type="text" class="form-control" placeholder="Enter Village/Town/Street/City" name="address" required>
                           </div>
                         </div>
                         <div class="col-lg-3 col-sm-3">
@@ -105,19 +105,19 @@ include('../includes/form-header.php');
                         <div class="col-lg-3 col-sm-4">
                           <div class="form-group has-default">
                             <label class="text-info"><b>POST OFFICE</b></label>
-                            <input type="text" class="form-control" placeholder="Enter P.O. Name" name="post_office">
+                            <input type="text" class="form-control" placeholder="Enter P.O. Name" name="post_office" required>
                           </div>
                         </div>
                         <div class="col-lg-3 col-sm-4">
                           <div class="form-group has-default">
                             <label class="text-info"><b>POLICE STATION</b></label>
-                            <input type="text" class="form-control" placeholder="Enter P.S. Name" name="police_station">
+                            <input type="text" class="form-control" placeholder="Enter P.S. Name" name="police_station" required>
                           </div>
                         </div>
                         <div class="col-lg-3 col-sm-4">
                           <div class="form-group has-default">
                             <label class="text-info"><b>PIN CODE</b></label>
-                            <input type="text" class="form-control" placeholder="Enter PIN Code" name="pin">
+                            <input type="text" class="form-control" placeholder="Enter PIN Code" name="pin" required>
                           </div>
                         </div>
                         <div class="col-lg-3 col-sm-3">
@@ -151,7 +151,7 @@ include('../includes/form-header.php');
                           <div class="col-lg-4 col-sm-4">
                             <div class="form-group has-default">
                               <label class="text-info"><b>SELECT CATEGORY</b></label>
-                                <select class="selectpicker" data-style="select-with-transition" title="Select Category" data-size="7" name="head_position">
+                                <select class="selectpicker" data-style="select-with-transition" title="Select Category" data-size="7" name="head_position" required>
                                 <option disabled>Choose city</option>
                                 <option value="president">President</option>
                                 <option value="secratary">Secratary</option>
@@ -162,19 +162,19 @@ include('../includes/form-header.php');
                           <div class="col-lg-8 col-sm-8">
                             <div class="form-group has-default">
                               <label class="text-info"><b>NAME</b></label>
-                              <input type="text" class="form-control" placeholder="Enter Your Name" name="head_name">
+                              <input type="text" class="form-control" placeholder="Enter Your Name" name="head_name" required>
                             </div>
                           </div>
                           <div class="col-lg-6 col-sm-6">
                             <div class="form-group has-default">
                               <label class="text-info"><b>CONTACT NUMBER</b></label>
-                              <input type="text" class="form-control" placeholder="Enter Contact Name" name="head_mobile">
+                              <input type="text" class="form-control" placeholder="Enter Contact Name" name="head_mobile" required>
                             </div>
                           </div>
                           <div class="col-lg-6 col-sm-6">
                             <div class="form-group has-default">
                               <label class="text-info"><b>E-MAIL</b></label>
-                              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter E-Mail Id" name="head_email">
+                              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter E-Mail Id" name="head_email" required>
                              
                             </div>
                           </div>
@@ -199,13 +199,13 @@ include('../includes/form-header.php');
                           <div class="col-lg-12 col-sm-12">
                             <div class="form-group has-default">
                               <label for="MemberName" class="text-info"><b>MEMBER NAME</b></label>
-                              <input type="text" class="form-control" id="MemberName" placeholder="Enter Your Name" name="member_name[]">
+                              <input type="text" class="form-control" id="MemberName" placeholder="Enter Your Name" name="member_name[]" required>
                             </div>
                           </div>
                           <div class="col-lg-4 col-sm-4">
                             <div class="form-group">
                               <label for="SelectGender" class="text-info"><b>SELECT GENDER</b></label> <br>
-                                <select class="selectpicker" data-style="select-with-transition" id="SelectGender" title="Select Gender" data-size="7" name="member_gender[]">
+                                <select class="selectpicker" data-style="select-with-transition" id="SelectGender" title="Select Gender" data-size="7" name="member_gender[]" required>
                                 <option disabled>Select Gender</option>
                                 <option value="Male">MALE</option>
                                 <option value="Female">FEMALE</option>                               
@@ -215,14 +215,14 @@ include('../includes/form-header.php');
                           <div class="col-lg-4 col-sm-4">
                             <div class="form-group has-default">
                               <label for="InputAge" class="text-info"><b>AGE</b></label>
-                              <input type="text" class="form-control" id="InputAge" aria-describedby="emailHelp" placeholder="Enter Age" name="member_age[]">
+                              <input type="text" class="form-control" id="InputAge" aria-describedby="emailHelp" placeholder="Enter Age" name="member_age[]" required>
                              
                             </div>
                           </div>
                           <div class="col-lg-4 col-sm-4">
                             <div class="form-group has-default">
                               <label for="InputQualification" class="text-info"><b>QUALIFICATION</b></label>
-                              <input type="text" class="form-control" id="InputQualification" aria-describedby="emailHelp" placeholder="Enter Qualification, if any" name="member_qualification[]">
+                              <input type="text" class="form-control" id="InputQualification" aria-describedby="emailHelp" placeholder="Enter Qualification, if any" name="member_qualification[]" required>
                              
                             </div>
                           </div>
@@ -252,13 +252,13 @@ include('../includes/form-header.php');
                           <div class="col-lg-6 col-sm-6">
                             <div class="form-group has-default">
                               <label class="text-info"><b>AREA OF INTEREST</b></label>
-                              <input type="text" class="form-control" placeholder="Enter Area of Interest" name="area_of_interest">
+                              <input type="text" class="form-control" placeholder="Enter Area of Interest" name="area_of_interest" required>
                             </div>
                           </div>
                           <div class="col-lg-6 col-sm-6">
                             <div class="form-group has-default">
                               <label class="text-info"><b>GROUP EXPERIENCE</b></label>
-                              <input type="text" class="form-control" placeholder="Enter Group Experience, if any" name="group_exp">
+                              <input type="text" class="form-control" placeholder="Enter Group Experience, if any" name="group_exp" required>
                             </div>
                           </div>
                     
@@ -283,26 +283,26 @@ include('../includes/form-header.php');
                           <div class="col-lg-6 col-sm-6">
                             <div class="form-group has-default">
                               <label class="text-info"><b>A/C NUMBER</b></label>
-                              <input type="text" class="form-control" placeholder="Enter Account Number" name="acc_no">
+                              <input type="text" class="form-control" placeholder="Enter Account Number" name="acc_no" required>
                             </div>
                           </div>
                           <div class="col-lg-6 col-sm-6">
                             <div class="form-group has-default">
                               <label class="text-info"><b>IFSC CODE</b></label>
-                              <input type="text" class="form-control" placeholder="Enter IFSC Code" name="ifsc_code">
+                              <input type="text" class="form-control" placeholder="Enter IFSC Code" name="ifsc_code" required>
                             </div>
                           </div>
 
                           <div class="col-lg-6 col-sm-6">
                             <div class="form-group has-default">
                               <label class="text-info"><b>BANK NAME</b></label>
-                              <input type="text" class="form-control" placeholder="Enter Bank Name" name="bank_name">
+                              <input type="text" class="form-control" placeholder="Enter Bank Name" name="bank_name" required>
                             </div>
                           </div>
                           <div class="col-lg-6 col-sm-6">
                             <div class="form-group has-default">
                               <label class="text-info"><b>BRANCH NAME</b></label>
-                              <input type="text" class="form-control" placeholder="Enter Branch Name" name="branch_name">
+                              <input type="text" class="form-control" placeholder="Enter Branch Name" name="branch_name" required>
                             </div>
                           </div>
 
@@ -324,7 +324,7 @@ include('../includes/form-header.php');
 
                           
                           <div class="form-group col-lg-12 col-sm-12">
-                           <div class="form-check">
+                           <!-- <div class="form-check">
                               <label class="form-check-label">
                                   <input class="form-check-input" type="checkbox" value="">
                                   I Agree
@@ -332,7 +332,7 @@ include('../includes/form-header.php');
                                     <span class="check"></span>
                                   </span>
                               </label>
-                            </div>
+                            </div> -->
                           </div>
                           <button id="modalActivate" type="button" name="preview" class="btn btn-success" onclick="previewForm()" data-toggle="modal" data-target="#exampleModalPreview">Preview</button>
                         

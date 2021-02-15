@@ -349,6 +349,7 @@ document.querySelector('#passrset').addEventListener("click", function() {
   })
 });
 }
+
 //contact page send msg
 function sendMsg(btn){
   const btnProcessing=`<i class="fa fa-spinner fa-spin"></i>Processing`;
@@ -444,3 +445,6 @@ let netState=true;
             netState=false;
         }
    },2000); 
+
+
+   

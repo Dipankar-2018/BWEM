@@ -39,13 +39,13 @@ include('../includes/form-header.php');
                         <div class="col-lg-4 col-sm-4">
                           <div class="form-group has-default">
                             <label class="text-info"><b>NAME</b></label>
-                            <input type="text" class="form-control" placeholder="Enter Your/Traiee Name" name="name">
+                            <input type="text" class="form-control" placeholder="Enter Your/Traiee Name" name="name" required>
                           </div>
                         </div>
                         <div class="col-lg-4 col-sm-4">
                           <div class="form-group has-default">
                             <label class="text-info"><b>E-MAIL</b></label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter E-Mail Id" name="email">
+                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter E-Mail Id" name="email" required> 
                            
                           </div>
                         </div>
@@ -53,19 +53,19 @@ include('../includes/form-header.php');
                         <div class="col-lg-4 col-sm-4">
                           <div class="form-group has-default">
                             <label class="text-info"><b>CONTACT NUMBER</b></label>
-                            <input type="text" class="form-control" placeholder="Enter Contact Number" name="contact">
+                            <input type="text" class="form-control" placeholder="Enter Contact Number" name="contact" required>
                           </div>
                         </div>
                         <div class="col-lg-8 col-sm-8">
                           <div class="form-group has-default">
                             <label class="text-info"><b>GUARDIAN'S NAME</b></label>
-                            <input type="text" class="form-control" placeholder="Enter Guardian Name" name="gname">
+                            <input type="text" class="form-control" placeholder="Enter Guardian Name" name="gname" required>
                           </div>
                         </div>
                         <div class="col-lg-4 col-sm-4">
                           <div class="form-group has-default">
                               <label class="text-info"><b>RELATION</b></label>
-                                <select class="selectpicker" data-style="select-with-transition" title="Select Any" data-size="7" name="relation">
+                                <select class="selectpicker" data-style="select-with-transition" title="Select Any" data-size="7" name="relation" required>
                                 <option disabled>Select Any</option>
                                 <option value="father">Father</option>
                                 <option value="mother">Mother</option>
@@ -77,13 +77,13 @@ include('../includes/form-header.php');
                           <div class="form-group">
                             <label class="label-control"></label>
                             <label class="text-info"><b>DATE OF BIRTH</b></label>
-                            <input type="date" class="form-control datepicker" name="dob">
+                            <input type="date" class="form-control datepicker" name="dob" required>
                           </div>
                         </div>
                         <div class="col-lg-3 col-sm-4">
                           <div class="form-group has-default">
                               <label class="text-info"><b>CATEGORY</b></label>
-                                <select class="selectpicker" data-style="select-with-transition" title="Select Any" data-size="7" name="category">
+                                <select class="selectpicker" data-style="select-with-transition" title="Select Any" data-size="7" name="category" required>
                                 <option disabled>Select Any</option>
                                 <option value="st">ST</option>
                                 <option value="sc">SC</option>
@@ -95,7 +95,7 @@ include('../includes/form-header.php');
                         <div class="col-lg-3 col-sm-4">
                           <div class="form-group has-default">
                               <label class="text-info"><b>RELIGION</b></label>
-                                <select class="selectpicker" data-style="select-with-transition" title="Select Any" data-size="7" name="religion">
+                                <select class="selectpicker" data-style="select-with-transition" title="Select Any" data-size="7" name="religion" required>
                                 <option disabled>Select Any</option>
                                 <option value="hindu">Hindu</option>
                                 <option value="muslim">Muslim</option>
@@ -110,7 +110,7 @@ include('../includes/form-header.php');
                         <div class="col-lg-3 col-sm-4">
                           <div class="form-group has-default">
                               <label class="text-info"><b>EDUCATON</b></label>
-                                <select class="selectpicker" data-style="select-with-transition" title="Select Any" data-size="7" name="education">
+                                <select class="selectpicker" data-style="select-with-transition" title="Select Any" data-size="7" name="education" required>
                                 <option disabled>Select Any</option>
                                 <option value="8th Pass / Equivalent">8th Pass / Equivalent</option>
                                 <option value="M.P Pass / Equivalent">M.P Pass / Equivalent</option>
@@ -123,7 +123,7 @@ include('../includes/form-header.php');
                         <div class="col-md-8 col-sm-8">
                           <div class="form-group has-default">
                             <label class="text-info"><b>ADDRESS</b></label>
-                            <input type="text" class="form-control" placeholder="Enter Village/Town/Street/City" name="address">
+                            <input type="text" class="form-control" placeholder="Enter Village/Town/Street/City" name="address" required>
                           </div>
                         </div>
                          <div class="col-lg-4 col-sm-4">
@@ -159,19 +159,19 @@ include('../includes/form-header.php');
                         <div class="col-lg-3 col-sm-4">
                           <div class="form-group has-default">
                             <label class="text-info"><b>POST OFFICE</b></label>
-                            <input type="text" class="form-control" placeholder="Enter P.O. Name" name="post">
+                            <input type="text" class="form-control" placeholder="Enter P.O. Name" name="post" required>
                           </div>
                         </div>
                         <div class="col-lg-3 col-sm-4">
                           <div class="form-group has-default">
                             <label class="text-info"><b>POLICE STATION</b></label>
-                            <input type="text" class="form-control" placeholder="Enter P.S. Name" name="police">
+                            <input type="text" class="form-control" placeholder="Enter P.S. Name" name="police" required>
                           </div>
                         </div>
                         <div class="col-lg-3 col-sm-4">
                           <div class="form-group has-default">
                             <label class="text-info"><b>PIN CODE</b></label>
-                            <input type="text" class="form-control" placeholder="Enter PIN Code" name="pin">
+                            <input type="text" class="form-control" placeholder="Enter PIN Code" name="pin" required>
                           </div>
                         </div>
                         
@@ -197,7 +197,7 @@ include('../includes/form-header.php');
                           <div class="col-lg-4 col-sm-4">
                             <div class="form-group has-default">
                               <label class="text-info"><b>SELECT TRAINIG COURSE<a class="text-danger"> *</a></b></label>
-                                <select class="selectpicker" data-style="select-with-transition" title="Select Category" data-size="7" name="course">
+                                <select class="selectpicker" data-style="select-with-transition" title="Select Category" data-size="7" name="course" required>
                                 <option disabled>Select Any</option>
                                 <option value="Dairy Farming">Diary Farming</option>
                                 <option value="Napkin Production">Napkin Production</option>
@@ -207,7 +207,7 @@ include('../includes/form-header.php');
                           <div class="col-lg-4 col-sm-4">
                             <div class="form-group has-default">
                               <label class="text-info"><b>SELECT COURSE DURATION<a class="text-danger"> *</a></b></label>
-                                <select class="selectpicker" data-style="select-with-transition" title="Select Category" data-size="7" name="course_duration">
+                                <select class="selectpicker" data-style="select-with-transition" title="Select Category" data-size="7" name="course_duration" required>
                                 <option disabled>Select Any</option>
                                 <option value="7 Days">7 Days</option>
                                 <option value="15 Days">15 Days</option>
@@ -219,7 +219,7 @@ include('../includes/form-header.php');
                           <div class="col-lg-4 col-sm-4">
                             <div class="form-group has-default">
                               <label class="text-info"><b>SELECT PREFERRED LOCATION</b></label>
-                                <select class="selectpicker" data-style="select-with-transition" title="Select Category" data-size="7" name="location">
+                                <select class="selectpicker" data-style="select-with-transition" title="Select Category" data-size="7" name="location" required>
                                 <option disabled>Select Any</option>
                                 <option value="Kokrajhar">Kokrajhar</option>
                                 <option value="Chirang">Chirang</option>
@@ -251,7 +251,7 @@ include('../includes/form-header.php');
                               <label class="text-info"><b>UPLOAD PHOTO</b></label>
                               <input type="file" class="inputFileHidden" name="photo" onchange="readURL(this,'photo');">
                               <div class="input-group">
-                                <input type="text" class="form-control inputFileVisible" placeholder="Select File (Passport Photo)">
+                                <input type="text" class="form-control inputFileVisible" placeholder="Select File (Passport Photo)" required>
                                 <span class="input-group-btn">
                                   <button type="button" class="btn btn-link btn-fab btn-primary">
                                     <i class="material-icons">attach_file</i>
@@ -263,7 +263,7 @@ include('../includes/form-header.php');
                           <div class="col-lg-4 col-sm-4">
                             <div class="form-group form-file-upload form-file-multiple">
                               <label class="text-info"><b>UPLOAD VOTER/AADHAAR</b></label>
-                              <input type="file"  class="inputFileHidden" name="voter_aadhaar" onchange="readURL(this,'voter_aadhaar');">
+                              <input type="file"  class="inputFileHidden" name="voter_aadhaar" onchange="readURL(this,'voter_aadhaar');" required>
                               <div class="input-group">
                                 <input type="text" class="form-control inputFileVisible" placeholder="Select File">
                                 <span class="input-group-btn">
@@ -277,7 +277,7 @@ include('../includes/form-header.php');
                           <div class="col-lg-4 col-sm-4">
                             <div class="form-group form-file-upload form-file-multiple">
                               <label class="text-info"><b>UPLOAD EDUCATION CERTIFICATE</b></label>
-                              <input type="file"  class="inputFileHidden" name="education_cer" onchange="readURL(this,'education_cer');">
+                              <input type="file"  class="inputFileHidden" name="education_cer" onchange="readURL(this,'education_cer');" required>
                               <div class="input-group">
                                 <input type="text" class="form-control inputFileVisible" placeholder="Select File">
                                 <span class="input-group-btn">
@@ -310,33 +310,33 @@ include('../includes/form-header.php');
                           <div class="col-lg-6 col-sm-6">
                             <div class="form-group has-default">
                               <label class="text-info"><b>A/C NUMBER</b></label>
-                              <input type="text" class="form-control" placeholder="Enter Account Number" name="ac_no">
+                              <input type="text" class="form-control" placeholder="Enter Account Number" name="ac_no" required>
                             </div>
                           </div>
                           <div class="col-lg-6 col-sm-6">
                             <div class="form-group has-default">
                               <label class="text-info"><b>IFSC CODE</b></label>
-                              <input type="text" class="form-control" placeholder="Enter IFSC Code" name="ifsc">
+                              <input type="text" class="form-control" placeholder="Enter IFSC Code" name="ifsc" required>
                             </div>
                           </div>
 
                           <div class="col-lg-6 col-sm-6">
                             <div class="form-group has-default">
                               <label class="text-info"><b>BANK NAME</b></label>
-                              <input type="text" class="form-control" placeholder="Enter Bank Name" name="bank_name">
+                              <input type="text" class="form-control" placeholder="Enter Bank Name" name="bank_name" required>
                             </div>
                           </div>
                           <div class="col-lg-6 col-sm-6">
                             <div class="form-group has-default">
                               <label class="text-info"><b>BRANCH NAME</b></label>
-                              <input type="text" class="form-control" placeholder="Enter Branch Name" name="branch_name">
+                              <input type="text" class="form-control" placeholder="Enter Branch Name" name="branch_name" required>
                             </div>
                           </div>
 
                           <div class="col-lg-12 col-sm-12">
                             <div class="form-group form-file-upload form-file-multiple">
                               <label class="text-info"><b>UPLOAD BANK DOCUMENT (Passbook/Cancelled Cheque)</b></label>
-                              <input type="file" class="inputFileHidden" onchange="readURL(this,'passbook_file');" name="passbook_file">
+                              <input type="file" class="inputFileHidden" onchange="readURL(this,'passbook_file');" name="passbook_file" required>
                               <div class="input-group">
                                 <input type="text" class="form-control inputFileVisible" placeholder="Select File">
                                 <span class="input-group-btn">
@@ -350,7 +350,7 @@ include('../includes/form-header.php');
                          
                           
                           <div class="form-group col-lg-12 col-sm-12">
-                           <div class="form-check">
+                           <!-- <div class="form-check">
                               <label class="form-check-label">
                                   <input class="form-check-input" type="checkbox" value="">
                                   I Aggree
@@ -358,7 +358,7 @@ include('../includes/form-header.php');
                                     <span class="check"></span>
                                   </span>
                               </label>
-                            </div>
+                            </div> -->
                           </div>
                           <button id="modalActivate" type="button" name="preview" class="btn btn-success" onclick="previewTraineeForm()" data-toggle="modal" data-target="#exampleModalPreview">Preview</button>
                           <button id="submitMainForm" type="submit" class="btn btn-primary" name="submit">Submit</button>
