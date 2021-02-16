@@ -96,13 +96,13 @@ materialKitDemo = {
 
     var marker = new google.maps.Marker({
       position: myLatlng,
-      title: "Hello World!"
+      title: "BWEM"
     });
     marker.setMap(map);
   },
 
   initContactUs2Map: function() {
-    var lat = 44.433530;
+    var lat = 90.433530;
     var long = 26.093928;
 
     var centerLong = long - 0.025;
@@ -204,7 +204,7 @@ materialKitDemo = {
 
     var marker = new google.maps.Marker({
       position: myLatlng,
-      title: "Hello World!"
+      title: "BWEM2"
     });
     marker.setMap(map);
   },

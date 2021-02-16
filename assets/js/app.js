@@ -1,3 +1,5 @@
+
+
 //Add New member function
 $(document).ready(function() {
     var max_fields      = 100; //maximum input boxes allowed
@@ -52,7 +54,7 @@ $(document).ready(function() {
                   </div>
          
                   <div class="text-center">
-                    <button type="button" class="btn btn-danger btn-round" onclick="removeElement(this)">Remove Member</button>                            
+                    <button type="button" class="btn btn-danger btn-round member-delete" onclick="removeElement(this)">Remove Member</button>                            
                   </div>
                 </div>
         
@@ -65,13 +67,33 @@ $(document).ready(function() {
             ); //add input box
             x++; 
 	  }
+    popUpShow(true,"Member Added!");
     });
 
 });
 //remove element 
 function removeElement(e){
+  popUpShow(false,"Member Deleted!");
  return e.parentElement.parentElement.parentElement.parentElement.remove();
 }
+//Member Added/remove Popup
+//to add pass true else false in flag
+function popUpShow(flag,message){
+  const body=document.querySelector('body');
+  const div=document.createElement('div');
+  setTimeout(()=>body.removeChild(div),600);
+  div.setAttribute('class',`alert alert-${!flag?`danger`:`warning`} alert-dismissible fade show`);
+  const alert=`<strong>${message}</strong>`;
+  div.innerHTML=alert;
+  div.style.zIndex=3000;
+  div.style.position="fixed";
+  div.style.width='20%';
+  div.style.top='10vh';
+  div.style.left='70%';
+  div.style.right='10px';
+  body.appendChild(div);
+}
+
 //image preview
 function readURL(input,targetId) {
   let FileUploadPath = input.value;
@@ -364,6 +386,15 @@ function sendMsg(btn){
   document.querySelector('#phone').value="";
   const message=document.querySelector('#message').value;
   document.querySelector('#message').value="";
+  if(!name&&!email&&!phone&&!message){
+    swal("Fields Cannot be empty", {
+      icon: "error",
+    });
+    btn.innerHTML=temp;
+    btn.disabled=false;
+    return;
+  }
+    
   $.ajax({
     url: "./contact-us.php",
     method: "POST",

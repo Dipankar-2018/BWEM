@@ -375,7 +375,7 @@ include('../includes/form-header.php');
             </form>
         </div>
         <!-- Reg. Form End -->
-
+      </div>
 
       </div>
     </div>

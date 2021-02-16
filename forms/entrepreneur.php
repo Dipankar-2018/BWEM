@@ -228,7 +228,7 @@ include('../includes/form-header.php');
                           </div>
                          
                           <div class="text-center">
-                            <button type="button" class="btn btn-primary btn-round" id="add_member">Add Member</button>                                                      
+                            <button type="button" class="btn btn-primary btn-round member-add" id="add_member">Add Member</button>                                                      
                           </div>
                         </div>
                 
