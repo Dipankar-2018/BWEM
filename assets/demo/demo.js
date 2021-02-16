@@ -1,9 +1,9 @@
 materialKitDemo = {
 
   initContactUsMap: function() {
-    var myLatlng = new google.maps.LatLng(44.433530, 26.093928);
+    var myLatlng = new google.maps.LatLng(26.42682, 90.284572152);
     var mapOptions = {
-      zoom: 14,
+      zoom: 17,
       center: myLatlng,
       styles: [{
         "featureType": "water",
@@ -96,7 +96,7 @@ materialKitDemo = {
 
     var marker = new google.maps.Marker({
       position: myLatlng,
-      title: "BWEM"
+      title: "BWEM-BTC Secretariat"
     });
     marker.setMap(map);
   },
